@@ -1,1 +1,1 @@
-# conj-lite
+# CONJ Lite - eCommerce WordPress Theme
