@@ -1,0 +1,326 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Conj Lite\n"
+"POT-Creation-Date: 2018-04-05 00:56+0400\n"
+"PO-Revision-Date: 2018-04-05 00:56+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:21
+msgid "Search"
+msgstr ""
+
+#. translators: 1: Div tag open 2: Aria-label quotation close.
+#: 404.php:40
+#, php-format
+msgid "%1$sPromoted Products%2$s"
+msgstr ""
+
+#. translators: 1: Nav tag open 2: Aria-label quotation close.
+#: 404.php:47
+#, php-format
+msgid "%1$sProduct Categories%2$s"
+msgstr ""
+
+#. translators: 1: Div tag open 2: Aria-label quotation close.
+#: 404.php:58
+#, php-format
+msgid "%1$sRecent Posts%2$s"
+msgstr ""
+
+#. translators: 1: Div tag open 2: Aria-label quotation close.
+#: 404.php:65
+#, php-format
+msgid "%1$sCategories%2$s"
+msgstr ""
+
+#. translators: 1: Head tag open 2: Head tag close.
+#: 404.php:68
+#, php-format
+msgid "%1$sMost Used Categories%2$s"
+msgstr ""
+
+#. translators: 1: Div tag open 2: Aria-label quotation close.
+#. translators: 1: Head tag open 2: Head tag close.
+#: 404.php:93 404.php:95
+#, php-format
+msgid "%1$sBest-Selling Products%2$s"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:107
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:38 index.php:43 page-templates/template-fluid.php:35
+#: search.php:39 single.php:25
+msgid "Previous page"
+msgstr ""
+
+#: archive.php:39 index.php:44 page-templates/template-fluid.php:36
+#: search.php:40 single.php:26
+msgid "Next page"
+msgstr ""
+
+#: archive.php:40 index.php:45 page-templates/template-fluid.php:37
+#: search.php:41 single.php:27
+msgid "Page"
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:32
+#, php-format
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:37
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: header.php:31 includes/conj-template-functions.php:48
+msgid "Skip to content"
+msgstr ""
+
+#. translators: %s: Version number, i.e. 4.8.
+#: includes/back-compat.php:40 includes/back-compat.php:53
+#: includes/back-compat.php:69
+#, php-format
+msgid ""
+"Conj Lite requires at least WordPress version 4.8. You are running version "
+"%s. Please upgrade and try again."
+msgstr ""
+
+#: includes/class-conj.php:132
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/class-conj.php:133
+msgid "Push Menu"
+msgstr ""
+
+#: includes/class-conj.php:246
+msgid "Sidebar"
+msgstr ""
+
+#: includes/class-conj.php:248
+msgid "Widgets added to this region will appear in archive/shop pages."
+msgstr ""
+
+#. translators: 1: Decimal number.
+#: includes/class-conj.php:258
+#, php-format
+msgid "Footer Column %1$d"
+msgstr ""
+
+#. translators: 1: Decimal number.
+#: includes/class-conj.php:260
+#, php-format
+msgid "Widgets added here will appear in column %1$d of the footer."
+msgstr ""
+
+#: includes/class-conj.php:340
+msgctxt "montserrat font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: %s: post author
+#: includes/conj-functions.php:179
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#. translators: %s: Post date
+#: includes/conj-functions.php:212
+#, php-format
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr ""
+
+#. translators: %: Number of comments
+#: includes/conj-functions.php:235 includes/conj-functions.php:238
+msgid "One Comment"
+msgstr ""
+
+#: includes/conj-functions.php:235 includes/conj-functions.php:238
+msgid "% Comments"
+msgstr ""
+
+#. translators: %: Number of comments
+#: includes/conj-functions.php:238
+msgid "Leave a comment"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: includes/conj-functions.php:257
+msgid ", "
+msgstr ""
+
+#: includes/conj-functions.php:272
+msgid "in"
+msgstr ""
+
+#: includes/conj-functions.php:272
+msgid "Categories"
+msgstr ""
+
+#: includes/conj-functions.php:275
+msgid "Tags"
+msgstr ""
+
+#: includes/conj-functions.php:294
+msgid "Read more"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: includes/conj-functions.php:319
+#, php-format
+msgid "Edit this post<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: includes/conj-template-functions.php:47
+msgid "Skip to navigation"
+msgstr ""
+
+#: includes/conj-template-functions.php:83
+msgid "Menu"
+msgstr ""
+
+#. translators: 1: WordPress.org URL.
+#: includes/conj-template-functions.php:208
+#, php-format
+msgid "%1$sProudly powered by %2$s "
+msgstr ""
+
+#: includes/conj-template-functions.php:211
+msgid "Y"
+msgstr ""
+
+#. translators: 1: Seperator, 2: Theme name, 3: Theme author.
+#: includes/conj-template-functions.php:215
+#, php-format
+msgid "%1$s Theme: %2$s by %3$s"
+msgstr ""
+
+#. translators: 1: Span open tag, 2: Span close tag.
+#: includes/woocommerce/class-conj-woocommerce.php:298
+#, php-format
+msgid "%1$sPrice%2$s"
+msgstr ""
+
+#: includes/woocommerce/conj-woocommerce-template-functions.php:240
+msgid "View your shopping cart"
+msgstr ""
+
+#. translators: number of items in the mini cart.
+#: includes/woocommerce/conj-woocommerce-template-functions.php:242
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: page-templates/template-fluid.php:41 single.php:31
+msgid "Previous"
+msgstr ""
+
+#: page-templates/template-fluid.php:42 single.php:32
+msgid "Next"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-image.php:65 template-parts/content.php:51
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-image.php:78 template-parts/content-page.php:27
+#: template-parts/content.php:62
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:42
+#, php-format
+msgid "Edit this page <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Conj Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.conj.ws"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Get started with Conj Lite which is the one thing you need to build your own "
+"stunning eCommerce website in a fast and efficient way."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "CONJ"
+msgstr ""
