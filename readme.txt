@@ -62,3 +62,5 @@ GNU General Public License for more details.
 * [Skip to content](https://github.com/Automattic/_s/pull/136)
 * [Slinky](https://github.com/alizahid/slinky)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
+* [Black camera lens](https://www.pexels.com/photo/black-camera-lens-615302)
+* [Apple watch](https://pixabay.com/en/apple-watch-smart-technology-light-1500849/)
