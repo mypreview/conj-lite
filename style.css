@@ -899,6 +899,9 @@ header.site-header:after {
 	z-index: 1;
 	pointer-events: none;
 }
+#masthead {
+	padding-top: 1.8em;
+}
 @media (min-width: 82.0625em) {
 	body #masthead > .col-full {
 		grid-column-gap: 40px;
