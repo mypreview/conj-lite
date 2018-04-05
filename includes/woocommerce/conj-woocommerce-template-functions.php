@@ -281,6 +281,43 @@ if ( ! function_exists( 'conjws_lite_wc_header_cart' ) ) :
 endif;
 
 /**
+ * Used to wrap the "#order_review" tag.
+ *
+ * @return  void
+ */
+if ( ! function_exists( 'conjws_lite_wc_checkout_order_review_wrapper' ) ) :
+	function conjws_lite_wc_checkout_order_review_wrapper() {
+		
+		?><div class="conj-wc-checkout-order-review__wrapper">
+		<?php
+	}
+endif;
+/**
+ * Prepends a heading tag to the "#order_review" container.
+ *
+ * @return  void
+ */
+if ( ! function_exists( 'conjws_lite_wc_checkout_order_review_heading' ) ) :
+	function conjws_lite_wc_checkout_order_review_heading() {
+		
+		?><h3 class="conj-wc-checkout-order-review__heading"><?php esc_html_e( 'Your order', 'conj-lite' ); ?></h3>
+		<?php
+	}
+endif;
+/**
+ * Used to close the wrapper of "#order_review" tag.
+ *
+ * @return  void
+ */
+if ( ! function_exists( 'conjws_lite_wc_checkout_order_review_wrapper_close' ) ) :
+	function conjws_lite_wc_checkout_order_review_wrapper_close() {
+		
+		?></div><!-- .conj-wc-checkout-order-review__wrapper -->
+		<?php
+	}
+endif;
+
+/**
  * Display Featured and On-Sale Products.
  * Check for featured products then on-sale products and use the appropiate shortcode.
  * If neither exist, it can fallback to show recently added products.
