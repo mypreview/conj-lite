@@ -12,3 +12,15 @@ Rest assured that the Conj theme uses a mobile-first grid-based architecture tha
 The entire platform of Conj is built on top of the [Underscores](https://github.com/Automattic/_s) starter theme which is a solid foundation of code and also used for all themes released by Automattic on WordPress.com. 
 
 Get the one thing you need to build stunning eCommerce website in a fast and efficient way.
+
+## Get Involved
+
+Want to contribute? Here's the [GitHub development repository](https://github.com/conjws/conj-lite "GitHub development repository").
+
+## Documentation
+
+Get started [here](https://www.conj.ws/?p=9) with a collection of tutorials that cover the basics.
+
+## Free Support
+
+If you have any question(s) about using theme, please do not hesitate to check out our [support forums](https://support.conj.ws/t/conj-lite) and start a new discussion for further assistance or clarification.
