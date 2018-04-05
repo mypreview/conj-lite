@@ -8,7 +8,17 @@ Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
+Get started with Conj which is the one thing you need to build your own stunning eCommerce website in a fast and efficient way.
+
 == Description ==
+
+Conj’s fantastic out of the box deep code and design integration with WooCommerce, the premier eCommerce solution for WordPress, enables your store to be bulletproof against any conflicts during major WooCommerce updates. 
+
+Rest assured that the Conj theme uses a mobile-first grid-based architecture that renders beautifully formatted content on phones, tablets, and desktop monitors. Your visitors can expect brilliant looking products whether they are browsing your website at the office or on the go. 
+
+The entire platform of Conj is built on top of the Underscores starter theme which is a solid foundation of code and also used for all themes released by Automattic on WordPress.com. 
+
+Get the one thing you need to build stunning eCommerce website in a fast and efficient way.
 
 == Installation ==
 1. Upload the entire `conj-lite` folder to the `/wp-content/themes/` directory
