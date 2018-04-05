@@ -81,5 +81,16 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
  * @see  conjws_lite_wc_search_field()
  * @see  conjws_lite_wc_header_cart()
  */
-add_action( 'conjws_lite_header',						'conjws_lite_wc_search_field',					40 );
-add_action( 'conjws_lite_header', 						'conjws_lite_wc_header_cart',    				50 );
+add_action( 'conjws_lite_header',							'conjws_lite_wc_search_field',						40 );
+add_action( 'conjws_lite_header', 							'conjws_lite_wc_header_cart',    					50 );
+
+/**
+ * Checkout
+ *
+ * @see  conjws_lite_wc_checkout_order_review_wrapper()
+ * @see  conjws_lite_wc_checkout_order_review_heading()
+ * @see  conjws_lite_wc_checkout_order_review_wrapper_close()
+ */
+add_action( 'woocommerce_checkout_before_order_review',		'conjws_lite_wc_checkout_order_review_wrapper',   	   1 );
+add_action( 'woocommerce_checkout_order_review',			'conjws_lite_wc_checkout_order_review_heading',   	   1 );
+add_action( 'woocommerce_checkout_after_order_review',		'conjws_lite_wc_checkout_order_review_wrapper_close',  99 );
