@@ -13,6 +13,14 @@ The entire platform of Conj is built on top of the [Underscores](https://github.
 
 Get the one thing you need to build stunning eCommerce website in a fast and efficient way.
 
+## Live Demo
+
+Check out the [Live Demo](https://demo.mypreview.one/conj) to visit **CONJ PRO** theme in action.
+
+## Get the PRO Version
+
+The **CONJ PRO** theme is available to purchase from [mypreview.one](https://www.mypreview.one/conj.html). :moneybag:
+
 ## Get Involved
 
 Want to contribute? Here's the [GitHub development repository](https://github.com/mypreview/conj-lite "GitHub development repository").
