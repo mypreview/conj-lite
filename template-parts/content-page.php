@@ -4,9 +4,8 @@
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,7 +15,7 @@
 
 	<?php 
 	if ( '' !== get_the_post_thumbnail() ) {
-		conjws_lite_post_thumbnail();
+		mypreview_conj_lite_post_thumbnail();
 	} ?>
 
 	<div class="entry-content">

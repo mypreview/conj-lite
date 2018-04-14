@@ -9,7 +9,7 @@
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 get_header(); ?>
@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				do_action( 'conjws_lite_page_before' );
+				do_action( 'mypreview_conj_lite_page_before' );
 
 				get_template_part( 'template-parts/content', 'page' );
 
@@ -29,7 +29,7 @@ get_header(); ?>
 					comments_template();
 				} // End If Statement
 
-				do_action( 'conjws_lite_page_after' );
+				do_action( 'mypreview_conj_lite_page_after' );
 
 			endwhile; // End of the loop.
 			?>

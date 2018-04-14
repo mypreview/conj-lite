@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2018-04-05 00:56+0400\n"
-"PO-Revision-Date: 2018-04-05 00:56+0400\n"
+"POT-Creation-Date: 2018-04-15 01:05+0400\n"
+"PO-Revision-Date: 2018-04-15 01:05+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -117,43 +117,43 @@ msgid "Skip to content"
 msgstr ""
 
 #. translators: %s: Version number, i.e. 4.8.
-#: includes/back-compat.php:40 includes/back-compat.php:53
-#: includes/back-compat.php:69
+#: includes/back-compat.php:41 includes/back-compat.php:54
+#: includes/back-compat.php:70
 #, php-format
 msgid ""
 "Conj Lite requires at least WordPress version 4.8. You are running version "
 "%s. Please upgrade and try again."
 msgstr ""
 
-#: includes/class-conj.php:132
+#: includes/class-conj.php:133
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/class-conj.php:133
+#: includes/class-conj.php:134
 msgid "Push Menu"
 msgstr ""
 
-#: includes/class-conj.php:246
+#: includes/class-conj.php:247
 msgid "Sidebar"
 msgstr ""
 
-#: includes/class-conj.php:248
+#: includes/class-conj.php:249
 msgid "Widgets added to this region will appear in archive/shop pages."
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:258
+#: includes/class-conj.php:259
 #, php-format
 msgid "Footer Column %1$d"
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:260
+#: includes/class-conj.php:261
 #, php-format
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: includes/class-conj.php:340
+#: includes/class-conj.php:341
 msgctxt "montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -235,6 +235,14 @@ msgstr ""
 msgid "%1$s Theme: %2$s by %3$s"
 msgstr ""
 
+#: includes/customizer/class-conj-customizer.php:49
+msgid "CONJ PRO"
+msgstr ""
+
+#: includes/customizer/class-conj-customizer.php:50
+msgid "GO PREMIUM"
+msgstr ""
+
 #. translators: 1: Span open tag, 2: Span close tag.
 #: includes/woocommerce/class-conj-woocommerce.php:298
 #, php-format
@@ -252,6 +260,10 @@ msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
+
+#: includes/woocommerce/conj-woocommerce-template-functions.php:303
+msgid "Your order"
+msgstr ""
 
 #: page-templates/template-fluid.php:41 single.php:31
 msgid "Previous"
@@ -273,36 +285,36 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-image.php:78 template-parts/content-page.php:27
+#: template-parts/content-image.php:78 template-parts/content-page.php:26
 #: template-parts/content.php:62
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-none.php:14
+#: template-parts/content-none.php:13
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:24
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:38
+#: template-parts/content-none.php:37
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:44
+#: template-parts/content-none.php:43
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-page.php:42
+#: template-parts/content-page.php:41
 #, php-format
 msgid "Edit this page <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -312,15 +324,28 @@ msgid "Conj Lite"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://www.conj.ws"
+msgid "https://www.mypreview.one/conj.html"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Get started with Conj Lite which is the one thing you need to build your own "
-"stunning eCommerce website in a fast and efficient way."
+"Conj’s fantastic out of the box deep code and design integration with "
+"WooCommerce, the premier eCommerce solution for WordPress, enables your "
+"store to be bulletproof against any conflicts during major WooCommerce "
+"updates. Rest assured that the Conj theme uses a mobile-first grid-based "
+"architecture that renders beautifully formatted content on phones, tablets, "
+"and desktop monitors. Your visitors can expect brilliant looking products "
+"whether they are browsing your website at the office or on the go. The "
+"entire platform of Conj is built on top of the Underscores starter theme "
+"which is a solid foundation of code and also used for all themes released by "
+"Automattic on WordPress.com. Get the one thing you need to build stunning "
+"eCommerce website in a fast and efficient way."
 msgstr ""
 
 #. Author of the plugin/theme
 msgid "CONJ"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.mypreview.one"
 msgstr ""

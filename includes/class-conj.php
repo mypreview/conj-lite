@@ -3,19 +3,20 @@
  * Conj Lite Class
  *
  * @author  	Mahdi Yazdani
- * @package 	conjws
+ * @package 	mypreview-conj
  * @since 	    1.0.0
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'CONJWS_Lite' ) ) :
+if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 
 	/**
 	 * The main Conj Lite class
 	 */
-	class CONJWS_Lite {
+	class MyPreview_Conj_Lite {
 
 		/**
 		 * Setup class.
@@ -60,7 +61,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 			 * @see 	https://codex.wordpress.org/Content_Width
 			 */
 			if ( ! isset( $content_width ) ) {
-				$content_width = apply_filters( 'conjws_lite_content_width', 1210 ); /* pixels */
+				$content_width = apply_filters( 'mypreview_conj_lite_content_width', 1210 ); /* pixels */
 			} // End If Statement
 
 			/*
@@ -105,7 +106,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 			 *
 			 * @see 	https://developer.wordpress.org/themes/functionality/custom-headers
 			 */
-			add_theme_support( 'custom-header', apply_filters( 'conjws_lite_custom_header_args', array(
+			add_theme_support( 'custom-header', apply_filters( 'mypreview_conj_lite_custom_header_args', array(
 				'default-text-color' => '6B6F81',
 				'width'              => 1950,
 				'height'             => 500,
@@ -118,7 +119,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 			 *
 			 * @see 	https://codex.wordpress.org/Custom_Backgrounds
 			 */
-			add_theme_support( 'custom-background', apply_filters( 'conjws_lite_custom_background_args', array(
+			add_theme_support( 'custom-background', apply_filters( 'mypreview_conj_lite_custom_background_args', array(
 				'default-color' => 'F4F5FA',
 				'default-image' => '',
 			) ) );
@@ -248,7 +249,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 				'description'   => __( 'Widgets added to this region will appear in archive/shop pages.', 'conj-lite' )
 			);
 
-			$regions = intval( apply_filters( 'conjws_lite_footer_widget_columns', 4 ) );
+			$regions = intval( apply_filters( 'mypreview_conj_lite_footer_widget_columns', 4 ) );
 
 			for ( $region = 1; $region <= $regions; $region++ ) {
 
@@ -267,7 +268,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 				);
 			}
 
-			$sidebar_args = apply_filters( 'conjws_lite_sidebar_args', $sidebar_args );
+			$sidebar_args = apply_filters( 'mypreview_conj_lite_sidebar_args', $sidebar_args );
 
 			foreach ( $sidebar_args as $sidebar => $args ) {
 
@@ -288,14 +289,14 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 				/**
 				 * Dynamically generated filter hooks. Allow changing widget wrapper and title tags. See the list below.
 				 *
-				 * 'conjws_lite_sidebar_widget_tags'
+				 * 'mypreview_conj_lite_sidebar_widget_tags'
 				 *
-				 * 'conjws_lite_footer_1_widget_tags'
-				 * 'conjws_lite_footer_2_widget_tags'
-				 * 'conjws_lite_footer_3_widget_tags'
-				 * 'conjws_lite_footer_4_widget_tags'
+				 * 'mypreview_conj_lite_footer_1_widget_tags'
+				 * 'mypreview_conj_lite_footer_2_widget_tags'
+				 * 'mypreview_conj_lite_footer_3_widget_tags'
+				 * 'mypreview_conj_lite_footer_4_widget_tags'
 				 */
-				$filter_hook = sprintf( 'conjws_lite_%s_widget_tags', $sidebar );
+				$filter_hook = sprintf( 'mypreview_conj_lite_%s_widget_tags', $sidebar );
 				$widget_tags = apply_filters( $filter_hook, $widget_tags );
 				if ( is_array( $widget_tags ) ) {
 					register_sidebar( $args + $widget_tags );
@@ -313,7 +314,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 		 */
 		public function resource_hints( $urls, $relation_type ) {
 
-			if ( wp_style_is( 'conjws-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+			if ( wp_style_is( 'mypreview-conj-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 				$urls[] = array(
 					'href' => 'https://fonts.gstatic.com',
 					'crossorigin'
@@ -365,11 +366,11 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-			wp_enqueue_style( 'conjws-google-font', self::google_fonts_url(), array(), null );
-			wp_enqueue_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather' . $suffix . '.css' ), array(), MYPREVIEW_CONJ_THEME_VERSION );
-			wp_enqueue_style( 'conjws-styles', get_stylesheet_uri(), '', MYPREVIEW_CONJ_THEME_VERSION );
+			wp_enqueue_style( 'mypreview-conj-google-font', self::google_fonts_url(), array(), null );
+			wp_enqueue_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather' . $suffix . '.css' ), array(), MYPREVIEW_CONJ_LITE_THEME_VERSION );
+			wp_enqueue_style( 'mypreview-conj-styles', get_stylesheet_uri(), '', MYPREVIEW_CONJ_LITE_THEME_VERSION );
 
-			wp_enqueue_script( 'conjws-scripts', get_theme_file_uri( '/assets/js/conj' . $suffix . '.js' ), array( 'jquery' ), MYPREVIEW_CONJ_THEME_VERSION, TRUE );
+			wp_enqueue_script( 'mypreview-conj-scripts', get_theme_file_uri( '/assets/js/conj' . $suffix . '.js' ), array( 'jquery' ), MYPREVIEW_CONJ_LITE_THEME_VERSION, TRUE );
 
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 
@@ -390,7 +391,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 			if ( is_child_theme() ) {
 
 				$child_theme = wp_get_theme( get_stylesheet() );
-				wp_enqueue_style( 'conjws-child-style', get_stylesheet_uri(), array(), $child_theme->get( 'Version' ) );
+				wp_enqueue_style( 'mypreview-conj-child-style', get_stylesheet_uri(), array(), $child_theme->get( 'Version' ) );
 
 			} // End If Statement
 
@@ -416,7 +417,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 
 			// Add class if we're viewing the Customizer for easier styling of theme options.
 			if ( is_customize_preview() ) {
-				$classes[] = 'conjws-customizer';
+				$classes[] = 'mypreview-conj-customizer';
 			} // End If Statement
 
 			// Add a class if there is a custom header.
@@ -426,7 +427,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 
 			// Add class if sidebar is used.
 			if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() ) {
-				$classes[] = 'has-sidebar';
+				$classes[] = 'has-sidebar left-sidebar';
 			} // End If Statement
 
 			// Add class if the site title and tagline is hidden.
@@ -452,7 +453,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 		 */
 		public function custom_excerpt_more( $more ) {
 
-			return apply_filters( 'conjws_lite_excerpt_more', '...' );
+			return apply_filters( 'mypreview_conj_lite_excerpt_more', '...' );
 
 		}
 
@@ -475,7 +476,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 		}
 
 		/**
-		 * Flush out the transients used in conjws_lite_categorized_blog.
+		 * Flush out the transients used in mypreview_conj_lite_categorized_blog.
 		 *
 		 * @see 	https://codex.wordpress.org/Function_Reference/delete_transient
 		 * @return 	void
@@ -486,7 +487,7 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 				return;
 			} // End If Statement
 
-			delete_transient( 'conjws_lite_categories' );
+			delete_transient( 'mypreview_conj_lite_categories' );
 
 		}
 
@@ -560,4 +561,4 @@ if ( ! class_exists( 'CONJWS_Lite' ) ) :
 endif;
 // End Class.
 
-return new CONJWS_Lite();
+return new MyPreview_Conj_Lite();

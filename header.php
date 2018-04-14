@@ -5,7 +5,7 @@
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-files/#template-partials
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 ?><!doctype html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
@@ -21,11 +21,11 @@
 
 <?php
 /**
- * Functions hooked into conjws_lite_before_site action
+ * Functions hooked into mypreview_conj_lite_before_site action
  *
- * @hooked 	conjws_lite_handheld_navigation 					  - 10
+ * @hooked 	mypreview_conj_lite_handheld_navigation 					  - 10
  */
- do_action( 'conjws_lite_before_site' ); ?>
+ do_action( 'mypreview_conj_lite_before_site' ); ?>
 
 <div id="page" class="hfeed site c-offcanvas-content-wrap">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'conj-lite' ); ?></a>
@@ -34,16 +34,16 @@
 		
 		<?php
 		/**
-		 * Functions hooked into conjws_lite_header action
+		 * Functions hooked into mypreview_conj_lite_header action
 		 *
-		 * @hooked conjws_lite_skip_links                        - 0
-		 * @hooked conjws_lite_site_branding                    - 30
-		 * @hooked conjws_lite_wc_search_field                  - 40
-		 * @hooked conjws_lite_wc_header_cart                   - 50
-		 * @hooked conjws_lite_primary_navigation               - 60
-		 * @hooked conjws_lite_header_image					   - 99
+		 * @hooked mypreview_conj_lite_skip_links                        - 0
+		 * @hooked mypreview_conj_lite_site_branding                    - 30
+		 * @hooked mypreview_conj_lite_wc_search_field                  - 40
+		 * @hooked mypreview_conj_lite_wc_header_cart                   - 50
+		 * @hooked mypreview_conj_lite_primary_navigation               - 60
+		 * @hooked mypreview_conj_lite_header_image					   - 99
 		 */
-		do_action( 'conjws_lite_header' ); ?>
+		do_action( 'mypreview_conj_lite_header' ); ?>
 
 		</div>
 	</header><!-- #masthead -->
@@ -52,9 +52,9 @@
 
 		<?php
 		/**
-		 * Functions hooked into conjws_lite_header action
+		 * Functions hooked into mypreview_conj_lite_header action
 		 *
-		 * @hooked 	conjws_lite_site_container_wrapper			- 5
+		 * @hooked 	mypreview_conj_lite_site_container_wrapper			- 5
 		 * @hooked 	woocommerce_breadcrumb 							- 10
 		 */
-		do_action( 'conjws_lite_site_content_top' ); ?>
+		do_action( 'mypreview_conj_lite_site_content_top' ); ?>

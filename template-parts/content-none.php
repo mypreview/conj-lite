@@ -4,9 +4,8 @@
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
-
 ?>
 
 <section class="no-results not-found">

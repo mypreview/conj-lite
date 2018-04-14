@@ -10,7 +10,7 @@
  * @link 		https://developer.wordpress.org/reference/functions/the_post_navigation/
  * @link 		https://docs.woocommerce.com/wc-apidocs/function-woocommerce_content.html
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 get_header(); ?>
@@ -31,13 +31,13 @@ get_header(); ?>
 
 						get_template_part( 'template-parts/content', get_post_type() );
 
-						the_posts_pagination( apply_filters( 'conjws_lite_post_pagination_args', array(
+						the_posts_pagination( apply_filters( 'mypreview_conj_lite_post_pagination_args', array(
 							'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'conj-lite' ) . '</span>',
 							'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'conj-lite' ) . '</span>',
 							'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'conj-lite' ) . ' </span>',
 						) ) );
 
-						the_post_navigation( apply_filters( 'conjws_lite_post_navigation_args', array(
+						the_post_navigation( apply_filters( 'mypreview_conj_lite_post_navigation_args', array(
 							'prev_text' => '<span>' . __( 'Previous', 'conj-lite' ) . '</span>',
 							'next_text' => '<span>' . __( 'Next', 'conj-lite' ) . '</span>'
 						) ) );

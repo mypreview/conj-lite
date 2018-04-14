@@ -6,7 +6,7 @@
  * @link 		https://developer.wordpress.org/reference/functions/the_posts_pagination/
  * @link 		https://developer.wordpress.org/reference/functions/the_post_navigation/
  * 
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 get_header(); ?>
@@ -17,17 +17,17 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			do_action( 'conjws_lite_post_before' );
+			do_action( 'mypreview_conj_lite_post_before' );
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_posts_pagination( apply_filters( 'conjws_lite_post_pagination_args', array(
+			the_posts_pagination( apply_filters( 'mypreview_conj_lite_post_pagination_args', array(
 				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'conj-lite' ) . '</span>',
 				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'conj-lite' ) . '</span>',
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'conj-lite' ) . ' </span>',
 			) ) );
 
-			the_post_navigation( apply_filters( 'conjws_lite_post_navigation_args', array(
+			the_post_navigation( apply_filters( 'mypreview_conj_lite_post_navigation_args', array(
 				'prev_text' => '<span>' . __( 'Previous', 'conj-lite' ) . '</span>',
 				'next_text' => '<span>' . __( 'Next', 'conj-lite' ) . '</span>'
 			) ) );
@@ -37,7 +37,7 @@ get_header(); ?>
 				comments_template();
 			} // End If Statement
 
-			do_action( 'conjws_lite_post_after' );
+			do_action( 'mypreview_conj_lite_post_after' );
 
 		endwhile; // End of the loop.
 		?>

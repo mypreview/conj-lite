@@ -6,7 +6,7 @@
  * and the comment form.
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 /*
@@ -51,7 +51,7 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( apply_filters( 'conjws_lite_wp_list_comments', array(
+				wp_list_comments( apply_filters( 'mypreview_conj_lite_wp_list_comments', array(
 					'avatar_size' => 	100,
 					'style'       => 	'ol',
 					'short_ping'  => 	TRUE

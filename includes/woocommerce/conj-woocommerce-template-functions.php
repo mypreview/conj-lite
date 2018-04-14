@@ -2,20 +2,20 @@
 /**
  * WooCommerce template functions.
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 /**
  * WooCommerce shop messages.
  * 
- * @uses    conjws_lite_do_shortcode
+ * @uses    mypreview_conj_lite_do_shortcode
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_shop_messages' ) ) :
-	function conjws_lite_wc_shop_messages() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_shop_messages' ) ) :
+	function mypreview_conj_lite_wc_shop_messages() {
 
 		if ( ! is_checkout() ) {
-			echo wp_kses_post( conjws_lite_do_shortcode( 'woocommerce_messages' ) );
+			echo wp_kses_post( mypreview_conj_lite_do_shortcode( 'woocommerce_messages' ) );
 		}
 
 	}
@@ -27,8 +27,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_wrapper_before' ) ) :
-	function conjws_lite_wc_wrapper_before() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_wrapper_before' ) ) :
+	function mypreview_conj_lite_wc_wrapper_before() {
 
 		?>
 		<div id="primary" class="content-area">
@@ -44,8 +44,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_wrapper_after' ) ) :
-	function conjws_lite_wc_wrapper_after() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_wrapper_after' ) ) :
+	function mypreview_conj_lite_wc_wrapper_after() {
 
 		?>
 			</main><!-- #main -->
@@ -60,8 +60,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_sorting_wrapper' ) ) :
-	function conjws_lite_wc_sorting_wrapper() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_sorting_wrapper' ) ) :
+	function mypreview_conj_lite_wc_sorting_wrapper() {
 
 		?><div class="conj-wc-sorting">
 		<?php
@@ -78,8 +78,8 @@ endif;
  * @uses 	woocommerce_pagination();
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_pagination' ) ) :
-	function conjws_lite_wc_pagination() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_pagination' ) ) :
+	function mypreview_conj_lite_wc_pagination() {
 
 		if ( woocommerce_products_will_display() ) {
 			woocommerce_pagination();
@@ -93,8 +93,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_sorting_wrapper_close' ) ) :
-	function conjws_lite_wc_sorting_wrapper_close() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_sorting_wrapper_close' ) ) :
+	function mypreview_conj_lite_wc_sorting_wrapper_close() {
 
 		?></div><!-- .conj-wc-sorting -->
 		<?php
@@ -108,10 +108,10 @@ endif;
  * @uses 	@static 	products_per_column()
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_product_cols_wrapper' ) ) :
-	function conjws_lite_wc_product_cols_wrapper() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_product_cols_wrapper' ) ) :
+	function mypreview_conj_lite_wc_product_cols_wrapper() {
 
-		$columns = (int) CONJWS_Lite_WooCommerce::products_per_column( $number = null );
+		$columns = (int) MyPreview_Conj_Lite_WooCommerce::products_per_column( $number = null );
 		echo '<div class="conj-wc-product-columns archive-columns-' . absint( $columns ) . '">';
 
 	}
@@ -122,8 +122,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_product_cols_wrapper_close' ) ) :
-	function conjws_lite_wc_product_cols_wrapper_close() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_product_cols_wrapper_close' ) ) :
+	function mypreview_conj_lite_wc_product_cols_wrapper_close() {
 
 		?></div><!-- .conj-wc-product-columns -->
 		<?php
@@ -138,10 +138,10 @@ endif;
  * @uses    woocommerce_upsell_display()
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_upsell_display' ) ) :
-	function conjws_lite_wc_upsell_display() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_upsell_display' ) ) :
+	function mypreview_conj_lite_wc_upsell_display() {
 
-		$columns = apply_filters( 'conjws_lite_wc_upsells_columns', 3 );
+		$columns = apply_filters( 'mypreview_conj_lite_wc_upsells_columns', 3 );
 		woocommerce_upsell_display( -1, $columns );
 
 	}
@@ -153,8 +153,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_product_flash_wrapper' ) ) :
-	function conjws_lite_wc_product_flash_wrapper() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_product_flash_wrapper' ) ) :
+	function mypreview_conj_lite_wc_product_flash_wrapper() {
 
 		?><div class="conj-wc-product__flashs">
 		<?php
@@ -168,8 +168,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_product_flash_wrapper_close' ) ) :
-	function conjws_lite_wc_product_flash_wrapper_close() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_product_flash_wrapper_close' ) ) :
+	function mypreview_conj_lite_wc_product_flash_wrapper_close() {
 
 		?></div><!-- .conj-wc-product__flash -->
 		<?php
@@ -187,8 +187,8 @@ endif;
  * @uses 	woocommerce_product_search();
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_search_field' ) ) :
-	function conjws_lite_wc_search_field() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_search_field' ) ) :
+	function mypreview_conj_lite_wc_search_field() {
 
 		?>
 		<div class="site-wc-search">
@@ -209,17 +209,17 @@ endif;
  * Cart Fragments.
  * Ensure cart contents update when products are added to the cart via AJAX.
  *
- * @uses 	conjws_lite_wc_cart_link
+ * @uses 	mypreview_conj_lite_wc_cart_link
  * @param  	array $fragments Fragments to refresh via AJAX.
  * @return 	array            Fragments to refresh via AJAX
  */
-if ( ! function_exists( 'conjws_lite_wc_cart_link_fragment' ) ) :
-	function conjws_lite_wc_cart_link_fragment( $fragments ) {
+if ( ! function_exists( 'mypreview_conj_lite_wc_cart_link_fragment' ) ) :
+	function mypreview_conj_lite_wc_cart_link_fragment( $fragments ) {
 
 		global $woocommerce;
 
 		ob_start();
-		conjws_lite_wc_cart_link();
+		mypreview_conj_lite_wc_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
 
 		return $fragments;
@@ -233,8 +233,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_cart_link' ) ) :
-	function conjws_lite_wc_cart_link() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_cart_link' ) ) :
+	function mypreview_conj_lite_wc_cart_link() {
 
 		?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'conj-lite' ); ?>">
@@ -249,11 +249,11 @@ endif;
 /**
  * Display Header Cart.
  *
- * @uses 	conjws_lite_wc_cart_link();
+ * @uses 	mypreview_conj_lite_wc_cart_link();
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_header_cart' ) ) :
-	function conjws_lite_wc_header_cart() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_header_cart' ) ) :
+	function mypreview_conj_lite_wc_header_cart() {
 
 		if ( is_cart() ) {
 			$class = 'current-menu-item';
@@ -263,7 +263,7 @@ if ( ! function_exists( 'conjws_lite_wc_header_cart' ) ) :
 		?>
 		<ul id="site-header-cart" class="site-header-cart">
 			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php conjws_lite_wc_cart_link(); ?>
+				<?php mypreview_conj_lite_wc_cart_link(); ?>
 			</li>
 			<li>
 				<?php
@@ -285,8 +285,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_checkout_order_review_wrapper' ) ) :
-	function conjws_lite_wc_checkout_order_review_wrapper() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_checkout_order_review_wrapper' ) ) :
+	function mypreview_conj_lite_wc_checkout_order_review_wrapper() {
 		
 		?><div class="conj-wc-checkout-order-review__wrapper">
 		<?php
@@ -297,8 +297,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_checkout_order_review_heading' ) ) :
-	function conjws_lite_wc_checkout_order_review_heading() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_checkout_order_review_heading' ) ) :
+	function mypreview_conj_lite_wc_checkout_order_review_heading() {
 		
 		?><h3 class="conj-wc-checkout-order-review__heading"><?php esc_html_e( 'Your order', 'conj-lite' ); ?></h3>
 		<?php
@@ -309,8 +309,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_wc_checkout_order_review_wrapper_close' ) ) :
-	function conjws_lite_wc_checkout_order_review_wrapper_close() {
+if ( ! function_exists( 'mypreview_conj_lite_wc_checkout_order_review_wrapper_close' ) ) :
+	function mypreview_conj_lite_wc_checkout_order_review_wrapper_close() {
 		
 		?></div><!-- .conj-wc-checkout-order-review__wrapper -->
 		<?php
@@ -327,18 +327,18 @@ endif;
  * @param 	boolean $recent_fallback Should the function display recent products as a fallback when there are no featured or on-sale products?.
  * @uses  	wc_get_featured_product_ids()
  * @uses  	wc_get_product_ids_on_sale()
- * @uses  	conjws_lite_do_shortcode()
+ * @uses  	mypreview_conj_lite_do_shortcode()
  * @return 	void
  */
-if ( ! function_exists( 'conjws_lite_wc_promoted_products' ) ) :
-	function conjws_lite_wc_promoted_products( $per_page = '4', $columns = '2', $recent_fallback = TRUE ) {
+if ( ! function_exists( 'mypreview_conj_lite_wc_promoted_products' ) ) :
+	function mypreview_conj_lite_wc_promoted_products( $per_page = '4', $columns = '2', $recent_fallback = TRUE ) {
 
 		if ( wc_get_featured_product_ids() ) {
 
 			/* translators: 1: Opening heading tag, 2: Closing heading tag. */
 			printf( wp_kses_post( '%1$sFeatured Products%2$s', 'conj-lite' ), '<h2>', '</h2>' );
 
-			echo wp_kses_post( conjws_lite_do_shortcode( 'featured_products', array(
+			echo wp_kses_post( mypreview_conj_lite_do_shortcode( 'featured_products', array(
 					'per_page' => $per_page,
 					'columns'  => $columns
 			) ) );
@@ -347,7 +347,7 @@ if ( ! function_exists( 'conjws_lite_wc_promoted_products' ) ) :
 			/* translators: 1: Opening heading tag, 2: Closing heading tag. */
 			printf( wp_kses_post( '%1$sOn Sale Now%2$s', 'conj-lite' ), '<h2>', '</h2>' );
 
-			echo wp_kses_post( conjws_lite_do_shortcode( 'sale_products', array(
+			echo wp_kses_post( mypreview_conj_lite_do_shortcode( 'sale_products', array(
 					'per_page' => $per_page,
 					'columns'  => $columns
 			) ) );
@@ -356,7 +356,7 @@ if ( ! function_exists( 'conjws_lite_wc_promoted_products' ) ) :
 			/* translators: 1: Opening heading tag, 2: Closing heading tag. */
 			printf( wp_kses_post( '%1$sNew In Store%2$s', 'conj-lite' ), '<h2>', '</h2>' );
 
-			echo wp_kses_post( conjws_lite_do_shortcode( 'recent_products', array(
+			echo wp_kses_post( mypreview_conj_lite_do_shortcode( 'recent_products', array(
 					'per_page' => $per_page,
 					'columns'  => $columns,
 			) ) );

@@ -1,10 +1,10 @@
 === Conj Lite ===
-Contributors: conjws, mahdiyazdani, gookaani
+Contributors: mypreview, mahdiyazdani, gookaani
 Tags: two-columns, three-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
-Donate link: https://www.conj.ws
+Donate link: https://www.mypreview.one
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -24,10 +24,10 @@ Get the one thing you need to build stunning eCommerce website in a fast and eff
 1. Upload the entire `conj-lite` folder to the `/wp-content/themes/` directory
 2. Activate the theme through the `Themes` menu in WordPress
 3. Start by visiting theme customizer at `Appearance` » `Customize`.
-4. Go to `https://www.conj.ws/?p=9` for a guide on how to customize this theme.
+4. Go to `https://mypreview.github.io/Conj` for a guide on how to customize this theme.
 
 == Copyright ==
-Conj Lite WordPress Theme, Copyright 2018 - www.conj.ws.
+Conj Lite WordPress Theme, Copyright 2018 - www.mypreview.one
 Conj Lite is distributed under the terms of the GNU GPL Version 3.
 
 You can redistribute this program and/or modify it under the terms
@@ -48,6 +48,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.1 =
+* Minor changes.
+* Added "Go Pro" Customizer section.
+
 = 1.0.0 =
 * Initial release.
 
@@ -65,12 +69,14 @@ GNU General Public License for more details.
 * [Twentyseventeen](https://github.com/WordPress/twentyseventeen)
 * [Feather Icons](https://github.com/feathericons/feather)
 * [appendAround](https://github.com/filamentgroup/AppendAround)
+* [docsify](https://github.com/QingWei-Li/docsify)
 * [Just Another Parallax - Jarallax](https://github.com/nk-o/jarallax)
 * [FitVids](https://github.com/davatron5000/FitVids.js)
 * [JS Offcanvas](https://github.com/vmitsaras/js-offcanvas)
 * [Modernizr](https://github.com/Modernizr/Modernizr)
 * [Skip to content](https://github.com/Automattic/_s/pull/136)
 * [Slinky](https://github.com/alizahid/slinky)
+* [TRT Customizer PRO](https://github.com/justintadlock/trt-customizer-pro)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
 * [Black camera lens](https://www.pexels.com/photo/black-camera-lens-615302)
 * [Apple watch](https://pixabay.com/en/apple-watch-smart-technology-light-1500849/)

@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 get_header(); ?>
 
@@ -39,7 +39,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_pagination( apply_filters( 'conjws_lite_post_pagination_args', array(
+			the_posts_pagination( apply_filters( 'mypreview_conj_lite_post_pagination_args', array(
 				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'conj-lite' ) . '</span>',
 				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'conj-lite' ) . '</span>',
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'conj-lite' ) . ' </span>',

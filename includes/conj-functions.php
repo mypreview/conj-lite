@@ -3,7 +3,7 @@
  * Conj Lite  functions.
  *
  * @author  	Mahdi Yazdani
- * @package 	conjws
+ * @package 	mypreview-conj
  * @since 	    1.0.0
  */
 
@@ -12,8 +12,8 @@
  * 
  * @return  bool
  */
-if ( ! function_exists( 'conjws_lite_is_posts_page_configured' ) ) :
-	function conjws_lite_is_posts_page_configured() {
+if ( ! function_exists( 'mypreview_conj_lite_is_posts_page_configured' ) ) :
+	function mypreview_conj_lite_is_posts_page_configured() {
 
 		$get_posts_page = (bool) get_option( 'page_for_posts', TRUE );
 
@@ -27,8 +27,8 @@ endif;
  * 
  * @return  bool
  */
-if ( ! function_exists( 'conjws_lite_is_fluid_template' ) ) :
-	function conjws_lite_is_fluid_template() {
+if ( ! function_exists( 'mypreview_conj_lite_is_fluid_template' ) ) :
+	function mypreview_conj_lite_is_fluid_template() {
 
 		return is_page_template( 'page-templates/template-fluid.php' ) ? TRUE : FALSE;
 
@@ -40,8 +40,8 @@ endif;
  * 
  * @return  bool
  */
-if ( ! function_exists( 'conjws_lite_is_product_archive' ) ) :
-	function conjws_lite_is_product_archive() {
+if ( ! function_exists( 'mypreview_conj_lite_is_product_archive' ) ) :
+	function mypreview_conj_lite_is_product_archive() {
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
@@ -61,8 +61,8 @@ endif;
  *
  * @return  bool
  */
-if ( ! function_exists( 'conjws_lite_is_not_product_archive' ) ) :
-	function conjws_lite_is_not_product_archive() {
+if ( ! function_exists( 'mypreview_conj_lite_is_not_product_archive' ) ) :
+	function mypreview_conj_lite_is_not_product_archive() {
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
@@ -82,8 +82,8 @@ endif;
  *
  * @return  bool
  */
-if ( ! function_exists( 'conjws_lite_is_not_product_page' ) ) :
-	function conjws_lite_is_not_product_page() {
+if ( ! function_exists( 'mypreview_conj_lite_is_not_product_page' ) ) :
+	function mypreview_conj_lite_is_not_product_page() {
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			if ( is_product() ) {
@@ -106,8 +106,8 @@ endif;
  * @param  	array  $content The shortcode's content. Default is null (none).
  * @return 	string|bool False on failure, the result of the shortcode on success.
  */
-if ( ! function_exists( 'conjws_lite_do_shortcode' ) ) :
-	function conjws_lite_do_shortcode( $tag, array $atts = array(), $content = null ) {
+if ( ! function_exists( 'mypreview_conj_lite_do_shortcode' ) ) :
+	function mypreview_conj_lite_do_shortcode( $tag, array $atts = array(), $content = null ) {
 
 		global $shortcode_tags;
 		if ( ! isset( $shortcode_tags[ $tag ] ) ) {
@@ -126,8 +126,8 @@ endif;
  *
  * @return void
  */
-if ( ! function_exists( 'conjws_lite_post_thumbnail' ) ) :
-	function conjws_lite_post_thumbnail( $is_jarallax = NULL ) {
+if ( ! function_exists( 'mypreview_conj_lite_post_thumbnail' ) ) :
+	function mypreview_conj_lite_post_thumbnail( $is_jarallax = NULL ) {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
@@ -170,8 +170,8 @@ endif;
  *
  * @return void
  */
-if ( ! function_exists( 'conjws_lite_posted_on' ) ) :
-	function conjws_lite_posted_on() {
+if ( ! function_exists( 'mypreview_conj_lite_posted_on' ) ) :
+	function mypreview_conj_lite_posted_on() {
 
 		// Get the author name; wrap it in a link.
 		$byline = sprintf(
@@ -181,7 +181,7 @@ if ( ! function_exists( 'conjws_lite_posted_on' ) ) :
 		);
 
 		// Finally, let's write all of this to the page.
-		echo '<span class="posted-on">' . wp_kses_post( conjws_lite_time_link() ) . '</span><span class="byline">' . wp_kses_post( $byline ) . '</span>';
+		echo '<span class="posted-on">' . wp_kses_post( mypreview_conj_lite_time_link() ) . '</span><span class="byline">' . wp_kses_post( $byline ) . '</span>';
 
 	}
 endif;
@@ -191,8 +191,8 @@ endif;
  *
  * @return html
  */
-if ( ! function_exists( 'conjws_lite_time_link' ) ) :
-	function conjws_lite_time_link() {
+if ( ! function_exists( 'mypreview_conj_lite_time_link' ) ) :
+	function mypreview_conj_lite_time_link() {
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -221,8 +221,8 @@ endif;
  *
  * @return Null | html
  */
-if ( ! function_exists( 'conjws_lite_comments_link' ) ) :
-	function conjws_lite_comments_link() {
+if ( ! function_exists( 'mypreview_conj_lite_comments_link' ) ) :
+	function mypreview_conj_lite_comments_link() {
 
 		global $post;
 
@@ -250,8 +250,8 @@ endif;
  *
  * @return void
  */
-if ( ! function_exists( 'conjws_lite_entry_footer' ) ) :
-	function conjws_lite_entry_footer( $posted_categories = TRUE, $posted_tags = TRUE ) {
+if ( ! function_exists( 'mypreview_conj_lite_entry_footer' ) ) :
+	function mypreview_conj_lite_entry_footer( $posted_categories = TRUE, $posted_tags = TRUE ) {
 
 		/* translators: used between list items, there is a space after the comma */
 		$separate_meta = __( ', ', 'conj-lite' );
@@ -263,12 +263,12 @@ if ( ! function_exists( 'conjws_lite_entry_footer' ) ) :
 		$tags_list = get_the_tag_list( '', $separate_meta );
 
 		// We don't want to output .entry-footer if it will be empty, so make sure its not.
-		if ( ( ( conjws_lite_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
+		if ( ( ( mypreview_conj_lite_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
 			if ( 'post' === get_post_type() ) {
-				if ( ( $categories_list && conjws_lite_categorized_blog() ) || $tags_list ) {
+				if ( ( $categories_list && mypreview_conj_lite_categorized_blog() ) || $tags_list ) {
 					echo '<span class="cat-tags-links">';
 						// Make sure there's more than one category before displaying.
-						if ( $categories_list && conjws_lite_categorized_blog() && TRUE === $posted_categories ) {
+						if ( $categories_list && mypreview_conj_lite_categorized_blog() && TRUE === $posted_categories ) {
 							echo '<span class="cat-links" data-title="' . __( 'in', 'conj-lite' ) . '"><span class="screen-reader-text">' . __( 'Categories', 'conj-lite' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
 						} // End If Statement
 						if ( $tags_list && TRUE === $posted_tags ) {
@@ -277,7 +277,7 @@ if ( ! function_exists( 'conjws_lite_entry_footer' ) ) :
 					echo '</span>';
 				} // End If Statement
 			} // End If Statement
-			conjws_lite_edit_link();
+			mypreview_conj_lite_edit_link();
 		} // End If Statement
 
 	}
@@ -288,8 +288,8 @@ endif;
  *
  * @return void
  */
-if ( ! function_exists( 'conjws_lite_entry_readmore' ) ) :
-	function conjws_lite_entry_readmore() {
+if ( ! function_exists( 'mypreview_conj_lite_entry_readmore' ) ) :
+	function mypreview_conj_lite_entry_readmore() {
 
 		printf( '<a href="%1$s" target="_self"><i class="feather-arrow-right"></i><span class="screen-reader-text">%2$s</span></a>', esc_url( get_the_permalink() ), esc_html__( 'Read more' , 'conj-lite' ) );
 
@@ -306,8 +306,8 @@ endif;
  *
  * @return html
  */
-if ( ! function_exists( 'conjws_lite_edit_link' ) ) :
-	function conjws_lite_edit_link() {
+if ( ! function_exists( 'mypreview_conj_lite_edit_link' ) ) :
+	function mypreview_conj_lite_edit_link() {
 
 		if ( is_search() ) {
 			return NULL;
@@ -333,10 +333,10 @@ endif;
  *
  * @return bool
  */
-if ( ! function_exists( 'conjws_lite_categorized_blog' ) ) :
-	function conjws_lite_categorized_blog() {
+if ( ! function_exists( 'mypreview_conj_lite_categorized_blog' ) ) :
+	function mypreview_conj_lite_categorized_blog() {
 
-		$category_count = get_transient( 'conjws_lite_categories' );
+		$category_count = get_transient( 'mypreview_conj_lite_categories' );
 		
 		if ( FALSE === $category_count ) {
 			// Create an array of all the categories that are attached to posts.
@@ -348,7 +348,7 @@ if ( ! function_exists( 'conjws_lite_categorized_blog' ) ) :
 			) );
 			// Count the number of categories that are attached to the posts.
 			$category_count = count( $categories );
-			set_transient( 'conjws_lite_categories', $category_count );
+			set_transient( 'mypreview_conj_lite_categories', $category_count );
 		} // End If Statement
 
 		// Allow viewing case of 0 or 1 categories in post preview.
@@ -367,15 +367,15 @@ endif;
  * @param  bool $echo     Whether the site branding markup should be displayed or returned.
  * @return html
  */
-if ( ! function_exists( 'conjws_lite_site_title_or_logo' ) ) :
-	function conjws_lite_site_title_or_logo( $echo = TRUE ) {
+if ( ! function_exists( 'mypreview_conj_lite_site_title_or_logo' ) ) :
+	function mypreview_conj_lite_site_title_or_logo( $echo = TRUE ) {
 
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 
 			$logo = get_custom_logo();
-			if ( conjws_lite_is_front_page_configured() && conjws_lite_is_homepage_template() ) {
+			if ( mypreview_conj_lite_is_front_page_configured() && mypreview_conj_lite_is_homepage_template() ) {
 				$html = '<h1 class="logo">' . $logo . '</h1>';
-			} elseif ( ! conjws_lite_is_posts_page_configured() && is_home() ) {
+			} elseif ( ! mypreview_conj_lite_is_posts_page_configured() && is_home() ) {
 				$html = '<h1 class="logo">' . $logo . '</h1>';
 			} else {
 				$html = $logo;
@@ -409,7 +409,7 @@ if ( ! function_exists( 'conjws_lite_site_title_or_logo' ) ) :
 			$html = apply_filters( 'jetpack_the_site_logo', $html, $logo, $size );
 		} else {
 
-			if ( ! conjws_lite_is_posts_page_configured() && is_home() ) {
+			if ( ! mypreview_conj_lite_is_posts_page_configured() && is_home() ) {
 				$tag = 'h1';
 			} else {
 				$tag = 'p';
@@ -439,8 +439,8 @@ endif;
  * @param  url  	$url   	A direct URL to the image.
  * @return integer        	Associated id of passed image URL. 
  */
-if ( ! function_exists( 'conjws_lite_get_attachment_id' ) ) :
-	function conjws_lite_get_attachment_id( $url ) {
+if ( ! function_exists( 'mypreview_conj_lite_get_attachment_id' ) ) :
+	function mypreview_conj_lite_get_attachment_id( $url ) {
 
 		$attachment_id 	= 	0;
 		$url 			= 	esc_url( $url );

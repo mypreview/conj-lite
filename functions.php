@@ -17,18 +17,18 @@
  * @see 		https://codex.wordpress.org/Theme_Development
  * @see 		https://codex.wordpress.org/Plugin_API
  * @author  	Mahdi Yazdani
- * @package 	conjws
- * @since 	    1.0.0
+ * @package 	mypreview-conj
+ * @since 	    1.0.1
  */
+
 // Assign the "Conj Lite" info to constants.
 $conj_theme = wp_get_theme( 'conj-lite' );
 
-define( 'MYPREVIEW_CONJ_THEME_NAME', $conj_theme->get( 'Name' ) );
-define( 'MYPREVIEW_CONJ_THEME_URI', $conj_theme->get( 'ThemeURI' ) );
-define( 'MYPREVIEW_CONJ_THEME_AUTHOR', $conj_theme->get( 'Author' ) );
-define( 'MYPREVIEW_CONJ_THEME_AUTHOR_URI', $conj_theme->get( 'AuthorURI' ) );
-define( 'MYPREVIEW_CONJ_THEME_VERSION', $conj_theme->get( 'Version' ) );
-define( 'MYPREVIEW_CONJ_THEME_DOC_URI', 'https://www.conj.ws/?p=9' );
+define( 'MYPREVIEW_CONJ_LITE_THEME_NAME', $conj_theme->get( 'Name' ) );
+define( 'MYPREVIEW_CONJ_LITE_THEME_URI', $conj_theme->get( 'ThemeURI' ) );
+define( 'MYPREVIEW_CONJ_LITE_THEME_AUTHOR', $conj_theme->get( 'Author' ) );
+define( 'MYPREVIEW_CONJ_LITE_THEME_VERSION', $conj_theme->get( 'Version' ) );
+define( 'MYPREVIEW_CONJ_LITE_THEME_DOC_URI', 'https://mypreview.github.io/Conj' );
 
 // Conj Lite only works in WordPress 4.8 or later.
 if ( version_compare( $GLOBALS['wp_version'], '4.8', '<' ) ) {
@@ -41,8 +41,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.8', '<' ) ) {
  * Functions and definitions
  */
 $conj = ( object )array(
-	'version' 				=> 		MYPREVIEW_CONJ_THEME_VERSION,
-	'main' 					=> 		require get_parent_theme_file_path( '/includes/class-conj.php' )
+	'version' 				=> 		MYPREVIEW_CONJ_LITE_THEME_VERSION,
+	'main' 					=> 		require get_parent_theme_file_path( '/includes/class-conj.php' ),
+	'customizer' 			=> 		require get_parent_theme_file_path( '/includes/customizer/class-conj-customizer.php' ),
 );
 
 require get_parent_theme_file_path( '/includes/conj-functions.php' );
@@ -55,7 +56,9 @@ require get_parent_theme_file_path( '/includes/conj-template-functions.php' );
  * @see 	https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
  */
 if ( class_exists( 'WooCommerce' ) ) {
+	
 	$conj->woocommerce = require get_parent_theme_file_path( '/includes/woocommerce/class-conj-woocommerce.php' );
 	require get_parent_theme_file_path( '/includes/woocommerce/conj-woocommerce-template-hooks.php' );
 	require get_parent_theme_file_path( '/includes/woocommerce/conj-woocommerce-template-functions.php' );
-}
+
+} // End If Statement

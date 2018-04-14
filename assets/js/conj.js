@@ -48,7 +48,7 @@ jQuery Accesible Offcanvas Panels
  * Conj Lite scripts & custom methods
  *
  * @author      Mahdi Yazdani
- * @package     conjws
+ * @package     mypreview-conj
  * @since       1.0.0
  */
 (function( window, $, undefined ) {

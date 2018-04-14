@@ -3,7 +3,7 @@
  * Conj Lite WooCommerce Class
  *
  * @author  	Mahdi Yazdani
- * @package 	conjws
+ * @package 	mypreview-conj
  * @since 	    1.0.0
  */
 
@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
+if ( ! class_exists( 'MyPreview_Conj_Lite_WooCommerce' ) ) :
 
 	/**
 	 * The Conj Lite WooCommerce Integration class
 	 */
-	class CONJWS_Lite_WooCommerce {
+	class MyPreview_Conj_Lite_WooCommerce {
 
 		/**
 		 * Setup class.
@@ -65,7 +65,7 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 		public function setup() {
 
 			// Declare WooCommerce support.
-			add_theme_support( 'woocommerce', apply_filters( 'conjws_lite_woocommerce_args', array(
+			add_theme_support( 'woocommerce', apply_filters( 'mypreview_conj_lite_woocommerce_args', array(
 				'single_image_width'    => 670,
 				'thumbnail_image_width' => 318,
 				'product_grid'          => array(
@@ -91,7 +91,7 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 		 */
 		public function enqueue() {
 
-			wp_enqueue_style( 'conjws-woocommerce-styles', get_theme_file_uri( 'woocommerce.css' ), '', MYPREVIEW_CONJ_THEME_VERSION );
+			wp_enqueue_style( 'mypreview-conj-woocommerce-styles', get_theme_file_uri( 'woocommerce.css' ), '', MYPREVIEW_CONJ_LITE_THEME_VERSION );
 
 			$font_path   = WC()->plugin_url() . '/assets/fonts/';
 			$inline_font = '@font-face {
@@ -105,7 +105,7 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 					font-style: normal;
 				}';
 
-			wp_add_inline_style( 'conjws-woocommerce-styles', $inline_font );
+			wp_add_inline_style( 'mypreview-conj-woocommerce-styles', $inline_font );
 
 		}
 
@@ -131,11 +131,11 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 		 */
 		public function cross_sells_cols( $columns ) {
 
-			$columns = apply_filters( 'conjws_lite_wc_cross_sells_cols', 1 );
+			$columns = apply_filters( 'mypreview_conj_lite_wc_cross_sells_cols', 1 );
 
 			// Display 1 column only if the sidebar is NOT shown on the view.
-			if ( conjws_lite_is_fluid_template()) {
-				$columns = apply_filters( 'conjws_lite_wc_cross_sells_cols', 2 );
+			if ( mypreview_conj_lite_is_fluid_template()) {
+				$columns = apply_filters( 'mypreview_conj_lite_wc_cross_sells_cols', 2 );
 			}
 
 			return intval( $columns );
@@ -150,11 +150,11 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 		 */
 		public function cross_sells_total( $number ) {
 
-			$number = apply_filters( 'conjws_lite_wc_cross_sells_total', 2 );
+			$number = apply_filters( 'mypreview_conj_lite_wc_cross_sells_total', 2 );
 
 			// Display 1 column only if the sidebar is NOT shown on the view.
-			if ( conjws_lite_is_fluid_template() ) {
-				$number = apply_filters( 'conjws_lite_wc_cross_sells_total', 4 );
+			if ( mypreview_conj_lite_is_fluid_template() ) {
+				$number = apply_filters( 'mypreview_conj_lite_wc_cross_sells_total', 4 );
 			}
 
 			return intval( $number );
@@ -173,12 +173,12 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 			$columns = 3;
 
 			// Display 4 products in 4 columns only if the sidebar is NOT shown on the view.
-			if ( ( is_singular( 'product' ) && conjws_lite_is_fluid_template() ) || ! is_active_sidebar( 'sidebar-1' ) ) {
+			if ( ( is_singular( 'product' ) && mypreview_conj_lite_is_fluid_template() ) || ! is_active_sidebar( 'sidebar-1' ) ) {
 				$posts_per_page = 4;
 				$columns = 4;
 			}
 
-			$args = apply_filters( 'conjws_lite_wc_upsell_products_args', array(
+			$args = apply_filters( 'mypreview_conj_lite_wc_upsell_products_args', array(
 				'posts_per_page' => intval( $posts_per_page ),
 				'columns'        => intval( $columns )
 			) );
@@ -199,12 +199,12 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 			$columns = 3;
 
 			// Display 4 products in 4 columns only if the sidebar is NOT shown on the view.
-			if ( ( is_singular( 'product' ) && conjws_lite_is_fluid_template() ) || ! is_active_sidebar( 'sidebar-1' ) ) {
+			if ( ( is_singular( 'product' ) && mypreview_conj_lite_is_fluid_template() ) || ! is_active_sidebar( 'sidebar-1' ) ) {
 				$posts_per_page = 4;
 				$columns = 4;
 			}
 
-			$args = apply_filters( 'conjws_lite_wc_related_products_args', array(
+			$args = apply_filters( 'mypreview_conj_lite_wc_related_products_args', array(
 				'posts_per_page' => intval( $posts_per_page ),
 				'columns'        => intval( $columns )
 			) );
@@ -222,11 +222,11 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 
 			$columns = 4;
 
-			if ( ( is_singular( 'product' ) && conjws_lite_is_fluid_template() ) || ! is_active_sidebar( 'sidebar-1' ) ) {
+			if ( ( is_singular( 'product' ) && mypreview_conj_lite_is_fluid_template() ) || ! is_active_sidebar( 'sidebar-1' ) ) {
 				$columns = 5;
 			}
 
-			return intval( apply_filters( 'conjws_lite_wc_product_thumbnail_columns', intval( $columns ) ) );
+			return intval( apply_filters( 'mypreview_conj_lite_wc_product_thumbnail_columns', intval( $columns ) ) );
 
 		}
 
@@ -241,7 +241,7 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 			// Default number of products if < WooCommerce 3.3.
 			$number = 12;
 
-			return intval( apply_filters( 'conjws_lite_wc_products_per_page', $number ) );
+			return intval( apply_filters( 'mypreview_conj_lite_wc_products_per_page', $number ) );
 
 		}
 
@@ -316,7 +316,7 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 				$columns = wc_get_default_products_per_row();
 			}
 
-			return absint( apply_filters( 'conjws_lite_wc_products_per_column', $columns ) );
+			return absint( apply_filters( 'mypreview_conj_lite_wc_products_per_column', $columns ) );
 
 		}
 
@@ -347,4 +347,4 @@ if ( ! class_exists( 'CONJWS_Lite_WooCommerce' ) ) :
 
 endif;
 
-return new CONJWS_Lite_WooCommerce();
+return new MyPreview_Conj_Lite_WooCommerce();

@@ -2,7 +2,7 @@
 /**
  * Conj Lite template functions.
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 /**
@@ -10,8 +10,8 @@
  * 
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_handheld_navigation' ) ) :
-	function conjws_lite_handheld_navigation() {
+if ( ! function_exists( 'mypreview_conj_lite_handheld_navigation' ) ) :
+	function mypreview_conj_lite_handheld_navigation() {
 
 		?>
 		<div id="left" class="handheld-offcanvas c-offcanvas is-hidden" role="complementary">
@@ -40,8 +40,8 @@ endif;
  * 
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_skip_links' ) ) :
-	function conjws_lite_skip_links() {
+if ( ! function_exists( 'mypreview_conj_lite_skip_links' ) ) :
+	function mypreview_conj_lite_skip_links() {
 
 		?>
 		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_attr_e( 'Skip to navigation', 'conj-lite' ); ?></a>
@@ -56,12 +56,12 @@ endif;
  * 
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_site_branding' ) ) :
-	function conjws_lite_site_branding() {
+if ( ! function_exists( 'mypreview_conj_lite_site_branding' ) ) :
+	function mypreview_conj_lite_site_branding() {
 
 		?>
 		<div class="site-branding">
-			<?php conjws_lite_site_title_or_logo(); ?>
+			<?php mypreview_conj_lite_site_title_or_logo(); ?>
 		</div>
 		<?php
 
@@ -73,8 +73,8 @@ endif;
  * 
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_primary_navigation' ) ) :
-	function conjws_lite_primary_navigation() {
+if ( ! function_exists( 'mypreview_conj_lite_primary_navigation' ) ) :
+	function mypreview_conj_lite_primary_navigation() {
 
 		?>
 		<div class="primary-navigation">
@@ -108,8 +108,8 @@ endif;
  * @see 	https://developer.wordpress.org/reference/functions/the_header_image_tag/
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_header_image' ) ) :
-	function conjws_lite_header_image() {
+if ( ! function_exists( 'mypreview_conj_lite_header_image' ) ) :
+	function mypreview_conj_lite_header_image() {
 
 		if ( get_header_image() ) {
 			the_header_image_tag( array( 'class' => 'jarallax-img' ) );
@@ -123,8 +123,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_site_container_wrapper' ) ) :
-	function conjws_lite_site_container_wrapper() {
+if ( ! function_exists( 'mypreview_conj_lite_site_container_wrapper' ) ) :
+	function mypreview_conj_lite_site_container_wrapper() {
 
 		?><div class="conj-col__full">
 		<?php
@@ -137,8 +137,8 @@ endif;
  *
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_site_container_wrapper_close' ) ) :
-	function conjws_lite_site_container_wrapper_close() {
+if ( ! function_exists( 'mypreview_conj_lite_site_container_wrapper_close' ) ) :
+	function mypreview_conj_lite_site_container_wrapper_close() {
 
 		?></div><!-- .conj-col__full -->
 		<?php
@@ -151,11 +151,11 @@ endif;
  * 
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_footer_widgets' ) ) :
-	function conjws_lite_footer_widgets() {
+if ( ! function_exists( 'mypreview_conj_lite_footer_widgets' ) ) :
+	function mypreview_conj_lite_footer_widgets() {
 
-		$rows    = intval( apply_filters( 'conjws_lite_footer_widget_rows', 2 ) );
-		$regions = intval( apply_filters( 'conjws_lite_footer_widget_columns', 4 ) );
+		$rows    = intval( apply_filters( 'mypreview_conj_lite_footer_widget_rows', 2 ) );
+		$regions = intval( apply_filters( 'mypreview_conj_lite_footer_widget_columns', 4 ) );
 
 		for ( $row = 1; $row <= $rows; $row++ ) :
 
@@ -196,23 +196,23 @@ endif;
  * 
  * @return  void
  */
-if ( ! function_exists( 'conjws_lite_credit' ) ) :
-	function conjws_lite_credit() {
+if ( ! function_exists( 'mypreview_conj_lite_credit' ) ) :
+	function mypreview_conj_lite_credit() {
 
 		?>
 		<div class="site-info">
 
 			<?php 
-			if ( apply_filters( 'conjws_lite_credit_wp_link', TRUE ) ) {
+			if ( apply_filters( 'mypreview_conj_lite_credit_wp_link', TRUE ) ) {
 				/* translators: 1: WordPress.org URL. */
 				printf( esc_html__( '%1$sProudly powered by %2$s ', 'conj-lite' ), '<span class="site-wp-credits">', '<a href="https://wordpress.org" target="_blank">WordPress</a></span>' );
 			} // End If Statement
 
-			printf( wp_kses_post( '%1$s%2$s%3$s' ), '<span class="site-copyright">', apply_filters( 'conjws_lite_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date_i18n( __( 'Y', 'conj-lite' ) ) ), '</span>' );
+			printf( wp_kses_post( '%1$s%2$s%3$s' ), '<span class="site-copyright">', apply_filters( 'mypreview_conj_lite_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date_i18n( __( 'Y', 'conj-lite' ) ) ), '</span>' );
 			 
-			if ( apply_filters( 'conjws_lite_credit_author_link', TRUE ) ) {
+			if ( apply_filters( 'mypreview_conj_lite_credit_author_link', TRUE ) ) {
 				/* translators: 1: Seperator, 2: Theme name, 3: Theme author. */
-				printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-author-credits"><span class="sep"> | </span>', esc_html( MYPREVIEW_CONJ_THEME_NAME ), '<a href="' . esc_url( MYPREVIEW_CONJ_THEME_URI ) . '">' . esc_html( MYPREVIEW_CONJ_THEME_AUTHOR ) . '</a>.</span>' );
+				printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-author-credits"><span class="sep"> | </span>', esc_html( MYPREVIEW_CONJ_LITE_THEME_NAME ), '<a href="' . esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ) . '">' . esc_html( MYPREVIEW_CONJ_LITE_THEME_AUTHOR ) . '</a>.</span>' );
 			} // End If Statement 
 			?>
 

@@ -2323,10 +2323,10 @@ dl.variation dd > p {
 		    grid-template-columns: 90px 2.5fr 1fr 1.2fr 0.7fr 0.2fr;
 	}
 	.woocommerce-cart-form__contents thead tr {
-		grid-template-areas: "product-name-title product-name-title product-price-title product-quantity-title product-subtotal-title product-subtotal-title"
+		    grid-template-areas: "product-name-title product-name-title product-price-title product-quantity-title product-subtotal-title product-subtotal-title"
 	}
 	.woocommerce-cart-form__cart-item {
-		grid-template-areas: "product-thumbnail-item product-name-item product-price-item product-quantity-item product-subtotal-item product-remove-item"
+		    grid-template-areas: "product-thumbnail-item product-name-item product-price-item product-quantity-item product-subtotal-item product-remove-item"
 	}
 	.woocommerce-cart-form__contents th.product-remove,
 	.woocommerce-cart-form__contents th.product-thumbnail {
@@ -4062,6 +4062,8 @@ form.product-search-form div:before,
 }
 .select2-container--default.select2 .selection .select2-selection--single,
 .select2-container--default.select2 .selection .select2-selection--multiple {
+	background-image: -webkit-linear-gradient(45deg, transparent 50%, var(--blue-grey) 50%), -webkit-linear-gradient(315deg, var(--blue-grey) 50%, transparent 50%), -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(45deg, transparent 50%, var(--blue-grey) 50%), -o-linear-gradient(315deg, var(--blue-grey) 50%, transparent 50%), -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 	background-image: linear-gradient(45deg, transparent 50%, var(--blue-grey) 50%), linear-gradient(135deg, var(--blue-grey) 50%, transparent 50%), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
 .StripeElement.StripeElement--complete,

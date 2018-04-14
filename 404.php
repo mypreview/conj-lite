@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (not found)
  *
  * @link 		https://codex.wordpress.org/Creating_an_Error_404_Page
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 get_header(); ?>
@@ -39,7 +39,7 @@ get_header(); ?>
 							/* translators: 1: Div tag open 2: Aria-label quotation close. */
 							printf( esc_html__( '%1$sPromoted Products%2$s', 'conj-lite' ), '<div class="promoted-products" aria-label="', '">' );
 
-							conjws_lite_wc_promoted_products();
+							mypreview_conj_lite_wc_promoted_products();
 
 							printf( '</div><!-- .promoted-products -->' );
 
@@ -94,7 +94,7 @@ get_header(); ?>
 							/* translators: 1: Head tag open 2: Head tag close. */
 							printf( esc_html__( '%1$sBest-Selling Products%2$s', 'conj-lite' ), '<h2>', '</h2>' );
 
-							echo wp_kses_post( conjws_lite_do_shortcode( 'best_selling_products', array(
+							echo wp_kses_post( mypreview_conj_lite_do_shortcode( 'best_selling_products', array(
 								'per_page' => 4,
 								'columns'  => 4,
 							) ) );

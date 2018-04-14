@@ -3,11 +3,10 @@
  * The sidebar containing the main widget area
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) || apply_filters( 'conjws_lite_disable_sidebar', FALSE ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) || apply_filters( 'mypreview_conj_lite_disable_sidebar', FALSE ) ) {
 	return;
 }
 ?>

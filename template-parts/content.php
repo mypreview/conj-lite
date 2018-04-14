@@ -5,7 +5,7 @@
  * @link 		https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package 	conjws
+ * @package 	mypreview-conj
  */
 
 ?>
@@ -16,9 +16,9 @@
 	<div class="entry-meta">
 		<div class="post-meta">
 			<?php 
-			conjws_lite_posted_on();
-			conjws_lite_entry_footer( $posted_categories = TRUE, $posted_tags = FALSE ); 
-			conjws_lite_comments_link();
+			mypreview_conj_lite_posted_on();
+			mypreview_conj_lite_entry_footer( $posted_categories = TRUE, $posted_tags = FALSE ); 
+			mypreview_conj_lite_comments_link();
 			?>
 		</div><!-- .post-meta -->
 	</div><!-- .entry-meta -->
@@ -29,7 +29,7 @@
 		<?php
 		 // Check if post has a featured image attached!
 		if ( '' !== get_the_post_thumbnail() ) {
-			conjws_lite_post_thumbnail();
+			mypreview_conj_lite_post_thumbnail();
 		} // End If Statement 
 		?>
 
@@ -69,7 +69,7 @@
 
 		<?php if ( is_singular( 'post' ) ) : ?>
 			<footer class="entry-footer">
-				<?php conjws_lite_entry_footer( $posted_categories = FALSE, $posted_tags = TRUE ); ?>
+				<?php mypreview_conj_lite_entry_footer( $posted_categories = FALSE, $posted_tags = TRUE ); ?>
 			</footer><!-- .entry-footer -->
 		<?php endif; ?>
 
