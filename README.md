@@ -19,7 +19,7 @@ Check out the [Live Demo](https://demo.mypreview.one/conj) to visit **CONJ PRO**
 
 ## Get the PRO Version
 
-The **CONJ PRO** theme is available to purchase from [mypreview.one](https://www.mypreview.one/conj.html). :moneybag:
+The **CONJ PRO** theme is only available to purchase from [mypreview.one](https://www.mypreview.one/conj.html). :moneybag:
 
 ## Get Involved
 
