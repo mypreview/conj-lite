@@ -4,7 +4,7 @@ Tags: two-columns, three-columns, left-sidebar, grid-layout, flexible-header, cu
 Donate link: https://www.mypreview.one
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,7 +27,7 @@ Get the one thing you need to build stunning eCommerce website in a fast and eff
 4. Go to `https://mypreview.github.io/Conj` for a guide on how to customize this theme.
 
 == Copyright ==
-Conj Lite WordPress Theme, Copyright 2018 - www.mypreview.one
+Conj Lite WordPress Theme, Copyright 2015 - 2018 - www.mypreview.one
 Conj Lite is distributed under the terms of the GNU GPL Version 3.
 
 You can redistribute this program and/or modify it under the terms

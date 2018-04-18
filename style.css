@@ -4,7 +4,7 @@ Theme URI: 		https://www.mypreview.one/conj.html
 Author: 		CONJ
 Author URI: 	https://www.mypreview.one
 Description: 	Conj’s fantastic out of the box deep code and design integration with WooCommerce, the premier eCommerce solution for WordPress, enables your store to be bulletproof against any conflicts during major WooCommerce updates. Rest assured that the Conj theme uses a mobile-first grid-based architecture that renders beautifully formatted content on phones, tablets, and desktop monitors. Your visitors can expect brilliant looking products whether they are browsing your website at the office or on the go. The entire platform of Conj is built on top of the Underscores starter theme which is a solid foundation of code and also used for all themes released by Automattic on WordPress.com. Get the one thing you need to build stunning eCommerce website in a fast and efficient way.
-Version: 		1.0.1
+Version: 		1.0.2
 License: 		GNU General Public License v3 or later
 License URI: 	http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: 	conj-lite
@@ -1964,7 +1964,7 @@ body.has-offcanvas--visible {
 	.has-sidebar.left-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar):not(.conj-wc-details-no-sidebar):not(.conj-wc-archive-no-sidebar) .conj-col__full {
 		-ms-grid-columns: 370px 1fr;
 		    grid-template-columns: 370px 1fr;
-		                                                            grid-template-areas: "conj-woocommerce-breadcrumb conj-woocommerce-breadcrumb" "conj-woocommerce conj-woocommerce" "conj-secondary conj-primary";
+		                                                                        grid-template-areas: "conj-woocommerce-breadcrumb conj-woocommerce-breadcrumb" "conj-woocommerce conj-woocommerce" "conj-secondary conj-primary";
 	}
 }
 @media (min-width: 72.0625em) {
