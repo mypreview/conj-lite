@@ -38,7 +38,5 @@ add_action( 'mypreview_conj_lite_site_content_bottom',	 'mypreview_conj_lite_sit
  * Footer
  *
  * @see  mypreview_conj_lite_footer_widgets()
- * @see  mypreview_conj_lite_credit()
  */
 add_action( 'mypreview_conj_lite_footer', 			 'mypreview_conj_lite_footer_widgets',			  		  10 );
-add_action( 'mypreview_conj_lite_footer', 			 'mypreview_conj_lite_credit',					  		  20 );
