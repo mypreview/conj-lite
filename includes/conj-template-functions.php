@@ -154,70 +154,36 @@ endif;
 if ( ! function_exists( 'mypreview_conj_lite_footer_widgets' ) ) :
 	function mypreview_conj_lite_footer_widgets() {
 
-		$rows    = intval( apply_filters( 'mypreview_conj_lite_footer_widget_rows', 2 ) );
-		$regions = intval( apply_filters( 'mypreview_conj_lite_footer_widget_columns', 4 ) );
+		$row 	 = 	1;
+		$regions = 	intval( apply_filters( 'mypreview_conj_lite_footer_widget_columns', 4 ) );
 
-		for ( $row = 1; $row <= $rows; $row++ ) :
-
-			// Defines the number of active columns in this footer row.
-			for ( $region = $regions; 0 < $region; $region-- ) {
-				if ( is_active_sidebar( 'footer-' . strval( $region + $regions * ( $row - 1 ) ) ) ) {
-					$columns = $region;
-					break;
-				} // End If Statement
-			}
-
-			if ( isset( $columns ) ) : ?>
-				<div class=<?php echo '"footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix"'; ?>><?php
-
-					for ( $column = 1; $column <= $columns; $column++ ) :
-						$footer_n = $column + $regions * ( $row - 1 );
-
-						if ( is_active_sidebar( 'footer-' . strval( $footer_n ) ) ) : ?>
-
-							<div class="block footer-widget-<?php echo strval( $column ); ?>">
-								<?php dynamic_sidebar( 'footer-' . strval( $footer_n ) ); ?>
-							</div><?php
-
-						endif;
-					endfor; ?>
-
-				</div><!-- .footer-widgets.row-<?php echo strval( $row ); ?> --><?php
-
-				unset( $columns );
-			endif;
-		endfor;		
-
-	}
-endif;
-
-/**
- * Display the theme credit.
- * 
- * @return  void
- */
-if ( ! function_exists( 'mypreview_conj_lite_credit' ) ) :
-	function mypreview_conj_lite_credit() {
-
-		?>
-		<div class="site-info">
-
-			<?php 
-			if ( apply_filters( 'mypreview_conj_lite_credit_wp_link', TRUE ) ) {
-				/* translators: 1: WordPress.org URL. */
-				printf( esc_html__( '%1$sProudly powered by %2$s ', 'conj-lite' ), '<span class="site-wp-credits">', '<a href="https://wordpress.org" target="_blank">WordPress</a></span>' );
+		// Defines the number of active columns in this footer row.
+		for ( $region = $regions; 0 < $region; $region-- ) {
+			if ( is_active_sidebar( 'footer-' . strval( $region + $regions * ( $row - 1 ) ) ) ) {
+				$columns = $region;
+				break;
 			} // End If Statement
+		}
 
-			printf( wp_kses_post( '%1$s%2$s%3$s' ), '<span class="site-copyright">', apply_filters( 'mypreview_conj_lite_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date_i18n( __( 'Y', 'conj-lite' ) ) ), '</span>' );
-			 
-			if ( apply_filters( 'mypreview_conj_lite_credit_author_link', TRUE ) ) {
-				/* translators: 1: Seperator, 2: Theme name, 3: Theme author. */
-				printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-author-credits"><span class="sep"> | </span>', esc_html( MYPREVIEW_CONJ_LITE_THEME_NAME ), '<a href="' . esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ) . '">' . esc_html( MYPREVIEW_CONJ_LITE_THEME_AUTHOR ) . '</a>.</span>' );
-			} // End If Statement 
-			?>
+		if ( isset( $columns ) ) : ?>
+			<div class=<?php echo '"footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix"'; ?>><?php
 
-		</div><!-- .site-info -->
-		<?php		
+				for ( $column = 1; $column <= $columns; $column++ ) :
+					$footer_n = $column + $regions * ( $row - 1 );
+
+					if ( is_active_sidebar( 'footer-' . strval( $footer_n ) ) ) : ?>
+
+						<div class="block footer-widget-<?php echo strval( $column ); ?>">
+							<?php dynamic_sidebar( 'footer-' . strval( $footer_n ) ); ?>
+						</div><?php
+
+					endif;
+				endfor; ?>
+
+			</div><!-- .footer-widgets.row-<?php echo strval( $row ); ?> --><?php
+
+			unset( $columns );
+		endif;
 
 	}
 endif;
