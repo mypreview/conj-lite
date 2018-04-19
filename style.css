@@ -1691,6 +1691,9 @@ body.has-offcanvas--visible {
     -ms-grid-columns: 2fr auto;
         grid-template-columns: 2fr auto;
 }
+.site-wc-search .widget form[role="search"] {
+	min-height: 52px;
+}
 #colophon.site-footer .widget form[role="search"] *[type="submit"] {
 	min-width: 90px;
 	padding: 10px;
@@ -2278,6 +2281,10 @@ body:not(.single-post) article.post.hentry {
 }
 body:not(.single-post) article.post.hentry > .entry-meta .post-meta {
 	grid-gap: 1px;
+}
+.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar):not(.conj-wc-details-no-sidebar):not(.conj-wc-archive-no-sidebar) .conj-col__full > #primary,
+body:not(.single-post) article.post.hentry > .entry-wrapper {
+	overflow: hidden;
 }
 .single-post .conj-col__full > #primary,
 body:not(.single-post) article.post.hentry:not(.conj-blog-post__loop) > .entry-meta .cat-links,
@@ -2902,8 +2909,7 @@ object {
 	--watermelon: #FF4961;
 	--azure: #1E9FF2;
 }
-.widget_tag_cloud ul li,
-body.custom-background {
+.widget_tag_cloud ul li {
     background-color: var(--pale-grey-two);
 }
 blockquote,
@@ -3165,6 +3171,7 @@ input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:ho
 	color: var(--white);
 }
 mark,
+#masthead,
 body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *,
 ol.comment-list .comment .comment-body,
 .error-404-last .widget_tag_cloud ul li:not(:hover),
