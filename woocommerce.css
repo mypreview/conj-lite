@@ -2853,6 +2853,13 @@ form.product-search-form div:before {
 .woocommerce-mini-cart-item .remove_from_cart_button {
 	position: absolute;
 	right: 0;
+}
+.woocommerce-mini-cart-item:not(:first-child) .remove_from_cart_button:before,
+.woocommerce-mini-cart-item:not(:first-child) .remove_from_cart_button {
+	top: 2em;
+}
+.woocommerce-mini-cart-item:first-child .remove_from_cart_button:before,
+.woocommerce-mini-cart-item:first-child .remove_from_cart_button {
 	top: 0;
 }
 .woocommerce-mini-cart-item .remove_from_cart_button:before {
