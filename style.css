@@ -8,7 +8,7 @@ Version: 		1.0.2
 License: 		GNU General Public License v3 or later
 License URI: 	http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: 	conj-lite
-Tags: 			two-columns, three-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+Tags: 			two-columns, three-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
 This theme, like WordPress, is licensed under the GPL.
 The core CSS libraries can be found in /assets/css/vendor/
@@ -2038,7 +2038,7 @@ body.has-offcanvas--visible {
 	.has-sidebar.left-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar):not(.conj-wc-details-no-sidebar):not(.conj-wc-archive-no-sidebar) .conj-col__full {
 		-ms-grid-columns: 370px 1fr;
 		    grid-template-columns: 370px 1fr;
-		grid-template-areas: "conj-woocommerce-breadcrumb conj-woocommerce-breadcrumb" "conj-woocommerce conj-woocommerce" "conj-secondary conj-primary";
+		    grid-template-areas: "conj-woocommerce-breadcrumb conj-woocommerce-breadcrumb" "conj-woocommerce conj-woocommerce" "conj-secondary conj-primary";
 	}
 }
 @media (min-width: 72.0625em) {
