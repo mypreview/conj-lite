@@ -2,7 +2,7 @@
 Contributors: mypreview, mahdiyazdani, gookaani
 Tags: two-columns, three-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Donate link: https://www.mypreview.one
-Requires at least: 4.7
+Requires at least: 4.8
 Tested up to: 4.9.5
 Stable tag: 1.0.2
 License: GPLv3 or later
@@ -48,6 +48,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.2 =
+* Fixed a few styling issues.
+* Fixed escaping issues.
+
 = 1.0.1 =
 * Minor changes.
 * Added "Go Pro" Customizer section.
