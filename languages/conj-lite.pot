@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2018-04-15 01:05+0400\n"
-"PO-Revision-Date: 2018-04-15 01:05+0400\n"
+"POT-Creation-Date: 2018-04-20 23:58+0400\n"
+"PO-Revision-Date: 2018-04-20 23:57+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -112,6 +112,22 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
+#. translators: 1: WordPress.org URL.
+#: footer.php:44
+#, php-format
+msgid "%1$sProudly powered by %2$s "
+msgstr ""
+
+#: footer.php:46
+msgid "Y"
+msgstr ""
+
+#. translators: 1: Seperator, 2: Theme name, 3: Theme author.
+#: footer.php:49
+#, php-format
+msgid "%1$s Theme: %2$s by %3$s"
+msgstr ""
+
 #: header.php:31 includes/conj-template-functions.php:48
 msgid "Skip to content"
 msgstr ""
@@ -125,35 +141,35 @@ msgid ""
 "%s. Please upgrade and try again."
 msgstr ""
 
-#: includes/class-conj.php:133
+#: includes/class-conj.php:134
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/class-conj.php:134
+#: includes/class-conj.php:135
 msgid "Push Menu"
 msgstr ""
 
-#: includes/class-conj.php:247
+#: includes/class-conj.php:267
 msgid "Sidebar"
 msgstr ""
 
-#: includes/class-conj.php:249
+#: includes/class-conj.php:269
 msgid "Widgets added to this region will appear in archive/shop pages."
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:259
+#: includes/class-conj.php:279
 #, php-format
 msgid "Footer Column %1$d"
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:261
+#: includes/class-conj.php:281
 #, php-format
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: includes/class-conj.php:341
+#: includes/class-conj.php:361
 msgctxt "montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -217,22 +233,6 @@ msgstr ""
 
 #: includes/conj-template-functions.php:83
 msgid "Menu"
-msgstr ""
-
-#. translators: 1: WordPress.org URL.
-#: includes/conj-template-functions.php:208
-#, php-format
-msgid "%1$sProudly powered by %2$s "
-msgstr ""
-
-#: includes/conj-template-functions.php:211
-msgid "Y"
-msgstr ""
-
-#. translators: 1: Seperator, 2: Theme name, 3: Theme author.
-#: includes/conj-template-functions.php:215
-#, php-format
-msgid "%1$s Theme: %2$s by %3$s"
 msgstr ""
 
 #: includes/customizer/class-conj-customizer.php:49
