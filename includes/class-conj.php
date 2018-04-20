@@ -107,11 +107,11 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 			 * @see 	https://developer.wordpress.org/themes/functionality/custom-headers
 			 */
 			add_theme_support( 'custom-header', apply_filters( 'mypreview_conj_lite_custom_header_args', array(
-				'default-text-color' => '6B6F81',
-				'width'              => 1950,
-				'height'             => 500,
-				'flex-height'        => TRUE,
-				'wp-head-callback'   => array( $this, 'header_styles' )
+				'default-text-color' => 	'6B6F81',
+				'width'              => 	1950,
+				'height'             => 	500,
+				'flex-height'        => 	TRUE,
+				'wp-head-callback'   => 	array( $this, 'header_styles' )
 			) ) );
 
 			/**
@@ -120,8 +120,9 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 			 * @see 	https://codex.wordpress.org/Custom_Backgrounds
 			 */
 			add_theme_support( 'custom-background', apply_filters( 'mypreview_conj_lite_custom_background_args', array(
-				'default-color' => 'F4F5FA',
-				'default-image' => '',
+				'default-color' 	=> 		'F4F5FA',
+				'default-image' 	=> 		'',
+				'wp-head-callback'  => 		array( $this, 'background_styles' )
 			) ) );
 
 			/**
@@ -171,7 +172,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		}
 
 		/**
-		 * Get site description.
+		 * Get site header text color.
 		 *
 		 * @return string
 		 */
@@ -202,9 +203,28 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 				.site-title,
 				.site-title a,
 				.site-description {
-					color: #<?php echo esc_attr( $header_text_color ); ?>;
+					color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;
 				}
 			<?php endif; ?>
+			</style>
+			<?php
+
+		}
+
+		/**
+		 * Get the background color.
+		 *
+		 * @return string
+		 */
+		public function background_styles() {
+
+			$background_color = get_background_color();
+
+			?>
+			<style type="text/css">
+				body {
+					background-color: #<?php echo sanitize_hex_color_no_hash( $background_color ); ?>;
+				}
 			</style>
 			<?php
 
@@ -445,7 +465,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		}
 
 		/**
-		 * Adds the `...` to the end of excerpt read more link.
+		 * Replaces "[...]" (appended to automatically generated excerpts) with `...`
 		 *
 		 * @see 	https://developer.wordpress.org/reference/hooks/excerpt_more/
 		 * @param 	string $excerpt Excerpt more string.
@@ -453,7 +473,11 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		 */
 		public function custom_excerpt_more( $more ) {
 
-			return apply_filters( 'mypreview_conj_lite_excerpt_more', '...' );
+			if ( is_admin() ) {
+				return $more;
+			}
+
+			return apply_filters( 'mypreview_conj_lite_excerpt_more', '&hellip;' );
 
 		}
 
