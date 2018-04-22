@@ -1,10 +1,9 @@
 /*!
 Theme Name: 	Conj Lite
-Theme URI: 		https://www.mypreview.one/conj.html
 Author: 		CONJ
 Author URI: 	https://www.mypreview.one
 Description: 	Conj’s fantastic out of the box deep code and design integration with WooCommerce, the premier eCommerce solution for WordPress, enables your store to be bulletproof against any conflicts during major WooCommerce updates. Rest assured that the Conj theme uses a mobile-first grid-based architecture that renders beautifully formatted content on phones, tablets, and desktop monitors. Your visitors can expect brilliant looking products whether they are browsing your website at the office or on the go. The entire platform of Conj is built on top of the Underscores starter theme which is a solid foundation of code and also used for all themes released by Automattic on WordPress.com. Get the one thing you need to build stunning eCommerce website in a fast and efficient way.
-Version: 		1.0.2
+Version: 		1.0.3
 License: 		GNU General Public License v3 or later
 License URI: 	http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: 	conj-lite
@@ -283,6 +282,10 @@ body.single-post article.post.hentry .entry-footer .tags-links > a:before,
 .site-main .comment-navigation .nav-links .nav-previous a:before,
 .post-navigation .nav-links .nav-previous a > span:before,
 .single-post article.post.hentry .entry-title:before,
+.single-post article.post.hentry.format-status .entry-content:before,
+.single-post article.post.hentry.format-aside .entry-content:before,
+body:not(.single-post) article.post.hentry.format-status .entry-content:before,
+body:not(.single-post) article.post.hentry.format-aside .entry-content:before,
 body:not(.single-post) article.post.hentry .entry-title a:before,
 body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *:before,
 body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
@@ -368,6 +371,12 @@ p.no-comments:before {
 }
 .error-404.not-found form.search-form label:before {
 	font-size: 19px;
+}
+.single-post article.post.hentry.format-status .entry-content:before,
+.single-post article.post.hentry.format-aside .entry-content:before,
+body:not(.single-post) article.post.hentry.format-status .entry-content:before,
+body:not(.single-post) article.post.hentry.format-aside .entry-content:before {
+	font-size: 20px;
 }
 .entry-footer .edit-link .post-edit-link:before {
 	font-size: 22px;
@@ -2357,9 +2366,25 @@ body:not(.single-post) article.post.hentry > .entry-meta .post-meta {
 body:not(.single-post) article.post.hentry > .entry-wrapper {
 	overflow: hidden;
 }
+.single-post article.post.hentry.format-status .entry-content,
+.single-post article.post.hentry.format-aside .entry-content,
+.single-post article.post.hentry.format-chat .entry-content > *,
+body:not(.single-post) article.post.hentry.format-status .entry-content,
+body:not(.single-post) article.post.hentry.format-aside .entry-content,
+body:not(.single-post) article.post.hentry > .entry-meta .post-meta,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > * {
+	-webkit-box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
+	        box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
+}
+.single-post article.post.hentry.format-status .entry-content,
+.single-post article.post.hentry.format-aside .entry-content,
+.single-post article.post.hentry.format-chat .entry-content > *,
+body:not(.single-post) article.post.hentry.format-status .entry-content,
+body:not(.single-post) article.post.hentry.format-aside .entry-content,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *,
+body:not(.single-post) article.post.hentry > .entry-meta .cat-links,
 .single-post .conj-col__full > #primary,
-body:not(.single-post) article.post.hentry:not(.conj-blog-post__loop) > .entry-meta .cat-links,
-body:not(.single-post) article.post.hentry:not(.conj-blog-post__loop) > .entry-meta .post-meta > * {
+body:not(.single-post) article.post.hentry > .entry-meta .post-meta > * {
 	position: relative;
 }
 body:not(.single-post) article.post.hentry > .entry-meta .cat-links,
@@ -2370,14 +2395,35 @@ body:not(.single-post) article.post.hentry > .entry-meta .edit-link {
 	-ms-grid-row: 5;
 	grid-row: 5;
 }
+body:not(.single-post) article.post.hentry.format-quote .entry-content blockquote {
+	width: 100%;
+}
+body:not(.single-post) article.post.hentry.format-quote .entry-content blockquote,
+.single-post article.post.hentry.format-status .entry-content > *,
+.single-post article.post.hentry.format-aside .entry-content > *,
+body:not(.single-post) article.post.hentry.format-status .entry-content > *,
+body:not(.single-post) article.post.hentry.format-aside .entry-content > *,
 body.single-post article.post.hentry .entry-header .entry-title,
 body:not(.single-post) article.post.hentry .entry-header .entry-title {
 	margin-top: 0;
+}
+body.single-post article.post.hentry .entry-header .entry-title,
+body:not(.single-post) article.post.hentry .entry-header .entry-title {
 	margin-bottom: 10px;
 }
+.single-post article.post.hentry .entry-footer .edit-link,
+.single-post article.post.hentry.format-status .entry-content:before,
+.single-post article.post.hentry.format-aside .entry-content:before,
+.single-post article.post.hentry.format-chat .entry-content > *:before,
+body:not(.single-post) article.post.hentry.format-status .entry-content:before,
+body:not(.single-post) article.post.hentry.format-aside .entry-content:before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:before,
 body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
 body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *:before {
 	position: absolute;
+}
+body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
+body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *:before {
 	opacity: 0.7;
 	left: 12px;
 	top: 7px;
@@ -2415,12 +2461,85 @@ body:not(.single-post) article.post.hentry * + .entry-header {
 body:not(.single-post) article.post.hentry .entry-title a:before {
 	margin-right: 10px;
 }
+.single-post article.post.hentry.format-audio .entry-title:before,
+body:not(.single-post) article.post.hentry.format-audio .entry-title a:before {
+	content: "\e99c";
+}
+.single-post article.post.hentry.format-gallery .entry-title:before,
+body:not(.single-post) article.post.hentry.format-gallery .entry-title a:before {
+	content: "\e971";
+}
+.single-post article.post.hentry.format-chat .entry-title:before,
+body:not(.single-post) article.post.hentry.format-chat .entry-title a:before {
+	content: "\e98f";
+}
 .single-post article.post.hentry.format-image .entry-title:before,
 body:not(.single-post) article.post.hentry.format-image .entry-title a:before {
 	content: "\e978";
 }
+.single-post article.post.hentry.format-video .entry-title:before,
+body:not(.single-post) article.post.hentry.format-video .entry-title a:before {
+	content: "\e9f5";
+}
+.single-post article.post.hentry.format-link .entry-title:before,
+body:not(.single-post) article.post.hentry.format-link .entry-title a:before {
+	content: "\e980";
+}
 body:not(.single-post) article.post.hentry.sticky .entry-title a:before {
 	content: "\e9a1";
+}
+.single-post article.post.hentry.format-status .entry-content:before,
+body:not(.single-post) article.post.hentry.format-status .entry-content:before {
+	content: "\e95f";
+}
+.single-post article.post.hentry.format-aside .entry-content:before,
+body:not(.single-post) article.post.hentry.format-aside .entry-content:before {
+	content: "\e963";
+}
+.single-post article.post.hentry.format-status .entry-content:before,
+.single-post article.post.hentry.format-aside .entry-content:before,
+body:not(.single-post) article.post.hentry.format-status .entry-content:before,
+body:not(.single-post) article.post.hentry.format-aside .entry-content:before {
+    left: 11px;
+    top: 5px;
+}
+.single-post article.post.hentry.format-status .entry-content,
+.single-post article.post.hentry.format-aside .entry-content,
+body:not(.single-post) article.post.hentry.format-status .entry-content,
+body:not(.single-post) article.post.hentry.format-aside .entry-content {
+	padding: 11px 15px 11px 40px;
+}
+.single-post article.post.hentry.format-chat .entry-content > *:before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:before {
+	content: "";
+	width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+	top: 2px;
+}
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(odd):before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(odd):before {
+	left: -5px;
+	-webkit-box-shadow: -3px 2px 5px 0 rgba(69, 73, 91, 0.08);
+	        box-shadow: -3px 2px 5px 0 rgba(69, 73, 91, 0.08);
+}
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even):before {
+	right: -5px;
+	-webkit-box-shadow: 3px -2px 5px 0 rgba(69, 73, 91, 0.08);
+	        box-shadow: 3px -2px 5px 0 rgba(69, 73, 91, 0.08);
+}
+.single-post article.post.hentry.format-chat .entry-content > *,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > * {
+    padding: 5px 10px;
+	margin-left: 10px;
+    margin-right: 10px;
+}
+.single-post article.post.hentry.format-chat .entry-header,
+body:not(.single-post) article.post.hentry.format-chat .entry-header {
+	margin-bottom: 1em;
 }
 body.search-results article.type-post .entry-footer .cat-tags-links > span:not(:last-child),
 body.search-results article.type-post .entry-meta > span:not(:last-child) {
@@ -2430,6 +2549,10 @@ body.search-results article.type-post .byline:before,
 body.search-results article.type-post .cat-links:before,
 body.search-results article.type-post .posted-on:before {
 	margin-right: 5px;
+}
+.conj-hide-byline__JetPack.conj-hide-date__JetPack.conj-hide-comment__JetPack.conj-hide-categories__JetPack:not(.single-post):not(.admin-bar) article.post.hentry {
+	-ms-grid-columns: 1fr;
+	    grid-template-columns: 1fr;
 }
 @media (min-width: 68.0625em) {
 	body.has-sidebar:not(.no-sidebar):not(.single-post):not(.search-results) article.post.hentry {
@@ -3135,6 +3258,10 @@ textarea {
 	color: var(--blue-grey);
 	border-color: var(--pale-grey-two-darker);
 }
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even),
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even),
 .widget_tag_cloud ul li:hover,
 .calendar_wrap #today,
 .button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']):not(.product_type_external):not(.add_to_cart_button), 
@@ -3212,6 +3339,10 @@ body:not(.single-post) article.post.hentry > .entry-meta .post-meta,
 .entry-footer .edit-link .post-edit-link {
 	background-color: var(--pale-grey-two-darker);
 }
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even),
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even),
 .widget_tag_cloud ul li:hover,
 .calendar_wrap #today,
 .button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']):not(.product_type_external):not(.add_to_cart_button), 
@@ -3226,6 +3357,8 @@ input[type='submit'][name='apply_coupon']:focus,
 input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
 	border-color: var(--soft-blue);
 }
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even),
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even),
 .widget_tag_cloud ul li:hover a,
 .widget_calendar .calendar_wrap tbody td > a,
 .calendar_wrap #today,
@@ -3241,6 +3374,14 @@ input[type='submit'][name='apply_coupon']:focus,
 input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
 	color: var(--white);
 }
+.single-post article.post.hentry.format-status .entry-content,
+.single-post article.post.hentry.format-aside .entry-content,
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(odd):before,
+.single-post article.post.hentry.format-chat .entry-content > *:nth-child(odd),
+body:not(.single-post) article.post.hentry.format-status .entry-content,
+body:not(.single-post) article.post.hentry.format-aside .entry-content,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(odd):before,
+body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(odd),
 mark,
 #masthead,
 body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *,
