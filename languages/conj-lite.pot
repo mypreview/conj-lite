@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2018-04-20 23:58+0400\n"
-"PO-Revision-Date: 2018-04-20 23:57+0400\n"
+"POT-Creation-Date: 2018-04-22 23:08+0400\n"
+"PO-Revision-Date: 2018-04-22 23:08+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -280,12 +280,20 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-image.php:65 template-parts/content.php:51
+#: template-parts/content-aside.php:39 template-parts/content-audio.php:63
+#: template-parts/content-chat.php:49 template-parts/content-gallery.php:64
+#: template-parts/content-image.php:65 template-parts/content-link.php:49
+#: template-parts/content-quote.php:55 template-parts/content-status.php:39
+#: template-parts/content-video.php:63 template-parts/content.php:51
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-image.php:78 template-parts/content-page.php:26
+#: template-parts/content-aside.php:50 template-parts/content-audio.php:76
+#: template-parts/content-chat.php:60 template-parts/content-gallery.php:77
+#: template-parts/content-image.php:78 template-parts/content-link.php:60
+#: template-parts/content-page.php:26 template-parts/content-quote.php:68
+#: template-parts/content-status.php:50 template-parts/content-video.php:76
 #: template-parts/content.php:62
 msgid "Pages:"
 msgstr ""
@@ -323,10 +331,6 @@ msgstr ""
 msgid "Conj Lite"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "https://www.mypreview.one/conj.html"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid ""
 "Conj’s fantastic out of the box deep code and design integration with "
@@ -343,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "CONJ"
+msgid "MyPreview"
 msgstr ""
 
 #. Author URI of the plugin/theme
