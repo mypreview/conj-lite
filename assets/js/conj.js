@@ -49,7 +49,7 @@ jQuery Accesible Offcanvas Panels
  *
  * @author      Mahdi Yazdani
  * @package     mypreview-conj
- * @since       1.0.0
+ * @since       1.0.4
  */
 (function( window, $, undefined ) {
     'use strict';
@@ -141,5 +141,31 @@ jQuery Accesible Offcanvas Panels
     if ( gmaps.length > 0 ) {
     	gmaps.parent().fitVids();
     }
+
+	/* ---------------------------------------------- /*
+     * Makes the header cart content scrollable if 
+     * the height of the dropdown exceeds the 
+     * window height.
+     *
+     * Mouseover is used as items can be added to the 
+     * cart via ajax and we'll need to recheck.
+    /* ---------------------------------------------- */
+	if ( $( '.site-header-cart' ).length > 0 ) {
+		
+		$( '.site-header-cart' ).on( 'mouseover', function() {
+
+			var windowHeight  = window.outerHeight,
+				cartBottomPos = this.querySelector( '.widget_shopping_cart_content' ).getBoundingClientRect().bottom + this.offsetHeight,
+				cartList      = this.querySelector( '.cart_list' );
+
+			if ( cartBottomPos > windowHeight ) {
+				cartList.style.maxHeight = '15em';
+				cartList.style.overflowY = 'auto';
+				cartList.style.overflowX = 'hidden';
+			}
+
+		} );
+
+	}
 
 } )( this, jQuery );
