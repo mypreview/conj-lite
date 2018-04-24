@@ -4,7 +4,7 @@ Tags: two-columns, three-columns, left-sidebar, grid-layout, flexible-header, cu
 Donate link: https://www.mypreview.one
 Requires at least: 4.8
 Tested up to: 4.9.5
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,6 +48,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.5 =
+* Added theme up-sell page.
+
 = 1.0.4 =
 * Added a new method to make the header cart content scrollable.
 
