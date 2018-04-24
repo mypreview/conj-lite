@@ -4,7 +4,7 @@
  *
  * @author  	Mahdi Yazdani
  * @package 	mypreview-conj
- * @since 	    1.0.0
+ * @since 	    1.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,6 +31,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 			add_action( 'widgets_init',             array( $this, 'widgets_init' ),                     5 );
 			add_action( 'wp_resource_hints',        array( $this, 'resource_hints' ),               10, 2 );
 			add_action( 'wp_enqueue_scripts',       array( $this, 'enqueue' ),                     	   10 );
+			add_action( 'admin_enqueue_scripts', 	array( $this, 'admin_enqueue' ),  		   		   10 );
 			add_action( 'wp_enqueue_scripts',       array( $this, 'child_scripts' ),       			   30 );
 			add_filter( 'body_class',               array( $this, 'body_classes' ), 				10, 1 );
 			add_filter( 'excerpt_more',             array( $this, 'custom_excerpt_more' ), 			10, 1 );
@@ -41,6 +42,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 			add_filter( 'wp_list_categories', 		array( $this, 'cat_count_span' ), 				10, 1 );
 			add_filter( 'get_archives_link', 		array( $this, 'archive_count_span' ), 			10, 1 );
 			add_filter( 'the_content', 				array( $this, 'aside_to_infinity_and_beyond' ),  9, 1 );
+			add_action( 'admin_menu', 				array( $this, 'register_upsell_menu' ),  		   10 );
 
 		}
 
@@ -400,6 +402,21 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 
 		}
 		/**
+		 * Enqueue extra CSS & JavaScript to improve the user experience in the WordPress dashboard.
+		 *
+		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+		 * @see 	https://developer.wordpress.org/reference/functions/wp_localize_script/
+		 * @return 	void
+		 */
+		public function admin_enqueue() {
+
+			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+			wp_enqueue_style( 'mypreview-conj-upsell-styles', get_theme_file_uri( '/assets/admin/css/conj-pro-upsell' . $suffix . '.css' ), '', MYPREVIEW_CONJ_LITE_THEME_VERSION );
+
+		}
+		/**
 		 * Enqueue child theme stylesheet.
 		 * A separate function is required as the child theme css needs to be enqueued _after_ the parent theme
 		 * primary css and the separate WooCommerce css.
@@ -467,6 +484,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		/**
 		 * Replaces "[...]" (appended to automatically generated excerpts) with `...`
 		 *
+		 * @see 	https://developer.wordpress.org/reference/functions/is_admin/
 		 * @see 	https://developer.wordpress.org/reference/hooks/excerpt_more/
 		 * @param 	string $excerpt Excerpt more string.
 		 * @return 	string
@@ -577,6 +595,428 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 			} // End If Statement
 
 			return $content;
+
+		}
+
+		/**
+		 * Register the up-sell screen page.
+		 *
+		 * @see 	https://developer.wordpress.org/reference/functions/add_theme_page/
+		 * @return 	void
+		 */
+		public function register_upsell_menu() {
+
+			$page_title 	= 	esc_html__( 'Upgrade to CONJ PRO', 'conj-lite' );
+			$menu_title 	= 	esc_html__( 'CONJ PRO', 'conj-lite' );
+			add_theme_page( $page_title, $menu_title, 'manage_options', 'conj-pro-upsell-screen', array(
+				$this,
+				'upsell_screen'
+			) );
+
+		}
+		/**
+		 * The function to be called to output the up-sell content for this page.
+		 *
+		 * @return 	void
+		 */
+		public function upsell_screen() {
+
+			?>
+			<div class="wrap upgrade-to-conj-pro-wrapper">
+				<h2><?php esc_html_e( 'Meet Conj Pro', 'conj-lite' ); ?></h2>
+				<div id="poststuff">
+					<div id="post-body" class="metabox-holder columns-2">
+						<!-- main content -->
+						<div id="post-body-content">
+							<div class="meta-box-sortables ui-sortable">
+								<div class="postbox">
+									<div class="handlediv" title="<?php esc_attr_e( 'Click to toggle', 'conj-lite' ); ?>"><br /></div><!-- .handlediv -->
+									<!-- Toggle -->
+									<div id="upgrade-to-conj-pro">
+										<h2 class="hndle"><span><?php esc_html_e( 'Cool features you get with CONJ PRO theme', 'conj-lite' ); ?></span></h2>
+										<div class="inside">
+											<h3><?php esc_html_e( 'Get started with Conj which is the one thing you need to build your own stunning eCommerce website in a fast and efficient way.', 'conj-lite' ); ?></h3>
+											<p><?php esc_html_e( 'Conj\'s fantastic out of the box deep code and design integration with WooCommerce, the premier eCommerce solution for WordPress, enables your store to be bulletproof against any conflicts during major WooCommerce updates.', 'conj-lite' ); ?></p>
+											<p><?php esc_html_e( 'The entire platform of Conj is built on top of the Underscores starter theme which is a solid foundation of code and also used for all themes released by Automattic on WordPress.com.', 'conj-lite' ); ?></p>
+											<br/>
+											<table cellpadding="10" id="conj-pro-features-list">
+												<tbody>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-editor-table"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Layout alignment', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Easily swap the content area & the sidebar layout from left to right or vice versa.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-products"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Copyright credit', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Customize the copyright content as well as disable the WordPress and/or Conj theme credit links as well.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-search"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Header search field', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Displays search form in site navigation that makes users search the site quickly.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-update"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Automatic updates', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'You can update the theme automatically via the WordPress admin panel providing you have activated a valid license key.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-format-gallery"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Product image flipper', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Secondary product thumbnail on archives that is revealed when you hover over the main product image.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-sort"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Reorder homepage components', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Lightweight option that allows you to toggle the visibility & reorder the homepage components of the theme.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-translation"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Translation ready', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Conj theme is translation-ready and localized using the GNU framework.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-editor-expand"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Fluid post, page & product template', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Create a fluid template which spans from right to left takes most of the screen\'s width.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-admin-site"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'WPML compatible', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Conj theme is fully compatible and tested with most popular WordPress plugin that supports the creation of multilingual layouts.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-format-aside"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Aside post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'For brief snippets of text that are not entirely whole blog posts, such as quick thoughts and anecdotes. Similar to a Facebook note update.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-format-image"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Image post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php 
+															/* translators: 1: Open code tag, 2: Close code tag. */
+															printf( esc_html__( 'A single image. The first %1$s<img/>%2$s tag in the post content or uploaded featured image will be considered as an image post format.', 'conj-lite' ), '<code>', '</code>' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-format-video"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Video post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php 
+															/* translators: 1: Open code tag, 2: Close code tag. */
+															printf( esc_html__( 'A single video or video playlist. The first %1$s<video/>%2$s tag or embed in the post content will be considered as a video post format.', 'conj-lite' ), '<code>', '</code>' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-format-quote"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Quote post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'A quotation. The theme would add blockquote tag to the quote content automatically if the user didn\'t add it.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-images-alt2"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Gallery post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'A gallery of images. Post will likely contain a gallery shortcode and will have image attachments.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-admin-links"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Link post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'For those days when you just want to share a link to a fantastic article you read which creates a post that links to external resources right from the title.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-format-audio"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Audio post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php 
+															/* translators: 1: Open code tag, 2: Close code tag. */
+															printf( esc_html__( 'An audio file of your tunes or podcasts. The first %1$s<audio/>%2$s tag or embed in the post content will be considered as a audio post format.', 'conj-lite' ), '<code>', '</code>' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-format-chat"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Chat post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'To highlight an interesting conversation or a chat transcript you have with friends, both on- and offline.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-format-status"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Status post format', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'A quick update on what you are doing right now most likely to a Twitter status update because updates are no longer reserved for social networks.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-art"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Color scheme', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'You can use this option to choose a color, view color suggestions, refine with the color picker, & apply background color changes.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-align-center"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Footer bar', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'A full-width widgetized region which will display any widget added to this region above the Conj footer widget area.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-share"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Social network menu', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Navigation social media links to services like Twitter & Facebook, allowing visitors to access your social profiles quickly.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-arrow-right-alt"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Breadcrumbs', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'A simple yet useful feature to generate locational Schema.org compatible breadcrumb trails for posts, pages  & products.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-filter"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Product archive customizer', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Toggle the display of core elements & enable some that are not included in WooCommerce core.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-admin-customizer"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Product details customizer', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Change the layout & customize every element of the product single view page.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-schedule"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Sticky navigation', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'This control gives you the option to lock the entire navigation to the top of the page as the user scrolls.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-download"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'One click demo import', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'The easiest way to build your website, import whole demo content and set up your shop to look just like our demo in one click only.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-store"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'WooCommerce integration', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Designed & developed with WooCommerce functionality in mind & features a tight-knit integration with its extensions as well.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-hammer"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Header layout customizer', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Toggle and rearrange header components such as logo, mini-cart, search field, navigation, etc. with drag & drop.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-tagcloud"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Mega-Menu dropdowns', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Use drag & drop to add widgets that can be rearranged and resized to display any content you wish in your site navigation.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-pressthis"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Sticky add to cart', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'A content bar at the top of the browser window which includes the product name, price, rating, stock status and the add to cart button.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-store"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Distraction free checkout', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Remove any components that might be a distraction at checkout allowing the customer to focus on completing the checkout form.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-redo"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Two-Step checkout', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Enables two-step checkout, which separates the input of customer details / payment details into two pages.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-phone"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Contact info widget', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Display your location, hours, & contact information along with an optional Google map view.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-welcome-widgets-menus"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Sticky order review', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'The order review section sticks to the top of the browser window as the user scrolls down the checkout page.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-email"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'MailChimp newsletter integration', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'An easy, lightweight way to let your users sign up for several different MailChimp lists by creating multiple instances of the widget.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-menu"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Push menu', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Turn the mobile navigation into an off-screen, off-canvas sidebar menu with a hamburger toggle.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-star-half"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Featured reviews', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Display reviews on your homepage in a variety of styles & increase conversions by highlighting positive & selected product reviews.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-editor-textcolor"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Typography', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Easy access to any fonts you want from Google Web Fonts, the best free fonts available. Choose between dozens of popular fonts.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-cart"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Hero product', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Add an elegant hero component to the homepage template of your Conj powered webshop & watch conversions soar!', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-admin-generic"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Service component', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Service component makes it really easy to select a custom font icon to go along with any feature or service you provide.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-wordpress"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Based on Underscores', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'The entire platform of Conj is built on top of the Underscores starter theme which is a solid foundation of code by WordPress.com.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-megaphone"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Promo box widget', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'An image promo is an ideal way to convert more of your passive website visitors into active leads and customers.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-screenoptions"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Flexible CSS grid', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Conj uses a mobile-first grid-based architecture that renders beautifully formatted content on phones, tablets, & desktop monitors.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-slides"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Product pagination', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Display next & previous links on single product pages with a product thumbnail that will be revealed on hover.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-smartphone"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Handheld footer bar', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Display a sleek sticky bar with links to the user\'s account, search, & the shopping cart on devices with smaller screens.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-share-alt2"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Social Media widget', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Lets you easily add icons for the most popular social networks to your sidebar or any other widget area.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-visibility"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Retina ready', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Conj aesthetic galore HiDPI is achieved through CSS & vector graphics to ensure pixel perfection is reflected in the developed theme.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-share-alt"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Share buttons', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Buttons designed to be minimal, yet powerful, with support of popular networks to make your products go viral & get more traffic.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div><!-- .inside -->
+									</div><!-- #upgrade-to-conj-pro -->
+								</div><!-- .postbox -->
+							</div><!-- .meta-box-sortables -->
+						</div><!-- #post-body-content -->
+						<!-- sidebar -->
+						<div id="postbox-container-1" class="postbox-container">
+							<div class="meta-box-sortables">
+								<div class="postbox">
+									<div class="handlediv" title="<?php esc_attr_e( 'Click to toggle', 'conj-lite' ); ?>"><br /></div><!-- .handlediv -->
+									<!-- Toggle -->
+									<div id="upgrade-to-conj-pro-sidebar">
+										<h2 class="hndle"><span><?php esc_html_e( 'Get the one thing you need!', 'conj-lite' ); ?></span></h2>
+										<div class="inside">
+											<p align="center">
+												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" target="_blank">
+													<img class="conj-pro-featured-image" src="<?php echo get_theme_file_uri( 'assets/admin/img/buy-conj-pro-ecommerce-wordpress-theme.jpg' ); ?>" alt="CONJ PRO - eCommerce WordPress Theme">
+												</a>
+											</p>
+											<p align="center">
+												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Buy Now', 'conj-lite' ); ?></strong></a>
+												<a href="<?php echo esc_url( 'https://demo.mypreview.one/conj' ); ?>" class="button-secondary" target="_blank"><strong><?php esc_html_e( 'Live Demo', 'conj-lite' ); ?></strong></a>
+											</p>
+										</div><!-- .inside -->
+									</div><!-- #upgrade-to-conj-pro-sidebar -->
+								</div><!-- .postbox -->
+							</div><!-- .meta-box-sortables -->
+						</div><!-- .postbox-container -->
+					</div><!-- #post-body -->
+				</div><!-- #poststuff -->
+			</div><!-- .wrap -->
+			<?php
 
 		}
 
