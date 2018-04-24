@@ -5,6 +5,12 @@ Get started with Conj which is the one thing you need to build your own stunning
 
 ![CONJ Lite - eCommerce WordPress Theme](screenshot.jpg)
 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+►► If you are not a developer, please use the Offical [theme post page](https://wordpress.org/themes/conj-lite/) on wordpress.org.
+
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
 Conj’s fantastic out of the box deep code and design integration with WooCommerce, the premier eCommerce solution for WordPress, enables your store to be bulletproof against any conflicts during major WooCommerce updates. 
 
 Rest assured that the Conj theme uses a mobile-first grid-based architecture that renders beautifully formatted content on phones, tablets, and desktop monitors. Your visitors can expect brilliant looking products whether they are browsing your website at the office or on the go. 
