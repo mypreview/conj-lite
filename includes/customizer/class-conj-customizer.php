@@ -4,7 +4,7 @@
  *
  * @author  	Mahdi Yazdani
  * @package 	mypreview-conj
- * @since 	    1.0.1
+ * @since 	    1.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
