@@ -1,10 +1,10 @@
 === Conj Lite ===
 Contributors: mypreview, mahdiyazdani, gookaani
-Tags: two-columns, three-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+Tags: two-columns, three-columns, left-sidebar, grid-layout, flexible-header, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Donate link: https://www.mypreview.one
 Requires at least: 4.8
 Tested up to: 4.9.5
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,6 +48,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+= 1.0.6 =
+* Added theme up-sell admin dismissible notice.
+
 = 1.0.5 =
 * Added theme up-sell page.
 
