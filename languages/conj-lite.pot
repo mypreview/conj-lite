@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2018-04-24 16:58+0400\n"
-"PO-Revision-Date: 2018-04-24 16:58+0400\n"
+"POT-Creation-Date: 2018-04-25 20:42+0400\n"
+"PO-Revision-Date: 2018-04-25 20:42+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -141,66 +141,81 @@ msgid ""
 "%s. Please upgrade and try again."
 msgstr ""
 
-#: includes/class-conj.php:136
+#: includes/class-conj.php:139
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/class-conj.php:137
+#: includes/class-conj.php:140
 msgid "Push Menu"
 msgstr ""
 
-#: includes/class-conj.php:269
+#: includes/class-conj.php:272
 msgid "Sidebar"
 msgstr ""
 
-#: includes/class-conj.php:271
+#: includes/class-conj.php:274
 msgid "Widgets added to this region will appear in archive/shop pages."
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:281
+#: includes/class-conj.php:284
 #, php-format
 msgid "Footer Column %1$d"
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:283
+#: includes/class-conj.php:286
 #, php-format
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: includes/class-conj.php:363
+#: includes/class-conj.php:366
 msgctxt "montserrat font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/class-conj.php:609
+#: includes/class-conj.php:632
+msgid "Good for you! Good for your Wallet!"
+msgstr ""
+
+#. translators: 1: OFF percent, 2: HTML Dash, 3: Coupon code.
+#: includes/class-conj.php:635
+#, php-format
+msgid "TAKE %1$s OFF FOR YOUR FIRST PURCHASE!%2$sCOUPON CODE:%3$s"
+msgstr ""
+
+#: includes/class-conj.php:638 includes/class-conj.php:686
 msgid "Upgrade to CONJ PRO"
 msgstr ""
 
-#: includes/class-conj.php:610 includes/customizer/class-conj-customizer.php:49
+#: includes/class-conj.php:639
+msgid "Get to Know More"
+msgstr ""
+
+#: includes/class-conj.php:687 includes/customizer/class-conj-customizer.php:49
 msgid "CONJ PRO"
 msgstr ""
 
-#: includes/class-conj.php:626
+#: includes/class-conj.php:704
 msgid "Meet Conj Pro"
 msgstr ""
 
-#: includes/class-conj.php:633 includes/class-conj.php:997
+#: includes/class-conj.php:711 includes/class-conj.php:1075
+#: includes/class-conj.php:1093
 msgid "Click to toggle"
 msgstr ""
 
-#: includes/class-conj.php:636
+#: includes/class-conj.php:714
 msgid "Cool features you get with CONJ PRO theme"
 msgstr ""
 
-#: includes/class-conj.php:638
+#: includes/class-conj.php:716
 msgid ""
 "Get started with Conj which is the one thing you need to build your own "
 "stunning eCommerce website in a fast and efficient way."
 msgstr ""
 
-#: includes/class-conj.php:639
+#: includes/class-conj.php:717
 msgid ""
 "Conj's fantastic out of the box deep code and design integration with "
 "WooCommerce, the premier eCommerce solution for WordPress, enables your "
@@ -208,507 +223,531 @@ msgid ""
 "updates."
 msgstr ""
 
-#: includes/class-conj.php:640
+#: includes/class-conj.php:718
 msgid ""
 "The entire platform of Conj is built on top of the Underscores starter theme "
 "which is a solid foundation of code and also used for all themes released by "
 "Automattic on WordPress.com."
 msgstr ""
 
-#: includes/class-conj.php:647
+#: includes/class-conj.php:725
 msgid "Layout alignment"
 msgstr ""
 
-#: includes/class-conj.php:649
+#: includes/class-conj.php:727
 msgid ""
 "Easily swap the content area & the sidebar layout from left to right or vice "
 "versa."
 msgstr ""
 
-#: includes/class-conj.php:653
+#: includes/class-conj.php:731
 msgid "Copyright credit"
 msgstr ""
 
-#: includes/class-conj.php:655
+#: includes/class-conj.php:733
 msgid ""
 "Customize the copyright content as well as disable the WordPress and/or Conj "
 "theme credit links as well."
 msgstr ""
 
-#: includes/class-conj.php:661
+#: includes/class-conj.php:739
 msgid "Header search field"
 msgstr ""
 
-#: includes/class-conj.php:663
+#: includes/class-conj.php:741
 msgid ""
 "Displays search form in site navigation that makes users search the site "
 "quickly."
 msgstr ""
 
-#: includes/class-conj.php:667
+#: includes/class-conj.php:745
 msgid "Automatic updates"
 msgstr ""
 
-#: includes/class-conj.php:669
+#: includes/class-conj.php:747
 msgid ""
 "You can update the theme automatically via the WordPress admin panel "
 "providing you have activated a valid license key."
 msgstr ""
 
-#: includes/class-conj.php:675
+#: includes/class-conj.php:753
 msgid "Product image flipper"
 msgstr ""
 
-#: includes/class-conj.php:677
+#: includes/class-conj.php:755
 msgid ""
 "Secondary product thumbnail on archives that is revealed when you hover over "
 "the main product image."
 msgstr ""
 
-#: includes/class-conj.php:681
+#: includes/class-conj.php:759
 msgid "Reorder homepage components"
 msgstr ""
 
-#: includes/class-conj.php:683
+#: includes/class-conj.php:761
 msgid ""
 "Lightweight option that allows you to toggle the visibility & reorder the "
 "homepage components of the theme."
 msgstr ""
 
-#: includes/class-conj.php:689
+#: includes/class-conj.php:767
 msgid "Translation ready"
 msgstr ""
 
-#: includes/class-conj.php:691
+#: includes/class-conj.php:769
 msgid "Conj theme is translation-ready and localized using the GNU framework."
 msgstr ""
 
-#: includes/class-conj.php:695
+#: includes/class-conj.php:773
 msgid "Fluid post, page & product template"
 msgstr ""
 
-#: includes/class-conj.php:697
+#: includes/class-conj.php:775
 msgid ""
 "Create a fluid template which spans from right to left takes most of the "
 "screen's width."
 msgstr ""
 
-#: includes/class-conj.php:703
+#: includes/class-conj.php:781
 msgid "WPML compatible"
 msgstr ""
 
-#: includes/class-conj.php:705
+#: includes/class-conj.php:783
 msgid ""
 "Conj theme is fully compatible and tested with most popular WordPress plugin "
 "that supports the creation of multilingual layouts."
 msgstr ""
 
-#: includes/class-conj.php:709
+#: includes/class-conj.php:787
 msgid "Aside post format"
 msgstr ""
 
-#: includes/class-conj.php:711
+#: includes/class-conj.php:789
 msgid ""
 "For brief snippets of text that are not entirely whole blog posts, such as "
 "quick thoughts and anecdotes. Similar to a Facebook note update."
 msgstr ""
 
-#: includes/class-conj.php:717
+#: includes/class-conj.php:795
 msgid "Image post format"
 msgstr ""
 
 #. translators: 1: Open code tag, 2: Close code tag.
-#: includes/class-conj.php:721
+#: includes/class-conj.php:799
 #, php-format
 msgid ""
 "A single image. The first %1$s<img/>%2$s tag in the post content or uploaded "
 "featured image will be considered as an image post format."
 msgstr ""
 
-#: includes/class-conj.php:725
+#: includes/class-conj.php:803
 msgid "Video post format"
 msgstr ""
 
 #. translators: 1: Open code tag, 2: Close code tag.
-#: includes/class-conj.php:729
+#: includes/class-conj.php:807
 #, php-format
 msgid ""
 "A single video or video playlist. The first %1$s<video/>%2$s tag or embed in "
 "the post content will be considered as a video post format."
 msgstr ""
 
-#: includes/class-conj.php:735
+#: includes/class-conj.php:813
 msgid "Quote post format"
 msgstr ""
 
-#: includes/class-conj.php:737
+#: includes/class-conj.php:815
 msgid ""
 "A quotation. The theme would add blockquote tag to the quote content "
 "automatically if the user didn't add it."
 msgstr ""
 
-#: includes/class-conj.php:741
+#: includes/class-conj.php:819
 msgid "Gallery post format"
 msgstr ""
 
-#: includes/class-conj.php:743
+#: includes/class-conj.php:821
 msgid ""
 "A gallery of images. Post will likely contain a gallery shortcode and will "
 "have image attachments."
 msgstr ""
 
-#: includes/class-conj.php:749
+#: includes/class-conj.php:827
 msgid "Link post format"
 msgstr ""
 
-#: includes/class-conj.php:751
+#: includes/class-conj.php:829
 msgid ""
 "For those days when you just want to share a link to a fantastic article you "
 "read which creates a post that links to external resources right from the "
 "title."
 msgstr ""
 
-#: includes/class-conj.php:755
+#: includes/class-conj.php:833
 msgid "Audio post format"
 msgstr ""
 
 #. translators: 1: Open code tag, 2: Close code tag.
-#: includes/class-conj.php:759
+#: includes/class-conj.php:837
 #, php-format
 msgid ""
 "An audio file of your tunes or podcasts. The first %1$s<audio/>%2$s tag or "
 "embed in the post content will be considered as a audio post format."
 msgstr ""
 
-#: includes/class-conj.php:765
+#: includes/class-conj.php:843
 msgid "Chat post format"
 msgstr ""
 
-#: includes/class-conj.php:767
+#: includes/class-conj.php:845
 msgid ""
 "To highlight an interesting conversation or a chat transcript you have with "
 "friends, both on- and offline."
 msgstr ""
 
-#: includes/class-conj.php:771
+#: includes/class-conj.php:849
 msgid "Status post format"
 msgstr ""
 
-#: includes/class-conj.php:773
+#: includes/class-conj.php:851
 msgid ""
 "A quick update on what you are doing right now most likely to a Twitter "
 "status update because updates are no longer reserved for social networks."
 msgstr ""
 
-#: includes/class-conj.php:779
+#: includes/class-conj.php:857
 msgid "Color scheme"
 msgstr ""
 
-#: includes/class-conj.php:781
+#: includes/class-conj.php:859
 msgid ""
 "You can use this option to choose a color, view color suggestions, refine "
 "with the color picker, & apply background color changes."
 msgstr ""
 
-#: includes/class-conj.php:785
+#: includes/class-conj.php:863
 msgid "Footer bar"
 msgstr ""
 
-#: includes/class-conj.php:787
+#: includes/class-conj.php:865
 msgid ""
 "A full-width widgetized region which will display any widget added to this "
 "region above the Conj footer widget area."
 msgstr ""
 
-#: includes/class-conj.php:793
+#: includes/class-conj.php:871
 msgid "Social network menu"
 msgstr ""
 
-#: includes/class-conj.php:795
+#: includes/class-conj.php:873
 msgid ""
 "Navigation social media links to services like Twitter & Facebook, allowing "
 "visitors to access your social profiles quickly."
 msgstr ""
 
-#: includes/class-conj.php:799
+#: includes/class-conj.php:877
 msgid "Breadcrumbs"
 msgstr ""
 
-#: includes/class-conj.php:801
+#: includes/class-conj.php:879
 msgid ""
 "A simple yet useful feature to generate locational Schema.org compatible "
 "breadcrumb trails for posts, pages  & products."
 msgstr ""
 
-#: includes/class-conj.php:807
+#: includes/class-conj.php:885
 msgid "Product archive customizer"
 msgstr ""
 
-#: includes/class-conj.php:809
+#: includes/class-conj.php:887
 msgid ""
 "Toggle the display of core elements & enable some that are not included in "
 "WooCommerce core."
 msgstr ""
 
-#: includes/class-conj.php:813
+#: includes/class-conj.php:891
 msgid "Product details customizer"
 msgstr ""
 
-#: includes/class-conj.php:815
+#: includes/class-conj.php:893
 msgid ""
 "Change the layout & customize every element of the product single view page."
 msgstr ""
 
-#: includes/class-conj.php:821
+#: includes/class-conj.php:899
 msgid "Sticky navigation"
 msgstr ""
 
-#: includes/class-conj.php:823
+#: includes/class-conj.php:901
 msgid ""
 "This control gives you the option to lock the entire navigation to the top "
 "of the page as the user scrolls."
 msgstr ""
 
-#: includes/class-conj.php:827
+#: includes/class-conj.php:905
 msgid "One click demo import"
 msgstr ""
 
-#: includes/class-conj.php:829
+#: includes/class-conj.php:907
 msgid ""
 "The easiest way to build your website, import whole demo content and set up "
 "your shop to look just like our demo in one click only."
 msgstr ""
 
-#: includes/class-conj.php:835
+#: includes/class-conj.php:913
 msgid "WooCommerce integration"
 msgstr ""
 
-#: includes/class-conj.php:837
+#: includes/class-conj.php:915
 msgid ""
 "Designed & developed with WooCommerce functionality in mind & features a "
 "tight-knit integration with its extensions as well."
 msgstr ""
 
-#: includes/class-conj.php:841
+#: includes/class-conj.php:919
 msgid "Header layout customizer"
 msgstr ""
 
-#: includes/class-conj.php:843
+#: includes/class-conj.php:921
 msgid ""
 "Toggle and rearrange header components such as logo, mini-cart, search "
 "field, navigation, etc. with drag & drop."
 msgstr ""
 
-#: includes/class-conj.php:849
+#: includes/class-conj.php:927
 msgid "Mega-Menu dropdowns"
 msgstr ""
 
-#: includes/class-conj.php:851
+#: includes/class-conj.php:929
 msgid ""
 "Use drag & drop to add widgets that can be rearranged and resized to display "
 "any content you wish in your site navigation."
 msgstr ""
 
-#: includes/class-conj.php:855
+#: includes/class-conj.php:933
 msgid "Sticky add to cart"
 msgstr ""
 
-#: includes/class-conj.php:857
+#: includes/class-conj.php:935
 msgid ""
 "A content bar at the top of the browser window which includes the product "
 "name, price, rating, stock status and the add to cart button."
 msgstr ""
 
-#: includes/class-conj.php:863
+#: includes/class-conj.php:941
 msgid "Distraction free checkout"
 msgstr ""
 
-#: includes/class-conj.php:865
+#: includes/class-conj.php:943
 msgid ""
 "Remove any components that might be a distraction at checkout allowing the "
 "customer to focus on completing the checkout form."
 msgstr ""
 
-#: includes/class-conj.php:869
+#: includes/class-conj.php:947
 msgid "Two-Step checkout"
 msgstr ""
 
-#: includes/class-conj.php:871
+#: includes/class-conj.php:949
 msgid ""
 "Enables two-step checkout, which separates the input of customer details / "
 "payment details into two pages."
 msgstr ""
 
-#: includes/class-conj.php:877
+#: includes/class-conj.php:955
 msgid "Contact info widget"
 msgstr ""
 
-#: includes/class-conj.php:879
+#: includes/class-conj.php:957
 msgid ""
 "Display your location, hours, & contact information along with an optional "
 "Google map view."
 msgstr ""
 
-#: includes/class-conj.php:883
+#: includes/class-conj.php:961
 msgid "Sticky order review"
 msgstr ""
 
-#: includes/class-conj.php:885
+#: includes/class-conj.php:963
 msgid ""
 "The order review section sticks to the top of the browser window as the user "
 "scrolls down the checkout page."
 msgstr ""
 
-#: includes/class-conj.php:891
+#: includes/class-conj.php:969
 msgid "MailChimp newsletter integration"
 msgstr ""
 
-#: includes/class-conj.php:893
+#: includes/class-conj.php:971
 msgid ""
 "An easy, lightweight way to let your users sign up for several different "
 "MailChimp lists by creating multiple instances of the widget."
 msgstr ""
 
-#: includes/class-conj.php:897
+#: includes/class-conj.php:975
 msgid "Push menu"
 msgstr ""
 
-#: includes/class-conj.php:899
+#: includes/class-conj.php:977
 msgid ""
 "Turn the mobile navigation into an off-screen, off-canvas sidebar menu with "
 "a hamburger toggle."
 msgstr ""
 
-#: includes/class-conj.php:905
+#: includes/class-conj.php:983
 msgid "Featured reviews"
 msgstr ""
 
-#: includes/class-conj.php:907
+#: includes/class-conj.php:985
 msgid ""
 "Display reviews on your homepage in a variety of styles & increase "
 "conversions by highlighting positive & selected product reviews."
 msgstr ""
 
-#: includes/class-conj.php:911
+#: includes/class-conj.php:989
 msgid "Typography"
 msgstr ""
 
-#: includes/class-conj.php:913
+#: includes/class-conj.php:991
 msgid ""
 "Easy access to any fonts you want from Google Web Fonts, the best free fonts "
 "available. Choose between dozens of popular fonts."
 msgstr ""
 
-#: includes/class-conj.php:919
+#: includes/class-conj.php:997
 msgid "Hero product"
 msgstr ""
 
-#: includes/class-conj.php:921
+#: includes/class-conj.php:999
 msgid ""
 "Add an elegant hero component to the homepage template of your Conj powered "
 "webshop & watch conversions soar!"
 msgstr ""
 
-#: includes/class-conj.php:925
+#: includes/class-conj.php:1003
 msgid "Service component"
 msgstr ""
 
-#: includes/class-conj.php:927
+#: includes/class-conj.php:1005
 msgid ""
 "Service component makes it really easy to select a custom font icon to go "
 "along with any feature or service you provide."
 msgstr ""
 
-#: includes/class-conj.php:933
+#: includes/class-conj.php:1011
 msgid "Based on Underscores"
 msgstr ""
 
-#: includes/class-conj.php:935
+#: includes/class-conj.php:1013
 msgid ""
 "The entire platform of Conj is built on top of the Underscores starter theme "
 "which is a solid foundation of code by WordPress.com."
 msgstr ""
 
-#: includes/class-conj.php:939
+#: includes/class-conj.php:1017
 msgid "Promo box widget"
 msgstr ""
 
-#: includes/class-conj.php:941
+#: includes/class-conj.php:1019
 msgid ""
 "An image promo is an ideal way to convert more of your passive website "
 "visitors into active leads and customers."
 msgstr ""
 
-#: includes/class-conj.php:947
+#: includes/class-conj.php:1025
 msgid "Flexible CSS grid"
 msgstr ""
 
-#: includes/class-conj.php:949
+#: includes/class-conj.php:1027
 msgid ""
 "Conj uses a mobile-first grid-based architecture that renders beautifully "
 "formatted content on phones, tablets, & desktop monitors."
 msgstr ""
 
-#: includes/class-conj.php:953
+#: includes/class-conj.php:1031
 msgid "Product pagination"
 msgstr ""
 
-#: includes/class-conj.php:955
+#: includes/class-conj.php:1033
 msgid ""
 "Display next & previous links on single product pages with a product "
 "thumbnail that will be revealed on hover."
 msgstr ""
 
-#: includes/class-conj.php:961
+#: includes/class-conj.php:1039
 msgid "Handheld footer bar"
 msgstr ""
 
-#: includes/class-conj.php:963
+#: includes/class-conj.php:1041
 msgid ""
 "Display a sleek sticky bar with links to the user's account, search, & the "
 "shopping cart on devices with smaller screens."
 msgstr ""
 
-#: includes/class-conj.php:967
+#: includes/class-conj.php:1045
 msgid "Social Media widget"
 msgstr ""
 
-#: includes/class-conj.php:969
+#: includes/class-conj.php:1047
 msgid ""
 "Lets you easily add icons for the most popular social networks to your "
 "sidebar or any other widget area."
 msgstr ""
 
-#: includes/class-conj.php:975
+#: includes/class-conj.php:1053
 msgid "Retina ready"
 msgstr ""
 
-#: includes/class-conj.php:977
+#: includes/class-conj.php:1055
 msgid ""
 "Conj aesthetic galore HiDPI is achieved through CSS & vector graphics to "
 "ensure pixel perfection is reflected in the developed theme."
 msgstr ""
 
-#: includes/class-conj.php:981
+#: includes/class-conj.php:1059
 msgid "Share buttons"
 msgstr ""
 
-#: includes/class-conj.php:983
+#: includes/class-conj.php:1061
 msgid ""
 "Buttons designed to be minimal, yet powerful, with support of popular "
 "networks to make your products go viral & get more traffic."
 msgstr ""
 
-#: includes/class-conj.php:1000
+#: includes/class-conj.php:1078
 msgid "Get the one thing you need!"
 msgstr ""
 
-#: includes/class-conj.php:1008
+#: includes/class-conj.php:1086
 msgid "Buy Now"
 msgstr ""
 
-#: includes/class-conj.php:1009
+#: includes/class-conj.php:1087
 msgid "Live Demo"
+msgstr ""
+
+#: includes/class-conj.php:1096
+msgid "Support and Documentation"
+msgstr ""
+
+#: includes/class-conj.php:1098
+msgid ""
+"As you might have already gathered, we love hearing your feedback, And you "
+"seem to love giving it!"
+msgstr ""
+
+#: includes/class-conj.php:1099
+msgid ""
+"Our top priority is that you have a great experience with us and learn to "
+"create amazing code-free websites quickly."
+msgstr ""
+
+#: includes/class-conj.php:1101
+msgid "Support Forum"
+msgstr ""
+
+#: includes/class-conj.php:1102
+msgid "Documentation"
 msgstr ""
 
 #. translators: %s: post author
