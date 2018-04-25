@@ -18,7 +18,7 @@
  * @see 		https://codex.wordpress.org/Plugin_API
  * @author  	Mahdi Yazdani
  * @package 	mypreview-conj
- * @since 	    1.0.5
+ * @since 	    1.0.6
  */
 
 // Assign the "Conj Lite" info to constants.
@@ -28,6 +28,7 @@ define( 'MYPREVIEW_CONJ_LITE_THEME_NAME', $conj_theme->get( 'Name' ) );
 define( 'MYPREVIEW_CONJ_LITE_THEME_URI', 'https://www.mypreview.one/conj.html' );
 define( 'MYPREVIEW_CONJ_LITE_THEME_AUTHOR', $conj_theme->get( 'Author' ) );
 define( 'MYPREVIEW_CONJ_LITE_THEME_VERSION', $conj_theme->get( 'Version' ) );
+define( 'MYPREVIEW_CONJ_LITE_THEME_SUPPORT_URI', 'https://support.mypreview.one' );
 define( 'MYPREVIEW_CONJ_LITE_THEME_DOC_URI', 'https://mypreview.github.io/Conj' );
 
 // Conj Lite only works in WordPress 4.8 or later.
