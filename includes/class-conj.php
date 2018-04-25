@@ -25,24 +25,27 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'after_setup_theme',        array( $this, 'setup' ),                           10 );
-			add_action( 'wp_head',          		array( $this, 'javascript_detection' ),             0 );
-			add_action( 'wp_head',          		array( $this, 'pingback_header' ),                 10 );
-			add_action( 'widgets_init',             array( $this, 'widgets_init' ),                     5 );
-			add_action( 'wp_resource_hints',        array( $this, 'resource_hints' ),               10, 2 );
-			add_action( 'wp_enqueue_scripts',       array( $this, 'enqueue' ),                     	   10 );
-			add_action( 'admin_enqueue_scripts', 	array( $this, 'admin_enqueue' ),  		   		   10 );
-			add_action( 'wp_enqueue_scripts',       array( $this, 'child_scripts' ),       			   30 );
-			add_filter( 'body_class',               array( $this, 'body_classes' ), 				10, 1 );
-			add_filter( 'excerpt_more',             array( $this, 'custom_excerpt_more' ), 			10, 1 );
-			add_filter( 'widget_tag_cloud_args',    array( $this, 'widget_tag_cloud_args' ), 		10, 1 );
-			add_action( 'edit_category',            array( $this, 'category_transient_flusher' ), 	   10 );
-			add_action( 'save_post',                array( $this, 'category_transient_flusher' ), 	   10 );
-			add_filter( 'comment_form_fields',      array( $this, 'move_comment_field_to_bottom' ), 10, 1 );
-			add_filter( 'wp_list_categories', 		array( $this, 'cat_count_span' ), 				10, 1 );
-			add_filter( 'get_archives_link', 		array( $this, 'archive_count_span' ), 			10, 1 );
-			add_filter( 'the_content', 				array( $this, 'aside_to_infinity_and_beyond' ),  9, 1 );
-			add_action( 'admin_menu', 				array( $this, 'register_upsell_menu' ),  		   10 );
+			add_action( 'after_setup_theme',        							array( $this, 'setup' ),                           10 );
+			add_action( 'wp_head',          									array( $this, 'javascript_detection' ),             0 );
+			add_action( 'wp_head',          									array( $this, 'pingback_header' ),                 10 );
+			add_action( 'widgets_init',             							array( $this, 'widgets_init' ),                     5 );
+			add_action( 'wp_resource_hints',        							array( $this, 'resource_hints' ),               10, 2 );
+			add_action( 'wp_enqueue_scripts',       							array( $this, 'enqueue' ),                     	   10 );
+			add_action( 'admin_enqueue_scripts', 								array( $this, 'admin_enqueue' ),  		   		   10 );
+			add_action( 'wp_enqueue_scripts',       							array( $this, 'child_scripts' ),       			   30 );
+			add_filter( 'body_class',               							array( $this, 'body_classes' ), 				10, 1 );
+			add_filter( 'excerpt_more',             							array( $this, 'custom_excerpt_more' ), 			10, 1 );
+			add_filter( 'widget_tag_cloud_args',    							array( $this, 'widget_tag_cloud_args' ), 		10, 1 );
+			add_action( 'edit_category',            							array( $this, 'category_transient_flusher' ), 	   10 );
+			add_action( 'save_post',                							array( $this, 'category_transient_flusher' ), 	   10 );
+			add_filter( 'comment_form_fields',      							array( $this, 'move_comment_field_to_bottom' ), 10, 1 );
+			add_filter( 'wp_list_categories', 									array( $this, 'cat_count_span' ), 				10, 1 );
+			add_filter( 'get_archives_link', 									array( $this, 'archive_count_span' ), 			10, 1 );
+			add_filter( 'the_content', 											array( $this, 'aside_to_infinity_and_beyond' ),  9, 1 );
+			add_action( 'admin_notices', 										array( $this, 'upsell_notice' ),  		   		   10 );
+			add_action( 'wp_ajax_mypreview_conj_lite_dismiss_upsell_notice', 	array( $this, 'dismiss_upsell_notice' ), 		   10 );
+			add_action( 'switch_theme', 										array( $this, 'bring_back_upsell_notice' ), 	   10 );
+			add_action( 'admin_menu', 											array( $this, 'register_upsell_menu' ),  		   10 );
 
 		}
 
@@ -413,7 +416,15 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-			wp_enqueue_style( 'mypreview-conj-upsell-styles', get_theme_file_uri( '/assets/admin/css/conj-pro-upsell' . $suffix . '.css' ), '', MYPREVIEW_CONJ_LITE_THEME_VERSION );
+			wp_enqueue_style( 'mypreview-conj-upsell-styles', get_theme_file_uri( '/assets/admin/css/upsell' . $suffix . '.css' ), '', MYPREVIEW_CONJ_LITE_THEME_VERSION );
+
+			$mypreview_conj_lite_admin_l10n = array(
+					'ajaxurl' 				=> 		admin_url( 'admin-ajax.php' ),
+					'notice_nonce'	 		=> 		wp_create_nonce( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK' )
+			);
+			wp_register_script( 'mypreview-conj-upsell-scripts', get_theme_file_uri( '/assets/admin/js/upsell' . $suffix . '.js' ), array( 'jquery' ) , MYPREVIEW_CONJ_THEME_VERSION, TRUE );
+			wp_localize_script( 'mypreview-conj-upsell-scripts', 'MyPreviewConjUpsellNotice', $mypreview_conj_lite_admin_l10n );
+			wp_enqueue_script( 'mypreview-conj-upsell-scripts' );
 
 		}
 		/**
@@ -599,6 +610,72 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		}
 
 		/**
+		 * Output admin notices.
+		 *
+		 * @see 	https://developer.wordpress.org/reference/hooks/admin_notices/
+		 * @return 	void
+		 */
+		public function upsell_notice() {
+
+			// Bail out, if the user already closed up-sell notice.
+			if ( TRUE === (bool) get_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK' ) ) {
+				return;
+			} // End If Statement
+			?>
+
+			<div id="conj-upsell-notice" class="notice notice-info is-dismissible">
+				<div class="conj-upsell-notice__logo">
+					<img class="mypreview-logo" src="<?php echo get_theme_file_uri( 'assets/admin/img/mypreview-logo.png' ); ?>" alt="MyPreview LLC" />
+				</div>
+				<div class="conj-upsell-notice__wrapper">
+					<div class="conj-upsell-notice__content">
+						<h3><?php esc_html_e( 'Good for you! Good for your Wallet!', 'conj-lite' ); ?></h3>
+						<p><?php 
+						/* translators: 1: OFF percent, 2: HTML Dash, 3: Coupon code. */
+						printf( esc_html__( 'TAKE %1$s OFF FOR YOUR FIRST PURCHASE!%2$sCOUPON CODE:%3$s', 'conj-lite' ), '<strong>20%</strong>', '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;', '&nbsp;<mark><strong>FIRST-CONJ</strong></mark>' ); ?></p>
+					</div><!-- .notice-content -->
+					<div class="conj-upsell-notice__btns">
+						<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Upgrade to CONJ PRO', 'conj-lite' ); ?> &rarr;</strong></a>
+						<a href="<?php echo esc_url (admin_url( 'themes.php?page=conj-pro-upsell-screen' ) ); ?>" class="button-secondary" target="_self"><strong><?php esc_html_e( 'Get to Know More', 'conj-lite' ); ?></strong></a>
+					</div>
+				</div><!-- .conj-upsell-notice__wrapper -->
+			</div><!-- #conj-upsell-notice -->
+
+			<?php
+
+		}
+
+		/**
+		 * AJAX dismiss up-sell notice.
+		 *
+		 * @see 	https://wordpress.stackexchange.com/questions/242705/how-to-stop-showing-admin-notice-after-close-button-has-been-clicked
+		 * @return 	void
+		 */
+		public function dismiss_upsell_notice() {
+
+			$nonce = ! empty( $_POST['nonce'] ) ? $_POST['nonce'] : FALSE;
+			
+			if ( ! $nonce || ! wp_verify_nonce( $nonce, 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK' ) || ! current_user_can( 'manage_options' ) ) {
+				wp_die();
+			} // End If Statement
+			
+			update_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK', TRUE );
+
+		}
+
+		/**
+		 * Bring back CONJ pro up-sell notice once the CONJ lite theme has been switched.
+		 *
+		 * @see 	https://codex.wordpress.org/Function_Reference/switch_theme
+		 * @return 	void
+		 */
+		public function bring_back_upsell_notice() {
+
+			update_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK', FALSE );
+
+		}
+
+		/**
 		 * Register the up-sell screen page.
 		 *
 		 * @see 	https://developer.wordpress.org/reference/functions/add_theme_page/
@@ -614,6 +691,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 			) );
 
 		}
+
 		/**
 		 * The function to be called to output the up-sell content for this page.
 		 *
@@ -1001,12 +1079,27 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 										<div class="inside">
 											<p align="center">
 												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" target="_blank">
-													<img class="conj-pro-featured-image" src="<?php echo get_theme_file_uri( 'assets/admin/img/buy-conj-pro-ecommerce-wordpress-theme.jpg' ); ?>" alt="CONJ PRO - eCommerce WordPress Theme">
+													<img class="conj-pro-featured-image" src="<?php echo get_theme_file_uri( 'assets/admin/img/buy-conj-pro-ecommerce-wordpress-theme.jpg' ); ?>" alt="CONJ PRO - eCommerce WordPress Theme" />
 												</a>
 											</p>
 											<p align="center">
 												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Buy Now', 'conj-lite' ); ?></strong></a>
 												<a href="<?php echo esc_url( 'https://demo.mypreview.one/conj' ); ?>" class="button-secondary" target="_blank"><strong><?php esc_html_e( 'Live Demo', 'conj-lite' ); ?></strong></a>
+											</p>
+										</div><!-- .inside -->
+									</div><!-- #upgrade-to-conj-pro-sidebar -->
+								</div><!-- .postbox -->
+								<div class="postbox">
+									<div class="handlediv" title="<?php esc_attr_e( 'Click to toggle', 'conj-lite' ); ?>"><br /></div><!-- .handlediv -->
+									<!-- Toggle -->
+									<div id="conj-support-docs-sidebar">
+										<h2 class="hndle"><span><?php esc_html_e( 'Support and Documentation', 'conj-lite' ); ?></span></h2>
+										<div class="inside">
+											<p><?php esc_html_e( 'As you might have already gathered, we love hearing your feedback, And you seem to love giving it!', 'conj-lite' ); ?></p>
+											<p><?php echo esc_html_e( 'Our top priority is that you have a great experience with us and learn to create amazing code-free websites quickly.', 'conj-lite' ); ?></p>
+											<p align="center">
+												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_SUPPORT_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Support Forum', 'conj-lite' ); ?></strong></a>
+												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_DOC_URI ); ?>" class="button-secondary" target="_blank"><strong><?php esc_html_e( 'Documentation', 'conj-lite' ); ?></strong></a>
 											</p>
 										</div><!-- .inside -->
 									</div><!-- #upgrade-to-conj-pro-sidebar -->
