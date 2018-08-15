@@ -4,7 +4,7 @@
  *
  * @author  	Mahdi Yazdani
  * @package 	mypreview-conj
- * @since 	    1.0.0
+ * @since 	    1.0.7
  */
 
 /**
@@ -19,6 +19,21 @@ if ( ! function_exists( 'mypreview_conj_lite_is_posts_page_configured' ) ) :
 
 		return ( ! empty( $get_posts_page ) ) ? TRUE : FALSE;
 
+	}
+endif;
+
+/**
+ * Query if the static front page already configured and exists.
+ * 
+ * @return  bool
+ */
+if ( ! function_exists( 'mypreview_conj_lite_is_front_page_configured' ) ) :
+	function mypreview_conj_lite_is_front_page_configured() {
+
+		$get_front_page = (bool) get_option( 'page_on_front', TRUE );
+
+		return ( ! empty( $get_front_page ) ) ? TRUE : FALSE;
+		
 	}
 endif;
 
@@ -373,7 +388,7 @@ if ( ! function_exists( 'mypreview_conj_lite_site_title_or_logo' ) ) :
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 
 			$logo = get_custom_logo();
-			if ( mypreview_conj_lite_is_front_page_configured() && mypreview_conj_lite_is_homepage_template() ) {
+			if ( mypreview_conj_lite_is_front_page_configured() ) {
 				$html = '<h1 class="logo">' . $logo . '</h1>';
 			} elseif ( ! mypreview_conj_lite_is_posts_page_configured() && is_home() ) {
 				$html = '<h1 class="logo">' . $logo . '</h1>';
