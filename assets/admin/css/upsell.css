@@ -150,10 +150,15 @@ table#conj-pro-features-list tbody tr td.content strong {
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
-#upgrade-to-conj-pro-sidebar .inside p:last-child a, #conj-support-docs-sidebar .inside p:last-child a {
+#upgrade-to-conj-pro-sidebar .inside p:last-child a {
 	-webkit-box-flex: 0;
 	    -ms-flex: 0 0 49%;
 	        flex: 0 0 49%;
+}
+#conj-support-docs-sidebar .inside p:last-child a {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 100%;
+	        flex: 0 0 100%;
 }
 @media (min-width: 992px) {
 	.upgrade-to-conj-pro-wrapper #post-body.columns-2 #postbox-container-1 {
