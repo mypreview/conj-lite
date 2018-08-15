@@ -25,7 +25,7 @@ Check out the [Live Demo](https://demo.mypreview.one/conj) to visit **CONJ PRO**
 
 ## Get the PRO Version
 
-The **CONJ PRO** theme is only available to purchase from [mypreview.one](https://www.mypreview.one/conj.html). :moneybag:
+The **CONJ PRO** theme is only available to purchase from [Themeforest](https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview). :moneybag:
 
 ## Get Involved
 
@@ -34,7 +34,3 @@ Want to contribute? Here's the [GitHub development repository](https://github.co
 ## Documentation
 
 Get started [here](https://mypreview.github.io/Conj) with a collection of tutorials that cover the basics.
-
-## Free Support
-
-If you have any question(s) about using theme, please do not hesitate to check out our [support forums](https://support.mypreview.one/t/conj-lite) and start a new discussion for further assistance or clarification.
