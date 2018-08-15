@@ -4,7 +4,7 @@
  *
  * @author  	Mahdi Yazdani
  * @package 	mypreview-conj
- * @since 	    1.0.5
+ * @since 	    1.0.9
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -420,9 +420,9 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 
 			$mypreview_conj_lite_admin_l10n = array(
 					'ajaxurl' 				=> 		admin_url( 'admin-ajax.php' ),
-					'notice_nonce'	 		=> 		wp_create_nonce( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK' )
+					'notice_nonce'	 		=> 		wp_create_nonce( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyU' )
 			);
-			wp_register_script( 'mypreview-conj-upsell-scripts', get_theme_file_uri( '/assets/admin/js/upsell' . $suffix . '.js' ), array( 'jquery' ) , MYPREVIEW_CONJ_THEME_VERSION, TRUE );
+			wp_register_script( 'mypreview-conj-upsell-scripts', get_theme_file_uri( '/assets/admin/js/upsell' . $suffix . '.js' ), array( 'jquery' ) , MYPREVIEW_CONJ_LITE_THEME_VERSION, TRUE );
 			wp_localize_script( 'mypreview-conj-upsell-scripts', 'MyPreviewConjUpsellNotice', $mypreview_conj_lite_admin_l10n );
 			wp_enqueue_script( 'mypreview-conj-upsell-scripts' );
 
@@ -618,25 +618,25 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		public function upsell_notice() {
 
 			// Bail out, if the user already closed up-sell notice.
-			if ( TRUE === (bool) get_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK' ) ) {
+			if ( TRUE === (bool) get_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyU' ) ) {
 				return;
 			} // End If Statement
 			?>
 
 			<div id="conj-upsell-notice" class="notice notice-info is-dismissible">
 				<div class="conj-upsell-notice__logo">
-					<img class="mypreview-logo" src="<?php echo get_theme_file_uri( 'assets/admin/img/mypreview-logo.png' ); ?>" alt="MyPreview LLC" />
+					<img class="mypreview-logo" src="<?php echo get_theme_file_uri( 'assets/admin/img/mypreview-logo.png' ); ?>" alt="<?php esc_attr_e( 'MyPreview LLC', 'conj-lite' ); ?>" />
 				</div>
 				<div class="conj-upsell-notice__wrapper">
 					<div class="conj-upsell-notice__content">
-						<h3><?php esc_html_e( 'Good for you! Good for your Wallet!', 'conj-lite' ); ?></h3>
+						<h3><?php esc_html_e( 'CONJ - eCommerce WordPress Theme', 'conj-lite' ); ?></h3>
 						<p><?php 
-						/* translators: 1: OFF percent, 2: HTML Dash, 3: Coupon code. */
-						printf( esc_html__( 'TAKE %1$s OFF FOR YOUR FIRST PURCHASE!%2$sCOUPON CODE:%3$s', 'conj-lite' ), '<strong>20%</strong>', '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;', '&nbsp;<mark><strong>FIRST-CONJ</strong></mark>' ); ?></p>
+						/* translators: 1: Open anchor tag, 2: Close anchor tag. */
+						printf( esc_html__( 'This item is only available to purchase from %1$sThemeforest%2$s marketplace.', 'conj-lite' ), '<a href="' . esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ) . '" target="_blank">', '</a>' ); ?></p>
 					</div><!-- .notice-content -->
 					<div class="conj-upsell-notice__btns">
 						<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Upgrade to CONJ PRO', 'conj-lite' ); ?> &rarr;</strong></a>
-						<a href="<?php echo esc_url (admin_url( 'themes.php?page=conj-pro-upsell-screen' ) ); ?>" class="button-secondary" target="_self"><strong><?php esc_html_e( 'Get to Know More', 'conj-lite' ); ?></strong></a>
+						<a href="<?php echo esc_url ( admin_url( 'themes.php?page=conj-pro-upsell-screen' ) ); ?>" class="button-secondary" target="_self"><strong><?php esc_html_e( 'Get to Know More', 'conj-lite' ); ?></strong></a>
 					</div>
 				</div><!-- .conj-upsell-notice__wrapper -->
 			</div><!-- #conj-upsell-notice -->
@@ -655,11 +655,11 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 
 			$nonce = ! empty( $_POST['nonce'] ) ? $_POST['nonce'] : FALSE;
 			
-			if ( ! $nonce || ! wp_verify_nonce( $nonce, 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK' ) || ! current_user_can( 'manage_options' ) ) {
+			if ( ! $nonce || ! wp_verify_nonce( $nonce, 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyU' ) || ! current_user_can( 'manage_options' ) ) {
 				wp_die();
 			} // End If Statement
 			
-			update_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK', TRUE );
+			update_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyU', TRUE );
 
 		}
 
@@ -671,7 +671,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 		 */
 		public function bring_back_upsell_notice() {
 
-			update_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyK', FALSE );
+			update_option( 'mypreview_conj_lite_upsell_dismissed_mEwAPEpdyU', FALSE );
 
 		}
 
@@ -1061,6 +1061,34 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 															<?php esc_html_e( 'Buttons designed to be minimal, yet powerful, with support of popular networks to make your products go viral & get more traffic.', 'conj-lite' ); ?>
 														</td>
 													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-align-right"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Sticky sidebar', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'This control gives you the option to lock the entire sidebar area to the top of the page as the user scrolls.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-slides"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Slider post type', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Image & content slider which supports touch navigation with a swipe gesture.', 'conj-lite' ); ?>
+														</td>
+													</tr>
+													<tr>
+														<td class="icon"><span class="dashicons dashicons-hidden"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'Page title toggle', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Easily remove the page title from specific single pages, shop or homepage template.', 'conj-lite' ); ?>
+														</td>
+														<td class="icon"><span class="dashicons dashicons-welcome-view-site"></span></td>
+														<td class="content">
+															<strong><?php esc_html_e( 'IE 11 compatible', 'conj-lite' ); ?></strong>
+															<br/>
+															<?php esc_html_e( 'Although Internet Explorer relatively is an old browser, Conj theme supports the browser globally and is compatible with IE 11 fully.', 'conj-lite' ); ?>
+														</td>
+													</tr>
 												</tbody>
 											</table>
 										</div><!-- .inside -->
@@ -1084,7 +1112,7 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 											</p>
 											<p align="center">
 												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Buy Now', 'conj-lite' ); ?></strong></a>
-												<a href="<?php echo esc_url( 'https://demo.mypreview.one/conj' ); ?>" class="button-secondary" target="_blank"><strong><?php esc_html_e( 'Live Demo', 'conj-lite' ); ?></strong></a>
+												<a href="<?php echo esc_url( 'https://www.conj.ws' ); ?>" class="button-secondary" target="_blank"><strong><?php esc_html_e( 'Live Demo', 'conj-lite' ); ?></strong></a>
 											</p>
 										</div><!-- .inside -->
 									</div><!-- #upgrade-to-conj-pro-sidebar -->
@@ -1098,7 +1126,6 @@ if ( ! class_exists( 'MyPreview_Conj_Lite' ) ) :
 											<p><?php esc_html_e( 'As you might have already gathered, we love hearing your feedback, And you seem to love giving it!', 'conj-lite' ); ?></p>
 											<p><?php echo esc_html_e( 'Our top priority is that you have a great experience with us and learn to create amazing code-free websites quickly.', 'conj-lite' ); ?></p>
 											<p align="center">
-												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_SUPPORT_URI ); ?>" class="button-primary" target="_blank"><strong><?php esc_html_e( 'Support Forum', 'conj-lite' ); ?></strong></a>
 												<a href="<?php echo esc_url( MYPREVIEW_CONJ_LITE_THEME_DOC_URI ); ?>" class="button-secondary" target="_blank"><strong><?php esc_html_e( 'Documentation', 'conj-lite' ); ?></strong></a>
 											</p>
 										</div><!-- .inside -->
