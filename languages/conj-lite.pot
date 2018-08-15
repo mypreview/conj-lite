@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2018-04-25 20:42+0400\n"
-"PO-Revision-Date: 2018-04-25 20:42+0400\n"
+"POT-Creation-Date: 2018-07-29 17:51+0400\n"
+"PO-Revision-Date: 2018-05-14 10:20+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -174,14 +174,19 @@ msgctxt "montserrat font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/class-conj.php:632
-msgid "Good for you! Good for your Wallet!"
+#: includes/class-conj.php:628
+msgid "MyPreview LLC"
 msgstr ""
 
-#. translators: 1: OFF percent, 2: HTML Dash, 3: Coupon code.
+#: includes/class-conj.php:632
+msgid "CONJ - eCommerce WordPress Theme"
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
 #: includes/class-conj.php:635
 #, php-format
-msgid "TAKE %1$s OFF FOR YOUR FIRST PURCHASE!%2$sCOUPON CODE:%3$s"
+msgid ""
+"This item is only available to purchase from %1$sThemeforest%2$s marketplace."
 msgstr ""
 
 #: includes/class-conj.php:638 includes/class-conj.php:686
@@ -200,8 +205,8 @@ msgstr ""
 msgid "Meet Conj Pro"
 msgstr ""
 
-#: includes/class-conj.php:711 includes/class-conj.php:1075
-#: includes/class-conj.php:1093
+#: includes/class-conj.php:711 includes/class-conj.php:1103
+#: includes/class-conj.php:1121
 msgid "Click to toggle"
 msgstr ""
 
@@ -714,91 +719,126 @@ msgid ""
 "networks to make your products go viral & get more traffic."
 msgstr ""
 
-#: includes/class-conj.php:1078
-msgid "Get the one thing you need!"
+#: includes/class-conj.php:1067
+msgid "Sticky sidebar"
 msgstr ""
 
-#: includes/class-conj.php:1086
-msgid "Buy Now"
+#: includes/class-conj.php:1069
+msgid ""
+"This control gives you the option to lock the entire sidebar area to the top "
+"of the page as the user scrolls."
+msgstr ""
+
+#: includes/class-conj.php:1073
+msgid "Slider post type"
+msgstr ""
+
+#: includes/class-conj.php:1075
+msgid ""
+"Image & content slider which supports touch navigation with a swipe gesture."
+msgstr ""
+
+#: includes/class-conj.php:1081
+msgid "Page title toggle"
+msgstr ""
+
+#: includes/class-conj.php:1083
+msgid ""
+"Easily remove the page title from specific single pages, shop or homepage "
+"template."
 msgstr ""
 
 #: includes/class-conj.php:1087
+msgid "IE 11 compatible"
+msgstr ""
+
+#: includes/class-conj.php:1089
+msgid ""
+"Although Internet Explorer relatively is an old browser, Conj theme supports "
+"the browser globally and is compatible with IE 11 fully."
+msgstr ""
+
+#: includes/class-conj.php:1106
+msgid "Get the one thing you need!"
+msgstr ""
+
+#: includes/class-conj.php:1114
+msgid "Buy Now"
+msgstr ""
+
+#: includes/class-conj.php:1115
 msgid "Live Demo"
 msgstr ""
 
-#: includes/class-conj.php:1096
+#: includes/class-conj.php:1124
 msgid "Support and Documentation"
 msgstr ""
 
-#: includes/class-conj.php:1098
+#: includes/class-conj.php:1126
 msgid ""
 "As you might have already gathered, we love hearing your feedback, And you "
 "seem to love giving it!"
 msgstr ""
 
-#: includes/class-conj.php:1099
+#: includes/class-conj.php:1127
 msgid ""
 "Our top priority is that you have a great experience with us and learn to "
 "create amazing code-free websites quickly."
 msgstr ""
 
-#: includes/class-conj.php:1101
-msgid "Support Forum"
-msgstr ""
-
-#: includes/class-conj.php:1102
+#: includes/class-conj.php:1129
 msgid "Documentation"
 msgstr ""
 
 #. translators: %s: post author
-#: includes/conj-functions.php:179
+#: includes/conj-functions.php:194
 #, php-format
 msgid "by %s"
 msgstr ""
 
 #. translators: %s: Post date
-#: includes/conj-functions.php:212
+#: includes/conj-functions.php:227
 #, php-format
 msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
 msgstr ""
 
 #. translators: %: Number of comments
-#: includes/conj-functions.php:235 includes/conj-functions.php:238
+#: includes/conj-functions.php:250 includes/conj-functions.php:253
 msgid "One Comment"
 msgstr ""
 
-#: includes/conj-functions.php:235 includes/conj-functions.php:238
+#: includes/conj-functions.php:250 includes/conj-functions.php:253
 msgid "% Comments"
 msgstr ""
 
 #. translators: %: Number of comments
-#: includes/conj-functions.php:238
+#: includes/conj-functions.php:253
 msgid "Leave a comment"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: includes/conj-functions.php:257
+#: includes/conj-functions.php:272
 msgid ", "
 msgstr ""
 
-#: includes/conj-functions.php:272
+#: includes/conj-functions.php:287
 msgid "in"
 msgstr ""
 
-#: includes/conj-functions.php:272
+#: includes/conj-functions.php:287
 msgid "Categories"
 msgstr ""
 
-#: includes/conj-functions.php:275
+#: includes/conj-functions.php:290
 msgid "Tags"
 msgstr ""
 
-#: includes/conj-functions.php:294
+#: includes/conj-functions.php:309
 msgid "Read more"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: includes/conj-functions.php:319
+#: includes/conj-functions.php:334
 #, php-format
 msgid "Edit this post<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -901,6 +941,10 @@ msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Conj Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.mypreview.one/conj.html"
 msgstr ""
 
 #. Description of the plugin/theme
