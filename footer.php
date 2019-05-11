@@ -7,6 +7,7 @@
  * @package 	conj-lite
  */
 	
+					?></div><!-- .conj-lite-col__full --><?php
 					/**
 					 * Functions hooked in to conj_lite_before_footer action
 					 *
@@ -36,7 +37,7 @@
 				do_action( 'conj_lite_after_footer' ); ?>
 				
 			</div><!-- #page -->
-		</div><!-- #conj-site__wrapper -->
+		</div><!-- #conj-lite-site__wrapper -->
 
 		<?php 
 		do_action( 'conj_lite_after_site' );
