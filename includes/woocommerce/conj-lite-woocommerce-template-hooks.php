@@ -2,6 +2,7 @@
 /**
  * WooCommerce hooks
  *
+ * @requires 	WooCommerce
  * @author  	Mahdi Yazdani
  * @package 	conj-lite
  * @since 	    1.1.0
@@ -52,26 +53,17 @@ add_action( 'woocommerce_after_shop_loop', 				'conj_lite_wc_product_cols_wrappe
  * Products
  *
  * @see  	conj_lite_wc_upsell_display()
- * @see 	conj_lite_wc_product_meta_list_wrapper()
  * @see  	conj_lite_wc_product_flash_wrapper()
  * @see  	conj_lite_wc_product_flash_wrapper_close()
- * @see  	conj_lite_wc_show_product_categories()
- * @see  	conj_lite_wc_show_product_description()
- * @see  	conj_lite_wc_product_meta_list_wrapper_close()
  */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display',  	 			 		 15 );
 add_action( 'woocommerce_after_single_product_summary',    'conj_lite_wc_upsell_display',  	 			   		 15 );
-
-add_action( 'woocommerce_before_shop_loop_item',      	   'conj_lite_wc_product_meta_list_wrapper',  	 	      9 );
 
 remove_action( 'woocommerce_before_shop_loop_item_title',  'woocommerce_show_product_loop_sale_flash', 	 	     10 );
 
 add_action( 'woocommerce_after_shop_loop_item_title',      'conj_lite_wc_product_flash_wrapper',  	 	 		  6 );
 add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_product_loop_sale_flash', 	  	 	  6 );
 add_action( 'woocommerce_after_shop_loop_item_title',      'conj_lite_wc_product_flash_wrapper_close', 	 		  6 );
-add_action( 'woocommerce_after_shop_loop_item_title',      'conj_lite_wc_show_product_categories',  	 	   	  2 );
-add_action( 'woocommerce_after_shop_loop_item_title',      'conj_lite_wc_show_product_description',  	 	 	  3 );
-add_action( 'woocommerce_after_shop_loop_item_title',      'conj_lite_wc_product_meta_list_wrapper_close',   	 30 );
 
 add_action( 'woocommerce_before_single_product_summary',   'conj_lite_wc_product_flash_wrapper',  	 	 		  9 );
 add_action( 'woocommerce_before_single_product_summary',   'conj_lite_wc_product_flash_wrapper_close', 			 11 );
