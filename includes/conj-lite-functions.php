@@ -8,6 +8,30 @@
  */
 
 /**
+ * Checks if the current page is a blog post archive/single.
+ *
+ * @uses 	is_archive()
+ * @uses 	is_author()
+ * @uses 	is_category()
+ * @uses 	is_home()
+ * @uses 	is_single()
+ * @uses 	is_tag()
+ * @uses 	get_post_type()
+ * @return  bool
+ */
+if ( ! function_exists( 'conj_lite_is_blog_archive' ) ) :
+	function conj_lite_is_blog_archive() {
+
+		if ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag() ) && 'post' === get_post_type() ) {
+			return TRUE;
+		} else {
+			return FALSE;
+		} // End If Statement
+
+	}
+endif;
+
+/**
  * Call a shortcode function by tag name.
  *
  * @uses 	call_user_func()
