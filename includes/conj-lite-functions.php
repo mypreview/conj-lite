@@ -32,6 +32,20 @@ if ( ! function_exists( 'conj_lite_is_blog_archive' ) ) :
 endif;
 
 /**
+ * Checks if the current page is the fluid template.
+ *
+ * @uses 	is_page_template()
+ * @return  bool
+ */
+if ( ! function_exists( 'conj_lite_is_fluid_template' ) ) :
+	function conj_lite_is_fluid_template() {
+
+		return is_page_template( 'page-templates/template-fluid.php' )  ?  TRUE  :  FALSE;
+
+	}
+endif;
+
+/**
  * Call a shortcode function by tag name.
  *
  * @uses 	call_user_func()
