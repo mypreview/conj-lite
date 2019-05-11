@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2018-07-29 17:51+0400\n"
+"POT-Creation-Date: 2019-05-11 21:45+0400\n"
 "PO-Revision-Date: 2018-05-14 10:20+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,86 +21,80 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:16
+#: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:20
+#: 404.php:18
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
 
-#: 404.php:21
+#: 404.php:19
 msgid "Search"
 msgstr ""
 
 #. translators: 1: Div tag open 2: Aria-label quotation close.
-#: 404.php:40
+#: 404.php:35
 #, php-format
 msgid "%1$sPromoted Products%2$s"
 msgstr ""
 
 #. translators: 1: Nav tag open 2: Aria-label quotation close.
-#: 404.php:47
+#: 404.php:40
 #, php-format
 msgid "%1$sProduct Categories%2$s"
 msgstr ""
 
 #. translators: 1: Div tag open 2: Aria-label quotation close.
-#: 404.php:58
-#, php-format
-msgid "%1$sRecent Posts%2$s"
-msgstr ""
-
-#. translators: 1: Div tag open 2: Aria-label quotation close.
-#: 404.php:65
+#: 404.php:51
 #, php-format
 msgid "%1$sCategories%2$s"
 msgstr ""
 
 #. translators: 1: Head tag open 2: Head tag close.
-#: 404.php:68
+#: 404.php:54
 #, php-format
 msgid "%1$sMost Used Categories%2$s"
 msgstr ""
 
 #. translators: 1: Div tag open 2: Aria-label quotation close.
 #. translators: 1: Head tag open 2: Head tag close.
-#: 404.php:93 404.php:95
+#: 404.php:72 404.php:74
 #, php-format
 msgid "%1$sBest-Selling Products%2$s"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: 404.php:107
+#: 404.php:83
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #: archive.php:38 index.php:43 page-templates/template-fluid.php:35
-#: search.php:39 single.php:25
+#: search.php:38 single.php:25
 msgid "Previous page"
 msgstr ""
 
 #: archive.php:39 index.php:44 page-templates/template-fluid.php:36
-#: search.php:40 single.php:26
+#: search.php:39 single.php:26
 msgid "Next page"
 msgstr ""
 
 #: archive.php:40 index.php:45 page-templates/template-fluid.php:37
-#: search.php:41 single.php:27
+#: search.php:40 single.php:27
 msgid "Page"
 msgstr ""
 
 #. translators: %s: post title
-#: comments.php:32
+#: comments.php:30
 #, php-format
 msgctxt "comments title"
 msgid "One Reply to &ldquo;%s&rdquo;"
 msgstr ""
 
-#: comments.php:37
+#: comments.php:35
 #, php-format
 msgctxt "comments title"
 msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
@@ -108,772 +102,732 @@ msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:66
+#: comments.php:64
 msgid "Comments are closed."
 msgstr ""
 
-#. translators: 1: WordPress.org URL.
-#: footer.php:44
-#, php-format
-msgid "%1$sProudly powered by %2$s "
-msgstr ""
-
-#: footer.php:46
-msgid "Y"
-msgstr ""
-
-#. translators: 1: Seperator, 2: Theme name, 3: Theme author.
-#: footer.php:49
-#, php-format
-msgid "%1$s Theme: %2$s by %3$s"
-msgstr ""
-
-#: header.php:31 includes/conj-template-functions.php:48
+#: header.php:31 includes/conj-lite-template-functions.php:51
 msgid "Skip to content"
 msgstr ""
 
-#. translators: %s: Version number, i.e. 4.8.
-#: includes/back-compat.php:41 includes/back-compat.php:54
-#: includes/back-compat.php:70
+#. translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required PHP version number, 4: Running PHP version number, 5: Anchor open tag, 6: Anchor close tag.
+#: includes/back-compat.php:52
 #, php-format
 msgid ""
-"Conj Lite requires at least WordPress version 4.8. You are running version "
-"%s. Please upgrade and try again."
+"%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least PHP version "
+"%3$s. You are running version %4$s. Please %5$supgrade%6$s and try again."
 msgstr ""
 
-#: includes/class-conj.php:139
+#. translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required WordPress version number, 4: Running WordPress version number.
+#: includes/back-compat.php:73
+#, php-format
+msgid ""
+"%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least WordPress "
+"version %3$s. You are running version %4$s. Please upgrade and try again."
+msgstr ""
+
+#: includes/class-conj-lite.php:138
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/class-conj.php:140
+#: includes/class-conj-lite.php:139
 msgid "Push Menu"
 msgstr ""
 
-#: includes/class-conj.php:272
+#: includes/class-conj-lite.php:200
+msgid "Small"
+msgstr ""
+
+#: includes/class-conj-lite.php:201
+msgid "S"
+msgstr ""
+
+#: includes/class-conj-lite.php:206
+msgid "Regular"
+msgstr ""
+
+#: includes/class-conj-lite.php:207
+msgid "M"
+msgstr ""
+
+#: includes/class-conj-lite.php:212
+msgid "Large"
+msgstr ""
+
+#: includes/class-conj-lite.php:213
+msgid "L"
+msgstr ""
+
+#: includes/class-conj-lite.php:218
+msgid "Larger"
+msgstr ""
+
+#: includes/class-conj-lite.php:219
+msgid "XL"
+msgstr ""
+
+#: includes/class-conj-lite.php:230
+msgid "Black"
+msgstr ""
+
+#: includes/class-conj-lite.php:235
+msgid "Mako"
+msgstr ""
+
+#: includes/class-conj-lite.php:240
+msgid "Storm Gray"
+msgstr ""
+
+#: includes/class-conj-lite.php:245
+msgid "Manatee"
+msgstr ""
+
+#: includes/class-conj-lite.php:250
+msgid "Cadet Blue"
+msgstr ""
+
+#: includes/class-conj-lite.php:255
+msgid "Ghost"
+msgstr ""
+
+#: includes/class-conj-lite.php:260
+msgid "Martinique"
+msgstr ""
+
+#: includes/class-conj-lite.php:265
+msgid "Victoria"
+msgstr ""
+
+#: includes/class-conj-lite.php:270
+msgid "Cornflower Blue"
+msgstr ""
+
+#: includes/class-conj-lite.php:275
+msgid "Malibu"
+msgstr ""
+
+#: includes/class-conj-lite.php:280
+msgid "Melrose"
+msgstr ""
+
+#: includes/class-conj-lite.php:285
+msgid "Radical Red"
+msgstr ""
+
+#: includes/class-conj-lite.php:290
+msgid "Peach"
+msgstr ""
+
+#: includes/class-conj-lite.php:295
+msgid "Blizzard Blue"
+msgstr ""
+
+#: includes/class-conj-lite.php:300
+msgid "White Lilac"
+msgstr ""
+
+#: includes/class-conj-lite.php:305
+msgid "Athens Gray"
+msgstr ""
+
+#: includes/class-conj-lite.php:310
+msgid "White"
+msgstr ""
+
+#: includes/class-conj-lite.php:402
 msgid "Sidebar"
 msgstr ""
 
-#: includes/class-conj.php:274
+#: includes/class-conj-lite.php:404
 msgid "Widgets added to this region will appear in archive/shop pages."
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:284
+#: includes/class-conj-lite.php:412
 #, php-format
 msgid "Footer Column %1$d"
 msgstr ""
 
 #. translators: 1: Decimal number.
-#: includes/class-conj.php:286
+#: includes/class-conj-lite.php:414
 #, php-format
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: includes/class-conj.php:366
-msgctxt "montserrat font: on or off"
-msgid "on"
-msgstr ""
-
-#: includes/class-conj.php:628
-msgid "MyPreview LLC"
-msgstr ""
-
-#: includes/class-conj.php:632
-msgid "CONJ - eCommerce WordPress Theme"
-msgstr ""
-
-#. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: includes/class-conj.php:635
-#, php-format
-msgid ""
-"This item is only available to purchase from %1$sThemeforest%2$s marketplace."
-msgstr ""
-
-#: includes/class-conj.php:638 includes/class-conj.php:686
-msgid "Upgrade to CONJ PRO"
-msgstr ""
-
-#: includes/class-conj.php:639
-msgid "Get to Know More"
-msgstr ""
-
-#: includes/class-conj.php:687 includes/customizer/class-conj-customizer.php:49
-msgid "CONJ PRO"
-msgstr ""
-
-#: includes/class-conj.php:704
-msgid "Meet Conj Pro"
-msgstr ""
-
-#: includes/class-conj.php:711 includes/class-conj.php:1103
-#: includes/class-conj.php:1121
-msgid "Click to toggle"
-msgstr ""
-
-#: includes/class-conj.php:714
-msgid "Cool features you get with CONJ PRO theme"
-msgstr ""
-
-#: includes/class-conj.php:716
-msgid ""
-"Get started with Conj which is the one thing you need to build your own "
-"stunning eCommerce website in a fast and efficient way."
-msgstr ""
-
-#: includes/class-conj.php:717
-msgid ""
-"Conj's fantastic out of the box deep code and design integration with "
-"WooCommerce, the premier eCommerce solution for WordPress, enables your "
-"store to be bulletproof against any conflicts during major WooCommerce "
-"updates."
-msgstr ""
-
-#: includes/class-conj.php:718
-msgid ""
-"The entire platform of Conj is built on top of the Underscores starter theme "
-"which is a solid foundation of code and also used for all themes released by "
-"Automattic on WordPress.com."
-msgstr ""
-
-#: includes/class-conj.php:725
-msgid "Layout alignment"
-msgstr ""
-
-#: includes/class-conj.php:727
-msgid ""
-"Easily swap the content area & the sidebar layout from left to right or vice "
-"versa."
-msgstr ""
-
-#: includes/class-conj.php:731
-msgid "Copyright credit"
-msgstr ""
-
-#: includes/class-conj.php:733
-msgid ""
-"Customize the copyright content as well as disable the WordPress and/or Conj "
-"theme credit links as well."
-msgstr ""
-
-#: includes/class-conj.php:739
-msgid "Header search field"
-msgstr ""
-
-#: includes/class-conj.php:741
-msgid ""
-"Displays search form in site navigation that makes users search the site "
-"quickly."
-msgstr ""
-
-#: includes/class-conj.php:745
-msgid "Automatic updates"
-msgstr ""
-
-#: includes/class-conj.php:747
-msgid ""
-"You can update the theme automatically via the WordPress admin panel "
-"providing you have activated a valid license key."
-msgstr ""
-
-#: includes/class-conj.php:753
-msgid "Product image flipper"
-msgstr ""
-
-#: includes/class-conj.php:755
-msgid ""
-"Secondary product thumbnail on archives that is revealed when you hover over "
-"the main product image."
-msgstr ""
-
-#: includes/class-conj.php:759
-msgid "Reorder homepage components"
-msgstr ""
-
-#: includes/class-conj.php:761
-msgid ""
-"Lightweight option that allows you to toggle the visibility & reorder the "
-"homepage components of the theme."
-msgstr ""
-
-#: includes/class-conj.php:767
-msgid "Translation ready"
-msgstr ""
-
-#: includes/class-conj.php:769
-msgid "Conj theme is translation-ready and localized using the GNU framework."
-msgstr ""
-
-#: includes/class-conj.php:773
-msgid "Fluid post, page & product template"
-msgstr ""
-
-#: includes/class-conj.php:775
-msgid ""
-"Create a fluid template which spans from right to left takes most of the "
-"screen's width."
-msgstr ""
-
-#: includes/class-conj.php:781
-msgid "WPML compatible"
-msgstr ""
-
-#: includes/class-conj.php:783
-msgid ""
-"Conj theme is fully compatible and tested with most popular WordPress plugin "
-"that supports the creation of multilingual layouts."
-msgstr ""
-
-#: includes/class-conj.php:787
-msgid "Aside post format"
-msgstr ""
-
-#: includes/class-conj.php:789
-msgid ""
-"For brief snippets of text that are not entirely whole blog posts, such as "
-"quick thoughts and anecdotes. Similar to a Facebook note update."
-msgstr ""
-
-#: includes/class-conj.php:795
-msgid "Image post format"
-msgstr ""
-
-#. translators: 1: Open code tag, 2: Close code tag.
-#: includes/class-conj.php:799
-#, php-format
-msgid ""
-"A single image. The first %1$s<img/>%2$s tag in the post content or uploaded "
-"featured image will be considered as an image post format."
-msgstr ""
-
-#: includes/class-conj.php:803
-msgid "Video post format"
-msgstr ""
-
-#. translators: 1: Open code tag, 2: Close code tag.
-#: includes/class-conj.php:807
-#, php-format
-msgid ""
-"A single video or video playlist. The first %1$s<video/>%2$s tag or embed in "
-"the post content will be considered as a video post format."
-msgstr ""
-
-#: includes/class-conj.php:813
-msgid "Quote post format"
-msgstr ""
-
-#: includes/class-conj.php:815
-msgid ""
-"A quotation. The theme would add blockquote tag to the quote content "
-"automatically if the user didn't add it."
-msgstr ""
-
-#: includes/class-conj.php:819
-msgid "Gallery post format"
-msgstr ""
-
-#: includes/class-conj.php:821
-msgid ""
-"A gallery of images. Post will likely contain a gallery shortcode and will "
-"have image attachments."
-msgstr ""
-
-#: includes/class-conj.php:827
-msgid "Link post format"
-msgstr ""
-
-#: includes/class-conj.php:829
-msgid ""
-"For those days when you just want to share a link to a fantastic article you "
-"read which creates a post that links to external resources right from the "
-"title."
-msgstr ""
-
-#: includes/class-conj.php:833
-msgid "Audio post format"
-msgstr ""
-
-#. translators: 1: Open code tag, 2: Close code tag.
-#: includes/class-conj.php:837
-#, php-format
-msgid ""
-"An audio file of your tunes or podcasts. The first %1$s<audio/>%2$s tag or "
-"embed in the post content will be considered as a audio post format."
-msgstr ""
-
-#: includes/class-conj.php:843
-msgid "Chat post format"
-msgstr ""
-
-#: includes/class-conj.php:845
-msgid ""
-"To highlight an interesting conversation or a chat transcript you have with "
-"friends, both on- and offline."
-msgstr ""
-
-#: includes/class-conj.php:849
-msgid "Status post format"
-msgstr ""
-
-#: includes/class-conj.php:851
-msgid ""
-"A quick update on what you are doing right now most likely to a Twitter "
-"status update because updates are no longer reserved for social networks."
-msgstr ""
-
-#: includes/class-conj.php:857
-msgid "Color scheme"
-msgstr ""
-
-#: includes/class-conj.php:859
-msgid ""
-"You can use this option to choose a color, view color suggestions, refine "
-"with the color picker, & apply background color changes."
-msgstr ""
-
-#: includes/class-conj.php:863
-msgid "Footer bar"
-msgstr ""
-
-#: includes/class-conj.php:865
-msgid ""
-"A full-width widgetized region which will display any widget added to this "
-"region above the Conj footer widget area."
-msgstr ""
-
-#: includes/class-conj.php:871
-msgid "Social network menu"
-msgstr ""
-
-#: includes/class-conj.php:873
-msgid ""
-"Navigation social media links to services like Twitter & Facebook, allowing "
-"visitors to access your social profiles quickly."
-msgstr ""
-
-#: includes/class-conj.php:877
-msgid "Breadcrumbs"
-msgstr ""
-
-#: includes/class-conj.php:879
-msgid ""
-"A simple yet useful feature to generate locational Schema.org compatible "
-"breadcrumb trails for posts, pages  & products."
-msgstr ""
-
-#: includes/class-conj.php:885
-msgid "Product archive customizer"
-msgstr ""
-
-#: includes/class-conj.php:887
-msgid ""
-"Toggle the display of core elements & enable some that are not included in "
-"WooCommerce core."
-msgstr ""
-
-#: includes/class-conj.php:891
-msgid "Product details customizer"
-msgstr ""
-
-#: includes/class-conj.php:893
-msgid ""
-"Change the layout & customize every element of the product single view page."
-msgstr ""
-
-#: includes/class-conj.php:899
-msgid "Sticky navigation"
-msgstr ""
-
-#: includes/class-conj.php:901
-msgid ""
-"This control gives you the option to lock the entire navigation to the top "
-"of the page as the user scrolls."
-msgstr ""
-
-#: includes/class-conj.php:905
-msgid "One click demo import"
-msgstr ""
-
-#: includes/class-conj.php:907
-msgid ""
-"The easiest way to build your website, import whole demo content and set up "
-"your shop to look just like our demo in one click only."
-msgstr ""
-
-#: includes/class-conj.php:913
-msgid "WooCommerce integration"
-msgstr ""
-
-#: includes/class-conj.php:915
-msgid ""
-"Designed & developed with WooCommerce functionality in mind & features a "
-"tight-knit integration with its extensions as well."
-msgstr ""
-
-#: includes/class-conj.php:919
-msgid "Header layout customizer"
-msgstr ""
-
-#: includes/class-conj.php:921
-msgid ""
-"Toggle and rearrange header components such as logo, mini-cart, search "
-"field, navigation, etc. with drag & drop."
-msgstr ""
-
-#: includes/class-conj.php:927
-msgid "Mega-Menu dropdowns"
-msgstr ""
-
-#: includes/class-conj.php:929
-msgid ""
-"Use drag & drop to add widgets that can be rearranged and resized to display "
-"any content you wish in your site navigation."
-msgstr ""
-
-#: includes/class-conj.php:933
-msgid "Sticky add to cart"
-msgstr ""
-
-#: includes/class-conj.php:935
-msgid ""
-"A content bar at the top of the browser window which includes the product "
-"name, price, rating, stock status and the add to cart button."
-msgstr ""
-
-#: includes/class-conj.php:941
-msgid "Distraction free checkout"
-msgstr ""
-
-#: includes/class-conj.php:943
-msgid ""
-"Remove any components that might be a distraction at checkout allowing the "
-"customer to focus on completing the checkout form."
-msgstr ""
-
-#: includes/class-conj.php:947
-msgid "Two-Step checkout"
-msgstr ""
-
-#: includes/class-conj.php:949
-msgid ""
-"Enables two-step checkout, which separates the input of customer details / "
-"payment details into two pages."
-msgstr ""
-
-#: includes/class-conj.php:955
-msgid "Contact info widget"
-msgstr ""
-
-#: includes/class-conj.php:957
-msgid ""
-"Display your location, hours, & contact information along with an optional "
-"Google map view."
-msgstr ""
-
-#: includes/class-conj.php:961
-msgid "Sticky order review"
-msgstr ""
-
-#: includes/class-conj.php:963
-msgid ""
-"The order review section sticks to the top of the browser window as the user "
-"scrolls down the checkout page."
-msgstr ""
-
-#: includes/class-conj.php:969
-msgid "MailChimp newsletter integration"
-msgstr ""
-
-#: includes/class-conj.php:971
-msgid ""
-"An easy, lightweight way to let your users sign up for several different "
-"MailChimp lists by creating multiple instances of the widget."
-msgstr ""
-
-#: includes/class-conj.php:975
-msgid "Push menu"
-msgstr ""
-
-#: includes/class-conj.php:977
-msgid ""
-"Turn the mobile navigation into an off-screen, off-canvas sidebar menu with "
-"a hamburger toggle."
-msgstr ""
-
-#: includes/class-conj.php:983
-msgid "Featured reviews"
-msgstr ""
-
-#: includes/class-conj.php:985
-msgid ""
-"Display reviews on your homepage in a variety of styles & increase "
-"conversions by highlighting positive & selected product reviews."
-msgstr ""
-
-#: includes/class-conj.php:989
-msgid "Typography"
-msgstr ""
-
-#: includes/class-conj.php:991
-msgid ""
-"Easy access to any fonts you want from Google Web Fonts, the best free fonts "
-"available. Choose between dozens of popular fonts."
-msgstr ""
-
-#: includes/class-conj.php:997
-msgid "Hero product"
-msgstr ""
-
-#: includes/class-conj.php:999
-msgid ""
-"Add an elegant hero component to the homepage template of your Conj powered "
-"webshop & watch conversions soar!"
-msgstr ""
-
-#: includes/class-conj.php:1003
-msgid "Service component"
-msgstr ""
-
-#: includes/class-conj.php:1005
-msgid ""
-"Service component makes it really easy to select a custom font icon to go "
-"along with any feature or service you provide."
-msgstr ""
-
-#: includes/class-conj.php:1011
-msgid "Based on Underscores"
-msgstr ""
-
-#: includes/class-conj.php:1013
-msgid ""
-"The entire platform of Conj is built on top of the Underscores starter theme "
-"which is a solid foundation of code by WordPress.com."
-msgstr ""
-
-#: includes/class-conj.php:1017
-msgid "Promo box widget"
-msgstr ""
-
-#: includes/class-conj.php:1019
-msgid ""
-"An image promo is an ideal way to convert more of your passive website "
-"visitors into active leads and customers."
-msgstr ""
-
-#: includes/class-conj.php:1025
-msgid "Flexible CSS grid"
-msgstr ""
-
-#: includes/class-conj.php:1027
-msgid ""
-"Conj uses a mobile-first grid-based architecture that renders beautifully "
-"formatted content on phones, tablets, & desktop monitors."
-msgstr ""
-
-#: includes/class-conj.php:1031
-msgid "Product pagination"
-msgstr ""
-
-#: includes/class-conj.php:1033
-msgid ""
-"Display next & previous links on single product pages with a product "
-"thumbnail that will be revealed on hover."
-msgstr ""
-
-#: includes/class-conj.php:1039
-msgid "Handheld footer bar"
-msgstr ""
-
-#: includes/class-conj.php:1041
-msgid ""
-"Display a sleek sticky bar with links to the user's account, search, & the "
-"shopping cart on devices with smaller screens."
-msgstr ""
-
-#: includes/class-conj.php:1045
-msgid "Social Media widget"
-msgstr ""
-
-#: includes/class-conj.php:1047
-msgid ""
-"Lets you easily add icons for the most popular social networks to your "
-"sidebar or any other widget area."
-msgstr ""
-
-#: includes/class-conj.php:1053
-msgid "Retina ready"
-msgstr ""
-
-#: includes/class-conj.php:1055
-msgid ""
-"Conj aesthetic galore HiDPI is achieved through CSS & vector graphics to "
-"ensure pixel perfection is reflected in the developed theme."
-msgstr ""
-
-#: includes/class-conj.php:1059
-msgid "Share buttons"
-msgstr ""
-
-#: includes/class-conj.php:1061
-msgid ""
-"Buttons designed to be minimal, yet powerful, with support of popular "
-"networks to make your products go viral & get more traffic."
-msgstr ""
-
-#: includes/class-conj.php:1067
-msgid "Sticky sidebar"
-msgstr ""
-
-#: includes/class-conj.php:1069
-msgid ""
-"This control gives you the option to lock the entire sidebar area to the top "
-"of the page as the user scrolls."
-msgstr ""
-
-#: includes/class-conj.php:1073
-msgid "Slider post type"
-msgstr ""
-
-#: includes/class-conj.php:1075
-msgid ""
-"Image & content slider which supports touch navigation with a swipe gesture."
-msgstr ""
-
-#: includes/class-conj.php:1081
-msgid "Page title toggle"
-msgstr ""
-
-#: includes/class-conj.php:1083
-msgid ""
-"Easily remove the page title from specific single pages, shop or homepage "
-"template."
-msgstr ""
-
-#: includes/class-conj.php:1087
-msgid "IE 11 compatible"
-msgstr ""
-
-#: includes/class-conj.php:1089
-msgid ""
-"Although Internet Explorer relatively is an old browser, Conj theme supports "
-"the browser globally and is compatible with IE 11 fully."
-msgstr ""
-
-#: includes/class-conj.php:1106
-msgid "Get the one thing you need!"
-msgstr ""
-
-#: includes/class-conj.php:1114
-msgid "Buy Now"
-msgstr ""
-
-#: includes/class-conj.php:1115
-msgid "Live Demo"
-msgstr ""
-
-#: includes/class-conj.php:1124
-msgid "Support and Documentation"
-msgstr ""
-
-#: includes/class-conj.php:1126
-msgid ""
-"As you might have already gathered, we love hearing your feedback, And you "
-"seem to love giving it!"
-msgstr ""
-
-#: includes/class-conj.php:1127
-msgid ""
-"Our top priority is that you have a great experience with us and learn to "
-"create amazing code-free websites quickly."
-msgstr ""
-
-#: includes/class-conj.php:1129
-msgid "Documentation"
+#: includes/class-conj-lite.php:486
+msgctxt "rubik and montserrat font: on or off"
+msgid "google-fonts-on"
 msgstr ""
 
 #. translators: %s: post author
-#: includes/conj-functions.php:194
+#: includes/conj-lite-functions.php:163
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#. translators: %s: Post date
-#: includes/conj-functions.php:227
+#. translators: 1: Open span tag, 2: Close span tag, 3: Post date.
+#: includes/conj-lite-functions.php:196
 #, php-format
-msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgid "%1$sPosted on%2$s %3$s"
 msgstr ""
 
 #. translators: %: Number of comments
-#: includes/conj-functions.php:250 includes/conj-functions.php:253
-msgid "One Comment"
-msgstr ""
-
-#: includes/conj-functions.php:250 includes/conj-functions.php:253
-msgid "% Comments"
-msgstr ""
-
-#. translators: %: Number of comments
-#: includes/conj-functions.php:253
+#: includes/conj-lite-functions.php:220
 msgid "Leave a comment"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: includes/conj-functions.php:272
-msgid ", "
+#: includes/conj-lite-functions.php:220
+msgid "One Comment"
 msgstr ""
 
-#: includes/conj-functions.php:287
+#: includes/conj-lite-functions.php:220
+msgid "% Comments"
+msgstr ""
+
+#: includes/conj-lite-functions.php:257
 msgid "in"
 msgstr ""
 
-#: includes/conj-functions.php:287
+#: includes/conj-lite-functions.php:257
 msgid "Categories"
 msgstr ""
 
-#: includes/conj-functions.php:290
+#: includes/conj-lite-functions.php:260
 msgid "Tags"
 msgstr ""
 
-#: includes/conj-functions.php:309
-msgid "Read more"
-msgstr ""
-
-#. translators: %s: Name of current post
-#: includes/conj-functions.php:334
+#. translators: 1: Open span tag, 2: Name of current post, 3: Close span tag.
+#: includes/conj-lite-functions.php:293
 #, php-format
-msgid "Edit this post<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgid "Edit this post%1$s \"%2$s\"%3$s"
 msgstr ""
 
-#: includes/conj-template-functions.php:47
+#: includes/conj-lite-template-functions.php:50
 msgid "Skip to navigation"
 msgstr ""
 
-#: includes/conj-template-functions.php:83
+#: includes/conj-lite-template-functions.php:88
 msgid "Menu"
 msgstr ""
 
-#: includes/customizer/class-conj-customizer.php:50
-msgid "GO PREMIUM"
+#. translators: 1: WordPress.org URL.
+#: includes/conj-lite-template-functions.php:167
+#, php-format
+msgid "%1$sProudly powered by %2$s "
+msgstr ""
+
+#: includes/conj-lite-template-functions.php:170
+msgid "Y"
+msgstr ""
+
+#. translators: 1: Seperator, 2: Theme name, 3: Theme author.
+#: includes/conj-lite-template-functions.php:174
+#, php-format
+msgid "%1$s Theme: %2$s by %3$s"
+msgstr ""
+
+#. translators: 1: Open small tag, 2: Close small tag.
+#: includes/nux/ocdi/class-conj-lite-demo-import.php:53
+#, php-format
+msgid ""
+"%1$sThe following plugins are used within the selected demo and you may want "
+"to install a few or all of them depending on which feature you may want to "
+"have on your site.%2$s"
+msgstr ""
+
+#. translators: 1: Open list and anchor tag, 2: Open small tag, 3: Close anchor and list tag.
+#: includes/nux/ocdi/class-conj-lite-demo-import.php:55
+#, php-format
+msgid "%1$sWooCommerce%2$s(Required)%3$s"
+msgstr ""
+
+#. translators: 1: Open list and anchor tag, 2: Open small tag, 3: Close anchor and list tag.
+#: includes/nux/ocdi/class-conj-lite-demo-import.php:57
+#, php-format
+msgid "%1$sJetpack by WordPress.com%2$s(Recommended)%3$s"
+msgstr ""
+
+#. translators: 1: Open div tag, 2: Close div tag.
+#: includes/nux/ocdi/class-conj-lite-demo-import.php:150
+#, php-format
+msgid ""
+"%1$sKeep in mind that it is NOT recommended to take next step forward if you "
+"have existing content in your WordPress installation, as it will add "
+"numerous posts, pages, products, categories, media and more to your site.%2$s"
+msgstr ""
+
+#: includes/nux/ocdi/class-conj-lite-demo-import.php:168
+msgid "CONJ Lite Demo Import"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:386
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:827
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2533
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:387
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:388
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:934
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:1121
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3509
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3509
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/nux/tgmpa/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: Span open tag, 2: Span close tag.
-#: includes/woocommerce/class-conj-woocommerce.php:298
+#: includes/woocommerce/class-conj-lite-woocommerce.php:318
 #, php-format
 msgid "%1$sPrice%2$s"
 msgstr ""
 
-#: includes/woocommerce/conj-woocommerce-template-functions.php:240
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:241
 msgid "View your shopping cart"
 msgstr ""
 
 #. translators: number of items in the mini cart.
-#: includes/woocommerce/conj-woocommerce-template-functions.php:242
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:243
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/woocommerce/conj-woocommerce-template-functions.php:303
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:299
 msgid "Your order"
 msgstr ""
 
@@ -886,55 +840,60 @@ msgid "Next"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:21
+#: search.php:20
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-aside.php:39 template-parts/content-audio.php:63
-#: template-parts/content-chat.php:49 template-parts/content-gallery.php:64
-#: template-parts/content-image.php:65 template-parts/content-link.php:49
-#: template-parts/content-quote.php:56 template-parts/content-status.php:39
-#: template-parts/content-video.php:63 template-parts/content.php:51
+#: template-parts/content-aside.php:26 template-parts/content-chat.php:29
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-aside.php:50 template-parts/content-audio.php:76
-#: template-parts/content-chat.php:60 template-parts/content-gallery.php:77
-#: template-parts/content-image.php:78 template-parts/content-link.php:60
-#: template-parts/content-page.php:26 template-parts/content-quote.php:69
-#: template-parts/content-status.php:50 template-parts/content-video.php:76
-#: template-parts/content.php:62
+#: template-parts/content-aside.php:37 template-parts/content-audio.php:53
+#: template-parts/content-chat.php:40 template-parts/content-gallery.php:54
+#: template-parts/content-image.php:45 template-parts/content-link.php:49
+#: template-parts/content-page.php:21 template-parts/content-quote.php:53
+#: template-parts/content-status.php:38 template-parts/content-video.php:54
+#: template-parts/content.php:40
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-none.php:13
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-audio.php:41 template-parts/content-gallery.php:42
+#: template-parts/content-image.php:34 template-parts/content-link.php:38
+#: template-parts/content-quote.php:41 template-parts/content-status.php:27
+#: template-parts/content-video.php:42 template-parts/content.php:29
+#, php-format
+msgid "Read more<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-none.php:11
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:22
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:37
+#: template-parts/content-none.php:35
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:43
+#: template-parts/content-none.php:41
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-page.php:41
+#: template-parts/content-page.php:36
 #, php-format
 msgid "Edit this page <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -944,22 +903,16 @@ msgid "Conj Lite"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://www.mypreview.one/conj.html"
+msgid "https://www.conj.ws/conj-lite"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Conj’s fantastic out of the box deep code and design integration with "
-"WooCommerce, the premier eCommerce solution for WordPress, enables your "
-"store to be bulletproof against any conflicts during major WooCommerce "
-"updates. Rest assured that the Conj theme uses a mobile-first grid-based "
-"architecture that renders beautifully formatted content on phones, tablets, "
-"and desktop monitors. Your visitors can expect brilliant looking products "
-"whether they are browsing your website at the office or on the go. The "
-"entire platform of Conj is built on top of the Underscores starter theme "
-"which is a solid foundation of code and also used for all themes released by "
-"Automattic on WordPress.com. Get the one thing you need to build stunning "
-"eCommerce website in a fast and efficient way."
+"Meet Conj – a super-fast, super-lightweight and super-stylish theme with "
+"impressive usability, both on the front and back end for creating a stylish "
+"WooCommerce webshop or stunning company website with its unique mobile-first "
+"and grid-based architecture. Intuitive, flexible and compatible with the new "
+"Gutenberg block-based content editor — Demo → https://www.conj.ws/conj-lite"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -967,5 +920,5 @@ msgid "MyPreview"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.mypreview.one"
+msgid "https://www.conj.ws"
 msgstr ""
