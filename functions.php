@@ -37,13 +37,13 @@ require get_parent_theme_file_path( '/includes/back-compat.php' );
  */
 $conj_lite = ( object )array(
 	'version' => CONJ_LITE_THEME_NAME,
-	'main' => require get_parent_theme_file_path( '/includes/class-conj.php' ),
-	'customizer' => require get_parent_theme_file_path( '/includes/customizer/class-conj-customizer.php' ),
+	'main' => require get_parent_theme_file_path( '/includes/class-conj-lite.php' ),
+	'customizer' => require get_parent_theme_file_path( '/includes/customizer/class-conj-lite-customizer.php' ),
 );
 
-require get_parent_theme_file_path( '/includes/conj-functions.php' );
-require get_parent_theme_file_path( '/includes/conj-template-hooks.php' );
-require get_parent_theme_file_path( '/includes/conj-template-functions.php' );
+require get_parent_theme_file_path( '/includes/conj-lite-functions.php' );
+require get_parent_theme_file_path( '/includes/conj-lite-template-hooks.php' );
+require get_parent_theme_file_path( '/includes/conj-lite-template-functions.php' );
 
 /**
  * Query whether "WooCommerce" is activated or NOT.
@@ -51,9 +51,9 @@ require get_parent_theme_file_path( '/includes/conj-template-functions.php' );
  * @see 	https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	$conj_lite->woocommerce = require get_parent_theme_file_path( '/includes/woocommerce/class-conj-woocommerce.php' );
-	require get_parent_theme_file_path( '/includes/woocommerce/conj-woocommerce-template-hooks.php' );
-	require get_parent_theme_file_path( '/includes/woocommerce/conj-woocommerce-template-functions.php' );
+	$conj_lite->woocommerce = require get_parent_theme_file_path( '/includes/woocommerce/class-conj-lite-woocommerce.php' );
+	require get_parent_theme_file_path( '/includes/woocommerce/conj-lite-woocommerce-template-hooks.php' );
+	require get_parent_theme_file_path( '/includes/woocommerce/conj-lite-woocommerce-template-functions.php' );
 } // End If Statement
 
 /**
@@ -65,7 +65,7 @@ if ( class_exists( 'WooCommerce' ) ) {
  */
 if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'activate_plugins' ) ) {
 	require get_parent_theme_file_path( '/includes/nux/tgmpa/class-tgm-plugin-activation.php' );
-	require get_parent_theme_file_path( '/includes/nux/tgmpa/conj-register-tgmpa-plugins.php' );
+	require get_parent_theme_file_path( '/includes/nux/tgmpa/conj-lite-register-tgmpa-plugins.php' );
 
 	/**
 	 * Query whether "One click demo import" is activated or NOT.
@@ -74,7 +74,7 @@ if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'a
 	 * @see 	https://developer.wordpress.org/reference/functions/current_user_can/
 	 */
 	if ( class_exists( 'OCDI_Plugin' ) ) {
-		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/class-conj-demo-import.php' );
+		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/class-conj-lite-demo-import.php' );
 	} // End If Statement
 } // End If Statement
 
