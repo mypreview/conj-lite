@@ -1,3 +1,9 @@
+/*
+ * Slinky
+ * Rather sweetmenus
+ * @author Ali Zahid <ali.zahid@live.com>
+ * @license MIT
+ */
 .slinky-menu {
 	-webkit-transform: translateZ(0);
 	overflow: hidden;
@@ -78,6 +84,7 @@
 	content: '';
 	height: 1em;
 	opacity: 0.25;
+	-o-transition: 200ms;
 	transition: 200ms;
 	width: 1em;
 }
@@ -87,7 +94,8 @@
 .slinky-theme-default .back::before {
 	-webkit-transform: scaleX(-1);
 	padding: 1em;
-	transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+	    transform: scaleX(-1);
 }
 .slinky-theme-default .next:hover::after, .slinky-theme-default .back:hover::before {
 	opacity: 0.75;
