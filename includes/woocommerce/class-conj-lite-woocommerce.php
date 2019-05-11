@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'MyPreview_Conj_Lite_WooCommerce' ) ) :
+if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 
 	/**
 	 * The Conj Lite WooCommerce integration class
 	 */
-	class MyPreview_Conj_Lite_WooCommerce {
+	class Conj_Lite_WooCommerce {
 
 		/**
 		 * Setup class.
@@ -344,4 +344,4 @@ if ( ! class_exists( 'MyPreview_Conj_Lite_WooCommerce' ) ) :
 
 endif;
 
-return new MyPreview_Conj_Lite_WooCommerce();
+return new Conj_Lite_WooCommerce();
