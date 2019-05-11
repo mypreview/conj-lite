@@ -73,7 +73,7 @@ if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'a
 	 * @see 	https://developer.wordpress.org/reference/functions/current_user_can/
 	 */
 	if ( class_exists( 'OCDI_Plugin' ) ) {
-		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/class-conj-lite-demo-import.php' );
+		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/ocdi/class-conj-lite-demo-import.php' );
 	} // End If Statement
 } // End If Statement
 
