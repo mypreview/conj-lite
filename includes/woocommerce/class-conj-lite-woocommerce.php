@@ -30,7 +30,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			add_action( 'after_setup_theme',        					array( $this, 'setup' ),       						11 );
 			add_action( 'wp_enqueue_scripts',       					array( $this, 'enqueue' ),       					10 );
 			add_action( 'enqueue_block_editor_assets',       			array( $this, 'enqueue_editor_assets' ),     	   	10 );
-			add_filter( 'body_class', 									array( $this, 'woocommerce_body_class' ),   	 10, 1 );
+			add_filter( 'body_class', 									array( $this, 'body_classes' ),   	 			 10, 1 );
 			add_filter( 'woocommerce_cross_sells_columns', 				array( $this, 'cross_sells_cols' ),    		 	 10, 1 );
 			add_filter( 'woocommerce_cross_sells_total', 				array( $this, 'cross_sells_total' ),    		 10, 1 );
 			add_filter( 'woocommerce_upsell_display_args', 				array( $this, 'upsell_products_args' ),    		 10, 1 );
