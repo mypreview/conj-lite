@@ -315,7 +315,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			// Skip appending this to the administrative interface of WooCommerce pages.
 			if ( ! is_admin() ) {
 				/* translators: 1: Span open tag, 2: Span close tag. */
-				$html.= sprintf( esc_html__( '%1$sPrice%2$s', 'conj' ), '<span class="price-label">', '</span>' );
+				$html.= sprintf( esc_html__( '%1$sPrice%2$s', 'conj-lite' ), '<span class="price-label">', '</span>' );
 			} // End If Statement
 			
     		return $html;
