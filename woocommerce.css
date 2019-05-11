@@ -622,9 +622,12 @@ ul.products li.product .button {
 # Breadcrumb
 --------------------------------------------------------------*/
 .woocommerce-breadcrumb {
-	padding-top: 22px;
-    padding-bottom: 22px;
+	display: flex;
+    flex-wrap: wrap;
+	padding-top: 17px;
+    padding-bottom: 17px;
 	position: relative;
+	z-index: 1;
 }
 nav.woocommerce-breadcrumb:after {
 	content: "";
@@ -634,14 +637,12 @@ nav.woocommerce-breadcrumb:after {
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     z-index: -1;
 }
 .breadcrumb-separator {
 	margin: 0 18px;
 }
-
 /*--------------------------------------------------------------
 # Shop tables
 --------------------------------------------------------------*/
@@ -652,9 +653,62 @@ table.shop_table_responsive tr td.download-actions .button {
 	display: block;
 	text-align: center;
 }
-.shop_table tr > th:not(:last-of-type), 
-.shop_table tr > td:not(:last-of-type) {
+.shop_attributes thead,
+.shop_attributes tfoot,
+.shop_attributes tbody {
+    display: flex;
+    flex-direction: column;
+}
+.shop_attributes tr {
+	border-style: solid;
+    justify-content: space-between;
+}
+.shop_attributes tbody tr:not(:last-child),  
+.shop_attributes tfoot tr:not(:last-child):not(:first-child), 
+.shop_attributes thead tr,
+.shop_table	tbody tr:not(:last-child) td, 
+.shop_table	tbody tr:not(:last-child) th, 
+.shop_table	tfoot tr:not(:last-child):not(:first-child) td, 
+.shop_table	tfoot tr:not(:last-child):not(:first-child) th, 
+.shop_table thead tr th {
+    border-width: 0 0 1px;
+}
+.shop_attributes tfoot tr:last-child,
+.shop_attributes tbody tr:last-child,
+.shop_attributes td,
+.shop_attributes th,
+.shop_table	tbody tr:last-child td, 
+.shop_table	tbody tr:last-child th, 
+.shop_table	tfoot tr:last-child td, 
+.shop_table	tfoot tr:last-child th {
+    border-width: 0;
+}
+.shop_attributes tfoot tr:first-child, 
+.shop_attributes tfoot tr:first-child,
+.shop_table	tfoot tr:first-of-type td, 
+.shop_table	tfoot tr:first-of-type th {
+    border-width: 1px 0;
+}
+.shop_attributes td, 
+.shop_attributes th,
+.shop_table td, 
+.shop_table th {
+	padding: 20px 0;
+}
+.shop_table tr > th:not(:last-child), 
+.shop_table:not(.woocommerce-cart-form__contents) tr > td:not(:last-child) {
 	padding-right: 0;
+}
+/*--------------------------------------------------------------
+## Additional information
+--------------------------------------------------------------*/
+.woocommerce-Tabs-panel--additional_information .shop_attributes tr > td:not(:last-child),
+.woocommerce-Tabs-panel--additional_information .shop_attributes tr > th:not(:last-child) {
+    padding: 7px 20px 7px 0;
+}
+.woocommerce-Tabs-panel--additional_information .shop_attributes tr > td:last-child,
+.woocommerce-Tabs-panel--additional_information .shop_attributes tr > th:last-child {
+    padding: 7px 0;
 }
 @media (min-width: 48.0625em) {
 	table.shop_table_responsive thead {
