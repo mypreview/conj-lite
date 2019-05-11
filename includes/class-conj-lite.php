@@ -578,11 +578,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		 */
 		public function enqueue_editor_assets() {
 
-			// Checks whether we're currently loading a Gutenberg page
-	        if ( ! function_exists( 'register_block_type' ) || isset( $_GET['classic-editor'] ) ) {
-	            return;
-	        } // End If Statement
-
 			/**
 			 * Google font handle is inspired by "Twenty Seventeen" `functions.php`
 			 * 
