@@ -2,6 +2,7 @@
 /**
  * Conj Lite WooCommerce Class
  *
+ * @requires 	WooCommerce
  * @author  	Mahdi Yazdani
  * @package 	conj-lite
  * @since 	    1.1.0
