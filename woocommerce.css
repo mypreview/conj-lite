@@ -2007,14 +2007,13 @@ p.stars a:before,
 .star-rating span,
 .star-rating:before {
 	position: absolute;
+	left: 0;
+	top: 0;
 }
 .star-rating {
-	font-family: 'star';
-	font-size: 1em;
-	font-weight: 400;
-	height: 1.618em;
+	height: 24px;
 	line-height: 1.618;
-	width: 5.3em;
+	width: 80px;
 }
 .star-rating span,
 .star-rating:before {
@@ -2022,25 +2021,13 @@ p.stars a:before,
 }
 .star-rating span:before,
 .star-rating:before {
-	content: "\53\53\53\53\53";
-}
-p.stars a:before,
-.star-rating span:before,
-.star-rating span,
-.star-rating:before {
-	left: 0;
+	content: "\e9d3\e9d3\e9d3\e9d3\e9d3";
 }
 p.stars.selected a.active ~ a:before,
 p.stars a:hover ~ a:before,
 p.stars a:before,
 .star-rating:before {
 	opacity: .25;
-}
-p.stars a:before,
-.star-rating span:before,
-.star-rating span,
-.star-rating:before {
-	top: 0;
 }
 .star-rating span {
 	padding-top: 1.5em;
