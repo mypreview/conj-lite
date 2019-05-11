@@ -3,6 +3,9 @@
  * Rather sweetmenus
  * @author Ali Zahid <ali.zahid@live.com>
  * @license MIT
+ *
+ * Edited by Mahdi Yazdani
+ * To Support RTL Language
  */
 
 class Slinky {
@@ -202,10 +205,19 @@ class Slinky {
     const { settings, base } = this
 
     // get current position from the left
-    const left = Math.round(parseInt(base.get(0).style.left)) || 0
+    const left  = Math.round(parseInt(base.get(0).style.left)) || 0
 
-    // set the new position from the left
-    base.css('left', `${left - depth * 100}%`)
+    // Edited for RTL language direction
+    const right   =   Math.round(parseInt(base.get(0).style.right)) || 0
+    const rtl     =   document.querySelector( 'body' );
+
+    if ( rtl.classList.contains( 'rtl' ) ) {
+      // set the new position from the right
+      base.css('right', `${right - depth * 100}%`)
+    } else {
+      // set the new position from the left
+      base.css('left', `${left - depth * 100}%`)
+    }
 
     // callback after the animation
     if (typeof callback === 'function') {
