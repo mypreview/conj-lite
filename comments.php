@@ -1,12 +1,11 @@
 <?php
 /**
  * The template for displaying comments
- *
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package 	mypreview-conj
+ * @package 	conj-lite
  */
 
 /*
@@ -16,11 +15,10 @@
  */
 if ( post_password_required() ) {
 	return;
-}
+} // End If Statement
 ?>
 
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
@@ -43,7 +41,7 @@ if ( post_password_required() ) {
 					number_format_i18n( $comments_number ),
 					get_the_title()
 				);
-			}
+			} // End If Statement
 			?>
 		</h2><!-- .comments-title -->
 
@@ -51,10 +49,10 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( apply_filters( 'mypreview_conj_lite_wp_list_comments', array(
-					'avatar_size' => 	100,
-					'style'       => 	'ol',
-					'short_ping'  => 	TRUE
+				wp_list_comments( apply_filters( 'conj_lite_wp_list_comments', array(
+					'avatar_size' => 100,
+					'style' => 	'ol',
+					'short_ping' => TRUE
 				) ) );
 			?>
 		</ol><!-- .comment-list -->
@@ -71,5 +69,4 @@ if ( post_password_required() ) {
 
 	comment_form();
 	?>
-
 </div><!-- #comments -->
