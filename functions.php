@@ -17,33 +17,28 @@
  * @see 		https://codex.wordpress.org/Theme_Development
  * @see 		https://codex.wordpress.org/Plugin_API
  * @author  	Mahdi Yazdani
- * @package 	mypreview-conj
- * @since 	    1.0.9
+ * @package 	conj-lite
+ * @since 	    1.1.0
  */
-
 // Assign the "Conj Lite" info to constants.
-$conj_theme = wp_get_theme( 'conj-lite' );
+$conj_lite_theme = wp_get_theme( 'conj-lite' );
 
-define( 'MYPREVIEW_CONJ_LITE_THEME_NAME', $conj_theme->get( 'Name' ) );
-define( 'MYPREVIEW_CONJ_LITE_THEME_URI', $conj_theme->get( 'ThemeURI' ) );
-define( 'MYPREVIEW_CONJ_LITE_THEME_AUTHOR', $conj_theme->get( 'Author' ) );
-define( 'MYPREVIEW_CONJ_LITE_THEME_VERSION', $conj_theme->get( 'Version' ) );
-define( 'MYPREVIEW_CONJ_LITE_THEME_DOC_URI', 'https://mypreview.github.io/Conj' );
+define( 'CONJ_LITE_THEME_NAME', $conj_lite_theme->get( 'Name' ) );
+define( 'CONJ_LITE_THEME_URI', $conj_lite_theme->get( 'ThemeURI' ) );
+define( 'CONJ_LITE_THEME_AUTHOR', $conj_lite_theme->get( 'Author' ) );
+define( 'CONJ_LITE_THEME_VERSION', $conj_lite_theme->get( 'Version' ) );
 
-// Conj Lite only works in WordPress 4.8 or later.
-if ( version_compare( $GLOBALS['wp_version'], '4.8', '<' ) ) {
-	require get_parent_theme_file_path( 'includes/back-compat.php' );
-	return;
-} // End If Statement
+// Back compat functionality
+require get_parent_theme_file_path( '/includes/back-compat.php' );
 
 /**
  * Initialize all the things.
  * Functions and definitions
  */
-$conj = ( object )array(
-	'version' 				=> 		MYPREVIEW_CONJ_LITE_THEME_VERSION,
-	'main' 					=> 		require get_parent_theme_file_path( '/includes/class-conj.php' ),
-	'customizer' 			=> 		require get_parent_theme_file_path( '/includes/customizer/class-conj-customizer.php' ),
+$conj_lite = ( object )array(
+	'version' => CONJ_LITE_THEME_NAME,
+	'main' => require get_parent_theme_file_path( '/includes/class-conj.php' ),
+	'customizer' => require get_parent_theme_file_path( '/includes/customizer/class-conj-customizer.php' ),
 );
 
 require get_parent_theme_file_path( '/includes/conj-functions.php' );
@@ -56,9 +51,34 @@ require get_parent_theme_file_path( '/includes/conj-template-functions.php' );
  * @see 	https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	
-	$conj->woocommerce = require get_parent_theme_file_path( '/includes/woocommerce/class-conj-woocommerce.php' );
+	$conj_lite->woocommerce = require get_parent_theme_file_path( '/includes/woocommerce/class-conj-woocommerce.php' );
 	require get_parent_theme_file_path( '/includes/woocommerce/conj-woocommerce-template-hooks.php' );
 	require get_parent_theme_file_path( '/includes/woocommerce/conj-woocommerce-template-functions.php' );
-
 } // End If Statement
+
+/**
+ * Whether the current request is for an administrative interface page
+ * 
+ * @see 	https://developer.wordpress.org/reference/functions/is_admin/
+ * @see 	https://developer.wordpress.org/reference/functions/current_user_can/
+ * @see 	https://github.com/TGMPA/TGM-Plugin-Activation
+ */
+if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'activate_plugins' ) ) {
+	require get_parent_theme_file_path( '/includes/nux/tgmpa/class-tgm-plugin-activation.php' );
+	require get_parent_theme_file_path( '/includes/nux/tgmpa/conj-register-tgmpa-plugins.php' );
+
+	/**
+	 * Query whether "One click demo import" is activated or NOT.
+	 *
+	 * @see 	https://github.com/proteusthemes/one-click-demo-import
+	 * @see 	https://developer.wordpress.org/reference/functions/current_user_can/
+	 */
+	if ( class_exists( 'OCDI_Plugin' ) ) {
+		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/class-conj-demo-import.php' );
+	} // End If Statement
+} // End If Statement
+
+/**
+ * Note: Do not add any custom code here!
+ * Please use a custom plugin or child theme so that your customizations aren't lost during updates.
+ */
