@@ -5,6 +5,8 @@
  * navigation support for dropdown menus.
  */
 ( function() {
+	'use strict';
+	
 	var container, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
@@ -29,18 +31,6 @@
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
 	}
-
-	// button.onclick = function() {
-	// 	if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-	// 		container.className = container.className.replace( ' toggled', '' );
-	// 		button.setAttribute( 'aria-expanded', 'false' );
-	// 		menu.setAttribute( 'aria-expanded', 'false' );
-	// 	} else {
-	// 		container.className += ' toggled';
-	// 		button.setAttribute( 'aria-expanded', 'true' );
-	// 		menu.setAttribute( 'aria-expanded', 'true' );
-	// 	}
-	// };
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
