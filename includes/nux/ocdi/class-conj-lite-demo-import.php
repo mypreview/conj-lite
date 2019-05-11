@@ -61,7 +61,6 @@ if ( ! class_exists( 'Conj_Lite_NUX_Demo_Import' ) ) :
 			$import_notice = array();
 			$import_notice[] = $import_notice_intro;
 			$import_notice[] = $import_notice_intro_list_wrapper;
-			$import_notice[] = $conj_powerpack_plugin_info;
 			$import_notice[] = $woocommerce_plugin_info;
 			$import_notice[] = $jetpack_plugin_info;
 			$import_notice[] = $import_notice_intro_list_wrapper_close;
