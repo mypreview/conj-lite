@@ -3,8 +3,7 @@
  * The template for displaying search results pages
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package 	mypreview-conj
+ * @package 	conj-lite
  */
 
 get_header(); ?>
@@ -33,12 +32,12 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
+			endwhile; // End of the loop.
 
 			the_posts_pagination( apply_filters( 'mypreview_conj_lite_post_pagination_args', array(
-				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'conj-lite' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'conj-lite' ) . '</span>',
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'conj-lite' ) . ' </span>',
+				'prev_text' => '<span class="screen-reader-text">' . esc_html__( 'Previous page', 'conj-lite' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . esc_html__( 'Next page', 'conj-lite' ) . '</span>',
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'conj-lite' ) . ' </span>',
 			) ) );
 
 		else :
