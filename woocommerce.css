@@ -622,9 +622,12 @@ ul.products li.product .button {
 # Breadcrumb
 --------------------------------------------------------------*/
 .woocommerce-breadcrumb {
-	padding-top: 22px;
-    padding-bottom: 22px;
+	display: flex;
+    flex-wrap: wrap;
+	padding-top: 17px;
+    padding-bottom: 17px;
 	position: relative;
+	z-index: 1;
 }
 nav.woocommerce-breadcrumb:after {
 	content: "";
@@ -634,7 +637,6 @@ nav.woocommerce-breadcrumb:after {
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     z-index: -1;
 }
