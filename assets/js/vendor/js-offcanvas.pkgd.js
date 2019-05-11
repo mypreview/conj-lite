@@ -1,8 +1,12 @@
-/* global Modernizr:true */
-;(function( w ){
+/*! js-Offcanvas - v1.2.9 - 2019-03-06
+jQuery Accesible Offcanvas Panels
+ * https://github.com/vmitsaras/js-offcanvas
+ * Copyright (c) 2019 Vasileios Mitsaras (@vmitsaras)
+ * MIT License */
+;(function( window ){
 	"use strict";
 
-	var utils = {};
+	var utils = window.utils || {};
 
 	utils.classes = {
 		hiddenVisually: "u-hidden-visually",
@@ -35,10 +39,6 @@
 		UP: 38
 	};
 
-	/**
-	 * a11yclick
-	 * Slightly modified from: http://www.karlgroves.com/2014/11/24/ridiculously-easy-trick-for-keyboard-accessibility/
-	 */
 	utils.a11yclick = function(event) {
 		var code = event.charCode || event.keyCode,
 			type = event.type;
@@ -53,9 +53,10 @@
 			return false;
 		}
 	};
-	utils.a11yclickBind = function(el, callback,name) {
+
+	utils.a11yclickBind = function(el, callback, name) {
 		el.on("click." + name + " keydown." + name,function(event){
-			if ( w.utils.a11yclick(event)) {
+			if ( utils.a11yclick(event)) {
 				event.preventDefault(event);
 				if( callback && typeof callback === 'function' ) { callback.call(); }
 				el.trigger('clicked.'+name);
@@ -63,24 +64,23 @@
 		});
 	};
 
-	utils.doc = w.document;
-	utils.supportTransition = Modernizr.csstransitions;
-	utils.supportAnimations = Modernizr.cssanimations;
-	utils.transEndEventNames = {
-		'WebkitTransition'	: 'webkitTransitionEnd',
-		'MozTransition'		: 'transitionend',
-		'OTransition'		: 'oTransitionEnd',
-		'msTransition'		: 'MSTransitionEnd',
-		'transition'		: 'transitionend'
+	utils.supportTransition = ('transition' in document.documentElement.style) || ('WebkitTransition' in document.documentElement.style);
+
+	utils.whichTransitionEvent = function () {
+		var el = document.createElement('fakeelement'),
+			transitions = {
+				'transition': 'transitionend',
+				'WebkitTransition': 'webkitTransitionEnd'
+			};
+
+		for (var t in transitions) {
+			if (el.style[t] !== undefined) {
+				return transitions[t];
+			}
+		}
 	};
-	utils.animEndEventNames = {
-		'WebkitAnimation' : 'webkitAnimationEnd',
-		'OAnimation' : 'oAnimationEnd',
-		'msAnimation' : 'MSAnimationEnd',
-		'animation' : 'animationend'
-	};
-	utils.transEndEventName = utils.transEndEventNames[Modernizr.prefixed('transition')];
-	utils.animEndEventName = utils.animEndEventNames[Modernizr.prefixed('animation')];
+
+	utils.transEndEventName = utils.whichTransitionEvent();
 
 	utils.onEndTransition = function( el, callback ) {
 		var onEndCallbackFn = function( ev ) {
@@ -98,22 +98,6 @@
 		}
 	};
 
-	utils.onEndAnimation = function( el, callback ) {
-		var onEndCallbackFn = function( ev ) {
-			if( utils.supportAnimations ) {
-				if( ev.target != this ) return;
-				this.removeEventListener( utils.animEndEventName, onEndCallbackFn );
-			}
-			if( callback && typeof callback === 'function' ) { callback.call(); }
-		};
-		if( utils.supportAnimations ) {
-			el.addEventListener( utils.animEndEventName, onEndCallbackFn );
-		}
-		else {
-			onEndCallbackFn();
-		}
-	};
-
 	utils.createModifierClass = function( cl, modifier ){
 		return cl + utils.classes.modifier + modifier
 	};
@@ -121,14 +105,14 @@
 	utils.cssModifiers = function( modifiers, cssClasses, baseClass ){
 		var arr = modifiers.split(",");
 		for(var i=0, l = arr.length; i < l; i++){
-			cssClasses.push( utils.createModifierClass(baseClass,arr[i]) );
+			cssClasses.push( utils.createModifierClass(baseClass,arr[i].trim()) );
 		}
 	};
 
 	utils.getMetaOptions = function( el, name, metadata ){
-		var dataAttr = 'data-' + name;
-		var dataOptionsAttr = dataAttr + '-options';
-		var attr = el.getAttribute( dataAttr ) || el.getAttribute( dataOptionsAttr );
+		var dataAttr = 'data-' + name,
+			dataOptionsAttr = dataAttr + '-options',
+			attr = el.getAttribute( dataAttr ) || el.getAttribute( dataOptionsAttr );
 		try {
 			return attr && JSON.parse( attr ) || {};
 		} catch ( error ) {
@@ -139,21 +123,8 @@
 			return;
 		}
 	};
-	// polyfill raf if needed
-	var raf = (function(callback){
-		return  window.requestAnimationFrame       ||
-			window.webkitRequestAnimationFrame ||
-			window.mozRequestAnimationFrame    ||
-			function( callback ){
-				window.setTimeout(callback, 1000 / 60);
-			};
-	})();
-	utils.raf = function(callback){
-		raf(callback);
-	};
 
-	// expose global utils
-	w.utils = utils;
+	window.utils = utils;
 
 })(this);
 
@@ -214,10 +185,11 @@
 			opts = self.options;
 
 		// get list of all children elements in given object
-		var o = self.$element.find('*');
+		var o = self.$element.find('*'),
+			focusEl = self.$element.find('[data-focus]');
 
 		// set the focus to the first keyboard focusable item
-		o.filter(opts.focusableElementsString).filter(':visible').first().focus();
+		focusEl.length ? focusEl.first().focus() : o.filter(opts.focusableElementsString).filter(':visible').first().focus();
 
 	};
 
@@ -234,7 +206,7 @@
 
 			// get list of focusable items
 			var focusableItems;
-			focusableItems = o.filter(opts.focusableElementsString).filter(':visible')
+			focusableItems = o.filter(opts.focusableElementsString).filter(':visible');
 
 			// get currently focused item
 			var focusedItem;
@@ -242,7 +214,7 @@
 
 			// get the number of focusable items
 			var numberOfFocusableItems;
-			numberOfFocusableItems = focusableItems.length
+			numberOfFocusableItems = focusableItems.length;
 
 			// get the index of the currently focused item
 			var focusedItemIndex;
@@ -276,11 +248,11 @@
 
 })(this, jQuery);
 
-(function( w, $ ){
+(function( window, $ ){
 	"use strict";
 	var name = "button",
 		componentName = name + "-component",
-		utils = w.utils,
+		utils = window.utils,
 		cl = {
 			iconOnly: "icon-only",
 			withIcon: "icon",
@@ -288,9 +260,9 @@
 			showHide: "visible-on-active"
 		};
 
-	w.componentNamespace = w.componentNamespace || {};
+	window.componentNamespace = window.componentNamespace || {};
 
-	var Button = w.componentNamespace.Button = function( element, options ){
+	var Button = window.componentNamespace.Button = function( element, options ){
 		if( !element ){
 			throw new Error( "Element required to initialize object" );
 		}
@@ -313,15 +285,16 @@
 		this.hasTitle = !!this.$element.attr( "title" );
 		this.$element.trigger( "beforecreate." + name );
 		this.isPressed = false;
+		this.isExpanded = false;
 		this._create();
 
 	};
 
 	Button.prototype._create = function(){
 		var options = this.options,
-			buttonClasses = [options.baseClass],
 			buttonTextClasses = [options.baseClass + '__text'];
 
+		this._buttonClasses = [options.baseClass];
 		if ( options.label === null ) {
 			options.label = this.$element.html();
 		}
@@ -333,21 +306,21 @@
 		if ( options.icon ) {
 
 			this.$buttonIcon = $( "<span class='"+ options.iconFamily +' ' + utils.createModifierClass(options.iconFamily, options.icon)+"'></span>" ).prependTo(this.$element);
-			buttonClasses.push( utils.createModifierClass(options.baseClass,cl.withIcon) );
+			this._buttonClasses.push( utils.createModifierClass(options.baseClass,cl.withIcon) );
 
 			if ( options.iconActive ) {
 				options.toggle = true;
 				this.$buttonIconActive = $( "<span class='"+ options.iconFamily  + ' ' + utils.createModifierClass(options.iconFamily, options.iconActive)+ ' ' +utils.createModifierClass(options.iconFamily, cl.showHide)+ "'></span>" ).insertAfter(this.$buttonIcon);
-				buttonClasses.push( utils.createModifierClass(options.baseClass,cl.toggleState) );
+				this._buttonClasses.push( utils.createModifierClass(options.baseClass,cl.toggleState) );
 			}
 			if ( options.hideText ) {
 				buttonTextClasses.push(utils.classes.hiddenVisually );
-				buttonClasses.push( utils.createModifierClass(options.baseClass,cl.iconOnly) );
+				this._buttonClasses.push( utils.createModifierClass(options.baseClass,cl.iconOnly) );
 			}
 		}
 
 		if ( options.modifiers ) {
-			utils.cssModifiers(options.modifiers,buttonClasses,options.baseClass);
+			utils.cssModifiers(options.modifiers,this._buttonClasses,options.baseClass);
 		}
 		if ( options.wrapText ) {
 			this.$buttonText.addClass( buttonTextClasses.join( " " ) );
@@ -356,7 +329,7 @@
 		if ( options.textActive && options.wrapText ) {
 			options.toggle = true;
 			buttonTextClasses.push( utils.createModifierClass(options.baseClass+'__text',cl.showHide) );
-			buttonClasses.push( utils.createModifierClass(options.baseClass,cl.toggleState) );
+			this._buttonClasses.push( utils.createModifierClass(options.baseClass,cl.toggleState) );
 
 			this.$buttonTextActive = $( '<span></span>' )
 				.addClass( buttonTextClasses.join( " " ) )
@@ -365,7 +338,7 @@
 			this.$element.attr('aria-live','polite');
 		}
 
-		this.$element.addClass( buttonClasses.join( " " ) );
+		this.$element.addClass( this._buttonClasses.join( " " ) );
 
 		if ( options.role) {
 			this.$element.attr( "role", options.role );
@@ -383,9 +356,6 @@
 		if ( !this.hasTitle && options.hideText && !options.hideTitle ) {
 			this.$element.attr('title',this.$element.text());
 		}
-		if ( options.ripple && w.componentNamespace.Ripple ) {
-			new w.componentNamespace.Ripple( this.element ).init();
-		}
 		this.$element.trigger( "create." + name );
 	};
 
@@ -395,12 +365,37 @@
 	};
 
 	Button.prototype._isExpanded = function(state){
-		this._isPressed(state);
-		this.$element.attr( "aria-expanded", state );
+		this.isExpanded = state;
+		this.$element.attr( "aria-expanded", state )[ state ? "addClass" : "removeClass" ](utils.classes.isActive);
 	};
 
 	Button.prototype.controls = function(el){
 		this.$element.attr( "aria-controls", el );
+	};
+
+	Button.prototype.destroy = function(){
+		var options = this.options;
+
+		this.$element
+			.removeData(componentName)
+			.removeAttr('role')
+			.removeAttr('aria-pressed')
+			.removeAttr('aria-expanded')
+			.removeAttr('aria-controls')
+			.removeClass( this._buttonClasses.join( " " ) )
+			.removeClass( utils.classes.isActive)
+			.off("."+name);
+		if ( this.options.icon ) {
+			this.$element.find('[class^="'+this.options.iconFamily+'"]').remove();
+		}
+
+		if ( options.wrapText ) {
+			var btnHtml = this.$buttonText.html();
+			this.$element.empty().html(btnHtml);
+		}
+
+		this.element = null;
+		this.$element = null;
 	};
 
 	Button.prototype.defaults = {
@@ -418,8 +413,7 @@
 		iconFamily: "o-icon",
 		iconPosition: null,
 		pressed: false,
-		expanded: false,
-		ripple: false
+		expanded: false
 	};
 
 	Button.defaults = Button.prototype.defaults;
@@ -434,7 +428,7 @@
 
 	$.fn[ pluginName ] = function(){
 		return this.each( function(){
-			new w.componentNamespace.Button( this ).init();
+			new window.componentNamespace.Button( this ).init();
 		});
 	};
 
@@ -444,17 +438,17 @@
 	});
 })(this, jQuery);
 
-;(function( w, $ ){
+;(function( window, $ ){
 	"use strict";
 
 	var name = "offcanvas",
 		componentName = name + "-component",
-		utils = w.utils,
-		doc = w.document;
+		utils = window.utils,
+		doc = document;
 
-	w.componentNamespace = w.componentNamespace || {};
+	window.componentNamespace = window.componentNamespace || {};
 
-	var Offcanvas = w.componentNamespace.Offcanvas = function( element,options ){
+	var Offcanvas = window.componentNamespace.Offcanvas = function( element,options ){
 		if( !element ){
 			throw new Error( "Element required to initialize object" );
 		}
@@ -490,7 +484,6 @@
 
 	Offcanvas.prototype._addAttributes = function(){
 		var options = this.options,
-			panelClasses = [options.baseClass,utils.classes.isClosed],
 			panelAttr = {
 				tabindex: "-1",
 				"aria-hidden": !this.isOpen
@@ -499,11 +492,13 @@
 		if ( options.role) {
 			panelAttr.role = options.role;
 		}
-		if(!w.utils.supportTransition){
-			panelClasses.push( utils.createModifierClass(options.baseClass, options.supportNoTransitionsClass));
+		this._panelClasses = [options.baseClass,utils.classes.isClosed];
+
+		if(!window.utils.supportTransition){
+			this._panelClasses.push( utils.createModifierClass(options.baseClass, options.supportNoTransitionsClass));
 		}
-		utils.cssModifiers(options.modifiers,panelClasses,options.baseClass );
-		this.$element.attr(panelAttr).addClass( panelClasses.join( " " ) );
+		utils.cssModifiers(options.modifiers,this._panelClasses,options.baseClass );
+		this.$element.attr(panelAttr).addClass( this._panelClasses.join( " " ) );
 
 		// Content-wrap
 		this.$content = $('.' + options.contentClass);
@@ -539,7 +534,7 @@
 	};
 
 	Offcanvas.prototype._trapTabKey = function() {
-		this.trapTabKey = new w.componentNamespace.TrapTabKey(this.element);
+		this.trapTabKey = new window.componentNamespace.TrapTabKey(this.element);
 		this.trapTabKey.init();
 	};
 
@@ -565,7 +560,7 @@
 		}
 		this.$closeBtn = this.$element.find('.'+options.closeButtonClass);
 		if( this.$closeBtn.length ){
-			this.closeBtn = new w.componentNamespace.Button(this.$closeBtn[0]);
+			this.closeBtn = new window.componentNamespace.Button(this.$closeBtn[0]);
 			this.closeBtn.init();
 			this.closeBtn.controls(this.$element.attr('id'));
 			utils.a11yclickBind(this.$closeBtn,closeOffcanvas,name);
@@ -579,19 +574,17 @@
 			if (options.resize) {
 				this.resize();
 			}
-			if( !this.$trigger ){
-				this.$trigger = this.$element.data( componentName + "-trigger" );
-			}
 			if( doc.activeElement ){
 				this.lastFocus = doc.activeElement;
 			}
 			this.isOpen = true;
-			$('body').addClass(this._bodyOpenClasses.join(" "));
+			$('html, body').addClass(this._bodyOpenClasses.join(" "));
 
 			this._addClasses(this.$element,this.isOpen,true);
 			this._addClasses(this.$content,this.isOpen,true);
 			if (options.modal) {
 				this._addClasses(this.$modal,this.isOpen,true);
+				this.$modal.addClass(utils.createModifierClass(options.modalClass,'opening'));
 			}
 
 			this.$element.attr( "aria-hidden", "false" )
@@ -607,6 +600,7 @@
 				self._addClasses(self.$content,self.isOpen,false);
 				if (options.modal) {
 					self._addClasses(self.$modal,self.isOpen,false);
+					self.$modal.removeClass(utils.createModifierClass(options.modalClass,'opening'));
 				}
 				self.$element.removeClass(utils.createModifierClass(options.baseClass,'opening'));
 			} );
@@ -636,6 +630,7 @@
 
 		if (this.options.modal) {
 			this._addClasses(this.$modal,this.isOpen,true);
+			this.$modal.addClass(utils.createModifierClass(options.modalClass,'closing'));
 		}
 
 		this.$element.attr( "aria-hidden", "true" )
@@ -654,12 +649,13 @@
 
 			if (self.options.modal) {
 				self._addClasses(self.$modal,self.isOpen,false);
+				self.$modal.removeClass(utils.createModifierClass(options.modalClass,'closing'));
 			}
 
 			self.$content.removeClass( self._contentOpenClasses.join( " " ) );
 			self.$element.removeClass(utils.createModifierClass(options.baseClass,'closing'));
 
-			$('body').removeClass(self._bodyOpenClasses.join(" "));
+			$('html, body').removeClass(self._bodyOpenClasses.join(" "));
 
 			if( self.lastFocus ){
 				self.lastFocus.focus();
@@ -703,12 +699,22 @@
 
 	Offcanvas.prototype.resize = function(){
 		var self = this,ticking;
+
+		var raf = (function(){
+			return  window.requestAnimationFrame   ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame    ||
+				function( callback ){
+					window.setTimeout(callback, 1000 / 60);
+				};
+		})();
+
 		function update() {
 			ticking = false;
 		}
 		function requestTick() {
 			if(!ticking) {
-				utils.raf(update);
+				raf(update);
 			}
 			ticking = true;
 		}
@@ -725,20 +731,44 @@
 	Offcanvas.prototype._initTrigger = function() {
 		var self = this,
 			options = self.options,
-			offcanvasID = this.$element.attr('id'),
-			att = "data-offcanvas-trigger",
-			$triggerButton;
+			offcanvasID = this.$element.attr('id');
 
-		if (!options.triggerButton) {
-			$triggerButton = $( "["+ att +"='" + offcanvasID + "']" );
-		} else {
-			$triggerButton = $(options.triggerButton);
+		if (options.triggerButton ) {
+			this.$triggerBtn = $(options.triggerButton);
+			new window.componentNamespace.OffcanvasTrigger(this.$triggerBtn[0], {"offcanvas": offcanvasID}).init();
 		}
-		new w.componentNamespace.OffcanvasTrigger( $triggerButton[0], { "offcanvas": offcanvasID } ).init();
 	};
 
 	Offcanvas.prototype.setButton = function(trigger){
 		this.$element.data( componentName + "-trigger", trigger );
+	};
+
+	Offcanvas.prototype.destroy = function(){
+
+		this.$element.trigger( "destroy." + name );
+
+		if( this.isOpen ){
+			this.close();
+		}
+
+			this.$element
+			.removeData()
+			.removeClass( this._panelClasses.join( " " ) )
+			.removeAttr('tabindex')
+			.removeAttr('aria-hidden');
+
+		if( this.$triggerBtn ){
+			this.$triggerBtn
+				.removeData('offcanvas-trigger-component')
+				.off(".offcanvas")
+				.off(".offcanvas-trigger")
+				.data('button-component').destroy();
+		}
+
+		this.$element.off( "." + name );
+		$( doc ).off( "." + name);
+		$(window).off('.'+name);
+
 	};
 
 	Offcanvas.prototype.defaults = {
@@ -750,7 +780,7 @@
 		closeButtonClass: "js-offcanvas-close",
 		bodyModifierClass: "has-offcanvas",
 		supportNoTransitionsClass: "support-no-transitions",
-		resize: true,
+		resize: false,
 		triggerButton: null,
 		modal: true,
 		onOpen: null,
