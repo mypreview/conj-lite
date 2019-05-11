@@ -3,73 +3,83 @@
  * Back compat functionality
  * Inspired by Twenty Sixteen `back-compat.php`
  *
- * Prevents Conj Lite from running on WordPress versions prior to 4.8,
+ * Prevents Conj from running on WordPress versions prior to 5.0 or PHP versions prior to 7.0,
  * since this theme is not meant to be backward compatible beyond that and
- * relies on many newer functions and markup changes introduced in 4.8.
+ * relies on many newer functions and markup changes introduced in 5.0 and PHP version 7.0.
  *
  * @link 		https://github.com/WordPress/twentysixteen
  * @author  	Mahdi Yazdani
- * @package 	mypreview-conj
- * @since 	    1.0.0
+ * @package 	conj-lite
+ * @since 	    1.1.0
  */
 
-/**
- * Prevent switching to Conj Lite on old versions of WordPress.
- * Switches to the default theme.
- */
-if ( ! function_exists( 'mypreview_conj_lite_switch_theme' ) ):
-	function mypreview_conj_lite_switch_theme() {
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+} // End If Statement
 
-		switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
-		unset( $_GET['activated'] );
-		add_action( 'admin_notices', 'mypreview_conj_lite_upgrade_notice', 10 );
+// Minimum required versions.
+define( 'CONJ_LITE_PHP_VERSION', '7.0.0' );
+define( 'CONJ_LITE_WORDPRESS_VERSION', '5.0.0' );
 
-	}
-endif;
-add_action( 'after_switch_theme', 'mypreview_conj_lite_switch_theme', 10 );
+// Do not allow the theme to be active if the PHP version is not met.
+if ( version_compare( PHP_VERSION, CONJ_LITE_PHP_VERSION, '<' ) ) {
+	add_action( 'admin_notices', 'conj_lite_back_compat_php_admin_notice' );
+	add_filter( 'conj_lite_back_compat_status', '__return_false', -1 );
+} // End If Statement
+
+// Do not allow the theme to be active if the WordPress version is not met.
+if ( version_compare( $GLOBALS['wp_version'], CONJ_LITE_WORDPRESS_VERSION, '<' ) ) {
+	add_action( 'admin_notices', 'conj_lite_back_compat_wordpress_admin_notice' );
+	add_filter( 'conj_lite_back_compat_status', '__return_false', -1 );
+} // End If Statement
+
 /**
- * Adds a message for unsuccessful theme switch.
+ * Output a notice that the minimum PHP version is not met.
  *
- * Prints an update nag after an unsuccessful attempt to switch to
- * Conj Lite on WordPress versions prior to 4.8.
- * @global string $wp_version WordPress version.
+ * @return void
  */
-if ( ! function_exists( 'mypreview_conj_lite_upgrade_notice' ) ):
-	function mypreview_conj_lite_upgrade_notice() {
+function conj_lite_back_compat_php_admin_notice() {
+	printf( '<div class="notice notice-warning"><p>%s</p></div>', wp_kses_post( conj_lite_get_php_notice_text() ) ); // WPCS: XSS okay.
+}
 
-		/* translators: %s: Version number, i.e. 4.8. */
-		$message = sprintf( esc_html_e( 'Conj Lite requires at least WordPress version 4.8. You are running version %s. Please upgrade and try again.', 'conj-lite' ) , $GLOBALS['wp_version']);
-		printf( '<div class="error"><p>%s</p></div>', $message );
-
-	}
-endif;
 /**
- * Prevents the Customizer from being loaded on WordPress versions prior to 4.8.
- * @global string $wp_version WordPress version.
+ * PHP upgrade notice text.
+ *
+ * @return string
  */
-if ( ! function_exists( 'mypreview_conj_lite_customize' ) ):
-	function mypreview_conj_lite_customize() {
+function conj_lite_get_php_notice_text() {
+	/* translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required PHP version number, 4: Running PHP version number, 5: Anchor open tag, 6: Anchor close tag. */
+	$notice_text = sprintf( esc_html__( '%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least PHP version %3$s. You are running version %4$s. Please %5$supgrade%6$s and try again.', 'conj-lite' ), '<a href="' . esc_url( CONJ_LITE_THEME_URI ) . '" target="_blank">', '</a>', esc_html( CONJ_LITE_PHP_VERSION ), esc_html( PHP_VERSION ), '<a href="https://wordpress.org/support/update-php/" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
 
-		/* translators: %s: Version number, i.e. 4.8. */
-		wp_die( sprintf( esc_html_e( 'Conj Lite requires at least WordPress version 4.8. You are running version %s. Please upgrade and try again.', 'conj-lite' ) , $GLOBALS['wp_version'] ) , '', array(
-			'back_link' => TRUE
-		) );
+	return apply_filters( 'conj_lite_php_notice_text', $notice_text );
+}
 
-	}
-endif;
-add_action( 'load-customize.php', 'mypreview_conj_lite_customize', 10 );
 /**
- * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.8.
- * @global string $wp_version WordPress version.
+ * Output a notice that the minimum WordPress version is not met.
+ *
+ * @return void
  */
-if ( ! function_exists( 'mypreview_conj_lite_preview' ) ):
-	function mypreview_conj_lite_preview() {
+function conj_lite_back_compat_wordpress_admin_notice() {
+	printf( '<div class="notice notice-warning"><p>%s</p></div>', wp_kses_post( conj_lite_get_wordpress_notice_text() ) ); // WPCS: XSS okay.
+}
 
-		if ( isset( $_GET['preview'] ) ):
-			/* translators: %s: Version number, i.e. 4.8. */
-			wp_die( sprintf( esc_html_e( 'Conj Lite requires at least WordPress version 4.8. You are running version %s. Please upgrade and try again.', 'conj-lite' ) , $GLOBALS['wp_version'] ) );
-		endif;
+/**
+ * WordPress upgrade notice text.
+ *
+ * @return string
+ */
+function conj_lite_get_wordpress_notice_text() {
+	/* translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required WordPress version number, 4: Running WordPress version number. */
+	$notice_text = sprintf( esc_html__( '%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least WordPress version %3$s. You are running version %4$s. Please upgrade and try again.', 'conj-lite' ), '<a href="' . esc_url( CONJ_LITE_THEME_URI ) . '" target="_blank" rel="noopener noreferrer nofollow">', '</a>', esc_html( CONJ_LITE_WORDPRESS_VERSION ), $GLOBALS['wp_version'] );
 
-	}
-endif;
-add_action( 'template_redirect', 'mypreview_conj_lite_preview', 10 );
+	return apply_filters( 'conj_lite_wordpress_notice_text', $notice_text );
+}
+
+/**
+ * Determine whether the minimum requirements are met or not?
+ *
+ * @return bool
+ */
+function conj_lite_back_compat_status() {
+	return apply_filters( 'conj_lite_back_compat_status', TRUE );
+}
