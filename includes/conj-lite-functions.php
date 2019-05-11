@@ -126,7 +126,7 @@ if ( ! function_exists( 'conj_lite_post_title' ) ) :
 	function conj_lite_post_title() {
 
 		// Skip printing the page title if it is already removed from the view.
-		if ( ! apply_filters( 'conj_lite_is_visible_post_title', '__return_true' ) ) {
+		if ( ! apply_filters( 'conj_lite_is_visible_post_title', '__return_true' ) || is_front_page() ) {
 			return;
 		} // End If Statement
 
