@@ -539,7 +539,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			wp_register_script( 'slinky', get_theme_file_uri( '/assets/js/vendor/slinky.js' ), array( 'jquery', 'js-offcanvas' ), '4.0.2', TRUE );
 			wp_register_script( 'jquery-fitvids', get_theme_file_uri( '/assets/js/vendor/jquery.fitvids.js' ), array( 'jquery' ), '1.1.0', TRUE );
 
-			$javascript_deps = (array) apply_filters( 'conj_lite_vendor_javascript_deps', array( 'jquery', 'js-offcanvas', 'conj-underscores-navigation', 'conj-underscores-skip-link-focus-fix', 'slinky', 'jquery-fitvids' ) );
+			$javascript_deps = (array) apply_filters( 'conj_lite_vendor_javascript_deps', array( 'jquery', 'js-offcanvas', 'conj-lite-underscores-navigation', 'conj-lite-underscores-skip-link-focus-fix', 'slinky', 'jquery-fitvids' ) );
 
 			wp_enqueue_script( 'conj-lite-scripts', get_theme_file_uri( '/assets/js/script.js' ), $javascript_deps, CONJ_LITE_THEME_VERSION, TRUE );
 
