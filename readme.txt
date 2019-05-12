@@ -1,6 +1,6 @@
 === Conj Lite ===
 Contributors: mypreview, mahdiyazdani, gookaani
-Tags: two-columns, three-columns, four-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, block-styles, wide-blocks
+Tags: two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, block-styles, wide-blocks
 Donate link: https://www.conj.ws
 Requires at least: 5.0
 Tested up to: 5.2
