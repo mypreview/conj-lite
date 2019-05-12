@@ -3653,7 +3653,6 @@ form.woocommerce-ResetPassword > p:first-of-type,
 .woocommerce-Address-title > h3 {
 	margin-top: 0;
 }
-.woocommerce-MyAccount-content .woocommerce-error.wc-stripe-error,
 .woocommerce-MyAccount-content .woocommerce-customer-details address,
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2,
 .woocommerce-EditAccountForm > p:last-of-type,
@@ -3707,9 +3706,6 @@ form.woocommerce-ResetPassword > p:last-of-type,
 }
 .woocommerce-MyAccount-content .woocommerce-PaymentMethods {
 	list-style: none;
-}
-.woocommerce-MyAccount-content .woocommerce-error.wc-stripe-error {
-	margin-top: 20px;
 }
 /*--------------------------------------------------------------
 ## Customer login
@@ -3961,38 +3957,31 @@ form.track_order > p:first-of-type {
 form.track_order > p:last-of-type {
 	margin-bottom: 0;
 }
+.woocommerce-error + .track_order {
+	margin-top: 42px;
+}
+form.track_order .button,
 form.track_order input[type="text"] {
 	width: 100%;
 }
-@media (min-width: 48.0625em) {
+.order-info + .woocommerce-order-details {
+	padding-top: 10px;
+}
+@media (min-width: 37.5625em) {
 	form.track_order > * {
-		padding-left: 75px;
-		padding-right: 75px;
+		padding-left: 42px;
+		padding-right: 42px;
 	}
 	form.track_order > p:first-of-type {
-		margin-bottom: 75px;
-		padding-top: 75px;
+		margin-bottom: 42px;
+		padding-top: 46px;
+		padding-bottom: 46px;
 	}
-	form.track_order,
-	form.track_order > p:first-of-type {
-		padding-bottom: 75px;
+	form.track_order {
+		padding-bottom: 53px;
 	}
 }
-@media (max-width: 48em) and (min-width: 27.5625em) {
-	form.track_order > * {
-		padding-left: 50px;
-		padding-right: 50px;
-	}
-	form.track_order > p:first-of-type {
-		margin-bottom: 50px;
-		padding-top: 50px;
-	}
-	form.track_order,
-	form.track_order > p:first-of-type {
-		padding-bottom: 50px;
-	}
-}
-@media (max-width: 27.5em) {
+@media (max-width: 37.5em) {
 	form.track_order > * {
 		padding-left: 30px;
 		padding-right: 30px;
@@ -4006,7 +3995,6 @@ form.track_order input[type="text"] {
 		padding-bottom: 30px;
 	}
 }
-
 /*--------------------------------------------------------------
 # 404
 --------------------------------------------------------------*/
