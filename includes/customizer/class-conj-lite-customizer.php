@@ -1,9 +1,9 @@
 <?php
 /**
- * Conj Customizer class
+ * Conj Lite Customizer class
  *
- * @since 	    1.3.7
- * @package 	conj
+ * @since 	    1.1.0
+ * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
