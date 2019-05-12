@@ -2043,8 +2043,8 @@ body.custom-background .c-offcanvas-content-wrap {
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-
-/* Text meant only for screen readers. */
+.ui-datepicker-header .ui-datepicker-next span, 
+.ui-datepicker-header .ui-datepicker-prev span,
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -2082,14 +2082,9 @@ body.custom-background .c-offcanvas-content-wrap {
 	z-index: 100000;
 	/* Above WP toolbar. */
 }
-
-
-/* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
-
-
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
