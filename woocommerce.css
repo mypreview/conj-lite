@@ -3998,21 +3998,14 @@ form.track_order input[type="text"] {
 /*--------------------------------------------------------------
 # 404
 --------------------------------------------------------------*/
-.error-404.not-found input[type="text"].product-search-field {
-	padding: 10px 20px 10px 40px;
-}
-.error-404.not-found .widget_product_search .woocommerce-product-search:before,
-.error-404.not-found form.product-search-form div:before {
+.error-404.not-found .widget_product_search .woocommerce-product-search:before {
     left: 15px;
-}
-.error-404.not-found form.product-search-form button {
-	padding: 10px;
 }
 .error-404-last .best-selling-products > h2,
 .error-404-first .promoted-products > h2 {
 	border-width: 0 0 1px;
-    margin-bottom: 40px;
-    padding-bottom: 25px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
     margin-top: 0;
 	border-style: solid;
 }
@@ -4021,18 +4014,21 @@ form.track_order input[type="text"] {
     box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
     padding: 30px;
 }
+.woocommerce-running .error-404-first .widgettitle {
+	margin-bottom: 21px;
+}
 @media (min-width: 62.0625em) {
 	.error-404-first {
 		display: -ms-grid;
 		display: grid;
 		-ms-grid-columns: 1.8fr 1fr;
-		    grid-template-columns: 1.8fr 1fr;
+	    grid-template-columns: 1.8fr 1fr;
 		grid-gap: 30px;
 	}
 }
 @media (max-width: 62em) {
 	.error-404-first .product-categories {
-		padding-top: 3.55em;
+		padding-top: 57px;
 	}
 }
 /*--------------------------------------------------------------
