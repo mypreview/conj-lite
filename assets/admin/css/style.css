@@ -14,7 +14,7 @@
 }
 #conj-lite-upsell-banner__top-text {
 	padding: 15px 35px 25px 15px;
-	background-color: #00be28;
+	background-color: #1e9ff2;
 	color: #fff;
 	display: flex;
 	align-items: baseline;
@@ -46,6 +46,31 @@
 	margin: .5em 0;
 	padding: 2px;
 }
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 > p {
+	text-align: center;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 .button-primary {
+	font-size: 14px;
+	margin: 2rem auto 0.3125rem;
+	padding: .5rem 1.5rem 2.2rem;
+	flex-shrink: 0;
+	background: #1e9ff2;
+	border-color: #006CBF #0053A6 #0053A6;
+	box-shadow: 0 1px 0 #0053A6;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 -1px 1px #0053A6,1px 0 1px #0053A6,0 1px 1px #0053A6,-1px 0 1px #0053A6;
+	transition: background .3s ease;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 .button-primary:hover {
+	background: #0586D9
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 .button-primary + small {
+	display: block;
+	font-size: 10px;
+	padding: 0 1rem;
+	margin-top: .5125rem;
+}
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features,
 #conj-lite-upsell-banner__message--inner {
 	display: flex;
@@ -58,6 +83,7 @@
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 {
 	margin: 0 1.5rem;
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 }
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col2 {
