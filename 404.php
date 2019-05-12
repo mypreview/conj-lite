@@ -55,11 +55,11 @@ get_header(); ?>
 							/* translators: 1: Head tag open 2: Head tag close. */
 							printf( esc_html__( '%1$sMost Used Categories%2$s', 'conj-lite' ), '<h2 class="widget-title">', '</h2><ul>' );
 								wp_list_categories( array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
+									'orderby' => 'count',
+									'order' => 'DESC',
 									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10
+									'title_li' => '',
+									'number' => 10
 								) );
 							printf( '</ul></div><!-- .widget_categories -->' );
 						} // End If Statement
@@ -76,7 +76,7 @@ get_header(); ?>
 								printf( esc_html__( '%1$sBest-Selling Products%2$s', 'conj-lite' ), '<h2>', '</h2>' );
 								echo wp_kses_post( conj_lite_do_shortcode( 'best_selling_products', array(
 									'per_page' => 4,
-									'columns'  => 4
+									'columns' => 4
 								) ) );
 							printf( '</div><!-- .best-selling-products -->' );
 
