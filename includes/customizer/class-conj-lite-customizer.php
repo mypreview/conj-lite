@@ -26,7 +26,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'customize_register',       array( $this, 'customize_register' ), 		10, 1 );
+			add_action( 'customize_register',                    array( $this, 'customize_register' ), 		10, 1 );
+            add_action( 'customize_controls_enqueue_scripts',    array( $this, 'panels_enqueue' ),             10 );
 
 		}
 
@@ -43,6 +44,9 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 		 * @return  void
 		 */
 		public function customize_register( $wp_customize ) {
+
+            // Load Customizer custom controls.
+            require get_parent_theme_file_path( '/includes/customizer/class-conj-lite-customizer-control-more.php' );
 
 			/**
 			 * Add the panels
@@ -71,6 +75,13 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 			    'capability' => 'edit_theme_options',
 			    'title' => esc_html__( 'Layout', 'conj-lite' )
 			) );
+
+            $wp_customize->add_section( 'conj_lite_more_sec', array(
+                'priority' => 9999,
+                'capability' => 'edit_theme_options',
+                /* translators: %s: Emoji unicode */
+                'title' => sprintf( esc_html__( 'More %s', 'conj-lite' ), '⚡' )
+            ) );
 
 			/**
 			 * Add the controls
@@ -199,6 +210,22 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'priority' => 10
             ) ) );
 
+            /**
+             * Add the controls
+             * More
+             */
+            $wp_customize->add_setting( 'conj_lite_more', array(
+                'type' => 'theme_mod',
+                'transport' => 'refresh',
+                'sanitize_callback' => 'sanitize_text_field'
+            ) );
+            $wp_customize->add_control( new Conj_Lite_More_Control( $wp_customize, 'conj_lite_more', array(
+                'label' => esc_html__( 'Looking for more options?', 'conj-lite' ) ,
+                'section' => 'conj_lite_more_sec',
+                'settings' => 'conj_lite_more',
+                'priority' => 10
+            ) ) );
+
 			// Default controls
 			$wp_customize->remove_control( 'display_header_text' );
 			$wp_customize->get_section( 'colors' )->panel = 'conj_lite_colors_pnl';
@@ -233,6 +260,19 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 			} // End If Statement
 
 		}
+
+        /**
+         * Enqueue extra CSS & JavaScript to improve the user experience in the Customizer.
+         *
+         * @see     https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+         * @access  public
+         * @return  void
+         */
+        public function panels_enqueue() {
+
+            wp_enqueue_style( 'conj-lite-panel-customizer-styles', get_theme_file_uri( '/assets/admin/css/panel-customizer.css' ), array(), CONJ_LITE_THEME_VERSION, 'all' );
+
+        }
 
 	    /**
 		 * Sanitizes choices (selects / radios)
