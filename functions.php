@@ -26,6 +26,7 @@ $conj_lite_theme = wp_get_theme( 'conj-lite' );
 define( 'CONJ_LITE_THEME_NAME', $conj_lite_theme->get( 'Name' ) );
 define( 'CONJ_LITE_THEME_URI', $conj_lite_theme->get( 'ThemeURI' ) );
 define( 'CONJ_LITE_THEME_AUTHOR', $conj_lite_theme->get( 'Author' ) );
+define( 'CONJ_LITE_THEME_AUTHOR_URI', $conj_lite_theme->get( 'AuthorURI' ) );
 define( 'CONJ_LITE_THEME_VERSION', $conj_lite_theme->get( 'Version' ) );
 
 // Back compat functionality
