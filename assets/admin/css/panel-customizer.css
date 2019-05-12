@@ -12,3 +12,19 @@
 	margin-top: 25px;
 	margin-bottom: 20px;
 }
+#conj-lite-customizer-more-control .button-primary {
+	font-size: 14px;
+	margin: .3125rem 0;
+	padding: .5rem 1.5rem 2.2rem;
+	flex-shrink: 0;
+	background: #1e9ff2;
+	border-color: #006CBF #0053A6 #0053A6;
+	box-shadow: 0 1px 0 #0053A6;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 -1px 1px #0053A6,1px 0 1px #0053A6,0 1px 1px #0053A6,-1px 0 1px #0053A6;
+	transition: background .3s ease;
+}
+#conj-lite-customizer-more-control .button-primary:hover {
+	background: #0586D9
+}
