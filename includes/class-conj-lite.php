@@ -2,9 +2,9 @@
 /**
  * Conj Lite Class
  *
- * @author  	Mahdi Yazdani
- * @package 	conj-lite
  * @since 	    1.1.0
+ * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -589,13 +589,15 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				wp_enqueue_style( 'conj-lite-google-font' );
 			} // End If Statement
 
-			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/css/style-editor.css' ), array( 'wp-edit-blocks' ), CONJ_LITE_THEME_VERSION, 'all' );
-			wp_register_style( 'conj-lite-block-editor-styles-rtl', get_theme_file_uri( '/assets/css/style-editor-rtl.css' ), array( 'conj-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_register_style( 'conj-lite-block-editor-styles-rtl', get_theme_file_uri( '/assets/admin/css/style-editor-rtl.css' ), array( 'conj-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
 
 			// Checks if current locale is RTL (Right To Left script).
 			if ( is_rtl() ) {
 				wp_enqueue_style( 'conj-lite-block-editor-styles-rtl' );
 			} // End If Statement
+
+			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
 
 		}
 
