@@ -630,7 +630,13 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 
 			// Add class if sidebar is used.
 			if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() ) {
-				$classes[] = 'has-sidebar left-sidebar';
+				$classes[] = 'has-sidebar';
+
+				$layout_sidebar = (string) get_theme_mod( 'conj_lite_layout_sidebar', 'left-sidebar' );
+				// Add a class to define sidebar placement.
+				if ( ! empty( $layout_sidebar ) ) {
+					$classes[] = esc_attr( $layout_sidebar );
+				} // End If Statement
 			} // End If Statement
 
 			// Add class if the site title and tagline is hidden.
