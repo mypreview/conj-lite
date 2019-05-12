@@ -46,7 +46,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 			<div id="conj-lite-upsell-notice" class="notice is-dismissible">
 				<div id="conj-lite-upsell-banner__top-text">
 					<span class="dashicons dashicons-info"></span>
-					<span><?php esc_html_e( 'You&rsquo;re currently using free version of the Conj theme. By upgrading to premium version, you would be able to enable powerful e-Commerce features and performance tools for your webshop.', 'conj-lite' ); ?></span>
+					<span><?php esc_html_e( 'You&rsquo;re currently using free version of the Conj theme. By upgrading to premium version, you would be able to unlock powerful e-Commerce features and performance tools for your webshop.', 'conj-lite' ); ?></span>
 				</div><!-- #conj-lite-upsell-banner__top-text -->
 				<div id="conj-lite-upsell-banner__message">
 					<div id="conj-lite-upsell-banner__message--inner">
@@ -172,7 +172,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 										printf( esc_html_x( '%s Translation ready', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
 										<li><?php 
 										/* translators: %s: Emoji unicode */
-										printf( esc_html_x( '%s .....and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
+										printf( esc_html_x( '%s &hellip;&hellip;and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
 									</ul>
 								</div>
 							</div>

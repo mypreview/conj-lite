@@ -83,7 +83,7 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 					printf( esc_html_x( '%s Google Analytics Integration', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s .....and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
+					printf( esc_html_x( '%s &hellip;&hellip;and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
 				</ul>
 			</p>
 			<p>
