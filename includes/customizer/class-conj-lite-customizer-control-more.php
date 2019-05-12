@@ -33,7 +33,7 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 			</span>
 			<p>
 				<?php
-				esc_html_e( 'CONJ aims to remove all barriers between you and 3rd party plugins by offering all the things that you need to run a successful webshop. Give us a try, and we promise you won’t regret it.', 'conj-lite' ); ?>
+				esc_html_e( 'CONJ aims to remove all barriers between you and 3rd party plugins by offering all the things that you need to run a successful webshop. Give us a try, and we promise you won&rsquo;t regret it.', 'conj-lite' ); ?>
 			</p>
 			<span class="customize-control-title">
 				<?php
@@ -44,46 +44,46 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 				<ul>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Header Customizer', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Header Customizer', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Modular Mega-Menu', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Modular Mega-Menu', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Gutenberg Blocks', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Gutenberg Blocks', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s +%s Template Blocks', 'conj-lite' ), '✅', '💯' ); ?></li>
+					printf( esc_html_x( '%s +%s Template Blocks', 'more_feature', 'conj-lite' ), '✅', '💯' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Two-Steps Checkout', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Two-Steps Checkout', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Product Brands', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Product Brands', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Store Vacation', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Store Vacation', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Attribute Swatches', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Attribute Swatches', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Product Quick View', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Product Quick View', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Distraction Free Checkout', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Distraction Free Checkout', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Product Archive Customizer', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Product Archive Customizer', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s WPML Compatible', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s WPML Compatible', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s Google Analytics Integration', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Google Analytics Integration', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html__( '%s .....and much more', 'conj-lite' ), '🔥' ); ?></li>
+					printf( esc_html_x( '%s .....and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
 				</ul>
 			</p>
 			<p>
