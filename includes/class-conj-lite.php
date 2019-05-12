@@ -479,7 +479,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		 */
 		public function admin_enqueue() {
 
-			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0' );
 			wp_enqueue_style( 'conj-lite-admin-nux-styles', get_theme_file_uri( '/assets/admin/css/style.css' ), array( 'feather' ), CONJ_LITE_THEME_VERSION );
 
 		}
