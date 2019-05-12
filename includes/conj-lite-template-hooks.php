@@ -32,4 +32,4 @@ add_action( 'conj_lite_header', 			'conj_lite_primary_navigation',              
  * @see  	conj_lite_credit()
  */
 add_action( 'conj_lite_footer', 			 'conj_lite_footer_widgets',			  	   10 );
-add_action( 'conj_footer', 			 		 'conj_lite_credit',					  	   20 );
+add_action( 'conj_lite_footer', 			 'conj_lite_credit',					  	   20 );
