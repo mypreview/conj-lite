@@ -2088,19 +2088,26 @@ body.custom-background .c-offcanvas-content-wrap {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+.entry-content .wp-block-latest-posts.alignleft,
+ul.wp-block-archives.alignleft,
+ol.wp-block-latest-comments.alignleft,
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: 2em;
 }
+.entry-content .wp-block-latest-posts.alignright,
+ul.wp-block-archives.alignright,
+ol.wp-block-latest-comments.alignright,
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: 2em;
 }
-.aligncenter {
-	clear: both;
-	display: block;
+.aligncenter.wp-block-archives-list {
+	display: table;
+}
+.aligncenter:not(.wp-block-cover) {
 	margin-left: auto;
 	margin-right: auto;
 }
