@@ -46,6 +46,9 @@
 	margin: .5em 0;
 	padding: 2px;
 }
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 > img {
+	margin-top: 1.7em;
+}
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 > p {
 	text-align: center;
 }
