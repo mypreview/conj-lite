@@ -27,7 +27,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'admin_notices', 	  array( $this, 'upsell_notice' ), 	     -1 );
+			add_action( 'admin_notices', 	  array( $this, 'upsell_notice' ), 	     1 );
 
 		}
 
