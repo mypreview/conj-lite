@@ -4,7 +4,7 @@
  *
  * @since 	    1.1.0
  * @package 	conj-lite
- * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -113,11 +113,10 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * @see 	https://developer.wordpress.org/themes/functionality/custom-headers
 			 */
 			add_theme_support( 'custom-header', apply_filters( 'conj_lite_custom_header_args', array(
-				'default-text-color' => 	'6B6F81',
+				'default-text-color' => '6B6F81',
 				'width' => 1950,
 				'height' => 500,
-				'flex-height' => TRUE,
-				'wp-head-callback' => array( $this, 'header_styles' )
+				'flex-height' => TRUE
 			) ) );
 
 			/**
@@ -317,51 +316,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		}
 
 		/**
-		 * Get site header text color.
-		 * Styles the site title and tagline.
-		 * NOTE: THIS IS A CALL BACK METHOD @see -> L-#120
-		 *
-		 * @link 	https://github.com/Automattic/_s/blob/master/inc/custom-header.php
-		 *
-		 * @access 	public
-		 * @return 	void
-		 */
-		public function header_styles() {
-
-			$header_text_color = get_header_textcolor();
-
-			// If no custom options for text are set, let's bail.
-			// get_header_textcolor() options: add_theme_support( 'custom-header' ) is default, hide text (returns 'blank') or any hex value.
-			if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-				return;
-			}
-
-			// If we get this far, we have custom styles. Let's do this.
-			?>
-			<style type="text/css">
-			<?php
-				// Has the text been hidden?
-				if ( 'blank' === $header_text_color ) : ?>
-				.site-title,
-				.site-description {
-					position: absolute;
-					clip: rect(1px, 1px, 1px, 1px);
-				}
-			<?php
-				// If the user has set a custom color for the text use that.
-				else : ?>
-				.site-title,
-				.site-title a,
-				.site-description {
-					color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;
-				}
-			<?php endif; ?>
-			</style>
-			<?php
-
-		}
-
-		/**
 		 * Handles JavaScript detection.
 		 * Adds a `js` class to the root `<html>` element when JavaScript is detected.
 		 *
@@ -529,6 +483,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			$stylesheet_deps = (array) apply_filters( 'conj_lite_vendor_stylesheet_deps', array( 'feather', 'js-offcanvas', 'slinky' ) );
 
 			wp_enqueue_style( 'conj-lite-styles', get_stylesheet_uri(), $stylesheet_deps, CONJ_LITE_THEME_VERSION );
+			wp_add_inline_style( 'conj-lite-styles', Conj_Lite_Customizer_Styles::css() );
 
 			/**
 			 * The core JS libraries can be found in /assets/js/vendor/
