@@ -171,7 +171,7 @@ if ( ! function_exists( 'conj_lite_credit' ) ) :
 		 
 		if ( apply_filters( 'conj_lite_credit_author_link', TRUE ) ) {
 			/* translators: 1: Seperator, 2: Theme name, 3: Theme author. */
-			printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-author-credits"><span class="sep"> | </span>', esc_html( CONJ_LITE_THEME_NAME ), '<a href="' . esc_url( CONJ_LITE_THEME_URI ) . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html( CONJ_LITE_THEME_AUTHOR ) . '</a>.</span>' );
+			printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-author-credits"><span class="sep"> | </span>', esc_html( CONJ_LITE_THEME_NAME ), '<a href="' . esc_url( CONJ_LITE_THEME_AUTHOR_URI ) . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html( CONJ_LITE_THEME_AUTHOR ) . '</a>.</span>' );
 		} // End If Statement ?>
 
 		</div><!-- .site-info --><?php		
