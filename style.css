@@ -1374,6 +1374,60 @@ input[type="radio"]:checked:before {
     border: 2px solid currentcolor;
 }
 /*--------------------------------------------------------------
+## Date picker
+--------------------------------------------------------------*/
+.ui-datepicker.ui-widget {
+	font-family: inherit;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-state-active,
+.ui-datepicker .ui-datepicker-calendar tbody tr, 
+.ui-datepicker .ui-datepicker-calendar thead,
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-unselectable,
+.ui-datepicker .ui-datepicker-calendar th,
+.ui-datepicker .ui-datepicker-header {
+	border-width: 0;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-state-default {
+	box-shadow: none;
+	background: inherit;
+}
+.ui-datepicker-calendar td.ui-datepicker-unselectable.ui-state-disabled {
+	background-color: inherit;
+}
+.ui-datepicker-header .ui-datepicker-next, 
+.ui-datepicker-header .ui-datepicker-prev {
+	background-image: none;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ui-datepicker .ui-datepicker-calendar td a,
+.ui-datepicker .ui-datepicker-header {
+	text-shadow: none;
+}
+.ui-datepicker-next:before, 
+.ui-datepicker-prev:before {
+	background-image: none;
+}
+.ui-datepicker-next:before {
+	content: "\e92f";
+}
+.ui-datepicker-prev:before {
+	content: "\e92e";
+}
+.ui-datepicker .ui-datepicker-title select {
+	padding: 0 15px 3px 10px;
+    border: none;
+    min-height: 32px;
+    margin-top: 0;
+    background-position: calc(100% - 6.8px) calc(1em + 1px), calc(100% - 4px) calc(1em + 1px), 100% 0;
+    background-size: 3px 3px, 3px 3px, 1.5em 1.5em;
+}
+.ui-datepicker .ui-datepicker-calendar td a {
+	margin: 0;
+    height: 100%;
+}
+/*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
 a span,
