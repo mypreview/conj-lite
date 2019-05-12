@@ -4032,6 +4032,72 @@ form.track_order input[type="text"] {
 	}
 }
 /*--------------------------------------------------------------
+# Search result
+--------------------------------------------------------------*/
+.search-results:not(.post-type-archive) .site-main article.type-product .entry-content {
+	flex-wrap: wrap;
+	display: flex;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .entry-wrapper {
+	align-items: center;
+	display: flex;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .post-thumbnail {
+	display: block;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .entry-meta {
+	border-style: solid;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .entry-content > * {
+	flex: 0 0 100%;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .woocommerce-product-details__categories {
+	order: -1;
+	margin-top: 5px;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .price {
+	margin-bottom: 0;
+}
+.search-results:not(.post-type-archive) .site-main article.type-product .woocommerce-Price-amount {
+	margin-bottom: 5px;
+}
+@media (min-width: 37.5625em) {
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-content {
+		width: calc(100% - 200px);
+	}
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-meta {
+		border-width: 0 1px 0 0;
+	}
+}
+@media (min-width: 48.0625em) {
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-meta {
+		padding-right: 30px;
+		margin-right: 30px;
+		width: 200px;
+	}
+}
+@media (max-width: 48em) and (min-width: 37.5625em) {
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-meta {
+		padding-right: 20px;
+		margin-right: 20px;
+		width: 150px;
+	}
+}
+@media (max-width: 37.5em) {
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-wrapper {
+		flex-wrap: wrap;
+	}
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-content,
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-meta {
+		width: 100%;
+	}
+	.search-results:not(.post-type-archive) .site-main article.type-product .entry-meta {
+		padding-bottom: 20px;
+		border-width: 0 0 1px;
+		margin-bottom: 20px;
+	}
+}
+/*--------------------------------------------------------------
 # Colors
 --------------------------------------------------------------*/
 .woocommerce-running {
