@@ -552,6 +552,21 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				wp_enqueue_style( 'conj-lite-block-editor-styles-rtl' );
 			} // End If Statement
 
+			// General			
+			$general_background_color = sanitize_hex_color_no_hash( get_background_color() );
+			// Retrieving Customizer theme mod values
+
+			$inline_css = "
+				body.post-type-post #editor .editor-block-list__block[data-align='full'],
+				.wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
+				.wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
+			 	.edit-post-visual-editor {
+					background-color: #{$general_background_color};
+				}
+			";
+
+			wp_add_inline_style( 'conj-lite-block-editor-styles', wp_strip_all_tags( $inline_css ) );
+
 			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
 
 		}
