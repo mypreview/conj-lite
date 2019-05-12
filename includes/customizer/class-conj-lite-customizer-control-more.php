@@ -89,7 +89,7 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 			<p>
 				<?php
 				/* translators: 1: Open anchor tag, 2: Emoji unicode, 3: Close anchor tag. */
-				printf( esc_html__( '%1$sUpgrade Now %2$s %3$s', 'conj-lite' ), '<a href="https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview" class="button button-primary" target="_blank" rel="noopener">', '💰', '</a>' ); ?>
+				printf( esc_html__( '%1$sGo Premium %2$s %3$s', 'conj-lite' ), '<a href="https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview" class="button button-primary" target="_blank" rel="noopener">', '💰', '</a>' ); ?>
 			</p>
 			<hr/>
 			<span class="customize-control-title">
