@@ -1110,31 +1110,108 @@ p.has-background {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-label + input {
+label:not(.screen-reader-text) > input[type="password"],
+label:not(.screen-reader-text) + textarea,
+label:not(.screen-reader-text) + input:not(.search-submit) {
 	display: block;
 }
+.ui-datepicker .ui-datepicker-calendar,
+select,
+input[type="text"], 
+input[type="email"], 
+input[type="url"], 
+input[type="password"], 
+input[type="search"], 
+input[type="number"], 
+input[type="tel"], 
+input[type="range"], 
+input[type="date"], 
+input[type="month"], 
+input[type="week"], 
+input[type="time"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="color"], 
+textarea,
+input[type="checkbox"],
+input[type="radio"],
+body:not(.single-post) article.post.hentry .entry-content .more-link,
+.type-attachment .edit-link .post-edit-link,
+.entry-footer .edit-link .post-edit-link,
+.button,
+.wp-block-file a.wp-block-file__button,
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+	border-style: solid;
+    border-width: 1px;
+}
+button.close-btn,
+button.pswp__button,
+button.handheld-menu-toggle,
+button.customize-partial-edit-shortcut-button {
+	border-width: 0;
+}
+body:not(.single-post) article.post.hentry .entry-content .more-link,
+.wp-block-button .wp-block-button__link,
+.type-attachment .edit-link .post-edit-link,
+.wp-block-file .wp-block-file__button,
 .entry-footer .edit-link .post-edit-link,
 .button, 
 button:not(.close-btn):not(.pswp__button):not(.customize-partial-edit-shortcut-button):not(.handheld-menu-toggle), 
 input[type="button"], 
 input[type="reset"], 
 input[type="submit"] {
-	border: 1px solid;
 	padding: 11px 40px;
 	min-width: 130px;
-	border-radius: 0;
 	outline: 0;
 	min-height: 48px;
 	position: relative;
-	-webkit-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
+	-webkit-transition: 0.3s ease all;
+	-o-transition: 0.3s ease all;
+	transition: 0.3s ease all;
 }
+.wp-block-file a.wp-block-file__button:active, 
+.wp-block-file a.wp-block-file__button:focus, 
+.wp-block-file a.wp-block-file__button:hover, 
+.wp-block-file a.wp-block-file__button:visited {
+	opacity: 1;
+}
+body:not(.single-post) article.post.hentry .entry-content .more-link,
+.wp-block-button.is-style-squared .wp-block-button__link,
+.type-attachment .edit-link .post-edit-link,
+.entry-footer .edit-link .post-edit-link,
+.button, 
+.wp-block-file .wp-block-file__button,
+button:not(.close-btn):not(.pswp__button):not(.handheld-menu-toggle):not(.customize-partial-edit-shortcut-button), 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+	border-radius: 0;
+}
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background), 
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):active, 
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus, 
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover,
+.wp-block-button.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+}
+.wp-block-button .wp-block-button__link,
+.type-attachment .edit-link .post-edit-link,
+.wp-block-file .wp-block-file__button,
 .entry-footer .edit-link .post-edit-link,
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 	cursor: pointer;
+	flex-wrap: wrap;
 }
+.wp-block-file a.wp-block-file__button:active, 
+.wp-block-file a.wp-block-file__button:focus, 
+.wp-block-file a.wp-block-file__button:hover, 
+.wp-block-file a.wp-block-file__button:visited,
 input[name='apply_coupon'],
 .button[disabled],
 button[disabled],
@@ -1151,6 +1228,9 @@ input[type='button']:hover,
 input[type='reset']:hover, 
 input[type='submit']:hover {
 	background-color: transparent;
+}
+.wp-block-button {
+	margin-bottom: 0;
 }
 select,
 input[type="text"], 
@@ -1169,7 +1249,7 @@ input[type="datetime"],
 input[type="datetime-local"], 
 input[type="color"], 
 textarea {
-	min-height: 46px;
+	min-height: 48px;
 	padding: 10px 14px;
 }
 select:focus,
@@ -1191,17 +1271,28 @@ input[type="color"]:focus,
 textarea:focus {
 	outline: 0;
 }
-select {
-    background-position: calc(100% - 20px) calc(1.3em + 2px), calc(100% - 15px) calc(1.3em + 2px), 100% 0;
+select:not([multiple="multiple"]) {
+    background-position: calc(100% - 14.8px) calc(1.3em + 4px), calc(100% - 10px) calc(1.3em + 4px), 100% 0;
     background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
     background-repeat: no-repeat;
 	border-radius: 0;
+	min-height: 48px;
+	padding: 12px 30px 12px 14px;
+}
+select[multiple="multiple"] {
+	overflow: auto;
+	padding: 0;
+}
+select[multiple="multiple"] option {
+	padding: 10px 25px 10px 14px;
+	cursor: pointer;
 }
 input[type=number]::-webkit-inner-spin-button {
 	-webkit-appearance: none;
-       -moz-appearance: none;
+		-moz-appearance:textfield;
             appearance: none;
 }
+.ui-datepicker.ui-widget,
 select,
 input[type="text"], 
 input[type="email"], 
@@ -1230,9 +1321,10 @@ input[type="radio"] {
 	-webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
-	border-style: solid;
-	border-width: 1px;
 	outline: 0;
+}
+input[type="number"] {
+	-moz-appearance:textfield;
 }
 textarea {
 	width: 100%;
@@ -1248,6 +1340,11 @@ input[type="radio"] {
 	width: 16px;
 	height: 16px;
 	position: relative;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.comment-form-cookies-consent [type="checkbox"] {
+    margin-top: 3px;
 }
 input[type="checkbox"]:checked:before,
 input[type="radio"]:checked:before {
@@ -1266,7 +1363,16 @@ input[type="radio"]:checked:before {
     width: 8px;
     height: 8px;
 }
-
+.wp-block-file .wp-block-file__button:before {
+	content: "\e955";
+}
+.wp-block-file .wp-block-file__button:not(:empty):before {
+	padding-right: 10px;
+}
+.is-style-outline .wp-block-button__link {
+    background: 0 0;
+    border: 2px solid currentcolor;
+}
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
