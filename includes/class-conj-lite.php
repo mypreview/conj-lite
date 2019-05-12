@@ -178,7 +178,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * This theme styles the visual editor to resemble the theme style,
 			 * specifically font, colors, and column width.
 		 	 */
-			add_editor_style( array( 'assets/css/legacy/editor-style.css', self::google_fonts_url() ) );
+			add_editor_style( array( 'assets/admin/css/legacy/editor-style.css', self::google_fonts_url() ) );
 
 			/**
 			 * Add support for Gutenberg.
