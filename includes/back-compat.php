@@ -8,9 +8,9 @@
  * relies on many newer functions and markup changes introduced in 5.0 and PHP version 7.0.
  *
  * @link 		https://github.com/WordPress/twentysixteen
- * @author  	Mahdi Yazdani
- * @package 	conj-lite
  * @since 	    1.1.0
+ * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

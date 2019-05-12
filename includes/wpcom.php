@@ -3,9 +3,9 @@
  * WordPress.com-specific functions and definitions
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @author  	Mahdi Yazdani
- * @package 	conj-lite
  * @since 	    1.1.0
+ * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 // Exit if accessed directly.

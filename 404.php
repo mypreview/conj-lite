@@ -3,7 +3,9 @@
  * The template for displaying 404 pages (not found)
  *
  * @link 		https://codex.wordpress.org/Creating_an_Error_404_Page
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 get_header(); ?>

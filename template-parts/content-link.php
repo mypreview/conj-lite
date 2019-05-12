@@ -3,7 +3,9 @@
  * The template for displaying posts in the `Link` post format
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="https://schema.org/BlogPosting" itemprop="blogPost">

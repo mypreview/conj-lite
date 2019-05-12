@@ -5,7 +5,9 @@
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
  * @link 		https://github.com/WordPress/twentyseventeen/blob/master/components/post/content-audio.php
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="https://schema.org/BlogPosting" itemprop="blogPost">

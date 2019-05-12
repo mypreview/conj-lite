@@ -9,8 +9,9 @@
  * @link 		https://developer.wordpress.org/reference/functions/the_posts_pagination/
  * @link 		https://developer.wordpress.org/reference/functions/the_post_navigation/
  * @link 		https://docs.woocommerce.com/wc-apidocs/function-woocommerce_content.html
- * @link 		https://jetpack.com/support/content-options/
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 get_header(); ?>

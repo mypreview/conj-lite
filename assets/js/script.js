@@ -1,9 +1,9 @@
 /**
  * Conj Lite scripts & custom methods
  *
- * @author      Mahdi Yazdani
- * @package     conj-lite
  * @since       1.1.0
+ * @package     conj-lite
+ * @author      MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 (function( window, $, undefined ) {
     'use strict';

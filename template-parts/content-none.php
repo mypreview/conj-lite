@@ -3,7 +3,9 @@
  * Template part for displaying a message that posts cannot be found
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 ?>
 <section class="no-results not-found">

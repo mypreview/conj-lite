@@ -3,7 +3,9 @@
  * The template for displaying search results pages
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 get_header(); ?>

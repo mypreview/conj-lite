@@ -4,9 +4,9 @@
  *
  * @uses 		One Click Demo Import
  * @link 		https://wordpress.org/plugins/one-click-demo-import/
- * @author  	Mahdi Yazdani
- * @package 	conj-lite
  * @since 	    1.1.0
+ * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 // Exit if accessed directly.

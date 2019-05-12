@@ -2,9 +2,9 @@
 /**
  * Conj functions.
  *
- * @author  	Mahdi Yazdani
- * @package 	conj-lite
  * @since 	    1.1.0
+ * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 /**

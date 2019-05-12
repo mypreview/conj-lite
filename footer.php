@@ -4,7 +4,9 @@
  * Contains the closing of the #content div and all content after.
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 	
 					?></div><!-- .conj-lite-col__full --><?php

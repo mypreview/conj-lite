@@ -3,7 +3,9 @@
  * The template for displaying archive pages
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @since 	    1.1.0
  * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 
 get_header(); ?>

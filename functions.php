@@ -16,9 +16,9 @@
  *
  * @see 		https://codex.wordpress.org/Theme_Development
  * @see 		https://codex.wordpress.org/Plugin_API
- * @author  	Mahdi Yazdani
- * @package 	conj-lite
  * @since 	    1.1.0
+ * @package 	conj-lite
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 // Assign the "Conj Lite" info to constants.
 $conj_lite_theme = wp_get_theme( 'conj-lite' );
