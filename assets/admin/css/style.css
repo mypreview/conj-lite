@@ -2,5 +2,64 @@
  * WordPress admin enhancements, specific to theme's admin modifications.
  *
  * @package     conj-lite
- * @author      MyPreview (Github: @mypreview, @gookalani)
+ * @author      MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
+#conj-lite-upsell-notice {
+	padding: 0;
+	border: none;
+	box-shadow: none;
+}
+#conj-lite-upsell-notice .notice-dismiss:before {
+	color: #fff;
+}
+#conj-lite-upsell-banner__top-text {
+	padding: 15px 35px 25px 15px;
+	background-color: #00be28;
+	color: #fff;
+	display: flex;
+	align-items: baseline;
+}
+#conj-lite-upsell-banner__top-text .dashicons {
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	position: relative;
+	top: 5px;
+}
+#conj-lite-upsell-banner__top-text .dashicons + span {
+	display: inline-block;
+	font-size: 14px;
+}
+#conj-lite-upsell-banner__message {
+	max-width: 1250px;
+	position: relative;
+	padding: 2rem;
+	z-index: 0;
+}
+#conj-lite-upsell-banner__message h2 {
+	font-size: 1.7em;
+}
+#conj-lite-upsell-banner__message li,
+#conj-lite-upsell-banner__message p {
+	color: #6f6f6f;
+	font-size: .875rem;
+	margin: .5em 0;
+	padding: 2px;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features,
+#conj-lite-upsell-banner__message--inner {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features {
+	margin-top: 30px;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 {
+	margin: 0 1.5rem;
+	display: flex;
+	flex-direction: column;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col2 {
+	padding-left: 2.8125rem;
+}
