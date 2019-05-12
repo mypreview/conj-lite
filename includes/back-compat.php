@@ -49,7 +49,7 @@ function conj_lite_back_compat_php_admin_notice() {
  */
 function conj_lite_get_php_notice_text() {
 	/* translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required PHP version number, 4: Running PHP version number, 5: Anchor open tag, 6: Anchor close tag. */
-	$notice_text = sprintf( esc_html__( '%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least PHP version %3$s. You are running version %4$s. Please %5$supgrade%6$s and try again.', 'conj-lite' ), '<a href="' . esc_url( CONJ_LITE_THEME_URI ) . '" target="_blank">', '</a>', esc_html( CONJ_LITE_PHP_VERSION ), esc_html( PHP_VERSION ), '<a href="https://wordpress.org/support/update-php/" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
+	$notice_text = sprintf( esc_html__( '%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least PHP version %3$s. You are running version %4$s. Please %5$supgrade%6$s and try again.', 'conj-lite' ), '<a href="' . esc_url( CONJ_LITE_THEME_URI ) . '" target="_blank" rel="noopener noreferrer nofollow">', '</a>', esc_html( CONJ_LITE_PHP_VERSION ), esc_html( PHP_VERSION ), '<a href="https://wordpress.org/support/update-php/" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
 
 	return apply_filters( 'conj_lite_php_notice_text', $notice_text );
 }
