@@ -251,11 +251,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 					'color' => '#A7ABBE'
 				),
 				array(
-					'name' => __( 'Ghost', 'conj-lite' ),
-					'slug' => 'ghost',
-					'color' => '#C0C4D2'
-				),
-				array(
 					'name' => __( 'Martinique', 'conj-lite' ),
 					'slug' => 'martinique',
 					'color' => '#2D2E4F'
@@ -271,39 +266,9 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 					'color' => '#666EE8'
 				),
 				array(
-					'name' => __( 'Malibu', 'conj-lite' ),
-					'slug' => 'malibu',
-					'color' => '#898EFF'
-				),
-				array(
-					'name' => __( 'Melrose', 'conj-lite' ),
-					'slug' => 'melrose',
-					'color' => '#9DA4FF'
-				),
-				array(
-					'name' => __( 'Radical Red', 'conj-lite' ),
-					'slug' => 'radical-red',
-					'color' => '#FF4961'
-				),
-				array(
-					'name' => __( 'Peach', 'conj-lite' ),
-					'slug' => 'peach',
-					'color' => '#FFEAB0'
-				),
-				array(
-					'name' => __( 'Blizzard Blue', 'conj-lite' ),
-					'slug' => 'blizzard-blue',
-					'color' => '#B7E5F0'
-				),
-				array(
 					'name' => __( 'White Lilac', 'conj-lite' ),
 					'slug' => 'white-lilac',
 					'color' => '#F4F5FA'
-				),
-				array(
-					'name' => __( 'Athens Gray', 'conj-lite' ),
-					'slug' => 'athens-gray',
-					'color' => '#E4E5EC'
 				),
 				array(
 					'name' => __( 'White', 'conj-lite' ),
