@@ -3564,6 +3564,8 @@ ul.woocommerce-thankyou-order-details li {
 /*--------------------------------------------------------------
 # My account
 --------------------------------------------------------------*/
+.woocommerce-MyAccount-content .woocommerce-PaymentMethods,
+.woocommerce-form-register .woocommerce-privacy-policy-text p,
 .woocommerce-MyAccount-content .woocommerce-address-fields > p,
 .woocommerce-MyAccount-content fieldset,
 .woocommerce-MyAccount-navigation ul {
@@ -3591,18 +3593,13 @@ ul.woocommerce-thankyou-order-details li {
     border-width: 0 0 1px 0;
 }
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login,
-#customer_login .woocommerce-form,
-.woocommerce-Address-title,
-.woocommerce-MyAccount-navigation-link > a {
-	display: -webkit-box;
-	display: -ms-flexbox;
+#customer_login .woocommerce-form {
 	display: flex;
 }
 .woocommerce-Address-title,
 .woocommerce-MyAccount-navigation-link > a {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+	display: flex;
+    align-items: center;
 }
 .woocommerce-MyAccount-navigation-link > a {
 	display: block;
@@ -3640,9 +3637,7 @@ ul.woocommerce-thankyou-order-details li {
 .woocommerce-MyAccount-content > form > h3,
 .woocommerce-Address-title {
 	border-width: 0 0 1px;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	justify-content: space-between;
 	margin-bottom: 15px;
 }
 .woocommerce-MyAccount-content > form > h3 {
@@ -3658,33 +3653,42 @@ form.woocommerce-ResetPassword > p:first-of-type,
 .woocommerce-Address-title > h3 {
 	margin-top: 0;
 }
+.woocommerce-MyAccount-content .woocommerce-error.wc-stripe-error,
+.woocommerce-MyAccount-content .woocommerce-customer-details address,
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2,
-.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login,
 .woocommerce-EditAccountForm > p:last-of-type,
 .woocommerce-MyAccount-content .woocommerce-address-fields button,
 form.woocommerce-ResetPassword > p:last-of-type,
-#customer_login form > p:last-of-type,
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login > p:last-of-type,
+#customer_login form > p:last-of-type,
 #customer_login .woocommerce-form {
 	margin-bottom: 0;
 }
+.woocommerce-MyAccount-content .woocommerce-PaymentMethods,
 .woocommerce-MyAccount-content fieldset {
 	border: none;
     padding: 0;
 }
 .woocommerce-MyAccount-content > p + section,
-.woocommerce-MyAccount-content legend,
-.woocommerce-order-details + .woocommerce-customer-details {
+.woocommerce-MyAccount-content legend {
 	padding-top: 10px;
 }
+.woocommerce-order-details + .woocommerce-customer-details {
+	padding-top: 21px;
+}
+.woocommerce-account .woocommerce-form-register .form-row > label:first-child,
 .woocommerce-MyAccount-content legend {
 	display: block;
     width: 100%;
+}
+.woocommerce-MyAccount-content legend {
 	padding-bottom: 21px;
+}
+.woocommerce-MyAccount-content #place_order {
+	margin-top: 11px;
 }
 .woocommerce-table--order-downloads tr,
 .woocommerce-MyAccount-orders tr {
-	display: -ms-grid;
 	display: grid;
 }
 .woocommerce-MyAccount-downloads-file:before {
@@ -3701,12 +3705,16 @@ form.woocommerce-ResetPassword > p:last-of-type,
 .woocommerce-orders-table__cell-order-actions .button:not(:first-child) {
 	padding-left: 10px;
 }
-.woocommerce-MyAccount-content .woocommerce-address-fields button {
-	margin-top: 15px
+.woocommerce-MyAccount-content .woocommerce-PaymentMethods {
+	list-style: none;
+}
+.woocommerce-MyAccount-content .woocommerce-error.wc-stripe-error {
+	margin-top: 20px;
 }
 /*--------------------------------------------------------------
 ## Customer login
 --------------------------------------------------------------*/
+.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login,
 form.woocommerce-ResetPassword,
 #customer_login > div {
 	-webkit-box-shadow: 0 10px 14px 0 rgba(69, 73, 91, 0.08);
@@ -3714,17 +3722,23 @@ form.woocommerce-ResetPassword,
 }
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login,
 #customer_login .woocommerce-form {
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	flex-direction: column;
 }
 form.woocommerce-ResetPassword button,
 #customer_login button {
 	width: 100%;
 }
+form.track_order .button,
 #customer_login .register button {
 	margin-top: 10px;
+}
+.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-form-row--wide,
+#customer_login .woocommerce-form-row--wide,
+#customer_login > div > h2 {
+	margin-bottom: 20px;
+}
+#customer_login .lost_password {
+	padding-top: 5px;
 }
 @media (min-width: 37.5625em) {
 	.logged-in.woocommerce-account.has-sidebar.no-sidebar .woocommerce-Addresses.col2-set,
@@ -3732,19 +3746,35 @@ form.woocommerce-ResetPassword button,
 	.logged-in.woocommerce-account:not(.has-sidebar) .woocommerce-Addresses.col2-set {
 		display: -ms-grid;
 		display: grid;
-		-ms-grid-columns: (1fr)[2];
-		    grid-template-columns: repeat(2, 1fr);
+		-ms-grid-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 30px;
+	}
+	form.woocommerce-ResetPassword,
+	#customer_login > div {
+		padding: 44px;
+	}
+	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login {
+		padding: 0 44px 44px; 
+	}
+	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2 {
+		padding: 44px 44px 30px; 
+	}
+	form.woocommerce-ResetPassword .button {
+		margin-bottom: 10px;
+	}
+	.logged-in.woocommerce-account.has-sidebar.no-sidebar .woocommerce-Addresses.col2-set address,
+	.logged-in.woocommerce-account.has-sidebar.page-template-template-fluid .woocommerce-Addresses.col2-set address,
+	.logged-in.woocommerce-account:not(.has-sidebar) .woocommerce-Addresses.col2-set address {
+		margin-bottom: 0;
 	}
 }
 @media (min-width: 48.0625em) {
 	.woocommerce-MyAccount-orders tr {
-		-ms-grid-columns: 0.5fr (1fr)[4];
-		    grid-template-columns: 0.5fr repeat(4, 1fr);
+		grid-template-columns: 0.5fr repeat(4, 1fr);
 	}
 	.woocommerce-table--order-downloads tr {
-		-ms-grid-columns: 1fr 0.9fr 0.4fr 0.3fr;
-		    grid-template-columns: 1fr 0.9fr 0.4fr 0.3fr;
+		grid-template-columns: 1fr 0.9fr 0.4fr 0.6fr;
 	}
 	.woocommerce-table--order-downloads tr > *:not(:first-child),
 	.woocommerce-MyAccount-orders tr > *:not(:first-child) {
@@ -3753,12 +3783,12 @@ form.woocommerce-ResetPassword button,
 	.woocommerce-account.has-sidebar.no-sidebar #customer_login.col2-set,
 	.woocommerce-account.has-sidebar.page-template-template-fluid  #customer_login.col2-set,
 	.woocommerce-account:not(.has-sidebar) #customer_login.col2-set {
-		display: -ms-grid;
 		display: grid;
-		-ms-grid-columns: (1fr)[2];
-		    grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 30px;
 	}
+	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login,
+	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2,
 	form.woocommerce-ResetPassword,
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) #customer_login.col2-set > div {
 		max-width: 670px;
@@ -3780,12 +3810,12 @@ form.woocommerce-ResetPassword button,
 	.logged-in.woocommerce-account.has-sidebar.page-template-template-fluid .entry-content > .woocommerce,
 	.logged-in.woocommerce-account:not(.has-sidebar) .entry-content > .woocommerce {
 		-ms-grid-columns: 277px 1fr;
-		    grid-template-columns: 277px 1fr;
+	    grid-template-columns: 277px 1fr;
 		grid-gap: 25px;
 	}
 	.logged-in.woocommerce-account.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .entry-content > .woocommerce {
 		-ms-grid-columns: 220px 1fr;
-		    grid-template-columns: 220px 1fr;
+	    grid-template-columns: 220px 1fr;
 		grid-gap: 15px;
 	}
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-table--order-downloads thead,
@@ -3794,8 +3824,8 @@ form.woocommerce-ResetPassword button,
 	}
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-table--order-downloads tr,
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-MyAccount-orders tr {
-		-ms-grid-columns: (1fr)[2];
-		    grid-template-columns: repeat(2, 1fr);
+		-ms-grid-columns: 1fr 1fr;
+	    grid-template-columns: repeat(2, 1fr);
 	}
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) table.woocommerce-table--order-downloads tr:not(:last-of-type),
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) table.woocommerce-MyAccount-orders tr:not(:last-of-type) {
@@ -3812,6 +3842,15 @@ form.woocommerce-ResetPassword button,
 		float: left;
 		margin-right: 10px;
 	}
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-table--order-downloads td,
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-MyAccount-orders td {
+		padding: 5px 0;
+	}
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) table.woocommerce-table--order-downloads tr:not(:last-of-type), 
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) table.woocommerce-MyAccount-orders tr:not(:last-of-type) {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+	}
 	.woocommerce-MyAccount-navigation-link.is-active:after {
 		width: 10px;
 		height: 10px;
@@ -3826,44 +3865,22 @@ form.woocommerce-ResetPassword button,
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-columns--addresses {
 		grid-gap: 10px;
 	}
-	form.woocommerce-ResetPassword,
-	#customer_login > div {
-		padding: 80px;
-	}
-	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login {
-		padding: 0 80px 80px; 
-	}
-	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2 {
-		padding: 80px 80px 50px; 
-	}
-	#customer_login > div > h2 {
-		margin-bottom: 50px;
-	}
-	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-form-row--wide,
-	#customer_login .woocommerce-form-row--wide {
-		margin-bottom: 20px;
+}
+@media (max-width: 62em) {
+	.logged-in.woocommerce-account .entry-content .woocommerce-MyAccount-content {
+		margin-top: 30px;
 	}
 }
 @media (max-width: 62em) and (min-width: 37.5625em) {
 	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-Addresses.col2-set {
 		display: -ms-grid;
 		display: grid;
-		-ms-grid-columns: (1fr)[2];
-		    grid-template-columns: repeat(2, 1fr);
+		-ms-grid-columns: 1fr 1fr;
+	    grid-template-columns: repeat(2, 1fr);
 		grid-gap: 30px;
 	}
-	form.woocommerce-ResetPassword,
-	#customer_login > div {
-		padding: 50px;
-	}
-	#customer_login > div > h2 {
-		margin-bottom: 30px;
-	}
-	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login {
-		padding: 0 50px 50px; 
-	}
-	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2 {
-		padding: 50px 50px 30px; 
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-Addresses.col2-set address {
+		margin-bottom: 0;
 	}
 	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-form-row--wide,
 	#customer_login .woocommerce-form-row--wide {
@@ -3879,6 +3896,24 @@ form.woocommerce-ResetPassword button,
 	table.woocommerce-table--order-downloads tbody tr:not(:last-of-type) td,
 	table.woocommerce-MyAccount-orders tbody tr:not(:last-of-type) td {
 		border: none;
+	}
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-table--order-downloads td,
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-MyAccount-orders td {
+		padding: 5px 0;
+	}
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-table--order-downloads tr td:first-child,
+	.has-sidebar:not(.page-template-template-fluid):not(.no-sidebar) .woocommerce-MyAccount-orders tr td:first-child {
+		padding-top: 0;
+	}
+	table.woocommerce-table--order-downloads tr:not(:last-of-type), 
+	table.woocommerce-MyAccount-orders tr:not(:last-of-type) {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+	}
+	.woocommerce-MyAccount-content > p:last-child,
+	table.woocommerce-table--order-downloads, 
+	table.woocommerce-MyAccount-orders {
+		margin-bottom: 0;
 	}
 }
 @media (max-width: 48em) and (min-width: 37.5625em) {
@@ -3902,9 +3937,6 @@ form.woocommerce-ResetPassword button,
 	}
 	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > h2 {
 		padding: 30px 30px 10px; 
-	}
-	#customer_login > div > h2 {
-		margin-bottom: 10px;
 	}
 	.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-form-row--wide,
 	#customer_login .woocommerce-form-row--wide {
