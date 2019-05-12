@@ -2905,48 +2905,72 @@ pre.wp-block-code,
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+#secondary {
+	z-index: 1;
+}
 #secondary.widget-area .widget:not(:first-of-type) {
-	border-style: solid;
 	border-width: 1px 0 0;
+}
+.site-footer .widget-title,
+#secondary.widget-area .widget:not(:first-of-type),
+.site-footer .widget-title__wrapper:after {
+	border-style: solid;
+}
+#secondary .conj-lite-secondary-widget-area__wrapper {
+	-webkit-box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
+	        box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
 }
 .widget select {
     width: 100%;
 }
 #secondary.widget-area .widget:not(:last-of-type) {
-	padding-bottom: 2.1em
+	padding-bottom: 28px;
 }
+.widget_pages ul.children > li,
+.site-footer .widget ul.menu .sub-menu > li,
+.conj-lite-secondary-widget-area__wrapper .widget ul.menu .sub-menu > li,
+.wp-block-categories.wp-block-categories-list ul.children > li,
 .widget_categories ul.children > li,
 .widget form[role="search"],
 #secondary.widget-area .widget-title,
 #secondary.widget-area .widget {
 	position: relative;
 }
-#secondary .widget-title .rsswidget:first-of-type,
+.conj-lite-secondary-widget-area__wrapper .widget-title .rsswidget:first-of-type,
+.site-footer .widget ul.menu .sub-menu > li:before,
+.conj-lite-secondary-widget-area__wrapper .widget ul.menu .sub-menu > li:before,
+.widget_pages ul ul.children > li:before,
+.wp-block-categories.wp-block-categories-list ul.children > li:before,
 .widget_categories ul ul.children > li:before,
 .widget form[role="search"]:before {
 	position: absolute;
 }
-.widget_tag_cloud li,
-.widget_categories li a,
-.widget_archive li a,
-#secondary.widget-area .widget-title {
-	display: -webkit-box;
-	display: -ms-flexbox;
+.widget_calendar .calendar_wrap td > a,
+.widget_rss .rss-date,
+.widget ul.menu li > a,
+.widget-title {
+    display: block;
+}
+.widget_tag_cloud li {
+	align-items: center;
 	display: flex;
 }
-.widget_tag_cloud li,
-#secondary.widget-area .widget-title {
-	-webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
+.widget_pages li a,
+.site-footer .widget ul.menu a,
+.conj-lite-secondary-widget-area__wrapper .widget ul.menu a,
+.wp-block-categories.wp-block-categories-list li a,
+.wp-block-archives li a,
 .widget_categories li a,
-.widget_archive li a,
-#secondary.widget-area .widget-title {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+.widget_archive li a {
+    justify-content: space-between;
+    display: flex;
 }
+.wp-block-categories.wp-block-categories-list {
+	flex-direction: column;
+	display: flex;
+}
+.site-footer .widget ul.menu .sub-menu,
+.conj-lite-secondary-widget-area__wrapper .widget ul.menu .sub-menu,
 .widget_tag_cloud ul,
 .widget_rss ul,
 .widget_recent_entries ul,
@@ -2961,6 +2985,9 @@ pre.wp-block-code,
 	display: -ms-grid;
 	display: grid;
 }
+.site-footer .widget-title {
+	display: inline-block;
+}
 .textwidget > *:first-of-type {
 	margin-top: 0;
 }
@@ -2969,39 +2996,78 @@ pre.wp-block-code,
 .widget_calendar .calendar_wrap table {
 	margin-bottom: 0;
 }
+.conj-lite-secondary-widget-area__wrapper .button, 
+.conj-lite-secondary-widget-area__wrapper button, 
+.conj-lite-secondary-widget-area__wrapper input[type="button"], 
+.conj-lite-secondary-widget-area__wrapper input[type="reset"], 
+.conj-lite-secondary-widget-area__wrapper input[type="submit"] {
+	padding-left: 30px;
+    padding-right: 30px;
+	min-width: 110px
+}
+.conj-lite-secondary-widget-area__wrapper > .widget > *:not(.widget-title):first-child {
+	margin-top: 5px;
+}
+.wp-block-archives li a > .count,
+.wp-block-categories-list li a > .count {
+	margin-left: 10px;
+}
+@media (min-width: 37.5625em) {
+	.conj-lite-secondary-widget-area__wrapper {
+		padding: 30px;
+	}
+}
+@media (max-width: 37.5em) {
+	.conj-lite-secondary-widget-area__wrapper {
+		padding: 20px;
+	}
+}
 /*--------------------------------------------------------------
 ## Widgets title
 --------------------------------------------------------------*/
-.widget-title {
-    display: block;
+.site-footer .widget-title {
+	border-width: 0 0 1px;
 }
-#secondary .conj-secondary-widget-area__wrapper {
-	-webkit-box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
-	        box-shadow: 0 2px 6px 0 rgba(69, 73, 91, 0.08);
-	padding: 30px;
+.site-footer .widget-title__wrapper:after {
+	bottom: 0;
+    left: 0;
+	height: 1px;
+	width: 100%;
+	content: "";
+	opacity: 0.5;
+	border-width: 0 0 1px;
 }
-#secondary.widget-area .widget-title {
-	cursor: pointer;
+.site-footer .widget-title {
+	padding-bottom: 15px;
 	z-index: 2;
-	overflow: hidden;
+}
+.site-footer .widget-title__wrapper {
+	margin-bottom: 20px;
 }
 #secondary.widget-area .widget:not(:first-of-type) .widget-title {
-    padding-top: 1.8em;
+    padding-top: 23px;
 }
 #secondary.widget-area .widget:not(:first-of-type) > *:first-of-type:not(.widget-title),
 #secondary.widget-area .widget-title + *[style*="display: none;"] + *,
 #secondary.widget-area .widget-title + .screen-reader-text + *,
 #secondary.widget-area .widget-title + * {
-	margin-top: 2em;
-}
-.site-footer .widget-title {
-	margin-bottom: 20px;
+	margin-top: 21px;
 }
 .widget-title .rsswidget:first-of-type {
 	left: 0;
 }
 #secondary .widget-title .rsswidget + .rsswidget {
 	padding-left: 20px;
+}
+@media (min-width: 48.0625em) {
+	.site-footer-bar .widget-title {
+		margin-bottom: 25px;
+	}
+}
+@media (max-width: 48em) {
+	.site-footer-bar .widget-title {
+		margin-bottom: 15px;
+	}
 }
 /*--------------------------------------------------------------
 ## Footer Widgets
@@ -4633,7 +4699,7 @@ mark,
 body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *,
 ol.comment-list .comment .comment-body,
 .error-404-last .widget_tag_cloud ul li:not(:hover),
-#secondary .conj-secondary-widget-area__wrapper,
+#secondary .conj-lite-secondary-widget-area__wrapper,
 #secondary.widget-area .widget-title > a,
 #secondary.widget-area .widget-title {
 	background-color: var(--white);
