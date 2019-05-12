@@ -117,7 +117,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		 */
 		public function enqueue_editor_assets() {
 
-			wp_enqueue_style( 'conj-lite-block-editor-woocommerce-styles', get_theme_file_uri( '/assets/css/style-editor-woocommerce.css' ), array( 'wp-edit-blocks', 'conj-lite-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-block-editor-woocommerce-styles', get_theme_file_uri( '/assets/admin/css/style-editor-woocommerce.css' ), array( 'wp-edit-blocks', 'conj-lite-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
 
 		}
 
