@@ -1,0 +1,14 @@
+/**
+ * Theme Customizer enhancements, specific to panels, for a better user experience.
+ *
+ * @package     conj-lite
+ * @author      MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
+ */
+#conj-lite-customizer-more-control {
+	overflow: hidden;
+	zoom: 1;
+}
+#conj-lite-customizer-more-control hr {
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
