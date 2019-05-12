@@ -238,9 +238,6 @@ h5,
 h6 {
 	clear: both;
 }
-p {
-	margin-bottom: 1.5em;
-}
 address {
 	margin: 0 0 1.5em;
 }
@@ -275,30 +272,24 @@ optgroup,
 textarea {
 	font-family: 'Montserrat', sans-serif;
 }
+.type-attachment .entry-meta .edit-link .post-edit-link:before,
+.no-results.not-found form.search-form label:before,
+.wp-block-file .wp-block-file__button:before,
+.comment-respond .comment-notes:before,
+.akismet_comment_form_privacy_notice:before,
+.ui-datepicker-next:before, 
+.ui-datepicker-prev:before,
 #site-navigation > div.menu ul.nav-menu ul.children .page_item_has_children > a:after,
 #site-navigation > div.menu ul.nav-menu .page_item_has_children > a:after,
 body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
 body.search-results article.type-post .tags-links > a:before,
-body.search-results article.type-post .byline:before,
-body.search-results article.type-post .cat-links:before,
-body.search-results article.type-post .posted-on:before,
 body.single-post article.post.hentry .entry-footer .tags-links > a:before,
-.single-post article.type-post .post-meta > a:before,
-.single-post article.type-post .post-meta .posted-on:before,
 .pagination .page-numbers.prev:before,
 .pagination .page-numbers.next:before,
 .site-main .comment-navigation .nav-links .nav-next a:after,
 .post-navigation .nav-links .nav-next a > span:after,
 .site-main .comment-navigation .nav-links .nav-previous a:before,
 .post-navigation .nav-links .nav-previous a > span:before,
-.single-post article.post.hentry .entry-title:before,
-.single-post article.post.hentry.format-status .entry-content:before,
-.single-post article.post.hentry.format-aside .entry-content:before,
-body:not(.single-post) article.post.hentry.format-status .entry-content:before,
-body:not(.single-post) article.post.hentry.format-aside .entry-content:before,
-body:not(.single-post) article.post.hentry .entry-title a:before,
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *:before,
-body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
 p.no-comments:before,
 .comment-body .reply a:before,
 cite:before,
@@ -308,24 +299,24 @@ blockquote:before,
 .slinky-theme-default .back::before,
 #masthead ul.sub-menu > li.menu-item-has-children > a:after,
 .primary-navigation ul.menu > li.menu-item-has-children > a:after,
-.secondary-navigation ul.menu > li.menu-item-has-children > a:after,
 input[type="checkbox"]:checked:before,
 .entry-footer .edit-link .post-edit-link:before,
 .widget form[role="search"]:before {
 	font-family: 'Feather';
 }
-body:not(.single-post) article.post.hentry > .entry-meta .byline {
-	font-size: 0;
-}
 body.search-results article.type-post .tags-links > a:before,
 body.single-post article.post.hentry .entry-footer .tags-links > a:before {
 	font-size: 9px;
 }
+h6 {
+	font-size: 10px;
+}
+.wp-block-pullquote cite,
+article.post.hentry .cat-tags-links .post-categories,
+.ui-datepicker.ui-widget th,
 body.search-results article .entry-footer,
-body.search-results article.type-post .entry-meta,
 .single-post article.type-post .post-meta,
-body:not(.single-post) article.post.hentry > .entry-meta .byline .author,
-body:not(.single-post) article.post.hentry > .entry-meta,
+article.post.hentry .entry-meta,
 cite,
 .widget_tag_cloud ul li,
 .site-footer .widget form[role="search"] input[type="search"],
@@ -335,74 +326,123 @@ cite,
 input[type="checkbox"]:checked:before {
 	font-size: 12px;
 }
-body.single-post article.post.hentry .entry-footer .tags-links > a,
-.single-post article.type-post .post-meta > a:before, 
-.single-post article.type-post .post-meta .posted-on:before,
+.wp-caption .wp-caption-text,
+article.type-attachment .entry-meta,
+.woocommerce-result-count,
+article.post.hentry .post-meta,
+label,
 cite:before {
 	font-size: 13px;
 }
-body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *:before,
+.has-small-font-size {
+	font-size: 13.6px;
+}
+pre.wp-block-code,
+.wp-block-file .wp-block-file__button,
+.wp-block-categories.wp-block-categories-list,
+.wp-block-button .wp-block-button__link,
+#secondary,
+.wp-block-latest-comments__comment-excerpt p,
+.wp-block-latest-comments__comment-date,
+.comment-metadata, 
+.comment-meta .comment-author,
+.comments-area ol.comment-list,
+body:not(.single-post) article.post.hentry .entry-content .more-link,
+#masthead ul.menu > li.menu-item-has-children > ul.sub-menu,
+body.single-post article.post.hentry .entry-footer .tags-links > a,
+h5,
+.ui-datepicker.ui-widget tbody,
+.akismet_comment_form_privacy_notice,
+.comment-notes,
+#site-navigation > div.menu ul.children,
+#masthead .primary-navigationul .sub-menu,
+.wp-caption-text.gallery-caption,
 .site-footer,
 .site-footer .widget-title,
-body, 
-button, 
+button,
 input, 
 select, 
 optgroup, 
 textarea {
 	font-size: 14px;
 }
-#site-navigation > div.menu ul.nav-menu,
+.search-results:not(.post-type-archive) .site-main article .entry-content,
+body:not(.single-post) article.post.hentry .entry-content,
+#site-navigation > div.menu > ul > li > a, 
+.primary-navigation > ul.menu > .menu-item > a,
+#secondary .widget-title a,
+#secondary .widget-title,
+li.conjmm-active .widget.widget_nav_menu .widget-title:after,
 #masthead ul.sub-menu > li.menu-item-has-children > a:after,
 #masthead ul.menu > li.menu-item-has-children > a:after {
 	font-size: 15px;
 }
+body,
+h4,
+.site-branding .logo,
+.has-regular-font-size,
+.comment-reply-title,
 .comments-area .comments-title,
-.site-main .comment-navigation .nav-links a,
-.post-navigation .nav-links a,
 .pagination .page-numbers,
 .page-links .page-number,
 .comment-meta .comment-author .fn,
-.error-404-first .widgettitle,
-.error-404-last .widgettitle,
-.error-404-first .widget-title,
-#secondary.widget-area .widget-title a,
-#secondary.widget-area .widget-title {
+body:not(.woocommerce-running) .error-404-first .widgettitle,
+body:not(.woocommerce-running) .error-404-last .widgettitle,
+body:not(.woocommerce-running) .error-404-first .widget-title {
 	font-size: 16px;
 }
+.conj-lite-blog__archive article.post.hentry .entry-content {
+	font-size: 17px;
+}
+.ui-datepicker .ui-datepicker-header,
+.wp-block-quote.is-style-large cite:before,
+.wp-block-quote.is-large cite:before,
+.type-attachment .post-meta > *:not(:last-child):after,
+article.post.hentry .post-meta > *:not(:last-child):after,
+ol.comment-list .comment-meta,
+.wp-block-latest-comments__comment-author,
+.akismet_comment_form_privacy_notice:before,
+.comment-respond .comment-notes:before,
+.wp-block-quote.is-style-large cite, 
+.wp-block-quote.is-style-large footer,
 blockquote:before,
 .slinky-theme-default .next::after, 
 .slinky-theme-default .back::before,
 .handheld-offcanvas .close-btn,
-#secondary.widget-area .widget-title:after,
 p.no-comments:before {
 	font-size: 18px;
 }
+.no-results.not-found form.search-form label:before,
 .error-404.not-found form.search-form label:before {
 	font-size: 19px;
 }
-.single-post article.post.hentry.format-status .entry-content:before,
-.single-post article.post.hentry.format-aside .entry-content:before,
-body:not(.single-post) article.post.hentry.format-status .entry-content:before,
-body:not(.single-post) article.post.hentry.format-aside .entry-content:before {
+h3 {
 	font-size: 20px;
 }
+.has-large-font-size {
+	font-size: 21.25px;
+}
+.type-attachment .edit-link .post-edit-link:before, 
 .entry-footer .edit-link .post-edit-link:before {
 	font-size: 22px;
 }
-article.post.hentry .entry-header .entry-title {
-	font-size: 23px;
+.wp-block-quote.is-style-large p {
+    font-size: 24px;
 }
 .site-branding .site-title {
 	font-size: 27px;
 }
-body.single-post article.post.hentry .entry-header .entry-title,
-h2 {
-	font-size: 25px;
-}
-h1 {
+h2,
+.wp-block-pullquote p {
 	font-size: 28px;
+}
+article.post.hentry:before,
+h1.page-title {
+	font-size: 33px;
+}
+.has-larger-font-size,
+h1 {
+	font-size: 35px;
 }
 big {
 	font-size: 125%;
@@ -412,57 +452,63 @@ body,
 .site-footer {
 	font-weight: 300;
 }
-body.single-post article.post.hentry .entry-footer .tags-links > a,
-.single-post article.post.hentry .entry-title:before,
-body:not(.single-post) article.post.hentry .entry-title a:before,
-.comments-area .comments-title,
-.page-links .page-number,
-.site-main .comment-navigation .nav-links a,
-.post-navigation .nav-links a,
-.pagination .page-numbers,
+.ui-datepicker .ui-datepicker-title select,
+.ui-datepicker .ui-datepicker-calendar td a, 
+.ui-datepicker .ui-datepicker-calendar td span,
+body,
 .comment-meta .comment-author .fn,
-.comment-respond .comment-reply-title,
-.comment-respond #reply-title,
-.error-404-first .widget-title,
-.error-404-first .widgettitle,
-.error-404-last .widgettitle,
-.widget_tag_cloud ul li,
-.calendar_wrap td,
-.widget_calendar .calendar_wrap caption,
 .slinky-theme-default li,
 .handheld-menu-toggle .c-button__text,
-.handheld-menu-toggle,
-th,
-#secondary.widget-area .widget-title a,
-#secondary.widget-area .widget-title,
-.button:not(.checkout-button), 
-button, 
-input[type="button"], 
-input[type="reset"], 
-input[type="submit"] {
+.handheld-menu-toggle {
 	font-weight: 400;
 }
-body:not(.single-post) article.post.hentry .entry-content .more-link,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+article.post.hentry .cat-tags-links .post-categories,
+.comment-respond .comment-reply-title, 
+.comment-respond #reply-title,
+.search-results:not(.post-type-archive) .site-main article .entry-meta span,
 b, 
 strong,
 .site-footer .widget-title {
 	font-weight: 500;
 }
-h4,
-h3,
-h5,
-h6,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong,
+h1,
+.site-main .post-navigation .nav-links,
+.site-main .comment-navigation .nav-links,
+article.post.hentry .cat-tags-links .post-categories a,
+.search-results:not(.post-type-archive) .site-main article .entry-title,
+.site-branding .site-title,
 input[type="checkbox"]:checked:before,
-h2,
-body.single-post article.post.hentry .entry-header .entry-title {
+article.post.hentry .entry-header .entry-title {
 	font-weight: 600;
 }
-.site-branding .site-title {
-	font-weight: 800;
+h1 strong {
+	font-weight: 700;
 }
+[class*="feather-"], 
+[class^=feather-] {
+	line-height: inherit;
+}
+.pagination .page-numbers.dots,
+.type-attachment .post-meta > *:not(:last-child):after,
+article.post.hentry .post-meta > *:not(:last-child):after,
 .gallery-icon {
 	line-height: 0;
 }
+.ui-datepicker-header .ui-datepicker-next, 
+.ui-datepicker-header .ui-datepicker-prev,
+article.post.hentry:before,
+.type-attachment .edit-link .post-edit-link:before, 
 .comment-meta .comment-author .fn,
 .widget_tag_cloud li,
 .slinky-theme-default .next::after, 
@@ -484,42 +530,60 @@ select,
 .site-branding .site-title {
 	line-height: 1.11;
 }
-p.no-comments:before {
-	line-height: 1.3;
+h4,
+h3 {
+	line-height: 1.25;
 }
-h1 {
-	line-height: 1.36;
+h2 {
+	line-height: 1.4;
 }
 .slinky-menu .header .title,
-.site-branding .site-description,
-body.single-post article.post.hentry .entry-header .entry-title,
-h2 {
+.site-branding .site-description {
 	line-height: 1.41;
 }
+h5,
+h1 {
+	line-height: 1.43;
+}
+h6,
 .comment-metadata,
 .site-footer-bar .widget-title {
-	line-height: 1.53;
+	line-height: 1.5;
 }
+.wp-block-pullquote p,
+.search-results:not(.post-type-archive) .site-main article .entry-content,
+body:not(.single-post) article.post.hentry .entry-content {
+	line-height: 1.6;
+}
+body,
+.site-branding .logo,
+.akismet_comment_form_privacy_notice,
+.comment-respond .comment-notes,
 p.no-comments {
 	line-height: 1.71;
 }
 .comments-area .comments-title,
 .comment-respond .comment-reply-title,
 .comment-respond #reply-title,
-.error-404-first .widgettitle,
-.error-404-last .widgettitle,
-.error-404-first .widget-title {
+body:not(.woocommerce-running) .error-404-first .widgettitle,
+body:not(.woocommerce-running) .error-404-last .widgettitle,
+body:not(.woocommerce-running) .error-404-first .widget-title  {
 	line-height: 1.75;
 }
-body,
 .site-info,
 .site-footer .widget {
 	line-height: 2;
 }
+h6,
+h5,
 .handheld-menu-toggle .c-button__text,
 .handheld-menu-toggle {
 	letter-spacing: 0.5px;
 }
+h1,
+body:not(.single-post) article.post.hentry .entry-content .more-link,
+.wp-block-file .wp-block-file__button,
+.wp-block-button .wp-block-button__link,
 #secondary.widget-area .widget-title a,
 #secondary.widget-area .widget-title,
 .button, 
@@ -532,6 +596,9 @@ input[type="submit"] {
 .site-branding .site-title {
 	letter-spacing: 4px;
 }
+article.type-attachment .post-meta,
+article.post.hentry .post-meta,
+body:not(.single-post) article.post.hentry.format-quote .entry-content blockquote,
 dfn,
 em, 
 i {
@@ -540,8 +607,33 @@ i {
 cite {
 	font-style: normal;
 }
-.site-main .comment-navigation .nav-links a,
-.post-navigation .nav-links a,
+.gallery,
+.wp-block-calendar th,
+.comment-navigation .nav-links a > span:after,
+.comment-navigation .nav-links a > span:before,
+.post-navigation .nav-links a > span:after,
+.post-navigation .nav-links a > span:before,
+.wp-caption-text,
+.single-post article.post.hentry .entry-wrapper .entry-footer,
+.conj-lite-blog__archive.has-sidebar.no-sidebar .conj-col__full > #primary .navigation.pagination, 
+.conj-lite-blog__archive.has-sidebar.page-template-template-fluid .conj-col__full > #primary .navigation.pagination, 
+.conj-lite-blog__archive:not(.has-sidebar) .conj-col__full > #primary .navigation.pagination,
+article.type-attachment .entry-meta .edit-link,
+article.post.hentry .entry-meta .edit-link,
+body:not(.single-post) article.post.hentry.format-quote .entry-content blockquote,
+article.post.hentry .entry-content .post-password-form,
+article.post.hentry .post-meta,
+body:not(.search-results) article.post.hentry .entry-header .entry-title,
+article.post.hentry .cat-tags-links .post-categories,
+.type-attachment .edit-link .post-edit-link,
+.site-footer-bar,
+.has-align-center,
+.wp-block-button.aligncenter,
+.aligncenter.wp-block-archives-dropdown,
+.wp-block-categories-dropdown.aligncenter,
+.wp-block-pullquote:not(.is-style-solid-color),
+.type-attachment .entry-meta,
+.type-attachment .attachment,
 .page-links .page-number,
 .pagination .page-numbers,
 .widget_tag_cloud ul li,
@@ -551,23 +643,39 @@ cite {
 a.button {
 	text-align: center;
 }
+.wp-block-calendar tfoot td#prev,
+article.post.hentry .entry-content .post-password-form label,
+.has-align-left,
+.site-footer-bar .widget_pages ul,
+.site-footer-bar .widget ul.menu,
+.widget_pages ul,
+.wp-block-categories.wp-block-categories-list,
 .widget_categories ul,
 .calendar_wrap tfoot td#prev,
 th {
 	text-align: left;
 }
+.wp-block-calendar tfoot td#next,
+body:not(.search-results) article.post.hentry.format-chat .entry-content > *:not(div):nth-child(even),
+.has-align-right,
+.wp-block-quote.is-style-large cite, 
+.wp-block-quote.is-style-large footer,
 .navigation.pagination,
 .comment-body .reply,
 .handheld-offcanvas .close-btn,
 .calendar_wrap tfoot td#next {
 	text-align: right;
 }
+.wp-block-calendar tfoot a,
+mark, 
+ins,
 a {
 	text-decoration: none;
 }
-body:not(.single-post) article.post.hentry .entry-content .more-link {
+.akismet_comment_form_privacy_notice a {
 	text-decoration: underline;
 }
+label,
 .handheld-menu-toggle .c-button__text,
 .handheld-menu-toggle,
 .comments-area .comments-title,
@@ -578,12 +686,27 @@ body:not(.single-post) article.post.hentry .entry-content .more-link {
 .error-404-last .widgettitle {
 	text-transform: uppercase;
 }
+.search-results:not(.post-type-archive) .site-main article .entry-meta span,
+body:not(.single-post) article.post.hentry .entry-content .more-link {
+	text-transform: capitalize;
+}
+.wp-block-search__label,
+.wp-block-pullquote cite,
+[type="checkbox"] + label {
+	text-transform: none;
+}
+.wp-block-media-text .wp-block-media-text__content,
 .widget_tag_cloud li a {
 	word-wrap: break-word;
 }
 @media (min-width: 37.5625em) {
 	.comment-metadata {
 		text-align: right;
+	}
+	.akismet_comment_form_privacy_notice:before,
+	.comment-respond .comment-notes:before,
+	p.no-comments:before {
+		line-height: 1.3;
 	}
 }
 @media (max-width: 37.5em) {
@@ -593,16 +716,38 @@ body:not(.single-post) article.post.hentry .entry-content .more-link {
 	.site-info {
 		text-align: center;
 	}
-	h1 {
+	h2,
+	.search-results:not(.post-type-archive) .site-main article .entry-title,
+	article.post.hentry .entry-header .entry-title,
+	h1.entry-title {
 		font-size: 25px;
 	}
-	h2 {
-		font-size: 23px;
+	.wp-block-pullquote > p {
+		font-size: 20px;
+	}
+	#secondary .widget-title:after {
+		font-size: 16px;
+	}
+	#secondary .widget-title a,
+	#secondary .widget-title {
+		font-size: 14px;
 	}
 }
 @media (max-width: 27.5em) {
+	h1 {
+		font-size: 32px;
+	}
+	.wp-block-image figcaption, 
+	.wp-block-gallery .blocks-gallery-image figcaption, 
+	.wp-block-gallery .blocks-gallery-item figcaption, 
+	.wp-caption .wp-caption-text {
+		font-size: 10px;
+	}
 	#secondary .widget form[role="search"] *[type="submit"] {
 		font-size: 12px;
+	}
+	.search-results:not(.post-type-archive) .site-main article .entry-title {
+		font-size: 20px;
 	}
 }
 /*--------------------------------------------------------------
