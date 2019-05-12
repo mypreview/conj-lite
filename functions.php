@@ -66,6 +66,7 @@ if ( class_exists( 'WooCommerce' ) ) {
  * @see 	https://github.com/TGMPA/TGM-Plugin-Activation
  */
 if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'activate_plugins' ) ) {
+	$conj_lite->admin = require get_parent_theme_file_path( '/includes/nux/class-conj-lite-admin.php' );
 	require get_parent_theme_file_path( '/includes/nux/tgmpa/class-tgm-plugin-activation.php' );
 	require get_parent_theme_file_path( '/includes/nux/tgmpa/conj-lite-register-tgmpa-plugins.php' );
 
