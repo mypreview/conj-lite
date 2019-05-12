@@ -52,6 +52,14 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 					<div id="conj-lite-upsell-banner__message--inner">
 						<div class="conj-lite-upsell-banner__message--inner-col1">
 							<img src="https://sore-manatee.jurassic.ninja/wp-content/plugins/jetpack/images/jetpack-powering-up.svg" width="225" />
+							<p>
+								<?php
+								/* translators: 1: Open anchor tag, 2: Emoji unicode, 3: Close anchor tag. */
+								printf( esc_html__( '%1$sGo Premium %2$s %3$s', 'conj-lite' ), '<a href="https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview" class="button button-primary" target="_blank" rel="noopener">', '💰', '</a>' ); ?>
+								<small><em>
+									<?php esc_html_e( 'By clicking the button, you will be redirected to the item details page on ThemeForest.', 'conj-lite' ); ?>
+								</em></small>
+							</p>
 						</div>
 						<div class="conj-lite-upsell-banner__message--inner-col2">
 							<h2><?php esc_html_e( 'Stay Focused on Your Business!', 'conj-lite' ); ?></h2>
@@ -162,6 +170,9 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 										<li><?php 
 										/* translators: %s: Emoji unicode */
 										printf( esc_html_x( '%s Translation ready', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
+										<li><?php 
+										/* translators: %s: Emoji unicode */
+										printf( esc_html_x( '%s .....and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
 									</ul>
 								</div>
 							</div>
