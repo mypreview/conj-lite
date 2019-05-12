@@ -38,6 +38,7 @@ require get_parent_theme_file_path( '/includes/back-compat.php' );
 $conj_lite = ( object )array(
 	'version' => CONJ_LITE_THEME_NAME,
 	'main' => require get_parent_theme_file_path( '/includes/class-conj-lite.php' ),
+	'customizer' => require get_parent_theme_file_path( '/includes/customizer/class-conj-lite-customizer.php' ),
 	'customizer_styles'	=> require get_parent_theme_file_path( '/includes/customizer/class-conj-lite-customizer-styles.php' )
 );
 
