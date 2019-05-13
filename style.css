@@ -5032,7 +5032,7 @@ input[type='week'],
 input[type='time'], 
 input[type='datetime'], 
 input[type='datetime-local'], 
-input[type='color'],
+input[type="color"],
 textarea {
 	background-color: #FFFFFF;
 	color: #898EA2;
