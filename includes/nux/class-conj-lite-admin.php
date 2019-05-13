@@ -86,7 +86,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 										printf( esc_html_x( '%s Based on Underscores', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
 										<li><?php 
 										/* translators: %s: Emoji unicode */
-										printf( esc_html_x( '%s Fully Responsive', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
+										printf( esc_html_x( '%s Fully responsive', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
 										<li><?php 
 										/* translators: %s: Emoji unicode */
 										printf( esc_html_x( '%s Flexible CSS grid', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
