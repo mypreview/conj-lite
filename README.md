@@ -23,11 +23,11 @@
 * WordPress version 5.0 or greater.
 * WooCommerce version 3.0 or greater.
 
-## Translators & non-English speakers
+## Translators
 
 Translators are welcome to contribute to the theme. Please use the [WordPress translation website](https://translate.wordpress.org/projects/wp-themes/conj-lite "WordPress translation website").
 
-## Free support
+## Support
 
 If you have any question(s) about using theme, please do not hesitate to check out [support forums](https://wordpress.org/support/theme/conj-lite) and start a new discussion for further assistance or clarification.
 
