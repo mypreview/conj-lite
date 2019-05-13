@@ -4332,18 +4332,13 @@ body:not(.woocommerce-running) .error-404-first .widget-title {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
 	display: none;
 	/* Theme Footer (when set to scrolling) */
 }
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -4355,89 +4350,123 @@ body:not(.woocommerce-running) .error-404-first .widget-title {
 	margin-top: 0;
 	padding: 0;
 }
-div.wp-video, 
-.mejs-container, 
-.mejs-container .mejs-controls, 
-.mejs-embed, 
-.mejs-embed body {
-	width: unset !important;
-	min-width: unset !important;
-}
-/* Make sure embeds and iframes fit their containers. */
 embed, 
 iframe, 
 object {
 	max-width: 100%;
 }
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
+.wp-block-columns .wp-block-image {
+	margin-bottom: 0;
 }
-
+.wp-block-image.is-resized {
+	width: auto;
+}
+.wp-block-image.is-resized img {
+	max-width: 100%;
+}
+.wp-block-image .alignright {
+	margin-left: 2em;
+}
+.wp-block-image .alignleft {
+	margin-right: 2em;
+}
+audio,
+video,
+p > img,
+.wp-block-image img,
+.wp-block-audio.aligncenter,
+.gallery-caption,
+figure.wp-caption img {
+	display: block;
+}
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 0;
+	margin-bottom: 1em;
 	max-width: 100%;
 }
+.wp-caption.alignright,
+.wp-caption.alignleft {
+	margin-bottom: 0;
+}
 .wp-caption img[class*="wp-image-"] {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+.wp-block-image figcaption,
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: 0.8075em 0 0;
 }
-.wp-caption-text {
-	text-align: center;
+@media (max-width: 27.5em) {
+	.wp-block-image figcaption,
+	.wp-caption .wp-caption-text {
+		margin: 0.3em 0 0;
+	}
 }
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-	display: -ms-grid;
-	display: grid;
-	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 }
-.gallery-columns-2 {
-	-ms-grid-columns: (1fr)[2];
-	    grid-template-columns: repeat(2, 1fr);
+.gallery .gallery-item {
+	margin-bottom: 10px;
 }
-.gallery-columns-3 {
-	-ms-grid-columns: (1fr)[3];
-	    grid-template-columns: repeat(3, 1fr);
+body:not(.rtl) .gallery-columns-9 > *:not(:nth-child(9n)),
+body:not(.rtl) .gallery-columns-8 > *:not(:nth-child(8n)),
+body:not(.rtl) .gallery-columns-7 > *:not(:nth-child(7n)),
+body:not(.rtl) .gallery-columns-6 > *:not(:nth-child(6n)),
+body:not(.rtl) .gallery-columns-5 > *:not(:nth-child(5n)),
+body:not(.rtl) .gallery-columns-4 > *:not(:nth-child(4n)),
+body:not(.rtl) .gallery-columns-3 > *:not(:nth-child(3n)),
+body:not(.rtl) .gallery-columns-2 > *:not(:nth-child(2n)) {
+	margin-right: 10px;
 }
-.gallery-columns-4 {
-	-ms-grid-columns: (1fr)[4];
-	    grid-template-columns: repeat(4, 1fr);
+.gallery-columns-2 > * {
+	width: calc((100% - 10.01px * 1) /2);
 }
-.gallery-columns-5 {
-	-ms-grid-columns: (1fr)[5];
-	    grid-template-columns: repeat(5, 1fr);
+.gallery-columns-3 > * {
+	width: calc((100% - 10.01px * 2) /3);
 }
-.gallery-columns-6 {
-	-ms-grid-columns: (1fr)[6];
-	    grid-template-columns: repeat(6, 1fr);
+.gallery-columns-4 > * {
+	width: calc((100% - 10.01px * 3) /4);
 }
-.gallery-columns-7 {
-	-ms-grid-columns: (1fr)[7];
-	    grid-template-columns: repeat(7, 1fr);
+.gallery-columns-5 > * {
+	width: calc((100% - 10.01px * 4) /5);
 }
-.gallery-columns-8 {
-	-ms-grid-columns: (1fr)[8];
-	    grid-template-columns: repeat(8, 1fr);
+.gallery-columns-6 > * {
+	width: calc((100% - 10.01px * 5) /6);
 }
-.gallery-columns-9 {
-	-ms-grid-columns: (1fr)[9];
-	    grid-template-columns: repeat(9, 1fr);
+.gallery-columns-7 > * {
+	width: calc((100% - 10.01px * 6) /7);
 }
-.gallery-caption {
-	display: block;
+.gallery-columns-8 > * {
+	width: calc((100% - 10.01px * 7) /8);
 }
-
+.gallery-columns-9 > * {
+	width: calc((100% - 10.01px * 8) /9);
+}
+/*--------------------------------------------------------------
+## Audio
+--------------------------------------------------------------*/
+.wp-block-audio audio {
+	width: 100%;
+}
+.wp-block-audio {
+	margin-bottom: 1em;
+}
+audio {
+	width: 100%;
+}
+/*--------------------------------------------------------------
+## Video
+--------------------------------------------------------------*/
+video {
+	max-width: 100%;
+}
 /*--------------------------------------------------------------
 # Post password
 --------------------------------------------------------------*/
