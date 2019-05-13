@@ -4473,29 +4473,23 @@ video {
 .post-password-form input[type="submit"]{
 	margin-top: 10px;
 }
-.post-password-form input[type="password"]{
-	min-height: 49px;
-}
 .post-password-form label,
 .post-password-form p:last-of-type {
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
 	display: inline-flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 .post-password-form p:last-of-type {
-	-webkit-box-align: end;
-	    -ms-flex-align: end;
-	        align-items: flex-end;
+	align-items: flex-end;
 }
 .post-password-form label {
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	flex-direction: column;
 }
-
+@media (max-width: 27.5em) {
+	article.post.hentry .entry-content .post-password-form label + input[type="submit"],
+	article.post.hentry .entry-content .post-password-form label {
+		width: 100%;
+	}
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
