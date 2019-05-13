@@ -1,36 +1,40 @@
 # CONJ Lite - eCommerce WordPress Theme
 <br/>[![Designed for WooCommerce](https://img.shields.io/badge/Designed%20for-WooCommerce-9a6b95.svg)](https://www.mypreview.one/conj.html) [![Compatible with WPML](https://img.shields.io/badge/Compatible%20with-WPML-308fb0.svg)](https://wpml.org) [![Compatible with ThemeCheck](https://img.shields.io/badge/ThemeCheck-Passed-c4d658.svg)](http://themecheck.org/score/wordpress-theme-conj-lite.html) [![Stable Version](https://img.shields.io/badge/Stable%20version-1.0.9-8a91ff.svg)](https://wp.me/p8930x-8q)
 
-Get started with Conj which is the one thing you need to build your own stunning eCommerce website in a fast and efficient way. 
-
 ![CONJ Lite - eCommerce WordPress Theme](screenshot.jpg)
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-►► If you are not a developer, please use the Offical [theme post page](https://wordpress.org/themes/conj-lite/) on wordpress.org.
+►► If you are not a developer, please use the offical [theme post page](https://wordpress.org/themes/conj-lite/) on wordpress.org.
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-Conj’s fantastic out of the box deep code and design integration with WooCommerce, the premier eCommerce solution for WordPress, enables your store to be bulletproof against any conflicts during major WooCommerce updates. 
+## Installation
 
-Rest assured that the Conj theme uses a mobile-first grid-based architecture that renders beautifully formatted content on phones, tablets, and desktop monitors. Your visitors can expect brilliant looking products whether they are browsing your website at the office or on the go. 
+* Download the theme from it's GitHub Repository Release window.
+* Go to **WordPress** > **Appearance** > **Themes** > **Add New**.
+* Click Upload Theme and **Choose File**, then select the theme's `.zip` file. Click Install Now.
+* Click Activate to use your new theme right away.
 
-The entire platform of Conj is built on top of the [Underscores](https://github.com/Automattic/_s) starter theme which is a solid foundation of code and also used for all themes released by Automattic on WordPress.com. 
+## Requirements
 
-Get the one thing you need to build stunning eCommerce website in a fast and efficient way.
+* PHP version 7 or greater.
+* MySQL version 5.6 or greater OR MariaDB version 10.0 or greater.
+* WordPress version 5.0 or greater.
+* WooCommerce version 3.0 or greater.
 
-## Live Demo
+## Translators & non-English speakers
 
-Check out the [Live Demo](https://demo.mypreview.one/conj) to visit **CONJ PRO** theme in action.
+Translators are welcome to contribute to the theme. Please use the [WordPress translation website](https://translate.wordpress.org/projects/wp-themes/conj-lite "WordPress translation website").
 
-## Get the PRO Version
+## Free support
 
-The **CONJ PRO** theme is only available to purchase from [Themeforest](https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview). :moneybag:
+If you have any question(s) about using theme, please do not hesitate to check out [support forums](https://wordpress.org/support/theme/conj-lite) and start a new discussion for further assistance or clarification.
 
-## Get Involved
+## Contributing
 
-Want to contribute? Here's the [GitHub development repository](https://github.com/mypreview/conj-lite "GitHub development repository").
+We welcome contributions in any form, and you can help reporting, testing, and detailing bugs.
 
-## Documentation
+## Premium Version
 
-Get started [here](https://mypreview.github.io/Conj) with a collection of tutorials that cover the basics.
+The premium version of this theme is only available to purchase from [Themeforest](https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview). :moneybag:
