@@ -51,7 +51,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 				<div id="conj-lite-upsell-banner__message">
 					<div id="conj-lite-upsell-banner__message--inner">
 						<div class="conj-lite-upsell-banner__message--inner-col1">
-							<img src="https://sore-manatee.jurassic.ninja/wp-content/plugins/jetpack/images/jetpack-powering-up.svg" width="225" />
+							<img src="<?php echo get_theme_file_uri( 'assets/admin/img/upsell-banner-img.jpg' ); ?>" width="250" />
 							<p>
 								<?php
 								/* translators: 1: Open anchor tag, 2: Emoji unicode, 3: Close anchor tag. */
