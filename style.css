@@ -3289,7 +3289,6 @@ ol.wp-block-latest-comments,
 # Container
 --------------------------------------------------------------*/
 .site-content {
-	z-index: -1;
     position: relative;
 }
 .conj-lite-col__full,
@@ -3298,40 +3297,18 @@ ol.wp-block-latest-comments,
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-}
-.conj-lite-col__full,
-.col-full {
 	padding: 0 20px;
 }
 .conj-lite-col__full {
 	grid-column-gap: 30px;
-	padding-bottom: 3.55em;
-}
-.col-5:not(.woocommerce-column):not(.u-column5),
-.col-4:not(.woocommerce-column):not(.u-column4),
-.col-3:not(.woocommerce-column):not(.u-column3),
-.col-2:not(.woocommerce-column):not(.u-column2),
-.col-1:not(.woocommerce-column):not(.u-column1) {
-	display: -ms-grid;
-	display: grid;
-}
-.col-4:not(.woocommerce-column):not(.u-column4),
-.col-3:not(.woocommerce-column):not(.u-column3),
-.col-2:not(.woocommerce-column):not(.u-column2),
-.col-1:not(.woocommerce-column):not(.u-column1) {
-    grid-gap: 40px;
-}
-.col-5:not(.woocommerce-column):not(.u-column5) {
-	grid-gap: 20px;
-}
-.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #primary:first-of-type + #secondary,
-.conj-lite-col__full > #primary:first-of-type {
-	margin-top: 3.55em;
 }
 @media (min-width: 37.5625em) {
-	.col-2:not(.woocommerce-column):not(.u-column2) {
-		-ms-grid-columns: (1fr)[2];
-		    grid-template-columns: repeat(2,1fr);
+	body .conj-lite-col__full {
+		padding-bottom: 57px;
+	}
+	body .conj-lite-col__full > #primary:first-of-type,
+	.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #primary:first-of-type + #secondary {
+		margin-top: 57px;
 	}
 }
 @media (min-width: 62.0625em) {
@@ -3340,74 +3317,45 @@ ol.wp-block-latest-comments,
 		display: grid;
 	}
 	.conj-lite-col__full > .woocommerce-breadcrumb {
-		-ms-grid-row: 1;
-		-ms-grid-column: 1;
-		-ms-grid-column-span: 2;
 		grid-area: conj-lite-woocommerce-breadcrumb;
 	}
 	.conj-lite-col__full > .woocommerce:not(:empty) {
-		-ms-grid-row: 2;
-		-ms-grid-column: 1;
-		-ms-grid-column-span: 2;
 		grid-area: conj-lite-woocommerce;
 	}
 	.conj-lite-col__full > #primary {
-		-ms-grid-row: 3;
-		-ms-grid-column: 2;
 		grid-area: conj-lite-primary;
 	}
 	.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #secondary {
-		-ms-grid-row: 3;
-		-ms-grid-column: 1;
 		grid-area: conj-lite-secondary;
 	}
-	.col-3:not(.woocommerce-column):not(.u-column2) {
-		-ms-grid-columns: (1fr)[3];
-		    grid-template-columns: repeat(3,1fr);
-	}
-	.col-4:not(.woocommerce-column):not(.u-column4) {
-		-ms-grid-columns: (1fr)[4];
-		    grid-template-columns: repeat(4,1fr);
+	.has-sidebar.right-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full {
+		-ms-grid-columns: 1fr 346px;
+		grid-template-columns: 1fr 346px;
+		grid-template-areas: "conj-lite-woocommerce-breadcrumb conj-lite-woocommerce-breadcrumb" "conj-lite-woocommerce conj-lite-woocommerce" "conj-lite-primary conj-lite-secondary";
 	}
 	.has-sidebar.left-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full {
-		-ms-grid-columns: 370px 1fr;
-		    grid-template-columns: 370px 1fr;
-		                                            grid-template-areas: "conj-lite-woocommerce-breadcrumb conj-lite-woocommerce-breadcrumb" "conj-lite-woocommerce conj-lite-woocommerce" "conj-lite-secondary conj-lite-primary";
-	}
-}
-@media (min-width: 72.0625em) {
-	.col-5:not(.woocommerce-column):not(.u-column5) {
-		-ms-grid-columns: (1fr)[5];
-		    grid-template-columns: repeat(5,1fr);
-	}
-}
-@media (max-width: 72em) and (min-width: 62.0625em) {
-	.col-5:not(.woocommerce-column):not(.u-column5) {
-		-ms-grid-columns: (1fr)[3];
-		    grid-template-columns: repeat(3,1fr);
+		-ms-grid-columns: 346px 1fr;
+		grid-template-columns: 346px 1fr;
+		grid-template-areas: "conj-lite-woocommerce-breadcrumb conj-lite-woocommerce-breadcrumb" "conj-lite-woocommerce conj-lite-woocommerce" "conj-lite-secondary conj-lite-primary";
 	}
 }
 @media (max-width: 62em) and (min-width: 37.5625em) {
-	.col-3:not(.woocommerce-column):not(.u-column3),
-	.col-5:not(.woocommerce-column):not(.u-column5),
-	.col-4:not(.woocommerce-column):not(.u-column4) {
-		-ms-grid-columns: (1fr)[2];
-		    grid-template-columns: repeat(2,1fr);
-	}
+	.right-sidebar.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #secondary,
 	.left-sidebar.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #secondary {
 		margin-top: 50px;
 	}
 }
 @media (max-width: 37.5em) {
-	.col-3:not(.woocommerce-column):not(.u-column3),
-	.col-5:not(.woocommerce-column):not(.u-column5),
-	.col-4:not(.woocommerce-column):not(.u-column4),
-	.col-2:not(.woocommerce-column):not(.u-column2) {
-		-ms-grid-columns: (1fr)[1];
-		    grid-template-columns: repeat(1,1fr);
-	}
+	.right-sidebar.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #secondary,
 	.left-sidebar.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #secondary {
-		margin-top: 30px;
+		margin-top: 39px;
+	}
+	.conj-lite-col__full {
+		padding-bottom: 2.55em;
+	}
+	.conj-lite-col__full > #primary:first-of-type,
+	.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > #primary:first-of-type + #secondary {
+		margin-top: 43px;
 	}
 }
 /*--------------------------------------------------------------
