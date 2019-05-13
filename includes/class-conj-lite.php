@@ -472,14 +472,24 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		/**
 		 * Enqueue extra CSS & JavaScript to improve the user experience in the WordPress dashboard.
 		 *
+		 * @see 	https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+		 * @see 	https://developer.wordpress.org/reference/functions/wp_localize_script/
 		 * @access 	public
 		 * @return 	void
 		 */
 		public function admin_enqueue() {
 
-			wp_enqueue_style( 'conj-lite-admin-nux-styles', get_theme_file_uri( '/assets/admin/css/style.css' ), array(), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-admin-styles', get_theme_file_uri( '/assets/admin/css/style.css' ), array(), CONJ_LITE_THEME_VERSION, 'all' );
+
+			$conj_lite_admin_l10n = array(
+				'dismiss_upsell_notice_nonce' => wp_create_nonce( 'conj_lite_upsell_notice_dismiss_nonce' )
+			);
+
+			wp_register_script( 'conj-lite-admin-scripts', get_theme_file_uri( '/assets/admin/js/script.js' ), array( 'jquery' ), CONJ_LITE_THEME_VERSION, TRUE );
+			wp_localize_script( 'conj-lite-admin-scripts', 'conj_lite_vars', $conj_lite_admin_l10n );
+			wp_enqueue_script( 'conj-lite-admin-scripts' );
 
 		}
 
@@ -487,11 +497,9 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		 * Enqueue block editor scripts and styles to extend Gutenberg editor.
 		 *
 		 * @see 	https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#add-the-stylesheet
-		 * @see 	https://developer.wordpress.org/reference/functions/post_type_exists/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_add_inline_style/
-		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
 		 * @access 	public
 		 * @return 	void
 		 */
