@@ -264,13 +264,31 @@ mark,
 ins {
 	text-decoration: none;
 }
-body,
-button, 
+p,
+body, 
 input, 
 select, 
 optgroup, 
 textarea {
 	font-family: 'Montserrat', sans-serif;
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+.widget-title,
+.site-branding .site-title {
+	font-family: 'Rubik',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+}
+button,
+.button,
+.wp-block-button .wp-block-button__link,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	font-family: 'Rubik',sans-serif;
 }
 .type-attachment .entry-meta .edit-link .post-edit-link:before,
 .no-results.not-found form.search-form label:before,
@@ -3729,10 +3747,10 @@ article.type-page .post-thumbnail {
 .single-post article.post.hentry .entry-footer .edit-link {
 	top: 0;
 }
-.conj-blog__archive.has-sidebar.no-sidebar .conj-lite-col__full > #primary,
-.conj-blog__archive.has-sidebar.post-template-template-fluid .conj-lite-col__full > #primary,
-.conj-blog__archive.has-sidebar.page-template-template-fluid .conj-lite-col__full > #primary,
-.conj-blog__archive:not(.has-sidebar) .conj-lite-col__full > #primary {
+.conj-lite-blog__archive.has-sidebar.no-sidebar .conj-lite-col__full > #primary,
+.conj-lite-blog__archive.has-sidebar.post-template-template-fluid .conj-lite-col__full > #primary,
+.conj-lite-blog__archive.has-sidebar.page-template-template-fluid .conj-lite-col__full > #primary,
+.conj-lite-blog__archive:not(.has-sidebar) .conj-lite-col__full > #primary {
     max-width: 910px;
 }
 .single-post article.post.hentry .entry-footer .tags-links {
@@ -4990,160 +5008,12 @@ body.conj-lite-customizer .customize-partial-edit-shortcut-button {
 /*--------------------------------------------------------------
 # Colors
 --------------------------------------------------------------*/
-:root {
-	--pale-grey-two-darker: #eff0f5;
-	--pale-grey-two-dark: #e0e1e6;
-	--pale-grey-two: #f4f5fa;
-	--pale-grey-two-lighter: #98a0ff;
-	--battleship-grey-darker: #434759;
-	--battleship-grey: #6b6f81;
-	--battleship-grey-light: #898d9f;
-	--battleship-grey-lighter: #9da1b3;
-	--charcoal-grey: #464855;
-	--soft-blue: #666EE8;
-	--blueberry: #414B92;
-	--blue-grey: #898EA2;
-	--white: #FFFFFF;
-	--periwinkle: #8A91FF;
-	--charcoal-grey-two: #3A3C4B;
-	--bluey-grey: #A7ABBD;
-	--charcoal-grey-three: #353745;
-	--steel: #7F829A;
-	--bluey-grey-two: #A5A8BB;
-	--watermelon: #FF4961;
-	--azure: #1E9FF2;
-}
-.widget_tag_cloud ul li {
-    background-color: var(--pale-grey-two);
-}
-blockquote,
-body.single-post article.post.hentry .entry-footer .tags-links > a,
-.single-post article.type-post .post-meta a,
-.single-post article.type-post .post-meta .byline a,
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta a,
-.error-404-first .widget_recent_entries a,
-#secondary .widget_conj_social_media_icons_widget ul.pe-social a,
-#secondary .widget_recent_entries a,
-#secondary .widget_pages ul a,
-#secondary .widget ul.menu li > a,
-#secondary .widget_meta a,
-.widget_categories a,
-#secondary .widget_archive a,
-.cart_totals .shipping label,
-body, 
-input, 
-select, 
-optgroup, 
-textarea,
-.site-branding .site-description,
-.site-branding .site-title a {
-	color: var(--battleship-grey);
-}
-body.search-results article .entry-footer a,
-body.search-results article .entry-title a,
-body:not(.single-post) article.post.hentry .entry-header a,
-.comment-meta .comment-author .fn,
-.comment-respond .comment-reply-title,
-.comment-respond #reply-title,
-#secondary .widget_calendar .calendar_wrap caption,
-#secondary.widget-area .widget-title > a,
-#secondary.widget-area .widget-title,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: var(--charcoal-grey);
-}
-.page-links a>.page-number,
-.site-main .comment-navigation .nav-links a,
-.post-navigation .nav-links a,
-.pagination .page-numbers:not(.current),
-.widget_tag_cloud a,
-label,
-dt {
-	color: var(--battleship-grey-light);
-}
-.comment.byuser img.avatar,
-.comment-metadata a time,
-.comment-meta .comment-author .says,
-.calendar_wrap tfoot td a,
-.calendar_wrap thead tr th,
-body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
-body.search-results article.type-post .byline:before,
-body.search-results article.type-post .cat-links:before,
-body.search-results article.type-post .posted-on:before,
-.single-post article.type-post .post-meta > a:before,
-.single-post article.type-post .post-meta .posted-on:before,
-.single-post article.type-post .post-meta .cat-tags-links .cat-links:before,
-.single-post article.type-post .post-meta .byline,
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *:before {
-	color: var(--battleship-grey-lighter);
-}
-.button:not([name='apply_coupon']):focus, 
-.button[disabled], 
-button[disabled], 
-button:not(.close-btn):not(.pswp__button):not(.handheld-menu-toggle):not([name='apply_coupon']):focus, 
-input[type='button']:focus, 
-input[type='reset']:focus, 
-button[name='apply_coupon']:not(:focus):not(:active):not(:hover),
-input[type='submit'][name='apply_coupon'],
-input[type='submit']:not([name='apply_coupon']):focus,
-.button:not([name='apply_coupon']):active, 
-button:not(.close-btn):not(.pswp__button):not([name='apply_coupon']):active, 
-input[type='button']:active, 
-input[type='reset']:active, 
-input[type='submit']:not([name='apply_coupon']):active,
-.button:not([name='apply_coupon']):hover, 
-button:not(.close-btn):not(.pswp__button):not(.handheld-menu-toggle):not([name='apply_coupon']):hover, 
-input[type='button']:hover, 
-input[type='reset']:hover, 
-input[type='submit']:not([name='apply_coupon']):hover,
-body.search-results article .entry-footer a:hover,
-body.search-results article .entry-title a:hover,
-body.single-post article.post.hentry .entry-footer .tags-links > a:hover,
-.single-post article.type-post .post-meta a:hover,
-.single-post article.type-post .post-meta .byline a:hover,
-body:not(.single-post) article.post.hentry .entry-header a:hover,
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta a:hover,
-.entry-footer .edit-link .post-edit-link,
-.page-links a>.page-number:hover,
-.site-main .comment-navigation a:hover,
-.post-navigation .nav-links a:hover,
-.pagination .page-numbers:hover,
-.pagination .page-numbers.current,
-.page-links .page-number,
-.comment-metadata a:hover time,
-.error-404-first .widget_recent_entries a:hover,
-#secondary .widget_recent_entries a:hover,
-#secondary .widget_categories .current-cat-parent > a,
-#secondary .widget_categories .current-cat > a,
-#secondary ul.menu .current_page_parent > a,
-#secondary ul.menu .current_page_item > a,
-#secondary .widget_pages .current_page_parent > a,
-#secondary .widget_pages .current_page_item > a,
-#secondary .widget_pages ul a:hover,
-#secondary .widget ul.menu li:hover > a,
-#secondary .widget_meta a abbr,
-#secondary .widget_meta a:hover,
-.widget_categories a:hover,
-.calendar_wrap tfoot td a:hover,
-#secondary .widget_archive a:hover,
-.site-branding .site-title a:hover,
-input[type='checkbox']:checked:before,
-a {
-	color: var(--soft-blue);
-}
-a:hover {
-	color: var(--blueberry);
-}
 select {
-	background-image: -webkit-linear-gradient(45deg, transparent 50%, var(--blue-grey) 50%), -webkit-linear-gradient(315deg, var(--blue-grey) 50%, transparent 50%), -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-	background-image: -o-linear-gradient(45deg, transparent 50%, var(--blue-grey) 50%), -o-linear-gradient(315deg, var(--blue-grey) 50%, transparent 50%), -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-	background-image: linear-gradient(45deg, transparent 50%, var(--blue-grey) 50%), linear-gradient(135deg, var(--blue-grey) 50%, transparent 50%), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+	background-image: -webkit-linear-gradient(45deg, transparent 50%, #898EA2 50%), -webkit-linear-gradient(315deg, #898EA2 50%, transparent 50%), -webkit-linear-gradient(left, transparent, transparent);
+	background-image: -o-linear-gradient(45deg, transparent 50%, #898EA2 50%), -o-linear-gradient(315deg, #898EA2 50%, transparent 50%), -o-linear-gradient(left, transparent, transparent);
+	background-image: linear-gradient(45deg, transparent 50%, #898EA2 50%), linear-gradient(135deg, #898EA2 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
 }
+.ui-datepicker.ui-widget,
 input[type='checkbox'],
 input[type='radio'],
 .widget form[role='search']:before,
@@ -5151,7 +5021,7 @@ select,
 input[type='text'], 
 input[type='email'], 
 input[type='url'], 
-input[type='password'], 
+input[type='password'],
 input[type='search'], 
 input[type='number'], 
 input[type='tel'], 
@@ -5164,49 +5034,37 @@ input[type='datetime'],
 input[type='datetime-local'], 
 input[type='color'],
 textarea {
-	background-color: var(--white);
-	color: var(--blue-grey);
-	border-color: var(--pale-grey-two-darker);
-}
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even),
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even),
-.widget_tag_cloud ul li:hover,
-.calendar_wrap #today,
-.button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']):not(.product_type_external):not(.add_to_cart_button), 
-button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-input[type='button']:not(:focus):not(:active):not(:hover), 
-input[type='reset']:not(:focus):not(:active):not(:hover), 
-button[name='apply_coupon']:active,
-button[name='apply_coupon']:hover,
-button[name='apply_coupon']:focus,
-input[type='submit'][name='apply_coupon']:hover,
-input[type='submit'][name='apply_coupon']:focus,
-input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover),
-mark,
-input[type='radio']:checked:before {
-	background-color: var(--soft-blue);
+	background-color: #FFFFFF;
+	color: #898EA2;
+	border-color: #DDDFE7;
 }
 textarea::-webkit-input-placeholder,
 input::-webkit-input-placeholder {
-	color: var(--blue-grey);
+	color: #898EA2;
+}
+textarea::-moz-placeholder,
+input::-moz-placeholder {
+	color: #898EA2;
 }
 textarea:-ms-input-placeholder,
 input:-ms-input-placeholder {
-	color: var(--blue-grey);
+	color: #898EA2;
 }
 textarea::-ms-input-placeholder,
 input::-ms-input-placeholder {
-	color: var(--blue-grey);
+	color: #898EA2;
 }
 textarea::placeholder,
 input::placeholder {
-	color: var(--blue-grey);
+	color: #898EA2;
 }
 textarea:-moz-placeholder,
 input:-moz-placeholder {
-	color: var(--blue-grey);
+	color: #898EA2;
+}
+.ui-datepicker .ui-datepicker-calendar td a, 
+.ui-datepicker .ui-datepicker-calendar td span {
+	color: #898EA2;
 }
 select:focus,
 input[type='text']:focus, 
@@ -5225,238 +5083,75 @@ input[type='datetime']:focus,
 input[type='datetime-local']:focus, 
 input[type='color']:focus, 
 textarea:focus {
-	border-color: var(--blue-grey);
+	border-color: #898EA2;
 }
+body:not(.woocommerce-running) .error-404-last .widgettitle, 
+body:not(.woocommerce-running) .error-404-first .widgettitle, 
+body:not(.woocommerce-running) .error-404-first .widget-title,
+.ui-datepicker .ui-datepicker-calendar,
+.ui-datepicker .ui-datepicker-calendar td,
+.shop_table td, 
+.shop_table th,
 .comments-area .comments-title,
-.site-main .comment-navigation a:not(:hover),
-.post-navigation .nav-links a span:not(:hover),
+.pagination .page-numbers.dots,
 .pagination .page-numbers:not(.current):not(:hover),
 .page-links a>.page-number:not(:hover),
+.wp-block-latest-comments__comment-meta,
 ol.comment-list .comment-meta,
 .comment-respond .comment-reply-title,
 .comment-respond #reply-title,
-td,
-th,
 blockquote,
-.error-404-last .widgettitle,
-.error-404-first .widgettitle,
-.error-404-first .widget-title,
+.wp-block-pullquote,
+section.error-404 not-found .widgettitle,
+.conj-lite-secondary-widget-area__wrapper .widget:not(:first-of-type),
+.site-footer .widget ul.menu .sub-menu,
+.conj-lite-secondary-widget-area__wrapper .widget ul.menu .sub-menu,
+.widget_pages ul ul.children,
+.widget_categories ul ul.children,
+.wp-block-categories.wp-block-categories-list ul.children,
 .entry-footer .edit-link .post-edit-link {
-	border-color: var(--pale-grey-two-dark);
+	border-color: #DDDFE7;
 }
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta,
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-week-end {
+	background-color: #eff1f9;
+}
+.ui-datepicker .ui-datepicker-calendar th,
+.site-footer .widget ul.menu .sub-menu li:before,
+.conj-lite-secondary-widget-area__wrapper .widget ul.menu .sub-menu li:before,
+.widget_pages ul.children > li:before,
 .widget_categories ul.children > li:before,
-.entry-footer .edit-link .post-edit-link {
-	background-color: var(--pale-grey-two-darker);
+.wp-block-categories.wp-block-categories-list ul.children > li:before,
+body.single-post article.post.hentry .entry-footer .tags-links:before {
+	background-color: #DDDFE7;
 }
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even),
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even):before,
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even),
-.widget_tag_cloud ul li:hover,
-.calendar_wrap #today,
-.button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']):not(.product_type_external):not(.add_to_cart_button), 
-button:not(.close-btn):not(.pswp__button):not(.handheld-menu-toggle):not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-input[type='button']:not(:focus):not(:active):not(:hover), 
-input[type='reset']:not(:focus):not(:active):not(:hover), 
-button[name='apply_coupon']:active,
-button[name='apply_coupon']:hover,
-button[name='apply_coupon']:focus,
-input[type='submit'][name='apply_coupon']:hover,
-input[type='submit'][name='apply_coupon']:focus,
-input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
-	border-color: var(--soft-blue);
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today {
+    background-color: #FFC06A;
 }
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(even),
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(even),
-.widget_tag_cloud ul li:hover a,
-.widget_calendar .calendar_wrap tbody td > a,
-.calendar_wrap #today,
-.button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']):not(.product_type_external):not(.add_to_cart_button), 
-button:not(.close-btn):not(.pswp__button):not(.handheld-menu-toggle):not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-input[type='button']:not(:focus):not(:active):not(:hover), 
-input[type='reset']:not(:focus):not(:active):not(:hover), 
-button[name='apply_coupon']:active,
-button[name='apply_coupon']:hover,
-button[name='apply_coupon']:focus,
-input[type='submit'][name='apply_coupon']:hover,
-input[type='submit'][name='apply_coupon']:focus,
-input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
-	color: var(--white);
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a {
+    color: #FFC06A;
 }
-.single-post article.post.hentry.format-status .entry-content,
-.single-post article.post.hentry.format-aside .entry-content,
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(odd):before,
-.single-post article.post.hentry.format-chat .entry-content > *:nth-child(odd),
-body:not(.single-post) article.post.hentry.format-status .entry-content,
-body:not(.single-post) article.post.hentry.format-aside .entry-content,
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(odd):before,
-body:not(.single-post) article.post.hentry.format-chat .entry-content > *:nth-child(odd),
-mark,
 #masthead,
-body:not(.single-post) article.post.hentry > .entry-meta .post-meta > *,
+.wp-block-tag-cloud a.tag-cloud-link,
+article.post.hentry .wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
+article.post.hentry .wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
+article.post.hentry.format-chat .entry-content > *:before,
+.search-results:not(.post-type-archive) .site-main article:not(.type-product),
+article.type-attachment,
+article.post.hentry,
+ol.comment-list .pingback:not(:last-child) .comment-body,
 ol.comment-list .comment .comment-body,
+.wp-block-latest-comments .wp-block-latest-comments__comment,
 .error-404-last .widget_tag_cloud ul li:not(:hover),
-#secondary .conj-lite-secondary-widget-area__wrapper,
-#secondary.widget-area .widget-title > a,
-#secondary.widget-area .widget-title {
-	background-color: var(--white);
+.conj-lite-secondary-widget-area__wrapper,
+.conj-lite-secondary-widget-area__wrapper .widget-title > a,
+.conj-lite-secondary-widget-area__wrapper .widget-title {
+	background-color: #FFFFFF;
 }
-#secondary .calendar_wrap tfoot tr:not(:last-of-type) td, 
-#secondary .calendar_wrap tbody tr:not(:last-of-type) td, 
-#secondary .calendar_wrap td {
-	border-color: var(--white);
+mark {
+	color: #FFFFFF;
 }
-.widget_calendar .calendar_wrap tbody td > a {
-	background-color: var(--pale-grey-two-lighter);
-}
-#secondary.widget-area .widget:not(:first-of-type),
-#masthead,
-.widget_categories ul ul.children {
-	border-color: var(--pale-grey-two-darker);
-}
-#site-navigation > div.menu ul.nav-menu > li > a,
-.primary-navigation > ul.menu > .menu-item > a {
-	color: var(--battleship-grey);
-}
-.primary-navigation ul.menu > li.menu-item-has-children > a:after,
-#masthead .social-navigation ul.menu a {
-	color: var(--battleship-grey-light);
-}
-.primary-navigation > ul.menu > li.menu-item-has-children.current_page_parent > a:after,
-.primary-navigation > ul.menu > li.menu-item-has-children.current-menu-parent > a:after,
-.primary-navigation > ul.menu > li.menu-item-has-children.current-menu-item > a:after,
-#site-navigation > div.menu ul.nav-menu .current_page_item > a,
-#site-navigation > div.menu ul.nav-menu .current_page_parent > a,
-.primary-navigation > ul.menu > .current-menu-item > a,
-.primary-navigation > ul.menu > .current-menu-parent > a,
-.primary-navigation > ul.menu > .current_page_parent > a,
-.handheld-menu-toggle:hover,
-.c-offcanvas-content-wrap--overlay .handheld-menu-toggle,
-.primary-navigation ul.menu > li.menu-item-has-children:hover > a:after,
-#site-navigation > div.menu ul.nav-menu > li.current_page_ancestor > a,
-#site-navigation > div.menu ul.nav-menu > li:hover > a,
-.primary-navigation > ul.menu > .menu-item:hover > a {
-	color: var(--periwinkle);
-}
-#site-navigation > div.menu ul.nav-menu ul.children:before,
-#site-navigation > div.menu ul.nav-menu ul.children,
-#masthead ul.sub-menu > li > ul.sub-menu:before,
-#masthead ul.menu > li.menu-item-has-children > ul.sub-menu:before,
-#masthead ul.sub-menu {
-	background-color: var(--white);
-	border-color: var(--pale-grey-two);
-}
-#site-navigation > div.menu ul.nav-menu ul.children > li > a,
-#masthead ul.sub-menu > li > a {
-	color: var(--battleship-grey);
-}
-#site-navigation > div.menu ul.nav-menu ul.children > li.current_page_ancestor > a,
-#site-navigation > div.menu ul.nav-menu ul.children > li.current_page_item > a,
-#site-navigation > div.menu ul.nav-menu ul.children > li:hover > a,
-#masthead ul.sub-menu .current-menu-item > a,
-#masthead ul.sub-menu .current-menu-parent > a,
-#masthead ul.sub-menu .current-menu-ancestor > a,
-#masthead ul.sub-menu .current_page_parent > a,
-#masthead ul.sub-menu .current_page_item > a,
-#masthead ul.sub-menu > li:hover > a {
-	color: var(--soft-blue);
-}
-.handheld-menu-toggle {
-	color: var(--battleship-grey-darker);
-}
-.hamburger-nav-icon .icon-bar {
-	background-color: var(--battleship-grey-darker);
-}
-#handheld-slinky-menu .current-menu-ancestor > a:before,
-#handheld-slinky-menu .current_page_ancestor > a:before,
-#handheld-slinky-menu .current-menu-item > a:before,
-#handheld-slinky-menu .current-menu-parent > a:before,
-#handheld-slinky-menu .current_page_item > a:before,
-.handheld-menu-toggle:hover .hamburger-nav-icon .icon-bar,
-.c-offcanvas-content-wrap--overlay .hamburger-nav-icon .icon-bar {
-	background-color: var(--periwinkle);
-}
-.slinky-theme-default .back::before,
-.slinky-theme-default .next::after {
-	color: var(--white);
-}
-.c-offcanvas,
-.slinky-menu > ul,
-.c-offcanvas.is-open {
-	background-color: var(--charcoal-grey-two);
-}
-.handheld-offcanvas .close-btn,
-.slinky-menu > ul a {
-	color: var(--white);
-}
-.slinky-menu .header .title,
-.slinky-menu > ul a:hover {
-	color: var(--bluey-grey);
-}
-.handheld-offcanvas .close-btn:hover {
-	color: var(--periwinkle);
-}
-#handheld-slinky-menu .current-menu-ancestor > a:before,
-#handheld-slinky-menu .current_page_ancestor > a:before,
-#handheld-slinky-menu .current-menu-item > a:before,
-#handheld-slinky-menu .current-menu-parent > a:before,
-#handheld-slinky-menu .current_page_item > a:before {
-	background-color: var(--periwinkle);
-}
-.site-footer {
-	background-color: var(--charcoal-grey-three);
-}
-.site-footer,
-.site-footer .widget_product_categories .product-categories li a,
-.site-footer .woocommerce.widget_rating_filter li a,
-.site-footer .woocommerce-mini-cart-item a,
-.site-footer a,
-.site-footer .woocommerce-mini-cart__total > strong {
-	color: var(--steel);
-}
-.site-footer .widget_product_categories .product-categories li a:hover,
-.site-footer .woocommerce.widget_rating_filter li a:hover,
-.site-footer .woocommerce-mini-cart-item a:hover,
-.site-footer .widget_categories .current-cat-parent > a,
-.site-footer .widget_categories .current-cat > a,
-.site-footer ul.menu .current_page_parent > a,
-.site-footer ul.menu .current_page_item > a,	
-.site-footer .widget_pages .current_page_parent > a,
-.site-footer .widget_pages .current_page_item > a,
-.site-footer a:focus,
-.site-footer a:active,
-.site-footer a:hover {
-	color: var(--periwinkle);
-}
-.site-footer h1,
-.site-footer h2,
-.site-footer h3,
-.site-footer h4,
-.site-footer h5,
-.site-footer h6,
-.site-footer .widget_calendar .calendar_wrap caption,
-.site-footer .widget-title {
-	color: var(--bluey-grey-two);
-}
-.site-footer .calendar_wrap tfoot tr:not(:last-of-type) td, 
-.site-footer .calendar_wrap tbody tr:not(:last-of-type) td, 
-.site-footer .calendar_wrap td {
-	border-color: var(--charcoal-grey-three);
-}
-code,
-pre,
-.required {
-	color: var(--watermelon);
-}
-code,
-pre {
-	background-color: var(--pale-grey-two-dark);
-}
-p.no-comments {
-	background-color: var(--azure);
-}
-p.no-comments a,
-p.no-comments {
-	color: var(--white) !important;
+.conj-lite-secondary-widget-area__wrapper .calendar_wrap tfoot tr:not(:last-of-type) td, 
+.conj-lite-secondary-widget-area__wrapper .calendar_wrap tbody tr:not(:last-of-type) td, 
+.conj-lite-secondary-widget-area__wrapper .calendar_wrap td {
+	border-color: #FFFFFF;
 }
