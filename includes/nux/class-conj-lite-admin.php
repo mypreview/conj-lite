@@ -27,7 +27,10 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'admin_notices', 	  array( $this, 'upsell_notice' ), 	     1 );
+			add_action( 'admin_notices', 	  							array( $this, 'upsell_notice' ), 	     	 	 1 );
+			add_action( 'switch_theme', 	  							array( $this, 'switch_theme' ), 				10 );
+			add_action( 'after_switch_theme', 							array( $this, 'after_switch_theme' ), 			10 );
+			add_action( 'wp_ajax_conj_lite_dismiss_upsell_notice', 		array( $this, 'dismiss_upsell_notice' ), 		10 );
 
 		}
 
@@ -41,6 +44,16 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 		 * @return 	void
 		 */
 		public function upsell_notice() {
+
+			// Bail out, if the theme recently activated.
+			if ( get_transient( 'conj_lite_did_just_activate_transient' ) ) {
+				return;
+			} // End If Statement
+
+			// Bail out, if the notice already dismissed by the user.
+			if ( get_transient( 'conj_lite_dismiss_upsell_notice_flag' ) ) {
+				return;
+			} // End If Statement
 
 			?>
 			<div id="conj-lite-upsell-notice" class="notice is-dismissible">
@@ -181,6 +194,54 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 				</div><!-- #conj-lite-upsell-banner__message -->
 			</div>
 			<?php
+
+		}
+
+		/**
+		 * Run when switching to another theme.
+		 *
+		 * @link 	https://developer.wordpress.org/reference/hooks/switch_theme/
+		 * @see 	https://developer.wordpress.org/reference/functions/delete_transient/
+		 * @access 	public
+		 * @return 	void
+		 */
+		public function switch_theme() {
+
+			delete_transient( 'conj_lite_dismiss_upsell_notice_flag' );
+			delete_transient( 'conj_lite_did_just_activate_transient' );
+
+		}
+
+		/**
+		 * Fires on the first WP load after a theme switch if the old theme still exists.
+		 *
+		 * @link 	https://developer.wordpress.org/reference/hooks/after_switch_theme/
+		 * @see 	https://developer.wordpress.org/reference/functions/set_transient/
+		 * @access 	public
+		 * @return 	void
+		 */
+		public function after_switch_theme() {
+
+			set_transient( 'conj_lite_did_just_activate_transient', TRUE, DAY_IN_SECONDS );
+
+		}
+
+		/**
+		 * AJAX dismiss up-sell banner notice.
+		 *
+		 * @see 	https://wordpress.stackexchange.com/questions/242705/how-to-stop-showing-admin-notice-after-close-button-has-been-clicked
+		 * @return 	void
+		 */
+		public function dismiss_upsell_notice() {
+
+			$nonce = ! empty( $_POST['nonce'] ) ? $_POST['nonce'] : FALSE;
+			
+			if ( ! $nonce || ! wp_verify_nonce( $nonce, 'conj_lite_upsell_notice_dismiss_nonce' ) || ! current_user_can( 'manage_options' ) ) {
+				wp_die();
+			} // End If Statement
+			
+			delete_transient( 'conj_lite_dismiss_upsell_notice_flag' );
+			set_transient( 'conj_lite_dismiss_upsell_notice_flag', TRUE, WEEK_IN_SECONDS );
 
 		}
 
