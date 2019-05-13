@@ -4260,27 +4260,18 @@ ol.comment-list .comment-body {
 --------------------------------------------------------------*/
 .error-404-last,
 .error-404-first {
-	padding-top: 3.55em;
+	padding-top: 50px;
 }
-.error-404.not-found form.search-form label {
-	position: relative;
-}
-.error-404.not-found form.search-form .search-field,
-.error-404.not-found form.search-form label {
-	width: 100%;
-}
+.no-results.not-found form.search-form .search-field,
 .error-404.not-found form.search-form .search-field {
 	padding: 10px 20px 10px 40px;
 	min-height: 51px;
 }
-.error-404.not-found form.search-form {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-}
+.no-results.not-found form.search-form .search-submit,
 .error-404.not-found form.search-form .search-submit {
 	padding: 10px;
 }
+.no-results.not-found form.search-form label:before,
 .error-404.not-found form.search-form label:before {
 	left: 15px;
 	content: "\e9bf";
@@ -4288,15 +4279,13 @@ ol.comment-list .comment-body {
 	-webkit-transform: translateY(-50%);
 	    -ms-transform: translateY(-50%);
 	        transform: translateY(-50%);
-    position: absolute;
 }
-.error-404-last .widgettitle,
-.error-404-first .widgettitle,
-.error-404-first .widget-title {
+body:not(.woocommerce-running) .error-404-last .widgettitle,
+body:not(.woocommerce-running) .error-404-first .widgettitle,
+body:not(.woocommerce-running) .error-404-first .widget-title {
 	border-width: 0 0 1px;
-    margin-bottom: 40px;
-    padding-bottom: 25px;
-    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
 	border-style: solid;
 }
 @media (min-width: 48.0625em) {
@@ -4312,7 +4301,32 @@ ol.comment-list .comment-body {
 @media (max-width: 48em) {
 	.error-404-last .widget_tag_cloud,
 	.error-404-first .widget_categories {
-		padding-top: 3.55em;
+		padding-top: 57px;
+	}
+}
+/*--------------------------------------------------------------
+## Search result
+--------------------------------------------------------------*/
+.search-results article.type-post:before {
+	top: 27px;
+}
+.search-results:not(.post-type-archive) .site-main article .entry-meta span {
+	margin: 0 10px 5px 0;
+}
+.search-results:not(.post-type-archive) .site-main article .entry-header h2 {
+	margin-top: 14px;
+	margin-bottom: 15px;
+}
+@media (min-width: 27.5625em) {
+	.search-results:not(.post-type-archive) .site-main article.post.hentry,
+	.search-results:not(.post-type-archive) .site-main article {
+		padding: 30px;
+	}
+}
+@media (max-width: 27.5em) {
+	.search-results:not(.post-type-archive) .site-main article.post.hentry,
+	.search-results:not(.post-type-archive) .site-main article {
+		padding: 20px;
 	}
 }
 /*--------------------------------------------------------------
