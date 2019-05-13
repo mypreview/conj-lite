@@ -4526,6 +4526,468 @@ video {
 	display: block;
 }
 /*--------------------------------------------------------------
+# IE10+ CSS
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/*--------------------------------------------------------------
+	## Post archive
+	--------------------------------------------------------------*/
+	body:not(.search-results) article.post.hentry.format-chat .entry-content > *:not(div) {
+	    max-width: calc(100% - 11px);
+	}
+   	/*--------------------------------------------------------------
+	## Clearings
+	--------------------------------------------------------------*/
+	.conj-lite-col__full::after,
+	.conj-lite-col__full::before,
+	.widget-area::after,
+	.widget-area::before,
+	.content-area::before,
+	.content-area::after {
+		content: "";
+		display: table;
+		table-layout: fixed;
+	}
+	.conj-lite-col__full::after,
+	.widget-area::after,
+	.content-area::after {
+		clear: both;
+	}
+	/*--------------------------------------------------------------
+	## Header
+	--------------------------------------------------------------*/
+	.hamburger-nav-icon .icon-bar:nth-child(2) {
+		width: 100%;
+	}
+	.hamburger-nav-icon .icon-bar:not(:last-child) {
+		margin-bottom: 7px;
+	}
+	.slinky-menu .header .title {
+		text-align: right;
+	}
+	#handheld-slinky-menu .current-menu-ancestor > a:before, 
+	#handheld-slinky-menu .current_page_ancestor > a:before, 
+	#handheld-slinky-menu .current-menu-item > a:before, 
+	#handheld-slinky-menu .current-menu-parent > a:before, 
+	#handheld-slinky-menu .current_page_item > a:before {
+		margin-top: -10px;
+	}
+	.site-main .comment-navigation .nav-links > *:only-child,
+	.site-main .post-navigation .nav-links > *:only-child {
+		width: 100%;
+	}
+	/*--------------------------------------------------------------
+	## Form
+	--------------------------------------------------------------*/
+	select {
+		max-width: 100%;
+	}
+	select::-ms-expand{
+		display: none;
+	}
+	.wp-block-button.aligncenter {
+		display: block;
+	}
+	body:not(.single-post) article.post.hentry .entry-content .more-link, 
+	.wp-block-button .wp-block-button__link,
+	.type-attachment .edit-link .post-edit-link,
+	.entry-footer .edit-link .post-edit-link, 
+	.site-footer-bar .widget_text p > a:only-child, 
+	.button, 
+	.wp-block-file .wp-block-file__button, 
+	button:not(.customize-partial-edit-shortcut-button):not(.handheld-menu-toggle):not(.pswp__button):not(.close-btn), 
+	input[type='button'], 
+	input[type='reset'], 
+	input[type='submit'] {
+		padding: 12px 40px;
+	}
+	/*--------------------------------------------------------------
+	## Container
+	--------------------------------------------------------------*/
+	.site-content {
+		overflow: hidden;
+	}
+	/*--------------------------------------------------------------
+	## Background Video
+	--------------------------------------------------------------*/
+	.wp-block-cover__video-background {
+		height: auto;
+		min-height: 100%;
+	}
+	/*--------------------------------------------------------------
+	## Widgets
+	--------------------------------------------------------------*/
+	.widget_rss ul,
+	.widget_recent_entries ul,
+	.widget_recent_comments ul,
+	.widget_tag_cloud .wp-tag-cloud,
+	.widget_product_tag_cloud .tagcloud,
+	.widget_pages ul.children,
+	.widget_pages ul,
+	.widget_meta ul,
+	.wp-block-categories.wp-block-categories-list,
+	.widget_categories ul,
+	.widget_archive ul,
+	.widget ul.menu {
+		display: flex;
+	}
+	.widget_tag_cloud ul {
+		flex-wrap: wrap;
+	}
+	.widget_archive ul,
+	.widget_categories ul,
+	.wp-block-categories.wp-block-categories-list,
+	.widget ul.menu,
+	.widget_recent_entries ul,
+	.widget_recent_comments ul {
+		flex-direction: column;
+	}
+	.widget_tag_cloud .wp-tag-cloud,
+	.widget_product_tag_cloud .tagcloud {
+		justify-content: space-between;
+	}
+	.widget_archive ul li:not(:last-child),
+	.widget_recent_comments ul li:not(:last-child),
+	.widget_recent_entries ul li:not(:last-child),
+	.wp-block-categories.wp-block-categories-list li,
+	.widget_categories ul li:not(:last-child),
+	.widget ul.menu li:not(:last-child) {
+		margin-bottom: 10px;
+	}
+	.conj-lite-secondary-widget-area__wrapper .widget-title {
+		z-index: 0;
+	}
+	.widget form[role="search"] [type="submit"] {
+		-ms-grid-column: 2;
+	}
+	/*--------------------------------------------------------------
+	## Comments
+	--------------------------------------------------------------*/
+	.comment-respond .comment-form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.comment-respond .comment-form > * {
+		margin-top: 15px;
+	}
+	.comment-respond .comment-form .comment-form-cookies-consent,
+	.comment-respond .comment-form .comment-subscription-form,
+	.comment-respond .comment-form .form-submit,
+	.comment-respond .comment-form .comment-form-comment,
+	.comment-respond .comment-form .comment-notes {
+		width: 100%;
+	}
+	.comment-respond .comment-form .comment-notes {
+		order: 1;
+	}
+	.comment-respond .comment-form .comment-form-author {
+		order: 2;
+	}
+	.comment-respond .comment-form .comment-form-email {
+		order: 3;
+	}
+	.comment-respond .comment-form .comment-form-url,
+	.comment-respond .comment-form .comment-form-rating {
+		order: 4;
+	}
+	.comment-respond .comment-form > .comment-form-rating:first-child {
+		margin-left: 0;
+	}
+	.comment-respond .comment-form .comment-form-cookies-consent {
+		order: 5;
+	}
+	.comment-respond .comment-form .comment-form-comment {
+		order: 6;
+	}
+	.comment-respond .comment-form .comment-form-comment {
+		order: 7;
+	}
+	.comment-respond .comment-form .form-submit {
+		order: 8;
+	}
+	.comment-form-url + .comment-subscription-form {
+		order: 7;
+	}
+	.comment-form-url + .comment-subscription-form + .comment-subscription-form {
+		order: 9;
+	}
+	.comment-form-cookies-consent + .comment-subscription-form {
+		order: 9;
+	}
+	.comment-form-cookies-consent + .comment-subscription-form + .comment-subscription-form {
+		order: 10;
+	}
+	/*--------------------------------------------------------------
+	## Media and text
+	--------------------------------------------------------------*/
+	.wp-block-media-text {
+		display: flex;
+	}
+	/*--------------------------------------------------------------
+	## Media
+	--------------------------------------------------------------*/
+	.wp-block-image .aligncenter > figcaption, 
+	.wp-block-image .alignleft > figcaption, 
+	.wp-block-image .alignright > figcaption, 
+	.wp-block-image.is-resized > figcaption,
+	.wp-block-image .aligncenter,
+	.wp-block-image.is-resized {
+		display: block;
+		flex-shrink: 0;
+	}
+	.wp-block-image {
+		flex-shrink: 0
+	}
+	.wp-block-image .aligncenter img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.wp-block-gallery .blocks-gallery-item img {
+		height: 100%;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS maximum width 62.0625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (max-width: 62.0625em) , (-ms-high-contrast: active) and (max-width: 62.0625em) { 
+	/*--------------------------------------------------------------
+	### Header
+	--------------------------------------------------------------*/
+	.hamburger-nav-icon {
+		display: flex;
+		flex-direction: column;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS maximum width 37.5625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (max-width: 37.5625em) , (-ms-high-contrast: active) and (max-width: 37.5625em) { 
+	/*--------------------------------------------------------------
+	### Media and text
+	--------------------------------------------------------------*/
+	.wp-block-media-text.is-stacked-on-mobile {
+		flex-wrap: wrap;
+	}
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media,
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+		width: 100%;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS minimum width 27.5625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (min-width: 27.5625em), (-ms-high-contrast: active) and (min-width: 27.5625em) {
+	/*--------------------------------------------------------------
+	### Widgets
+	--------------------------------------------------------------*/
+	.widget_tag_cloud .wp-tag-cloud li,
+	.widget_product_tag_cloud .tagcloud > * {
+		width: calc(33.33% - 3.333px);
+		margin-bottom: 5px;
+	}
+	.widget_tag_cloud .wp-tag-cloud li:nth-last-child(-n+3),
+	.widget_product_tag_cloud .tagcloud > *:nth-last-child(-n+3) {
+		margin-bottom: 0;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS minimum width 37.5625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (min-width: 37.5625em), (-ms-high-contrast: active) and (min-width: 37.5625em) {
+	/*--------------------------------------------------------------
+	### Header
+	--------------------------------------------------------------*/
+	.site-main .comment-navigation .nav-links,
+	.site-main .post-navigation .nav-links {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.site-main .comment-navigation .nav-links > *:not(:only-child),
+	.site-main .post-navigation .nav-links > *:not(:only-child) {
+		width: 50%;
+	}
+	/*--------------------------------------------------------------
+	### Media and text
+	--------------------------------------------------------------*/
+	.wp-block-media-text .wp-block-media-text__media,
+	.wp-block-media-text .wp-block-media-text__content {
+		width: 50%;
+	}
+	.wp-block-media-text.has-media-on-the-right {
+		flex-direction: row-reverse;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS minimum width 48.0625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (min-width: 48.0625em), (-ms-high-contrast: active) and (min-width: 48.0625em) {
+	/*--------------------------------------------------------------
+	### Comments
+	--------------------------------------------------------------*/
+	.comment-respond .comment-form .comment-form-url,
+	.comment-respond .comment-form .comment-form-rating,
+	.comment-respond .comment-form .comment-form-email,
+	.comment-respond .comment-form .comment-form-author {
+		width: calc(33.333% - 10px);
+	}
+	.comment-respond .comment-form .comment-form-author{
+		margin-right: 10px;
+	}
+	.comment-respond .comment-form .comment-form-url,
+	.comment-respond .comment-form .comment-form-rating {
+		margin-left: 10px;
+	}
+	.comment-respond .comment-form .comment-form-email {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS minimum width 82.0625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (min-width: 82.0625em), (-ms-high-contrast: active) and (min-width: 82.0625em) { 
+	/*--------------------------------------------------------------
+	### Header
+	--------------------------------------------------------------*/
+	#masthead > .col-full > *:not(.site-header-background-image) {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS maximum width 82.0625em and minimum width 62.0625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (max-width: 82.0625em) and (min-width: 62.0625em), (-ms-high-contrast: active) and (max-width: 82.0625em) and (min-width: 62.0625em) { 
+	/*--------------------------------------------------------------
+	### Header
+	--------------------------------------------------------------*/
+	#masthead > .col-full > * {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS minimum width 62.0625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (min-width: 62.0625em), (-ms-high-contrast: active) and (min-width: 62.0625em) {
+	/*--------------------------------------------------------------
+	### Header
+	--------------------------------------------------------------*/
+	.woocommerce-running .primary-navigation,
+	.site-header-cart,
+	.site-wc-search,
+	.site-branding {
+		-ms-grid-row: 2;
+	}
+	.site-header-cart,
+	.site-wc-search,
+	.site-branding {
+		-ms-grid-row: 1;
+	}
+	.woocommerce-running .col-full > .primary-navigation {
+		margin-top: 30px;
+	}
+	.woocommerce-running #masthead > .col-full > .primary-navigation,
+	#masthead > .col-full > .site-branding {
+		margin-left: 0;
+	}
+	#masthead > .col-full > .site-header-cart,
+	.woocommerce-running #masthead > .col-full > .primary-navigation,
+	body:not(.woocommerce-running) #masthead > .col-full > .primary-navigation {
+		margin-right: 0;
+	}
+	body:not(.woocommerce-running) .col-full > .primary-navigation {
+		align-items: flex-end;	
+	}
+	/*--------------------------------------------------------------
+	### Container
+	--------------------------------------------------------------*/
+	.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full {
+		display: block !important;
+	}
+	.has-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > .content-area {
+		width: calc(100% - 376px);
+	}
+	.has-sidebar .widget-area {
+		width: 346px;
+	}
+	.has-sidebar.left-sidebar .widget-area,
+	.has-sidebar.right-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > .content-area {
+		float: left;
+	}
+	.has-sidebar.left-sidebar:not(.product-template-template-fluid):not(.post-template-template-fluid):not(.page-template-template-fluid):not(.no-sidebar) .conj-lite-col__full > .content-area,
+	.has-sidebar.right-sidebar .widget-area {
+		float: right;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS maximum width 48.0625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (max-width: 48.0625em), (-ms-high-contrast: active) and (max-width: 48.0625em) {
+	/*--------------------------------------------------------------
+	## Comments
+	--------------------------------------------------------------*/
+	.comment-respond .comment-form .comment-form-url, 
+	.comment-respond .comment-form .comment-form-rating, 
+	.comment-respond .comment-form .comment-form-email, 
+	.comment-respond .comment-form .comment-form-author,
+	.comment-respond .comment-form {
+		width: 100%;
+	}
+	/*--------------------------------------------------------------
+	### Footer
+	--------------------------------------------------------------*/
+	.footer-widgets .widget_media_image img {
+		display: block;
+	}
+}
+/*--------------------------------------------------------------
+## IE10+ CSS maximum width 27.5625em
+--------------------------------------------------------------*/
+@media all and (-ms-high-contrast: none) and (max-width: 27.5625em), (-ms-high-contrast: active) and (max-width: 27.5625em) {
+	/*--------------------------------------------------------------
+	### Widgets
+	--------------------------------------------------------------*/
+	.widget_tag_cloud .wp-tag-cloud li,
+	.widget_product_tag_cloud .tagcloud > * {
+		width: calc((100% - 5.01px) /2);
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.widget_tag_cloud .wp-tag-cloud li:nth-child(2n),
+	.widget_product_tag_cloud .tagcloud > *:nth-child(2n) {
+		margin-right: 0;
+	}
+}
+/*--------------------------------------------------------------
+# IE Edge 16+ CSS
+--------------------------------------------------------------*/
+@supports (-ms-ime-align:auto) {
+	.conj-lite-secondary-widget-area__wrapper .widget-title {
+		z-index: 0;
+	}
+	/*--------------------------------------------------------------
+	## Background Video
+	--------------------------------------------------------------*/
+	.wp-block-cover__video-background {
+		height: auto;
+		min-height: 100%;
+	}
+	/*--------------------------------------------------------------
+	## JS-OffCanvas
+	--------------------------------------------------------------*/
+	.c-offcanvas-content-wrap {
+		transform: none;	
+	}
+}
+/*--------------------------------------------------------------
+# Customizer
+--------------------------------------------------------------*/
+body.conj-lite-customizer .customize-partial-edit-shortcut-button {
+	padding: 0 !important;
+    min-width: auto !important;
+}
+/*--------------------------------------------------------------
 # Colors
 --------------------------------------------------------------*/
 :root {
