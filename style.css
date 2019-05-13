@@ -3363,29 +3363,36 @@ ol.wp-block-latest-comments,
 --------------------------------------------------------------*/
 p.no-comments {
 	clear: both;
-	-webkit-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
-	        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
 	width: 100%;
-	padding: 14px 20px 14px 50px;
     list-style: none;
-	margin-left: 0;
-	margin-right: 0;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	position: relative;
 	margin: 0;
 }
+.akismet_comment_form_privacy_notice,
+.comment-respond .comment-notes,
+p.no-comments {
+	position: relative;
+	-webkit-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
+	        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
+	padding: 14px 20px 14px 50px;
+}
+.akismet_comment_form_privacy_notice:before,
+.comment-respond .comment-notes:before,
 p.no-comments:before {
 	position: absolute;
     left: 20px;
 	content: "\e91d";
 }
+.comment-respond .comment-notes {
+	margin-top: 10px;
+}
+.akismet_comment_form_privacy_notice {
+	margin-top: 15px;
+    margin-bottom: 0;
+}
 @media (min-width: 37.5625em) {
 	p.no-comments {
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
+		justify-content: space-between;
 	}
 }
 /*--------------------------------------------------------------
