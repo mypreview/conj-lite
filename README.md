@@ -11,7 +11,7 @@
 
 ## Installation
 
-* Download the theme from it's GitHub Repository Release window.
+* Download the theme from it's GitHub Repository [Release](https://github.com/mypreview/conj-lite/releases) window.
 * Go to **WordPress** > **Appearance** > **Themes** > **Add New**.
 * Click Upload Theme and **Choose File**, then select the theme's `.zip` file. Click Install Now.
 * Click Activate to use your new theme right away.
