@@ -35,6 +35,6 @@ If you have any question(s) about using theme, please do not hesitate to check o
 
 We welcome contributions in any form, and you can help reporting, testing, and detailing bugs.
 
-## Premium Version
+## Go premium
 
-The premium version of this theme is only available to purchase from [Themeforest](https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview). :moneybag:
+The premium version of this theme is available to purchase from [Themeforest](https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview). :moneybag:
