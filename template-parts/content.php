@@ -13,7 +13,7 @@
 	<div class="entry-wrapper">
 		<div class="entry-meta">
 			<?php 
-			conj_lite_entry_footer( $posted_categories = TRUE, $posted_tags = FALSE );  ?>
+			conj_lite_entry_footer( $posted_categories = TRUE, $posted_tags = FALSE );
 			conj_lite_post_title(); ?>
 			<div class="post-meta">
 				<?php conj_lite_posted_on(); conj_lite_comments_link(); ?>
