@@ -696,7 +696,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				return;
 			} // End If Statement
 
-			delete_transient( 'conj_categories' );
+			delete_transient( 'conj_lite_categories' );
 
 		}
 
