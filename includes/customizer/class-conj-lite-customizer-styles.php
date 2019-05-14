@@ -59,13 +59,31 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
         			color: #{$general_site_title_color};
         		}
         		/* General */
+        		.wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
+				.wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
+				.c-offcanvas-content-wrap,
+				.search-results:not(.post-type-archive) .site-main article:not(.type-product):not(.type-post) .entry-meta span,
+				article.post.hentry .cat-tags-links .post-categories a,
+				.entry-footer .edit-link .post-edit-link,
+				.widget_tag_cloud ul li,
 				.conj-lite-blog__archive.has-sidebar.post-template-template-fluid article.post.hentry .alignfull,
 				.conj-lite-blog__archive:not(.has-sidebar) article.post.hentry .alignfull,
 				body {
 					background-color: #{$general_background_color};
 				}
+				#site-navigation > div.menu > ul ul.children:before,
+				#site-navigation > div.menu > ul ul.children,
+				#masthead ul.sub-menu > li > ul.sub-menu:before,
+				#masthead ul.menu > li.menu-item-has-children > ul.sub-menu:before,
+				#masthead ul.sub-menu {
+					border-color: #{$general_background_color};
+				}
 				#masthead {
 					border-color: {$general_background_color_darker};
+				}
+				audio::-webkit-media-controls-panel,
+				pre:not(.wp-block-verse):not(.wp-block-code) {
+					background-color: {$general_background_color_dark};
 				}
 				body.search-results article .entry-footer a,
 				body.search-results article .entry-title a,
@@ -87,6 +105,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				h6 {
 					color: {$general_heading_color};
 				}
+				#site-navigation > div.menu > ul ul.children > li > a,
+				#masthead ul.sub-menu > li > a,
 				#site-navigation > div.menu > ul > li > a,
 				.primary-navigation > ul.menu > .menu-item > a,
 				.wp-block-pullquote,
@@ -136,6 +156,10 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				.single-post article.type-post .post-meta .byline {
 					color: {$general_text_color_lighter};
 				}
+				#site-navigation > div.menu > ul ul.children > li[class*='current'] > a,
+				#site-navigation > div.menu > ul ul.children > li:hover > a,
+				#masthead ul.sub-menu [class*='current'] > a,
+				#masthead ul.sub-menu > li:hover > a,
 				body.search-results article .entry-footer a:hover,
 				body.search-results article .entry-title a:hover,
 				body.single-post article.post.hentry .entry-footer .tags-links > a:hover,
