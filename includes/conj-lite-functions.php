@@ -184,11 +184,19 @@ endif;
 if ( ! function_exists( 'conj_lite_time_link' ) ) :
 	function conj_lite_time_link() {
 
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = sprintf( '<time class="entry-date published updated" datetime="%1$s">%2$s</time>', get_the_modified_date( DATE_W3C ), get_the_modified_date() );
-		} else {
-			$time_string = sprintf( '<time class="entry-date published" datetime="%1$s">%2$s</time>', get_the_date( DATE_W3C ), get_the_date() );
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		} // End If Statement
+
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			esc_html( get_the_modified_date() )
+		);
 
 		// Wrap the time string in a link, and preface it with 'Posted on'.
 		return sprintf(
