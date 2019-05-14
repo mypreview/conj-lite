@@ -203,8 +203,7 @@ form.woocommerce-ResetPassword button,
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login button,
 .woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-LostPassword,
 #customer_login button,
-#customer_login .woocommerce-LostPassword,
-ul.products li.product .woocommerce-product-details__categories {
+#customer_login .woocommerce-LostPassword {
 	font-size: 15px;
 }
 .widget_price_filter .price_label .from,
@@ -286,8 +285,7 @@ ul.products li.product .price .woocommerce-Price-amount {
 }
 .woocommerce-password-hint,
 .woocommerce-checkout-review-order-table thead th,
-.woocommerce-cart-form table th,
-ul.products li.product .woocommerce-product-details__categories {
+.woocommerce-cart-form table th {
 	line-height: 1.58;
 }
 .woocommerce-loop-category__title {
@@ -864,7 +862,6 @@ ul.products li.product.outofstock .button:after {
     min-height: 30px;
 }
 ul.products li.product img,
-ul.products li.product .woocommerce-product-details__categories,
 .conj-lite-wc-product__flashs span {
 	margin-bottom: 10px;
 }
@@ -888,9 +885,6 @@ ul.products li.product .conj-lite-wc-price__wrapper ins,
 ul.products li.product .conj-lite-wc-price__wrapper del {
 	margin: 0 4px;
 }
-ul.products li.product .woocommerce-product-details__categories {
-	margin-top: 0;
-}
 li.product .conj-lite-wc-price__wrapper > .woocommerce-Price-amount {
 	margin: 0 2px;
 }
@@ -903,10 +897,6 @@ ul.products li.product .price {
 	margin-top: auto;
 }
 @media (min-width: 60.0625em) {
-	ul.products li.product .added_to_cart,
-	ul.products li.product .button {
-		right: 50px;
-	}
 	[class*="wp-block-woocommerce-"].is-hidden-rating ul.products li.product .added_to_cart,
 	[class*="wp-block-woocommerce-"].is-hidden-rating ul.products li.product .button {
 		right: 20px;
@@ -4008,10 +3998,6 @@ form.track_order input[type="text"] {
 .search-results:not(.post-type-archive) .site-main article.type-product .entry-content > * {
 	flex: 0 0 100%;
 }
-.search-results:not(.post-type-archive) .site-main article.type-product .woocommerce-product-details__categories {
-	order: -1;
-	margin-top: 5px;
-}
 .search-results:not(.post-type-archive) .site-main article.type-product .price {
 	margin-bottom: 0;
 }
@@ -4562,6 +4548,7 @@ ol.commentlist .comment_container,
 .widget_price_filter .price_label .from, 
 .widget_price_filter .price_label .to,
 .widget_price_filter .ui-slider .ui-slider-handle,
+.select2-container.select2-container--default .select2-search--dropdown .select2-search__field,
 .select2-container.select2-container--default.select2 .selection .select2-selection--single,
 .select2-container.select2-container--default.select2 .selection .select2-selection--multiple,
 .widget_product_categories .product-categories .cat-parent ul.children,
