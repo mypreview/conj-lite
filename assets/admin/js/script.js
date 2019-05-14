@@ -16,7 +16,7 @@
 	$( function() {
 		// Dismiss up-sell banner notice on user click!
 		$( document ).on( 'click', '#conj-lite-upsell-notice .notice-dismiss', function() {
-			$.ajax({
+			$.ajax( {
 				type: 'POST',
 				url: ajaxurl,
 				data: { 
