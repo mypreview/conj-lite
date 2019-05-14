@@ -43,7 +43,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 			$general_text_color_lighter = sanitize_hex_color( conj_lite_adjust_color_brightness( $general_text_color, 50 ) );
 			$general_link_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_link_color', '#666EE8' ) );
 			$general_link_color_lighter = sanitize_hex_color( conj_lite_adjust_color_brightness( $general_link_color, 80 ) );
-			$conj_lite_general_link_alt_color = sanitize_hex_color( get_theme_mod( 'conj_general_link_alt_color', '#414B92' ) );
+			$general_link_alt_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_link_alt_color', '#414B92' ) );
 			// Button
 			$button_text_color = sanitize_hex_color( get_theme_mod( 'conj_lite_button_text_color', '#FFFFFF' ) );
 			$button_alt_text_color = sanitize_hex_color( get_theme_mod( 'conj_lite_button_alt_text_color', '#666EE8' ) );
