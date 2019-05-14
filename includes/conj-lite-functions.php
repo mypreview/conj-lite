@@ -49,10 +49,10 @@ endif;
  * Call a shortcode function by tag name.
  *
  * @uses 	call_user_func()
- * @param  	string 	$tag     	The shortcode whose function to call.
- * @param  	array  	$atts    	The attributes to pass to the shortcode function. Optional.
- * @param  	array  	$content 	The shortcode's content. Default is null (none).
- * @return 	string|bool 		False on failure, the result of the shortcode on success.
+ * @param  	string 		$tag     	The shortcode whose function to call.
+ * @param  	array  		$atts    	The attributes to pass to the shortcode function. Optional.
+ * @param  	array  		$content 	The shortcode's content. Default is null (none).
+ * @return 	string|bool 			False on failure, the result of the shortcode on success.
  */
 if ( ! function_exists( 'conj_lite_do_shortcode' ) ) :
 	function conj_lite_do_shortcode( $tag, array $atts = array(), $content = NULL ) {
@@ -116,10 +116,7 @@ endif;
 /**
  * Prints HTML markup for the current post title.
  *
- * @uses 	get_the_ID()
  * @uses 	the_title()
- * @uses 	get_post_meta()
- * @uses 	conj_lite_is_powerpack_activated()
  * @return 	null|void
  */
 if ( ! function_exists( 'conj_lite_post_title' ) ) :
@@ -146,12 +143,10 @@ endif;
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @uses 	get_option()
  * @uses 	get_the_author()
  * @uses 	get_author_posts_url()
  * @uses 	get_the_author_meta()
  * @uses 	conj_lite_time_link()
- * @uses 	is_customize_preview()
  * @return 	void
  */
 if ( ! function_exists( 'conj_lite_posted_on' ) ) :
@@ -176,7 +171,6 @@ endif;
  * @uses 	get_the_time()
  * @uses 	get_the_date()
  * @uses 	get_permalink()
- * @uses 	is_customize_preview()
  * @uses 	get_the_modified_date()
  * @uses 	get_the_modified_time()
  * @return 	html
@@ -213,7 +207,6 @@ endif;
  * @uses 	get_option()
  * @uses 	comments_open()
  * @uses 	post_password_required()
- * @uses 	is_customize_preview()
  * @return 	Null | html
  */
 if ( ! function_exists( 'conj_lite_comments_link' ) ) :
@@ -239,7 +232,6 @@ endif;
  * @uses 	get_option()
  * @uses 	get_the_category_list()
  * @uses 	get_the_tag_list()
- * @uses 	is_customize_preview()
  * @uses 	conj_lite_categorized_blog()
  * @return 	void
  */
@@ -354,7 +346,7 @@ endif;
  * @uses 	get_bloginfo()
  * @uses 	has_custom_logo()
  * @uses 	is_front_page()
- * @param  	bool $echo     Whether the site branding markup should be displayed or returned.
+ * @param  	bool 	$echo     Whether the site branding markup should be displayed or returned.
  * @return 	html
  */
 if ( ! function_exists( 'conj_lite_site_title_or_logo' ) ) :
