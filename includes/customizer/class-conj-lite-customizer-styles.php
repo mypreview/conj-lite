@@ -48,7 +48,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 			$button_text_color = sanitize_hex_color( get_theme_mod( 'conj_lite_button_text_color', '#FFFFFF' ) );
 			$button_alt_text_color = sanitize_hex_color( get_theme_mod( 'conj_lite_button_alt_text_color', '#666EE8' ) );
 			$button_background_color = sanitize_hex_color( get_theme_mod( 'conj_lite_button_background_color', '#666EE8' ) );
-			$button_background_color_lighter = sanitize_hex_color( conj_adjust_color_brightness( $button_background_color, 50 ) );
+			$button_background_color_lighter = sanitize_hex_color( conj_lite_adjust_color_brightness( $button_background_color, 50 ) );
 			// Header
 			$header_background_attachment_url = ( get_header_image() ) 	?  esc_url( get_header_image() ) : NULL;
 
@@ -358,6 +358,173 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
     				background-image: url({$header_background_attachment_url});
     			}
         	";
+
+        	/**
+        	 * If the WooCommerce plugin is already activated then
+        	 * append the following CSS styles to the Customizer style tag.
+        	 */
+			if ( class_exists( 'WooCommerce' ) ) :
+			
+				$customizer_css .= "
+
+					/* General */
+					.woocommerce-MyAccount-content legend,
+					.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-LostPassword,
+					#customer_login .woocommerce-LostPassword a,
+					.woocommerce-table--order-downloads .download-product a,
+					.woocommerce-table--order-details a,
+					.woocommerce-thankyou-order-received,
+					.woocommerce-MyAccount-content table.shop_table_responsive th,
+					.woocommerce-MyAccount-content table.shop_table_responsive tr td:before,
+					.woocommerce-table--order-details th,
+					.woocommerce-checkout-review-order-table td.product-name,
+					.woocommerce-cart-form__cart-item td,
+					.woocommerce-cart-form__cart-item td a,
+					.woocommerce-loop-category__title mark,
+					.product_list_widget li > a,
+					.woocommerce-mini-cart__total > strong,
+					.woocommerce-mini-cart-item a,
+					.woocommerce-Tabs-panel--additional_information .shop_attributes td,
+					ol.commentlist .comment-text .woocommerce-review__author,
+					.product_list_widget .woocommerce-Price-amount,
+	        		.product_list_widget .product-title {
+						color: {$general_heading_color};
+					}
+					.widget_product_categories .product-categories li.current-cat-parent > a,
+					.widget_product_categories .product-categories li.current-cat > a,
+					#customer_login .woocommerce-LostPassword a:hover,
+					.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-LostPassword a:hover,
+					.woocommerce-MyAccount-navigation-link:not(.is-active) > a:hover,
+					.woocommerce-MyAccount-navigation-link.is-active > a,
+					.woocommerce-table--order-downloads .download-product a:hover,
+					.woocommerce-table--order-details a:hover,
+					ul.woocommerce-thankyou-order-details li strong,
+					.woocommerce-checkout-review-order-table td.product-total,
+					.woocommerce-cart-form__cart-item td a:hover,
+					li.product-category a:hover .woocommerce-loop-category__title mark,
+					li.product-category a:hover .woocommerce-loop-category__title,
+					.product_list_widget li > a:hover,
+					.woocommerce.widget_rating_filter li a:hover,
+					.woocommerce-widget-layered-nav ul li a:hover,
+					.woocommerce-pagination ul li .page-numbers:not(.dots):hover,
+					.woocommerce-pagination ul li .page-numbers.current,
+					.widget_product_categories .product-categories li a:hover,
+					.woocommerce-mini-cart__total > .woocommerce-Price-amount,
+					.woocommerce-mini-cart-item .woocommerce-Price-amount,
+					.woocommerce-mini-cart-item .quantity,
+					.woocommerce-tabs ul.tabs li.active a,
+					.woocommerce-tabs ul.tabs li:hover a,
+					.woocommerce-product-rating .woocommerce-review-link:hover,
+					ul.products li.product > .price,
+					ul.products li.product .woocommerce-loop-product__link .woocommerce-loop-product__title:hover,
+					.product_list_widget .product-title:hover,
+					ul.products li.product .added_to_cart:after,
+					ul.products li.product .button:after {
+						color: {$general_link_color};
+					}
+					.widget_price_filter .ui-slider .ui-slider-range,
+					.search-results:not(.post-type-archive) .site-main article.type-product .woocommerce-Price-amount,
+					.single-product div.product .entry-summary .woocommerce-Price-amount {
+						background-color: {$general_link_color};
+					}
+					.woocommerce-pagination ul li .page-numbers:not(.dots):hover,
+					.woocommerce-pagination ul li .page-numbers.current {
+						border-color: {$general_link_color};
+					}
+					.woocommerce-mini-cart__buttons > a:not(.checkout):hover {
+						border-color: {$general_link_color} !important;
+					}
+					form.track_order > p:first-of-type {
+						background: -webkit-linear-gradient(315deg, {$general_link_color} 39%, {$general_link_color_lighter} 100%);
+						background: -o-linear-gradient(315deg, {$general_link_color} 39%, {$general_link_color_lighter} 100%);
+						background: linear-gradient(135deg, {$general_link_color} 39%, {$general_link_color_lighter} 100%);
+					}
+					.woocommerce-mini-cart__buttons > a:not(.checkout):hover,
+					.woocommerce-MyAccount-downloads-file,
+					.woocommerce-orders-table__cell-order-actions .woocommerce-button {
+						color: {$general_link_color} !important;
+					}
+					.woocommerce-MyAccount-downloads-file:hover,
+					.woocommerce-orders-table__cell-order-actions .woocommerce-button:hover {
+						color: {$general_link_alt_color} !important;
+					}
+					.widget_product_categories .product-categories li.current-cat-parent > a:hover,
+					.widget_product_categories .product-categories li.current-cat > a:hover,
+					.woocommerce-orders-table__cell-order-actions .woocommerce-button:hover,
+					ul.products li.product .added_to_cart:hover:after,
+					ul.products li.product .button:hover:after {
+						color: {$general_link_alt_color};
+					}
+					ul.woocommerce-thankyou-order-details li,
+					abbr.required:before,
+					.woocommerce-remove-coupon:before,
+					.product-remove .remove:before,
+					.woocommerce-review__published-date,
+					.single-product div.product .entry-summary del,
+					.search-results:not(.post-type-archive) .site-main article.type-product del .woocommerce-Price-amount,
+					.single-product div.product .entry-summary del .woocommerce-Price-amount,
+					ul.products li.product .price .price-label {
+						color: {$general_text_color_lighter};
+					}
+					.widget_product_tag_cloud .tagcloud a,
+					.woocommerce-product-gallery__trigger,
+					ul.products li.product .category-flash,
+					ul.products li.product .sold-out-flash,
+					.woocommerce-checkout-review-order-table thead th,
+					.woocommerce-cart-form table th,
+					.woocommerce-pagination ul li .page-numbers,
+					.single-product div.product .entry-summary .cart .quantity .qty,
+					.single-product div.product .entry-summary .product_meta,
+					.woocommerce-product-rating .woocommerce-review-link {
+						color: {$general_text_color_light};
+					}
+					.cart_totals .shipping label,
+					.site-footer-bar .widget_price_filter .price_label,
+					.woocommerce-MyAccount-navigation-link:not(.is-active) > a,
+					.woocommerce.widget_rating_filter li a,
+					.star-rating,
+					.woocommerce-widget-layered-nav ul li a,
+					.widget_product_categories .product-categories li a,
+					.woocommerce-tabs ul.tabs li a {
+						color: {$general_text_color};
+					}
+					.woocommerce-mini-cart__buttons > a:not(.checkout) {
+						color: {$general_text_color} !important;
+					}
+					.woocommerce-terms-and-conditions,
+					.widget_product_tag_cloud .tagcloud a,
+					.woocommerce-product-gallery__trigger,
+					.category-flash,
+					.sold-out-flash {
+						background-color: #{$general_background_color};
+					}
+					/* Button */
+					#main .woocommerce-variation-add-to-cart-disabled .button.disabled {
+						border-color: {$button_alt_text_color};
+					}
+					.select2-container.select2-container--default .select2-results__option[aria-selected=true], 
+					.select2-container.select2-container--default .select2-results__option[data-selected=true],
+					.select2-container.select2-container--default .select2-results__option--highlighted[aria-selected], 
+					.select2-container.select2-container--default .select2-results__option--highlighted[data-selected],
+					.widget_product_tag_cloud .tagcloud a:hover,
+					.site-header-cart:not(:hover):not(:focus) li:not(.current-menu-item) .cart-contents:not(:focus):not(:active):not(:hover) {
+						background-color: {$button_background_color};
+						border-color: {$button_background_color};
+						color: {$button_text_color};
+					}
+					#main .woocommerce-variation-add-to-cart-disabled .button.disabled,
+					.site-header-cart .current-menu-item .cart-contents,
+					.site-header-cart .cart-contents:active,
+					.site-header-cart .cart-contents:focus,
+					.site-header-cart:focus .cart-contents, 
+					.site-header-cart:hover .cart-contents:hover, 
+					.site-header-cart:hover .cart-contents, 
+					.site-header-cart .cart-contents:hover {
+						color: {$button_alt_text_color};
+					}
+				";
+			
+			endif; // End If class_exists( 'WooCommerce' );
 
         	$customizer_css = apply_filters( 'conj_lite_customizer_inline_css', $customizer_css );
 
