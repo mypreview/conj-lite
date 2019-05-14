@@ -27,11 +27,6 @@ function conj_lite_register_tgmpa_plugins() {
 		),
 		array(
 			'required' => FALSE,
-			'name' => 'Jetpack by WordPress.com',
-			'slug' => 'jetpack'
-		),
-		array(
-			'required' => FALSE,
 			'name' => 'One Click Demo Import',
 			'slug' => 'one-click-demo-import'
 		)
