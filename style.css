@@ -285,9 +285,9 @@ h6,
 button,
 .button,
 .wp-block-button .wp-block-button__link,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	font-family: 'Rubik',sans-serif;
 }
 .type-attachment .entry-meta .edit-link .post-edit-link:before,
@@ -1226,21 +1226,21 @@ input[type="submit"] {
 .wp-block-file a.wp-block-file__button:focus, 
 .wp-block-file a.wp-block-file__button:hover, 
 .wp-block-file a.wp-block-file__button:visited,
-input[name='apply_coupon'],
+input[name="apply_coupon"],
 .button[disabled],
 button[disabled],
 button:focus, 
-input[type='button']:focus, 
-input[type='reset']:focus, 
-input[type='submit']:focus,
+input[type="button"]:focus, 
+input[type="reset"]:focus, 
+input[type="submit"]:focus,
 button:active, 
-input[type='button']:active, 
-input[type='reset']:active, 
-input[type='submit']:active,
+input[type="button"]:active, 
+input[type="reset"]:active, 
+input[type="submit"]:active,
 button:hover, 
-input[type='button']:hover, 
-input[type='reset']:hover, 
-input[type='submit']:hover {
+input[type="button"]:hover, 
+input[type="reset"]:hover, 
+input[type="submit"]:hover {
 	background-color: transparent;
 }
 .wp-block-button {
@@ -4524,6 +4524,7 @@ video {
 --------------------------------------------------------------*/
 .site-footer {
     position: relative;
+    padding:56px 0 28px;
 }
 .site-footer > .col-full {
 	display: flex;
@@ -4614,9 +4615,9 @@ video {
 	.button, 
 	.wp-block-file .wp-block-file__button, 
 	button:not(.customize-partial-edit-shortcut-button):not(.handheld-menu-toggle):not(.pswp__button):not(.close-btn), 
-	input[type='button'], 
-	input[type='reset'], 
-	input[type='submit'] {
+	input[type="button"], 
+	input[type="reset"], 
+	input[type="submit"] {
 		padding: 12px 40px;
 	}
 	/*--------------------------------------------------------------
@@ -5014,24 +5015,24 @@ select {
 	background-image: linear-gradient(45deg, transparent 50%, #898EA2 50%), linear-gradient(135deg, #898EA2 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
 }
 .ui-datepicker.ui-widget,
-input[type='checkbox'],
-input[type='radio'],
-.widget form[role='search']:before,
+input[type="checkbox"],
+input[type="radio"],
+.widget form[role="search"]:before,
 select,
-input[type='text'], 
-input[type='email'], 
-input[type='url'], 
-input[type='password'],
-input[type='search'], 
-input[type='number'], 
-input[type='tel'], 
-input[type='range'], 
-input[type='date'], 
-input[type='month'], 
-input[type='week'], 
-input[type='time'], 
-input[type='datetime'], 
-input[type='datetime-local'], 
+input[type="text"], 
+input[type="email"], 
+input[type="url"], 
+input[type="password"],
+input[type="search"], 
+input[type="number"], 
+input[type="tel"], 
+input[type="range"], 
+input[type="date"], 
+input[type="month"], 
+input[type="week"], 
+input[type="time"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
 input[type="color"],
 textarea {
 	background-color: #FFFFFF;
@@ -5067,21 +5068,21 @@ input:-moz-placeholder {
 	color: #898EA2;
 }
 select:focus,
-input[type='text']:focus, 
-input[type='email']:focus, 
-input[type='url']:focus, 
-input[type='password']:focus, 
-input[type='search']:focus, 
-input[type='number']:focus, 
-input[type='tel']:focus, 
-input[type='range']:focus, 
-input[type='date']:focus, 
-input[type='month']:focus, 
-input[type='week']:focus, 
-input[type='time']:focus, 
-input[type='datetime']:focus, 
-input[type='datetime-local']:focus, 
-input[type='color']:focus, 
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="url"]:focus, 
+input[type="password"]:focus, 
+input[type="search"]:focus, 
+input[type="number"]:focus, 
+input[type="tel"]:focus, 
+input[type="range"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="week"]:focus, 
+input[type="time"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="color"]:focus, 
 textarea:focus {
 	border-color: #898EA2;
 }
@@ -5130,6 +5131,11 @@ body.single-post article.post.hentry .entry-footer .tags-links:before {
 .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a {
     color: #FFC06A;
 }
+#site-navigation > div.menu > ul ul.children:before,
+#site-navigation > div.menu > ul ul.children,
+#masthead ul.sub-menu > li > ul.sub-menu:before,
+#masthead ul.menu > li.menu-item-has-children > ul.sub-menu:before,
+#masthead ul.sub-menu,
 #masthead,
 .wp-block-tag-cloud a.tag-cloud-link,
 article.post.hentry .wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
@@ -5147,6 +5153,10 @@ ol.comment-list .comment .comment-body,
 .conj-lite-secondary-widget-area__wrapper .widget-title {
 	background-color: #FFFFFF;
 }
+.handheld-offcanvas .close-btn,
+.slinky-menu.slinky-theme-default > ul a,
+.slinky-theme-default .back::before,
+.slinky-theme-default .next::after,
 mark {
 	color: #FFFFFF;
 }
@@ -5154,4 +5164,84 @@ mark {
 .conj-lite-secondary-widget-area__wrapper .calendar_wrap tbody tr:not(:last-of-type) td, 
 .conj-lite-secondary-widget-area__wrapper .calendar_wrap td {
 	border-color: #FFFFFF;
+}
+.handheld-menu-toggle {
+	color: #434759;
+}
+.site-footer .widget_categories [class*="current"] > a,
+.site-footer ul.menu [class*="current"] > a,
+.site-footer .widget_pages [class*="current"] > a,
+.site-footer a:focus,
+.site-footer a:active,
+.site-footer a:hover,
+.handheld-offcanvas .close-btn:hover,
+.primary-navigation > ul.menu > li.menu-item-has-children[class*="current"] > a:after,
+#site-navigation > div.menu > ul [class*="current"] > a,
+.primary-navigation > ul.menu > [class*="current"] > a,
+.handheld-menu-toggle:hover,
+.c-offcanvas-content-wrap--overlay .handheld-menu-toggle,
+.primary-navigation ul.menu > li.menu-item-has-children:hover > a:after,
+#site-navigation > div.menu > ul > li.current_page_ancestor > a,
+#site-navigation > div.menu > ul > li:hover > a,
+.primary-navigation > ul.menu > .menu-item:hover > a {
+	color: #8A91FF;
+}
+.hamburger-nav-icon .icon-bar {
+	background-color: #434759;
+}
+#handheld-slinky-menu [class*="current"] > a:before,
+.handheld-menu-toggle:hover .hamburger-nav-icon .icon-bar,
+.c-offcanvas-content-wrap--overlay .hamburger-nav-icon .icon-bar {
+	background-color: #8A91FF;
+}
+.c-offcanvas,
+.slinky-menu > ul,
+.c-offcanvas.is-open {
+	background-color: #3A3C4B;
+}
+.slinky-menu .header .title,
+.slinky-menu > ul a:hover {
+	color: #A7ABBD;
+}
+.site-footer {
+	background-color: #353745;
+}
+.site-footer a,
+.site-footer {
+	color: #A5A8BB;
+}
+.site-footer .widget-title {
+	border-color: #8A91FF;
+}
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6,
+.site-footer .widget_calendar .calendar_wrap caption,
+.site-footer .widget-title {
+	color: #F4F5FA;
+}
+.site-footer .calendar_wrap tfoot tr:not(:last-of-type) td, 
+.site-footer .calendar_wrap tbody tr:not(:last-of-type) td, 
+.site-footer .calendar_wrap td {
+	border-color: #353745;
+}
+code,
+pre,
+.required {
+	color: #FF4961;
+}
+.search-results:not(.post-type-archive) .site-main article.type-post .entry-meta span,
+.akismet_comment_form_privacy_notice,
+.comment-respond .comment-notes,
+p.no-comments {
+	background-color: #1E9FF2;
+	color: #FFFFFF;
+}
+.akismet_comment_form_privacy_notice a,
+.comment-respond .comment-notes .required,
+p.no-comments a {
+	color: #FFFFFF !important;
 }
