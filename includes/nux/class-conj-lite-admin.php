@@ -243,6 +243,8 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 			delete_transient( 'conj_lite_dismiss_upsell_notice_flag' );
 			set_transient( 'conj_lite_dismiss_upsell_notice_flag', TRUE, WEEK_IN_SECONDS );
 
+			wp_die();
+
 		}
 
 	}
