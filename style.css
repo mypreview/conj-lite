@@ -290,6 +290,10 @@ input[type="reset"],
 input[type="submit"] {
 	font-family: 'Rubik',sans-serif;
 }
+article.post.hentry:before,
+.site-main .comment-navigation .nav-links .nav-next a > span:after,
+.site-main .comment-navigation .nav-links .nav-previous a > span:before,
+body:not(.single-post) article.post.hentry .entry-meta .edit-link:before,
 .type-attachment .entry-meta .edit-link .post-edit-link:before,
 .no-results.not-found form.search-form label:before,
 .wp-block-file .wp-block-file__button:before,
@@ -297,16 +301,14 @@ input[type="submit"] {
 .akismet_comment_form_privacy_notice:before,
 .ui-datepicker-next:before, 
 .ui-datepicker-prev:before,
-#site-navigation > div.menu ul.nav-menu ul.children .page_item_has_children > a:after,
-#site-navigation > div.menu ul.nav-menu .page_item_has_children > a:after,
+#site-navigation > div.menu > ul ul.children .page_item_has_children > a:after,
+#site-navigation > div.menu > ul .page_item_has_children > a:after,
 body:not(.single-post) article.post.hentry > .entry-meta .cat-links:before,
 body.search-results article.type-post .tags-links > a:before,
 body.single-post article.post.hentry .entry-footer .tags-links > a:before,
 .pagination .page-numbers.prev:before,
 .pagination .page-numbers.next:before,
-.site-main .comment-navigation .nav-links .nav-next a:after,
 .post-navigation .nav-links .nav-next a > span:after,
-.site-main .comment-navigation .nav-links .nav-previous a:before,
 .post-navigation .nav-links .nav-previous a > span:before,
 p.no-comments:before,
 .comment-body .reply a:before,
@@ -355,6 +357,7 @@ cite:before {
 .has-small-font-size {
 	font-size: 13.6px;
 }
+.comment-meta .comment-awaiting-moderation,
 pre.wp-block-code,
 .wp-block-file .wp-block-file__button,
 .wp-block-categories.wp-block-categories-list,
@@ -464,11 +467,6 @@ h1 {
 }
 big {
 	font-size: 125%;
-}
-h1,
-body, 
-.site-footer {
-	font-weight: 300;
 }
 .ui-datepicker .ui-datepicker-title select,
 .ui-datepicker .ui-datepicker-calendar td a, 
@@ -712,6 +710,9 @@ body:not(.single-post) article.post.hentry .entry-content .more-link {
 .wp-block-media-text .wp-block-media-text__content,
 .widget_tag_cloud li a {
 	word-wrap: break-word;
+}
+.comment-meta .comment-awaiting-moderation {
+    font-style: normal;
 }
 @media (min-width: 37.5625em) {
 	.comment-metadata {
@@ -1019,11 +1020,11 @@ p.has-background {
 	}
 }
 @media (min-width: 37.0625em) {
-	blockquote:not([class*=" "]),
 	.wp-block-quote.is-large, 
-	.wp-block-quote.is-style-large,
-	blockquote.wp-block-quote {
-		width: 83.3333333333%;
+	.wp-block-quote.is-style-large, 
+	blockquote.wp-block-quote, 
+	blockquote:not([class*=""]) {
+		max-width: 83.3333333333%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -1127,6 +1128,7 @@ label:not(.screen-reader-text) > input[type="password"],
 label:not(.screen-reader-text) + textarea,
 label:not(.screen-reader-text) + input:not(.search-submit) {
 	display: block;
+	margin-top: 6px;
 }
 .ui-datepicker .ui-datepicker-calendar,
 select,
@@ -3708,6 +3710,7 @@ body:not(.single-post) article.post.hentry .entry-content > .wp-block-gallery:la
 	margin-bottom: -12px;
 }
 .conj-lite-blog__archive.has-sidebar.page-template-template-fluid .conj-lite-col__full > #primary,
+.conj-lite-blog__archive.has-sidebar.post-template-template-fluid .conj-lite-col__full > #primary,
 .conj-lite-blog__archive:not(.has-sidebar) .conj-lite-col__full > #primary,
 article.post.hentry.format-video iframe,
 body:not(.single-post) article.post.hentry .entry-content .twitter-tweet,
@@ -4110,6 +4113,7 @@ ol.comment-list .comment-meta {
 	list-style: none;
 	list-style-type: none;
 }
+.comment-meta .comment-awaiting-moderation,
 .comments-area .comment-list {
     margin: 0 0 30px;
 }
@@ -4125,6 +4129,7 @@ ol.comment-list .comment ol.children {
 .type-page.hentry + .comments-area {
 	margin-top: 25px;
 }
+.comment-meta .comment-awaiting-moderation,
 .comment-metadata .edit-link {
 	order: -1;
 }
@@ -4220,6 +4225,9 @@ ol.comment-list .comment-body {
 .alignright.wp-block-latest-comments,
 .aligncenter.wp-block-latest-comments {
     max-width: 460px;
+}
+.comment-meta .comment-awaiting-moderation {
+    padding: 20px;
 }
 @media (min-width: 37.5625em) {
 	article.post.hentry + .comments-area,
@@ -5262,6 +5270,7 @@ pre,
 .required {
 	color: #FF4961;
 }
+.comment-meta .comment-awaiting-moderation,
 .search-results:not(.post-type-archive) .site-main article.type-post .entry-meta span,
 .akismet_comment_form_privacy_notice,
 .comment-respond .comment-notes,
