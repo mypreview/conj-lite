@@ -1748,6 +1748,29 @@ body.post-type-post #editor .editor-block-list__block[data-align="wide"][data-ty
     margin-top: 1.5px;
 }
 /*--------------------------------------------------------------
+## Tootlbar
+--------------------------------------------------------------*/
+.components-toolbar__control.components-button {
+    align-items: center;
+}
+.components-toolbar__control.components-button {
+    justify-content: center;
+}
+.editor-block-list__block .editor-block-list__block-mobile-toolbar {
+	box-shadow: none
+}
+@media (min-width: 37.5em) {
+	.editor-block-list__block .editor-block-contextual-toolbar {
+		-webkit-transform: translateY(-38px);
+		    -ms-transform: translateY(-38px);
+		        transform: translateY(-38px);
+	}
+	.editor-block-list__block .editor-block-contextual-toolbar {
+		margin-left: -1px;
+		margin-right: -1px;
+	}
+}
+/*--------------------------------------------------------------
 ## Classic editor
 --------------------------------------------------------------*/
 .block-library-classic__toolbar {
