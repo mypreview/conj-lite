@@ -2048,10 +2048,10 @@ p.stars:hover a:before {
 --------------------------------------------------------------*/
 .demo_store,
 .woocommerce-store-notice,
-.woocommerce-message, 
-.woocommerce-info, 
-.woocommerce-error, 
-.woocommerce-noreviews {
+.entry-content .woocommerce-message, 
+.entry-content .woocommerce-info, 
+.entry-content .woocommerce-error, 
+.entry-content .woocommerce-noreviews {
 	clear: both;
 	-webkit-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
 	        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
@@ -3342,6 +3342,9 @@ button[name='apply_coupon'] {
 .woocommerce-MyAccount-content input[type="radio"] + label img {
 	float: right;
 	margin-left: 3px;
+}
+.wc_payment_method.payment_method_paypal img {
+	max-height: 50px;
 }
 .wc_payment_methods > li:not(.woocommerce-notice) {
 	margin-top: 25px;
