@@ -2139,6 +2139,9 @@ ul.woocommerce-error {
     margin: 0;
     width: 100%;
 }
+.demo_store {
+	bottom: 0;
+}
 @media (min-width: 37.5625em) {
 	.woocommerce-info .showlogin,
 	.woocommerce-info .showcoupon,
@@ -2169,16 +2172,6 @@ ul.woocommerce-error {
 	.post-type-archive-product.search-results .woocommerce-breadcrumb + .woocommerce,
 	body:not(.search-no-results):not(.search-results) .woocommerce-breadcrumb + .woocommerce {
 		margin-top: 57px;
-	}
-}
-@media (min-width: 62.0625em) {
-	.demo_store {
-		bottom: 0;
-	}
-}
-@media (max-width: 62em) {
-	.demo_store {
-		bottom: 50px;
 	}
 }
 @media (max-width: 37.5em) {
