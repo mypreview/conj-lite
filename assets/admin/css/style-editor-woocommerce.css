@@ -21,6 +21,9 @@
 .wc-product-preview .star-rating:before {
 	font-family: 'Feather';
 }
+.wc-block-products-grid .wc-product-preview .wc-product-preview__title {
+	font-family: 'Rubik',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+}
 .wc-block-featured-product__price {
 	font-size: 24px;
 }
@@ -106,7 +109,10 @@
 .wc-block-products-grid .wc-product-preview .wc-product-preview__rating {
     bottom: 17px;
     position: absolute;
-    left: 50%;
+}
+.wc-block-products-grid.is-hidden-button .wc-product-preview .wc-product-preview__rating,
+.wc-block-products-grid.is-hidden-rating .wc-product-preview .wp-block-button {
+	left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
 }
@@ -119,9 +125,6 @@
 	justify-content: flex-end;
 	width: 22px;
     height: 22px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
 }
 .wc-block-products-grid .wc-product-preview .wc-product-preview__add-to-cart:after {
 	content: "\e9c8";
@@ -247,4 +250,16 @@
 }
 .star-rating span {
 	padding-top: 1.5em;
+}
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+.star-rating span:before {
+	color: #FFBF71;
+}
+.wc-block-products-grid .wc-product-preview {
+	background-color: #FFFFFF;
+}
+.wc-block-products-grid .wc-product-preview .wc-product-preview__add-to-cart {
+	background-color: #FFFFFF !important;
 }
