@@ -290,6 +290,7 @@ input[type="reset"],
 input[type="submit"] {
 	font-family: 'Rubik',sans-serif;
 }
+.comment-meta .comment-awaiting-moderation:before,
 article.post.hentry:before,
 .site-main .comment-navigation .nav-links .nav-next a > span:after,
 .site-main .comment-navigation .nav-links .nav-previous a > span:before,
@@ -415,6 +416,7 @@ body:not(.woocommerce-running) .error-404-first .widget-title {
 .conj-lite-blog__archive article.post.hentry .entry-content {
 	font-size: 17px;
 }
+.comment-meta .comment-awaiting-moderation:before,
 .ui-datepicker .ui-datepicker-header,
 .wp-block-quote.is-style-large cite:before,
 .wp-block-quote.is-large cite:before,
@@ -3431,6 +3433,7 @@ p.no-comments {
 	display: flex;
 	margin: 0;
 }
+.comment-meta .comment-awaiting-moderation,
 .akismet_comment_form_privacy_notice,
 .comment-respond .comment-notes,
 p.no-comments {
@@ -3439,6 +3442,7 @@ p.no-comments {
 	        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
 	padding: 14px 20px 14px 50px;
 }
+.comment-meta .comment-awaiting-moderation:before,
 .akismet_comment_form_privacy_notice:before,
 .comment-respond .comment-notes:before,
 p.no-comments:before {
@@ -4225,9 +4229,6 @@ ol.comment-list .comment-body {
 .alignright.wp-block-latest-comments,
 .aligncenter.wp-block-latest-comments {
     max-width: 460px;
-}
-.comment-meta .comment-awaiting-moderation {
-    padding: 20px;
 }
 @media (min-width: 37.5625em) {
 	article.post.hentry + .comments-area,
