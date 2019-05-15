@@ -113,23 +113,28 @@ p.has-text-color a:hover {
 .editor-block-list__layout var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
+.editor-block-list__layout select,
+.editor-block-list__layout textarea,
+.wp-block.editor-block-list__block input:not([type='submit']):not([type='button']):not([type='reset']),
+.editor-block-preview__content,
+.editor-block-preview__content > div,
+.editor-default-block-appender textarea.editor-default-block-appender__content,
+.editor-block-list__layout .editor-block-list__block {
+	font-family: 'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+}
 .editor-block-list__layout h1, 
 .editor-block-list__layout h2, 
 .editor-block-list__layout h3, 
 .editor-block-list__layout h4, 
 .editor-block-list__layout h5, 
 .editor-block-list__layout h6,
-.editor-block-preview__content,
-.editor-block-preview__content > div,
 .editor-post-title__block .editor-post-title__input,
-.editor-default-block-appender textarea.editor-default-block-appender__content,
-.editor-block-list__layout .editor-block-list__block,
-.editor-block-list__layout button, 
-.editor-block-list__layout input, 
-.editor-block-list__layout select, 
-.editor-block-list__layout optgroup, 
-.editor-block-list__layout textarea {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+.editor-post-title .editor-post-title__input {
+	font-family: 'Rubik',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+}
+.editor-block-list__layout button,
+.editor-block-list__layout .wp-block-button .wp-block-button__link {
+	font-family: 'Rubik',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
 .editor-block-list__layout abbr, 
 .editor-block-list__layout acronym {
