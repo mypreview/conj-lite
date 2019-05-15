@@ -270,7 +270,7 @@ input,
 select, 
 optgroup, 
 textarea {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
 h1, 
 h2, 
@@ -288,7 +288,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	font-family: 'Rubik',sans-serif;
+	font-family: 'Rubik',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
 article.post.hentry:before,
 .site-main .comment-navigation .nav-links .nav-next a > span:after,
