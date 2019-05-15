@@ -720,6 +720,7 @@ body:not(.single-post) article.post.hentry .entry-content .more-link {
 	.comment-metadata {
 		text-align: right;
 	}
+	.comment-meta .comment-awaiting-moderation:before,
 	.akismet_comment_form_privacy_notice:before,
 	.comment-respond .comment-notes:before,
 	p.no-comments:before {
@@ -2062,7 +2063,10 @@ body.custom-background .c-offcanvas-content-wrap {
 #handheld-slinky-menu .current-menu-item > a:before,
 #handheld-slinky-menu .current-menu-parent > a:before,
 #handheld-slinky-menu .current_page_item > a:before {
-	position: absolute;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 22px;
 }
 #handheld-slinky-menu .slinky-theme-default,
 #handheld-slinky-menu .slinky-theme-default a:not(.back):active,
@@ -5214,13 +5218,13 @@ mark {
 .site-footer a:hover,
 .handheld-offcanvas .close-btn:hover,
 .primary-navigation > ul.menu > li.menu-item-has-children[class*="current"] > a:after,
-#site-navigation > div.menu > ul [class*="current"] > a,
-.primary-navigation > ul.menu > [class*="current"] > a,
+#masthead #site-navigation > div.menu > ul [class*="current"] > a,
+#masthead .primary-navigation > ul.menu > [class*="current"] > a,
 .handheld-menu-toggle:hover,
 .c-offcanvas-content-wrap--overlay .handheld-menu-toggle,
 .primary-navigation ul.menu > li.menu-item-has-children:hover > a:after,
-#site-navigation > div.menu > ul > li.current_page_ancestor > a,
-#site-navigation > div.menu > ul > li:hover > a,
+#masthead #site-navigation > div.menu > ul > li.current_page_ancestor > a,
+#masthead #site-navigation > div.menu > ul > li:hover > a,
 .primary-navigation > ul.menu > .menu-item:hover > a {
 	color: #8A91FF;
 }
