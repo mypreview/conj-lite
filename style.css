@@ -290,7 +290,6 @@ input[type="reset"],
 input[type="submit"] {
 	font-family: 'Rubik',sans-serif;
 }
-.comment-meta .comment-awaiting-moderation:before,
 article.post.hentry:before,
 .site-main .comment-navigation .nav-links .nav-next a > span:after,
 .site-main .comment-navigation .nav-links .nav-previous a > span:before,
@@ -299,6 +298,7 @@ body:not(.single-post) article.post.hentry .entry-meta .edit-link:before,
 .no-results.not-found form.search-form label:before,
 .wp-block-file .wp-block-file__button:before,
 .comment-respond .comment-notes:before,
+.comment-meta .comment-awaiting-moderation:before,
 .akismet_comment_form_privacy_notice:before,
 .ui-datepicker-next:before, 
 .ui-datepicker-prev:before,
