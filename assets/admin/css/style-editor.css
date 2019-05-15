@@ -1871,3 +1871,36 @@ body.post-type-post #editor .editor-block-list__block[data-align="wide"][data-ty
 .edit-post-settings-sidebar__panel-block  .components-datetime__date .CalendarDay {
 	padding: 7.1px 0;
 }
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+.editor-block-list__block select {
+	color: #898EA2;
+	background-image: linear-gradient(45deg, transparent 50%, #898EA2 50%), linear-gradient(135deg, #898EA2 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
+}
+.wp-block-search .wp-block-search__input {
+	color: #898EA2;
+}
+.wp-block-tag-cloud a.tag-cloud-link,
+.post-type-post .wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
+.post-type-post .wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
+.post-type-post .edit-post-visual-editor > .editor-writing-flow,
+.wp-block-latest-comments__comment,
+.wp-block-search .wp-block-search__input,
+.editor-block-list__block select {
+	background-color: #FFFFFF;
+}
+.editor-block-list__layout blockquote.wp-block-quote,
+.wp-block-search .wp-block-search__input,
+.wp-block-pullquote,
+.wp-block-quote.is-large, 
+.wp-block-quote.is-style-large,
+.editor-block-list__layout blockquote,
+.wp-block-latest-comments__comment-meta,
+.wp-block-categories ul.wp-block-categories__list,
+.editor-block-list__block select {
+	border-color: #DDDFE7;
+}
+.wp-block-categories ul.wp-block-categories__list > li:before {
+	background-color: #DDDFE7;
+}
