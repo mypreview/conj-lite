@@ -516,7 +516,8 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				wp_enqueue_style( 'conj-lite-google-font' );
 			} // End If Statement
 
-			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0' );
+			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks', 'feather' ), CONJ_LITE_THEME_VERSION, 'all' );
 			wp_register_style( 'conj-lite-block-editor-styles-rtl', get_theme_file_uri( '/assets/admin/css/style-editor-rtl.css' ), array( 'conj-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
 
 			// Checks if current locale is RTL (Right To Left script).
