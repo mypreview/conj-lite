@@ -71,7 +71,7 @@ add_action( 'woocommerce_before_single_product_summary',   'conj_lite_wc_product
 /**
  * Cart fragment
  *
- * @see 	conj_wc_cart_link_fragment()
+ * @see 	conj_lite_wc_cart_link_fragment()
  */
 add_filter( 'woocommerce_add_to_cart_fragments',	 		'conj_lite_wc_cart_link_fragment',	 			  10, 1 );
 
