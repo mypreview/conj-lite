@@ -9,15 +9,15 @@ Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-
+Meet Conj – a super-fast, super-lightweight and super-stylish theme with impressive usability, both on the front and back end for creating a stylish WooCommerce webshop or stunning company website with its unique mobile-first and grid-based architecture.
 
 == Description ==
-
-
+Meet Conj – a super-fast, super-lightweight and super-stylish theme with impressive usability, both on the front and back end for creating a stylish WooCommerce webshop or stunning company website with its unique mobile-first and grid-based architecture which comes with built-in one click demo import to help you have your new website up and running in a matter of minutes. Intuitive, flexible and compatible with the new Gutenberg block-based content editor — Demo → https://www.conj.ws/lite
 
 == Installation ==
 1. Upload the entire `conj-lite` folder to the `/wp-content/themes/` directory
-2. Activate the theme through the `Themes` menu in WordPress
+2. Activate the theme through the `Themes` menu in WordPress.
+3. Start by visiting theme customizer at `Appearance` » `Customize`.
 
 == Frequently Asked Questions ==
 = What are the server requirements to install CONJ theme? =
@@ -39,36 +39,12 @@ The [Conj Lite - eCommerce WordPress Theme](https://www.conj.ws/conj-lite) open 
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
+Due to copyright restrictions, all images downloaded via demo import are watermarked and their quality reduced on purpose.
+
 == Changelog ==
 = 1.0.9 =
-* Updated language file.
-* Minor changes.
-
-= 1.0.8 =
-* Fixed a misspelling of the theme version number variable.
-
-= 1.0.7 =
-* Fixed missing function fatal error.
-
-= 1.0.6 =
-* Added theme up-sell admin dismissible notice.
-
-= 1.0.5 =
-* Added theme up-sell page.
-
-= 1.0.4 =
-* Added a new method to make the header cart content scrollable.
-
-= 1.0.3 =
-* Added all post-formats support.
-
-= 1.0.2 =
-* Fixed a few styling issues.
-* Fixed escaping issues.
-
-= 1.0.1 =
-* Minor changes.
-* Added "Go Pro" Customizer section.
+* Fix: Minor styling issues.
+* Update: Language file.
 
 = 1.0.0 =
 * Initial release.
