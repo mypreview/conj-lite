@@ -815,6 +815,7 @@ pre.wp-block-code {
     word-wrap: normal;
     padding: .8em 1em;
     border-style: solid;
+    border-color: #8df7b0;
 }
 hr {
 	border: none;
@@ -870,7 +871,7 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
-	border-collapse: separate;
+	border-collapse: collapse;
 	border-spacing: 0;
 	overflow-x: auto;
     -webkit-overflow-scrolling: touch;
