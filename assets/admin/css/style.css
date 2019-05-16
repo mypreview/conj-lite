@@ -55,7 +55,7 @@
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 .button-primary {
 	font-size: 14px;
 	margin: 2rem auto 0.3125rem;
-	padding: .5rem 1.5rem 2.2rem;
+	padding: .55rem 1.5rem;
 	-ms-flex-negative: 0;
 	    flex-shrink: 0;
 	background: #666EE8;
@@ -68,6 +68,7 @@
 	-webkit-transition: background .3s ease;
 	-o-transition: background .3s ease;
 	transition: background .3s ease;
+	height: auto;
 }
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 .button-primary:hover {
 	background: #4D55CF;
@@ -86,6 +87,7 @@
 }
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features {
 	margin-top: 30px;
+    flex-wrap: wrap;
 }
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 {
 	margin: 0 1.5rem;
@@ -95,4 +97,31 @@
 }
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col2 {
 	padding-left: 2.8125rem;
+}
+#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features > div {
+	width: 25%;
+}
+@media (max-width: 72em) {
+	#conj-lite-upsell-banner__message--inner {
+		flex-wrap: wrap;
+	}
+	#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col1 {
+		margin: 0 auto;
+	}
+	#conj-lite-upsell-banner__message {
+		padding: 1rem 2rem;
+	}
+	#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col2 {
+	    padding-left: 0;
+	}
+}
+@media (max-width: 83em) and (min-width: 72em), (max-width: 60em) {
+	#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features > div {
+		width: 50%;
+	}
+}
+@media (max-width: 36em) {
+	#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features > div {
+		width: 100%;
+	}
 }
