@@ -170,6 +170,7 @@ ul.products li.product .button:after {
 .single-product:not(.has-sidebar) .woocommerce-tabs .woocommerce-Tabs-panel--description table th {
 	font-size: 18px;
 }
+.reset_variations:before,
 .woocommerce-product-gallery .woocommerce-product-gallery__trigger:after,
 .woocommerce-tabs .panel h2:first-of-type,
 .star-rating,
@@ -606,6 +607,7 @@ body .woocommerce-customer-details address {
 	width: 1px;
 	word-wrap: normal !important;
 }
+.reset_variations,
 .woocommerce-product-gallery .woocommerce-product-gallery__trigger,
 abbr.required,
 .woocommerce-remove-coupon,
@@ -772,6 +774,9 @@ ul.products li.product {
 	flex-direction: column;
 	display: flex;
 }
+.conj-lite-wc-product__flashs {
+    z-index: 2;
+}
 .woocommerce-pagination ul li .page-numbers.dots,
 li.product .conj-lite-wc-price__wrapper,
 .conj-lite-wc-product__flashs,
@@ -908,7 +913,6 @@ ul.products li.product .price {
 @media (max-width: 60em) {
 	ul.products li.product .added_to_cart,
 	ul.products li.product .button {
-		right: 70px;
 		width: 27px;
 		height: 27px;
 	}
@@ -1271,7 +1275,8 @@ ol.commentlist .comment_container,
     z-index: 1;
     height: 30px;
     width: 30px;
-	right: 30px
+	right: 30px;
+	top: 30px;
 }
 .woocommerce-product-gallery__trigger:after {
 	content: "\e98b";
