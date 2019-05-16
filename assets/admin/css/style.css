@@ -98,9 +98,6 @@
 #conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col2 {
 	padding-left: 2.8125rem;
 }
-#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features > div {
-	width: 25%;
-}
 @media (max-width: 72em) {
 	#conj-lite-upsell-banner__message--inner {
 		flex-wrap: wrap;
@@ -113,6 +110,11 @@
 	}
 	#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-col2 {
 	    padding-left: 0;
+	}
+}
+@media (max-width: 72em) and (min-width: 60em) {
+	#conj-lite-upsell-banner__message--inner .conj-lite-upsell-banner__message--inner-features > div {
+		width: 25%;
 	}
 }
 @media (max-width: 83em) and (min-width: 72em), (max-width: 60em) {
