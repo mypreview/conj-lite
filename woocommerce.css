@@ -2944,6 +2944,9 @@ body.woocommerce .widget_price_filter[id*="woocommerce_price_filter-"] button[ty
 --------------------------------------------------------------*/
 .product_list_widget:not(.cart_list) li {
 	overflow: hidden;
+	padding-left: 100px;
+    min-height: 96px;
+    padding-top: 2px;
 }
 .product_list_widget:not(.cart_list) li:not(:last-child) {
 	margin-bottom: 20px;
@@ -2952,6 +2955,11 @@ body.woocommerce .widget_price_filter[id*="woocommerce_price_filter-"] button[ty
     position: absolute;
     left: 0;
 	padding: 5px;
+	max-width: 90px;
+    max-height: 90px;
+    border-style: solid;
+    border-width: 1px;
+    top: 6px;
 }
 .product_list_widget:not(.cart_list) li a,
 .product_list_widget:not(.cart_list) .product-title {
@@ -2971,12 +2979,6 @@ body.woocommerce .widget_price_filter[id*="woocommerce_price_filter-"] button[ty
 }
 .product_list_widget del {
 	margin-right: 5px;
-}
-.site-footer .product_list_widget:not(.cart_list) li,
-#secondary .product_list_widget:not(.cart_list) li {
-	padding-left: 100px;
-    min-height: 96px;
-    padding-top: 2px;
 }
 /*--------------------------------------------------------------
 ## Mini cart
