@@ -2011,7 +2011,7 @@ body.custom-background .c-offcanvas-content-wrap {
 .slinky-menu > ul {
 	left: 0;
 }
-.slinky-menu > ul {
+.slinky-menu ul {
 	padding-left: 2em;
 }
 .slinky-menu ul, 
