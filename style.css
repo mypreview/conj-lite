@@ -2610,7 +2610,7 @@ article.post.hentry .alignwide.wp-block-pullquote {
 	margin-top: 40px;
 	margin-right: 40px;
 }
-.col-1:not(.woocommerce-column):not(.u-column1) > * {
+.col-1:not(.woocommerce-column):not(.u-column1) > *:not(:first-child) {
 	margin-top: 40px;
 }
 .wp-block-columns > * {
@@ -2732,6 +2732,7 @@ body:not(.rtl) .wp-block-columns > *:last-child {
 	.col-4:not(.woocommerce-column):not(.u-column4) > * {
 		width: calc((100% - 40.02px) /2);
 	}
+	.footer-widgets.col-3 > *:last-child,
 	.wp-block-columns.has-1-columns > *,
 	.wp-block-columns.has-2-columns > * {
 		width: 100%;
@@ -2742,6 +2743,7 @@ body:not(.rtl) .wp-block-columns > *:last-child {
 	.wp-block-columns:not(.has-1-columns):not(.has-2-columns) > *:nth-child(2) {
 		margin-top: 0;
 	}
+	.footer-widgets.col-3 > *:last-child,
 	body:not(.rtl) .col-3:not(.woocommerce-column):not(.u-column3) > *:nth-child(2n),
 	body:not(.rtl) .col-5:not(.woocommerce-column):not(.u-column5) > *:nth-child(2n),
 	body:not(.rtl) .col-4:not(.woocommerce-column):not(.u-column4) > *:nth-child(2n),
@@ -3074,6 +3076,7 @@ pre.wp-block-code,
 	content: "";
 	opacity: 0.5;
 	border-width: 0 0 1px;
+	position: absolute;
 }
 .site-footer .widget-title {
 	padding-bottom: 15px;
@@ -3081,6 +3084,7 @@ pre.wp-block-code,
 }
 .site-footer .widget-title__wrapper {
 	margin-bottom: 20px;
+	position: relative;
 }
 #secondary.widget-area .widget:not(:first-of-type) .widget-title {
     padding-top: 23px;
