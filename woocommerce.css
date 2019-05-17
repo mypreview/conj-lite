@@ -2168,7 +2168,7 @@ ul.woocommerce-error {
 	.woocommerce-store-notice:not([style*="display: none;"]) {
 		display: flex !important;
 	}
-	.site-content > .conj-lite-col__full > .woocommerce:first-child,
+	body:not(.home) .site-content > .conj-lite-col__full > .woocommerce:first-child,
 	.post-type-archive-product.search-no-results .woocommerce-breadcrumb + .woocommerce,
 	.post-type-archive-product.search-results .woocommerce-breadcrumb + .woocommerce,
 	body:not(.search-no-results):not(.search-results) .woocommerce-breadcrumb + .woocommerce {
@@ -2204,7 +2204,7 @@ ul.woocommerce-error {
 	.woocommerce-info .button {
 		order: 5;
 	}
-	.site-content > .conj-lite-col__full > .woocommerce:first-child,
+	body:not(.home) .site-content > .conj-lite-col__full > .woocommerce:first-child,
 	body:not(.search-no-results) .woocommerce-breadcrumb + .woocommerce {
 		margin-top: 2.55em;
 	}
