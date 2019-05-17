@@ -101,11 +101,11 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 *
 			 * @see 	https://developer.wordpress.org/themes/functionality/custom-logo/
 			 */
-			add_theme_support( 'custom-logo', array(
+			add_theme_support( 'custom-logo', apply_filters( 'conj_lite_custom_logo_args', array(
 				'height' => 140,
 				'width' => 400,
 				'flex-width' => TRUE
-			) );
+			) ) );
 
 			/**
 			 * Set up the WordPress core custom header feature.
@@ -133,10 +133,10 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 *
 			 * @see 	https://developer.wordpress.org/reference/functions/wp_nav_menu/
 			 */
-			register_nav_menus( array(
+			register_nav_menus( apply_filters( 'conj_lite_nav_menu_args', array(
 				'primary' => __( 'Primary Menu', 'conj-lite' ),
 				'handheld' => __( 'Push Menu', 'conj-lite' )
-			) );
+			) ) );
 
 			/**
 			* Enable support for post formats.
