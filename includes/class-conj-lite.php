@@ -342,11 +342,20 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			$sidebar_args = apply_filters( 'conj_lite_sidebar_args', $sidebar_args );
 
 			foreach ( $sidebar_args as $sidebar => $args ) {
+				// Add wrapper around the widget title on footer section
+				if ( preg_match( '/footer-[0-9]+/', $args['id'] ) ) {
+					$title_wrapper_open = '<div class="widget-title__wrapper">';
+					$title_wrapper_close = '</div>';
+				} else {
+					$title_wrapper_open = '';
+					$title_wrapper_close = '';
+				} // End If Statement
+
 				$widget_tags = array(
 					'before_widget' => '<div id="%1$s" class="widget %2$s">',
 					'after_widget' => '</div>',
-					'before_title' => '<span class="widget-title">',
-					'after_title' => '</span>'
+					'before_title' => sprintf( '%s<span class="widget-title">', $title_wrapper_open ),
+					'after_title' => sprintf( '</span>%s', $title_wrapper_close )
 				);
 				/**
 				 * Dynamically generated filter hooks. Allow changing widget wrapper and title tags. See the list below.
