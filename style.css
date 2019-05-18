@@ -2488,6 +2488,13 @@ article.post.hentry .alignwide.wp-block-pullquote {
     align-items: center;
     overflow: hidden;
 }
+.wp-block-cover .wp-block-cover__inner-container {
+    max-width: 1210px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 20px;
+}
 .wp-block-cover.alignleft {
 	margin: 0 2em 1.5em 0;
 }
@@ -2497,39 +2504,8 @@ article.post.hentry .alignwide.wp-block-pullquote {
 .wp-block-cover.has-left-content {
     justify-content: flex-start; 
 }
-.wp-block-cover.has-left-content h2,
-.wp-block-cover.has-left-content .wp-block-cover-text {
-  margin-left: 0;
-  text-align: left; 
-}
 .wp-block-cover.has-right-content {
 	justify-content: flex-end; 
-}
-.wp-block-cover.has-right-content h2,
-.wp-block-cover.has-right-content .wp-block-cover-text {
-  margin-right: 0;
-  text-align: right; 
-}
-.wp-block-cover h2,
-.wp-block-cover .wp-block-cover-text {
-	color: #fff;
-	font-size: 2em;
-	line-height: 1.25;
-	z-index: 1;
-	margin-bottom: 0;
-	max-width: 610px;
-	padding: 14px;
-	text-align: center; 
-}
-.wp-block-cover h2 a,
-.wp-block-cover h2 a:hover,
-.wp-block-cover h2 a:focus,
-.wp-block-cover h2 a:active,
-.wp-block-cover .wp-block-cover-text a,
-.wp-block-cover .wp-block-cover-text a:hover,
-.wp-block-cover .wp-block-cover-text a:focus,
-.wp-block-cover .wp-block-cover-text a:active {
-  color: #fff; 
 }
 .wp-block-cover.has-parallax {
 	background-attachment: fixed; 
@@ -2570,6 +2546,20 @@ article.post.hentry .alignwide.wp-block-pullquote {
 .wp-block-cover.alignleft,
 .wp-block-cover.alignright {
 	display: flex; 
+}
+.wp-block-cover-image .wp-block-cover-image-text, 
+.wp-block-cover-image .wp-block-cover-text, 
+.wp-block-cover-image h2, 
+.wp-block-cover .wp-block-cover-image-text, 
+.wp-block-cover .wp-block-cover-text, 
+.wp-block-cover h2 {
+	max-width: 100%;
+    padding: 0;
+}
+.wp-block-cover-image h2,
+.wp-block-cover h2 {
+    margin-bottom: 0.563em;
+    font-size: 28px;
 }
 /*--------------------------------------------------------------
 ## Embed block
@@ -2778,54 +2768,84 @@ body:not(.rtl) .wp-block-columns > *:last-child {
 /*--------------------------------------------------------------
 ## Text color
 --------------------------------------------------------------*/
+.wp-block-button__link.has-black-color:active,
+.wp-block-button__link.has-black-color:focus, 
+.wp-block-button__link.has-black-color:visited,
 .wp-block-button .wp-block-button__link.has-black-color:hover,
-.has-black-color:hover,
-.has-black-color {
+#conj-lite-site__wrapper .has-black-color:hover,
+#conj-lite-site__wrapper .has-black-color {
 	color: #000000;
 }
+.wp-block-button__link.has-mako-color:active,
+.wp-block-button__link.has-mako-color:focus, 
+.wp-block-button__link.has-mako-color:visited,
 .wp-block-button .wp-block-button__link.has-mako-color:hover,
-.has-mako-color:hover,
-.has-mako-color {
+#conj-lite-site__wrapper .has-mako-color:hover,
+#conj-lite-site__wrapper .has-mako-color {
 	color: #464855;
 }
+.wp-block-button__link.has-storm-gray-color:active,
+.wp-block-button__link.has-storm-gray-color:focus, 
+.wp-block-button__link.has-storm-gray-color:visited,
 .wp-block-button .wp-block-button__link.has-storm-gray-color:hover,
-.has-storm-gray-color:hover,
-.has-storm-gray-color {
+#conj-lite-site__wrapper .has-storm-gray-color:hover,
+#conj-lite-site__wrapper .has-storm-gray-color {
 	color: #6B6F82;
 }
+.wp-block-button__link.has-manatee-color:active,
+.wp-block-button__link.has-manatee-color:focus, 
+.wp-block-button__link.has-manatee-color:visited,
 .wp-block-button .wp-block-button__link.has-manatee-color:hover,
-.has-manatee-color:hover,
-.has-manatee-color {
+#conj-lite-site__wrapper .has-manatee-color:hover,
+#conj-lite-site__wrapper .has-manatee-color {
 	color: #898EA3;
 }
+.wp-block-button__link.has-cadet-blue-color:active,
+.wp-block-button__link.has-cadet-blue-color:focus, 
+.wp-block-button__link.has-cadet-blue-color:visited,
 .wp-block-button .wp-block-button__link.has-cadet-blue-color:hover,
-.has-cadet-blue-color:hover,
-.has-cadet-blue-color {
+#conj-lite-site__wrapper .has-cadet-blue-color:hover,
+#conj-lite-site__wrapper .has-cadet-blue-color {
 	color: #A7ABBE;
 }
+.wp-block-button__link.has-martinique-color:active,
+.wp-block-button__link.has-martinique-color:focus, 
+.wp-block-button__link.has-martinique-color:visited,
 .wp-block-button .wp-block-button__link.has-martinique-color:hover,
-.has-martinique-color:hover,
-.has-martinique-color {
+#conj-lite-site__wrapper .has-martinique-color:hover,
+#conj-lite-site__wrapper .has-martinique-color {
 	color: #2D2E4F;
 }
+.wp-block-button__link.has-victoria-color:active,
+.wp-block-button__link.has-victoria-color:focus, 
+.wp-block-button__link.has-victoria-color:visited,
 .wp-block-button .wp-block-button__link.has-victoria-color:hover,
-.has-victoria-color:hover,
-.has-victoria-color {
+#conj-lite-site__wrapper .has-victoria-color:hover,
+#conj-lite-site__wrapper .has-victoria-color {
 	color: #414B92;
 }
+.wp-block-button__link.has-cornflower-blue-color:active,
+.wp-block-button__link.has-cornflower-blue-color:focus, 
+.wp-block-button__link.has-cornflower-blue-color:visited,
 .wp-block-button .wp-block-button__link.has-cornflower-blue-color:hover,
-.has-cornflower-blue-color:hover,
-.has-cornflower-blue-color {
+#conj-lite-site__wrapper .has-cornflower-blue-color:hover,
+#conj-lite-site__wrapper .has-cornflower-blue-color {
 	color: #666EE8;
 }
+.wp-block-button__link.has-white-lilac-color:active,
+.wp-block-button__link.has-white-lilac-color:focus, 
+.wp-block-button__link.has-white-lilac-color:visited,
 .wp-block-button .wp-block-button__link.has-white-lilac-color:hover,
-.has-white-lilac-color:hover,
-.has-white-lilac-color {
+#conj-lite-site__wrapper .has-white-lilac-color:hover,
+#conj-lite-site__wrapper .has-white-lilac-color {
 	color: #F4F5FA;
 }
+.wp-block-button__link.has-white-color:active,
+.wp-block-button__link.has-white-color:focus, 
+.wp-block-button__link.has-white-color:visited,
 .wp-block-button .wp-block-button__link.has-white-color:hover,
-.has-white-color:hover,
-.has-white-color {
+#conj-lite-site__wrapper .has-white-color:hover,
+#conj-lite-site__wrapper .has-white-color {
 	color: #FFFFFF;
 }
 /*--------------------------------------------------------------
@@ -4420,7 +4440,6 @@ object {
 }
 audio,
 video,
-p > img,
 .wp-block-image img,
 .wp-block-audio.aligncenter,
 .gallery-caption,
