@@ -1,7 +1,7 @@
 # Conj Lite - eCommerce WordPress Theme
 [![Conj Lite Downloads](https://img.shields.io/wordpress/theme/dt/conj-lite.svg)](https://wordpress.org/themes/conj-lite) [![Designed for WooCommerce](https://img.shields.io/badge/Designed%20for-WooCommerce-9a6b95.svg)](https://www.conj.ws) [![Compatible with WPML](https://img.shields.io/badge/Compatible%20with-WPML-308fb0.svg)](https://wpml.org/theme/conj) [![Compatible with ThemeCheck](https://img.shields.io/badge/ThemeCheck-Passed-c4d658.svg)](http://themecheck.info/score/wordpress-theme-conj-lite.html) [![Stable Version](https://img.shields.io/badge/Stable%20version-1.0.9-8a91ff.svg)](https://wordpress.org/themes/conj-lite) [![Follow Conj On Twitter](https://img.shields.io/twitter/follow/ConjSupport.svg)](https://twitter.com/ConjSupport)
 
-![CONJ Lite - eCommerce WordPress Theme](screenshot.jpg)
+<a href="https://wordpress.org/themes/conj-lite/" target="_blank"><img src="screenshot.jpg" alt="Conj Lite - eCommerce WordPress Theme" style="border:1px solid #d1d1d1;" /></a>
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
