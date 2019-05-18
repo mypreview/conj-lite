@@ -23,6 +23,10 @@
 * WordPress version 5.0 or greater.
 * WooCommerce version 3.0 or greater.
 
+## Demo
+
+Check out the [Live Demo](https://www.conj.ws) to visit the theme in action.
+
 ## Translators
 
 Translators are welcome to contribute to the theme. Please use the [WordPress translation website](https://translate.wordpress.org/projects/wp-themes/conj-lite "WordPress translation website").
