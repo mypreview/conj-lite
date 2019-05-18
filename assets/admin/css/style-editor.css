@@ -1494,6 +1494,25 @@ body:not(.rtl) .wp-block-columns > .editor-inner-blocks > .editor-block-list__la
     margin: 0 2em 1.5em 0;
 }
 /*--------------------------------------------------------------
+# Cover block
+--------------------------------------------------------------*/
+.wp-block-cover .wp-block-cover__inner-container {
+    max-width: 1210px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 20px;
+}
+.wp-block-cover-image .wp-block-cover-image-text, 
+.wp-block-cover-image .wp-block-cover-text, 
+.wp-block-cover-image h2, 
+.wp-block-cover .wp-block-cover-image-text, 
+.wp-block-cover .wp-block-cover-text, 
+.wp-block-cover h2 {
+	max-width: 100%;
+    padding: 0;
+}
+/*--------------------------------------------------------------
 # Media and text
 --------------------------------------------------------------*/
 .wp-block-media-text .editor-inner-blocks .editor-block-list__layout > *:first-child {
@@ -1935,4 +1954,12 @@ code,
 pre,
 .required {
 	color: #FF4961;
+}
+.wp-block-cover__inner-container .editor-block-list__layout h1, 
+.wp-block-cover__inner-container .editor-block-list__layout h2, 
+.wp-block-cover__inner-container .editor-block-list__layout h3, 
+.wp-block-cover__inner-container .editor-block-list__layout h4, 
+.wp-block-cover__inner-container .editor-block-list__layout h5, 
+.wp-block-cover__inner-container .editor-block-list__layout h6 {
+	color: #f8f9f9;
 }
