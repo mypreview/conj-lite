@@ -603,8 +603,8 @@ body .woocommerce-customer-details address {
 	padding: 0;
 	width: 1px;
 	word-wrap: normal !important;
+	font-size: 0;
 }
-.wc-block-featured-product__price .price-label,
 .reset_variations,
 .woocommerce-product-gallery .woocommerce-product-gallery__trigger,
 abbr.required,
