@@ -81,8 +81,10 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				#masthead {
 					border-color: {$general_background_color_darker};
 				}
-				audio::-webkit-media-controls-panel,
 				pre:not(.wp-block-verse):not(.wp-block-code) {
+					background-color: {$general_background_color_dark};
+				}
+				audio::-webkit-media-controls-panel {
 					background-color: {$general_background_color_dark};
 				}
 				body.search-results article .entry-footer a,
