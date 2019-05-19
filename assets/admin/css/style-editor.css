@@ -868,7 +868,10 @@ blockquote.wp-block-quote {
 .wp-block-freeform.block-library-rich-text__tinymce hr {
     border: none;
     border-bottom: 1px solid #ccc;
-    margin: 1.65em auto;
+}
+.wp-block-separator,
+.wp-block-freeform.block-library-rich-text__tinymce hr {
+    margin: 10px auto;
 }
 @media (min-width: 27.5625em) {
 	.editor-block-list__layout dl:not(.wp-caption):not(.gallery-item) {
@@ -1492,6 +1495,10 @@ body:not(.rtl) .wp-block-columns > .editor-inner-blocks > .editor-block-list__la
 }
 .wp-block-cover.alignleft {
     margin: 0 2em 1.5em 0;
+}
+.edit-post-visual-editor .block-editor-block-list__layout>.block-editor-block-list__block[data-align=left]:first-child, 
+.edit-post-visual-editor .block-editor-block-list__layout>.block-editor-block-list__block[data-align=right]:first-child {
+	margin-top: 0;
 }
 /*--------------------------------------------------------------
 # Cover block
