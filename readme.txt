@@ -66,6 +66,7 @@ Due to copyright restrictions, all images downloaded via demo import are waterma
 * [JS Offcanvas](https://github.com/vmitsaras/js-offcanvas)
 * [Skip to content](https://github.com/Automattic/_s/pull/136)
 * [Slinky](https://github.com/alizahid/slinky)
+* [Browsers support badges for GitHub](https://github.com/godban/browsers-support-badges)
 * [Rubik](https://fonts.google.com/specimen/Rubik)
 * [Homemade Apple](https://fonts.google.com/specimen/Homemade+Apple)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
