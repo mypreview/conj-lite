@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2019-05-14 20:09+0400\n"
+"POT-Creation-Date: 2019-05-19 23:12+0400\n"
 "PO-Revision-Date: 2018-05-14 10:20+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -226,50 +226,50 @@ msgstr ""
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: includes/class-conj-lite.php:405
+#: includes/class-conj-lite.php:414
 msgctxt "rubik and montserrat font: on or off"
 msgid "google-fonts-on"
 msgstr ""
 
 #. translators: %s: post author
-#: includes/conj-lite-functions.php:158
+#: includes/conj-lite-functions.php:179
 #, php-format
 msgid "by %s"
 msgstr ""
 
 #. translators: 1: Open span tag, 2: Close span tag, 3: Post date.
-#: includes/conj-lite-functions.php:198
+#: includes/conj-lite-functions.php:219
 #, php-format
 msgid "%1$sPosted on%2$s %3$s"
 msgstr ""
 
 #. translators: %: Number of comments
-#: includes/conj-lite-functions.php:221
+#: includes/conj-lite-functions.php:242
 msgid "Leave a comment"
 msgstr ""
 
-#: includes/conj-lite-functions.php:221
+#: includes/conj-lite-functions.php:242
 msgid "One Comment"
 msgstr ""
 
-#: includes/conj-lite-functions.php:221
+#: includes/conj-lite-functions.php:242
 msgid "% Comments"
 msgstr ""
 
-#: includes/conj-lite-functions.php:257
+#: includes/conj-lite-functions.php:278
 msgid "in"
 msgstr ""
 
-#: includes/conj-lite-functions.php:257
+#: includes/conj-lite-functions.php:278
 msgid "Categories"
 msgstr ""
 
-#: includes/conj-lite-functions.php:260
+#: includes/conj-lite-functions.php:281
 msgid "Tags"
 msgstr ""
 
 #. translators: 1: Open span tag, 2: Name of current post, 3: Close span tag.
-#: includes/conj-lite-functions.php:293
+#: includes/conj-lite-functions.php:314
 #, php-format
 msgid "Edit this post%1$s \"%2$s\"%3$s"
 msgstr ""
@@ -1199,7 +1199,7 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: Span open tag, 2: Span close tag.
-#: includes/woocommerce/class-conj-lite-woocommerce.php:318
+#: includes/woocommerce/class-conj-lite-woocommerce.php:345
 #, php-format
 msgid "%1$sPrice%2$s"
 msgstr ""
@@ -1303,7 +1303,7 @@ msgid ""
 "and grid-based architecture which comes with built-in one click demo import "
 "to help you have your new website up and running in a matter of minutes. "
 "Intuitive, flexible and compatible with the new Gutenberg block-based "
-"content editor — Demo → https://www.conj.ws/conj-lite"
+"content editor — Demo → https://www.conj.ws/lite"
 msgstr ""
 
 #. Author of the plugin/theme
