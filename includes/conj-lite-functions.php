@@ -8,6 +8,22 @@
  */
 
 /**
+ * Query if the static front page already configured and exists.
+ *
+ * @uses 	get_option()
+ * @return  bool
+ */
+if ( ! function_exists( 'conj_lite_is_front_page_configured' ) ) :
+	function conj_lite_is_front_page_configured() {
+
+		$get_front_page = (bool) get_option( 'page_on_front', TRUE );
+
+		return ( ! empty( $get_front_page ) ) ? TRUE : FALSE;
+
+	}
+endif;
+
+/**
  * Checks if the current page is a blog post archive/single.
  *
  * @uses 	is_archive()
@@ -123,7 +139,12 @@ if ( ! function_exists( 'conj_lite_post_title' ) ) :
 	function conj_lite_post_title() {
 
 		// Skip printing the page title if it is already removed from the view.
-		if ( ! apply_filters( 'conj_lite_is_visible_post_title', '__return_true' ) || is_front_page() ) {
+		if ( ! apply_filters( 'conj_lite_is_visible_post_title', '__return_true' ) ) {
+			return;
+		} // End If Statement
+
+		// Bailout, if the current screen is the front-page of the website.
+		if ( conj_lite_is_front_page_configured() && is_front_page() ) {
 			return;
 		} // End If Statement
 
