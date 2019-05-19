@@ -820,7 +820,7 @@ pre.wp-block-code {
 hr {
 	border: none;
     border-bottom: 1px solid #ccc;
-    margin: 1.65em auto;
+    margin: 10px auto;
 }
 ul, 
 ol {
@@ -2748,7 +2748,7 @@ body:not(.rtl) .wp-block-columns > *:last-child {
 	.col-3:not(.woocommerce-column):not(.u-column3) > *,
 	.col-5:not(.woocommerce-column):not(.u-column5) > *,
 	.col-4:not(.woocommerce-column):not(.u-column4) > *,
-	.wp-block-columns > * {
+	.wp-block-columns > .wp-block-column {
 		width: 100%;
 	}
 	.col-2:not(.woocommerce-column):not(.u-column2) > *:nth-child(1),
