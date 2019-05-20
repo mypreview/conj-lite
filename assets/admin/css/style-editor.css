@@ -1541,12 +1541,6 @@ body #editor .wp-block {
 	margin-bottom: 0;
     margin-top: 0;
 }
-.editor-block-list__layout > div:not(:only-child) > .editor-default-block-appender {
-	position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 29px;
-}
 .edit-post-layout__content {
     padding-bottom: 0;
 	overflow-x: hidden;
@@ -1566,10 +1560,10 @@ body #editor .wp-block {
 	margin-left: 0;
 	margin-right: 0;
 }
+.block-editor-block-list__block>.block-editor-block-list__insertion-point,
 .editor-block-list__layout .reusable-block-indicator,
 .editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit:before,
-.editor-block-list__layout .reusable-block-edit-panel,
-.editor-block-list__block>.editor-block-list__insertion-point {
+.editor-block-list__layout .reusable-block-edit-panel {
 	top: 0;
 }
 .editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit:before {
@@ -1606,16 +1600,12 @@ body #editor .wp-block {
 .block-editor-block-list__layout .block-editor-block-list__block[data-align=full]>.block-editor-block-list__block-edit>.block-editor-block-mover {
 	top: -21px;
 }
-.editor-block-list__block>.editor-block-list__insertion-point {
-	width: 30px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.editor-block-list__insertion-point-inserter .editor-inserter__toggle {
-	height: 23px;
-    margin-top: 2px;
-    width: 23px;
-    padding: 1.5px;
+.editor-block-list__block>.editor-block-list__insertion-point,
+.editor-block-list__layout > div:not(:only-child) > .editor-default-block-appender {
+	position: absolute;
+    bottom: -15px;
+    width: 30px;
+    left: calc(50% - 15px);
 }
 body #editor .editor-block-list__block[data-align="full"] {
     max-width: none;
