@@ -42,6 +42,63 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 Due to copyright restrictions, all images downloaded via demo import are watermarked and their quality reduced on purpose.
 
 == Changelog ==
+= 1.1.0 =
+* Fix: HTML validation errors.
+* Fix: Typography scaling issues.
+* Fix: Warning flags raised by ThemeCheck plugin.
+* Fix: WooCommerce pagination styling issue.
+* Fix: Align wide and full positioning in post editor.
+* Fix: Filling the space in the last column of 3x footer widget.
+* Fix: Adjust widget title border position in the footer.
+* Feature: Site-wide header image integration and support.
+* Feature: Added system font stack as fallback for Google web-fonts.
+* Feature: Update block editor width on page template change.
+* Feature: Single attachment (media) view page design.
+* Feature: Added style to Aksimet privacy notice.
+* Feature: Added style to comment privacy consent checkbox.
+* Feature: Added style to comment awaiting moderation notice.
+* Feature: `wp_body_open` hook support.
+* Feature: Left and right sidebar positioning support.
+* Feature: RTL (Right-to-left) language support.
+* Feature: Responsive embedded content support.
+* Feature: Registered site-wide color alter controls under the Customizer window.
+* Feature: Integrated with `One Click Demo Import` plugin to import built-in demo files.
+* Feature: Added style to the WooCommerce `Products by Attribute` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `Featured Product` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `Hand-Picked Products` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `Best-Selling Products` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `Top-Rated Products` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `Newest Products` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `On-Sale Products` Gutenberg editor blocks.
+* Feature: Added style to the WooCommerce `Products by Category ` Gutenberg editor blocks.
+* Feature: Reflect site-wide typography settings in Gutenberg editor.
+* Feature: Reflect site-wide color scheme in Gutenberg editor.
+* Feature: Reflect blog post styling to Gutenberg post edit view.
+* Update: Language file.
+* Update Core WordPress widgets style.
+* Update WooCommerce widgets style.
+* Update Comment pagination style.
+* Update: Theme screenshot.
+* Update: Classic editor styles.
+* Update: `Feather` CSS font icon pack to version 4.19.0
+* Update: Escaping the `pingback` URL.
+* Update: JS handlers switched to `.on()` method instead of using shortcut method.
+* Tweak: 404 page layout style and HTML markup.
+* Tweak: Replaced CSS variables with actual values to support IE 11.
+* Tweak: Typography hierarchy.
+* Tweak: Styling in Edge browser.
+* Tweak: RTL (Right-to-left) language styling.
+* Tweak: Registered third-party libraries to load independently.
+* Remove: `_authorname_` to prevent double prefixing.
+* Dev: Added TGMPA to recommend plugin installation.
+* Compatibility: Tested against the WordPress Unit Test data.
+* Compatibility: WordPress.com-specific functions and definitions.
+* Compatibility: WPML translation plugin.
+* Compatibility: IE 11 (Internet Explorer) browser.
+* Compatibility: Post formats.
+* Compatibility: WordPress 5.2.1
+* Compatibility: WooCommerce 3.6.3
+
 = 1.0.9 =
 * Fix: Minor styling issues.
 * Update: Language file.
