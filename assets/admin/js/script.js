@@ -1,7 +1,6 @@
 /**
  * WordPress admin enhancements, specific to theme's up-sell admin notice.
  *
- * @requires 	wp-block-editor
  * @package     conj-lite
  * @author     	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
