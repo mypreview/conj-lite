@@ -663,7 +663,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 
 			wp_add_inline_style( 'conj-lite-block-editor-styles', wp_strip_all_tags( $inline_css ) );
 
-			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
+			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-block-editor', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
 
 		}
 
