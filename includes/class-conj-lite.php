@@ -671,7 +671,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
   		 * Adds a custom parameter to the editor settings that is used
   		 * to track whether the main sidebar has widgets.
   		 *
-  		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
+  		 * @see 	https://developer.wordpress.org/reference/hooks/block_editor_settings/
   		 * @see 	https://developer.wordpress.org/reference/functions/is_active_sidebar/
   		 * @access 	public
   		 * @param 	array   	$settings 	Default editor settings.
