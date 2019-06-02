@@ -121,7 +121,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 										printf( esc_html_x( '%s Gutenberg blocks', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
 										<li><?php 
 										/* translators: %s: Emoji unicode */
-										printf( esc_html_x( '%s +%s template blocks', 'more_feature', 'conj-lite' ), '✅', '💯' ); ?></li>
+										printf( esc_html_x( '%1$s +%2$s template blocks', 'more_feature', 'conj-lite' ), '✅', '💯' ); ?></li>
 										<li><?php 
 										/* translators: %s: Emoji unicode */
 										printf( esc_html_x( '%s Demo content install', 'upsell_feature', 'conj-lite' ), '✅' ); ?></li>
@@ -234,7 +234,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 		 */
 		public function dismiss_upsell_notice() {
 
-			$nonce = ! empty( $_POST['nonce'] ) ? $_POST['nonce'] : FALSE;
+			$nonce = ! empty( $_POST['nonce'] )  ?  wp_unslash( $_POST['nonce'] )  :  FALSE;
 			
 			if ( ! $nonce || ! wp_verify_nonce( $nonce, 'conj_lite_upsell_notice_dismiss_nonce' ) || ! current_user_can( 'manage_options' ) ) {
 				wp_die();
