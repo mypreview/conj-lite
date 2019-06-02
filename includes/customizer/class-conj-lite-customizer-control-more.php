@@ -53,7 +53,7 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 					printf( esc_html_x( '%s Gutenberg Blocks', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s +%s Template Blocks', 'more_feature', 'conj-lite' ), '✅', '💯' ); ?></li>
+					printf( esc_html_x( '%1$s +%2$s Template Blocks', 'more_feature', 'conj-lite' ), '✅', '💯' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
 					printf( esc_html_x( '%s Two-Steps Checkout', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
@@ -95,7 +95,7 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 			<span class="customize-control-title">
 				<?php
 				/* translators: %s: Conj Lite */
-				printf( esc_html__( 'Enjoying %s?', 'conj-lite' ), CONJ_LITE_THEME_NAME ); ?>
+				printf( esc_html__( 'Enjoying %s?', 'conj-lite' ), esc_html( CONJ_LITE_THEME_NAME ) ); ?>
 			</span>
 			<p>
 				<?php
