@@ -25,7 +25,7 @@
 
 ## Demo
 
-Check out the [Live Demo](https://www.conj.ws) to visit the theme in action.
+Check out the [Live Demo](https://www.conj.ws/lite) to visit the theme in action.
 
 ## Browsers
 
