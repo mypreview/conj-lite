@@ -2,7 +2,7 @@
 /**
  * Conj Lite Class
  *
- * @since 	    1.1.0
+ * @since 	    1.1.1
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
@@ -527,12 +527,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 
 			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0' );
 			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks', 'feather' ), CONJ_LITE_THEME_VERSION, 'all' );
-			wp_register_style( 'conj-lite-block-editor-styles-rtl', get_theme_file_uri( '/assets/admin/css/style-editor-rtl.css' ), array( 'conj-lite-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
-
-			// Checks if current locale is RTL (Right To Left script).
-			if ( is_rtl() ) {
-				wp_enqueue_style( 'conj-lite-block-editor-styles-rtl' );
-			} // End If Statement
+			wp_style_add_data( 'conj-lite-block-editor-styles', 'rtl', 'replace' );
 
 			// General			
 			$general_background_color = sanitize_hex_color_no_hash( get_background_color() );

@@ -3,7 +3,7 @@
  * Conj Lite WooCommerce Class
  *
  * @requires 	WooCommerce
- * @since 	    1.1.0
+ * @since 	    1.1.1
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -118,6 +118,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		public function enqueue_editor_assets() {
 
 			wp_enqueue_style( 'conj-lite-block-editor-woocommerce-styles', get_theme_file_uri( '/assets/admin/css/style-editor-woocommerce.css' ), array( 'wp-edit-blocks', 'conj-lite-block-editor-styles' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_style_add_data( 'conj-lite-block-editor-woocommerce-styles', 'rtl', 'replace' );
 
 			// Retrieving Customizer theme mod values
 			$general_background_color = sanitize_hex_color_no_hash( get_background_color() );
