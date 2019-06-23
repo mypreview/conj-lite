@@ -1361,22 +1361,22 @@ body #editor .block-editor-block-list__block[data-type="core/column"] {
 .wp-block-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"]:not(:first-child) {
 	padding-top:30px;
 }
-.wp-block-columns.has-6-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
+.has-6-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
 	width: calc(100% /6);
 }
-.wp-block-columns.has-5-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
+.has-5-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
 	width: calc(100% /5);
 }
-.wp-block-columns.has-4-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
+.has-4-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
 	width: calc(100% /4);
 }
-.wp-block-columns.has-3-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
+.has-3-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
 	width: calc(100% /3);
 }
-.wp-block-columns.has-2-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
+.has-2-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
 	width: calc(100% /2);
 }
-.wp-block-columns.has-2-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
+.has-2-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
 	width: calc(100% /2);
 }
 .wp-block-columns.has-1-columns > .editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"] {
