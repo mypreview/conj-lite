@@ -2,10 +2,10 @@
 Contributors: mypreview, mahdiyazdani, gookaani
 Tags: two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, block-styles, wide-blocks
 Donate link: https://www.conj.ws
-Requires at least: 5.0
+Requires at least: 5.2
 Tested up to: 5.2.1
 Requires PHP: 7.0.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 Due to copyright restrictions, all images downloaded via demo import are watermarked and their quality reduced on purpose.
 
 == Changelog ==
+= 1.1.1 =
+* Fix: Adjust background color in block mover controls to improve visibility in either dark or light color scheme.
+* Fix: Correct block inserter position to avoid overlapping select block over the next one in the editor.
+* Fix: Prevent product images from getting stretched in Gutenberg editor block.
+* Tweak: Improved responsiveness of `core/columns` Gutenberg editor block.
+* Tweak: Use `wp_style_add_data` to set the rtl property to replace for editor stylesheet.
+* Tweak: RTL (Right-to-left) language styling.
+* Compatibility: WordPress 5.2.2
+* Compatibility: WooCommerce 3.6.4
+
 = 1.1.0 =
 * Fix: HTML validation errors.
 * Fix: Typography scaling issues.
