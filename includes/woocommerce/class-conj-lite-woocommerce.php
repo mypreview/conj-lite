@@ -17,7 +17,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 	/**
 	 * The Conj Lite WooCommerce integration class
 	 */
-	class Conj_Lite_WooCommerce {
+	final class Conj_Lite_WooCommerce {
 
 		/**
 		 * Setup class.

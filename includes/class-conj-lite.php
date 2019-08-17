@@ -16,7 +16,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 	/**
 	 * The main Conj Lite class
 	 */
-	class Conj_Lite {
+	final class Conj_Lite {
 
 		/**
 		 * Setup class.
