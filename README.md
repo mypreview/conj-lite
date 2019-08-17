@@ -11,14 +11,14 @@
 
 ## Installation
 
-* Download the theme from it's GitHub Repository [Release](https://github.com/mypreview/conj-lite/releases) window.
-* Go to **WordPress** > **Appearance** > **Themes** > **Add New**.
-* Click Upload Theme and **Choose File**, then select the theme's `.zip` file. Click Install Now.
-* Click Activate to use your new theme right away.
+* Download the theme from it's GitHub Repository Release window.
+* Log into your WordPress website and navigate to **Appearance** » **Themes** » **Add New**.
+* Click **Upload Theme** and **Choose File**, then select the theme's `.zip` file. Click **Install Now**.
+* Click **Activate** to start using your theme right away.
 
 ## Requirements
 
-* PHP version 7 or greater.
+* PHP version 7.0 or greater.
 * MySQL version 5.6 or greater OR MariaDB version 10.0 or greater.
 * WordPress version 5.0 or greater.
 * WooCommerce version 3.0 or greater.
@@ -47,4 +47,4 @@ We welcome contributions in any form, and you can help reporting, testing, and d
 
 ## Go premium
 
-The premium version of this theme is available to purchase from [Themeforest](https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview). :moneybag:
+The premium version of this theme is available to purchase from [www.conj.ws](https://www.conj.ws) website. :moneybag:
