@@ -170,7 +170,7 @@ if ( ! function_exists( 'conj_lite_credit' ) ) :
 
 			printf( wp_kses_post( '%1$s%2$s%3$s' ), '<span class="site-info__copyright">', apply_filters( 'conj_lite_copyright_text', wp_kses_post( $copyright_text ) ), '</span>' );
 			/* translators: 1: Seperator, 2: Theme name, 3: Theme author. */
-			printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-info__author-credits"><span class="sep"> | </span>', esc_html( CONJ_THEME_NAME ), sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a></span>', esc_url( CONJ_THEME_URI ), esc_html( CONJ_THEME_AUTHOR ) ) ); ?>
+			printf( esc_html__( '%1$s Theme: %2$s by %3$s', 'conj-lite' ), '<span class="site-info__author-credits"><span class="sep"> | </span>', esc_html( CONJ_LITE_THEME_NAME ), sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a></span>', esc_url( CONJ_LITE_THEME_URI ), esc_html( CONJ_LITE_THEME_AUTHOR ) ) ); ?>
 		</div><!-- .site-info --><?php	
 
 	}
