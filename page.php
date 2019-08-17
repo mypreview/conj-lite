@@ -8,7 +8,7 @@
  * different template.
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -17,10 +17,10 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+
 			<?php
 			while ( have_posts() ) : the_post();
-
-				do_action( 'conj_lite_page_before' );
+				do_action( 'conj_lite_before_page_content' );
 
 				get_template_part( 'template-parts/content', 'page' );
 
@@ -29,10 +29,10 @@ get_header(); ?>
 					comments_template();
 				} // End If Statement
 
-				do_action( 'conj_lite_page_after' );
-
+				do_action( 'conj_lite_after_page_content' );
 			endwhile; // End of the loop.
 			?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
