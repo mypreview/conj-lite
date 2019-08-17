@@ -2,10 +2,10 @@
 Contributors: mypreview, mahdiyazdani, gookaani
 Tags: two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, block-styles, wide-blocks
 Donate link: https://www.conj.ws
-Requires at least: 5.2
-Tested up to: 5.2.1
+Requires at least: 5.0
+Tested up to: 5.2.2
 Requires PHP: 7.0.0
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,7 +25,7 @@ To run the [Conj Lite - eCommerce WordPress Theme](https://www.conj.ws/conj-lite
 
 * PHP version 7 or greater.
 * MySQL version 5.6 or greater OR MariaDB version 10.0 or greater.
-* WordPress version 5.0 or greater.
+* WordPress version 5.2 or greater.
 * WooCommerce version 3.5 or greater.
 * WP Memory limit of 64 MB or greater (128 MB or higher is preferred).
 
