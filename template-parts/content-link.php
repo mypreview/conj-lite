@@ -3,7 +3,7 @@
  * The template for displaying posts in the `Link` post format
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -11,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="https://schema.org/BlogPosting" itemprop="blogPost">
 	<div class="entry-wrapper">
 		<div class="entry-meta">
-			<?php conj_lite_entry_footer( $posted_categories = TRUE, $posted_tags = FALSE );  ?>
+			<?php conj_lite_entry_footer( TRUE, FALSE );  ?>
 
 			<header class="entry-header">
 				<?php
@@ -47,17 +47,18 @@
 				get_the_title()
 			) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'conj-lite' ),
+			wp_link_pages( apply_filters( 'conj_lite_wp_link_pages_args', array(
+				/* translators: %s: Open div tag. */
+				'before' => sprintf( esc_html_x( '%sPages:', 'page links', 'conj-lite' ), '<div class="page-links">' ),
 				'after' => '</div>',
 				'link_before' => '<span class="page-number">',
 				'link_after' => '</span>'
-			) );
+			) ) );
 		?></div><!-- .entry-content -->
 
 		<?php if ( is_singular( 'post' ) ) : ?>
 			<footer class="entry-footer">
-				<?php conj_lite_entry_footer( $posted_categories = FALSE, $posted_tags = TRUE ); ?>
+				<?php conj_lite_entry_footer( FALSE, TRUE ); ?>
 			</footer><!-- .entry-footer -->
 		<?php endif; ?>
 
