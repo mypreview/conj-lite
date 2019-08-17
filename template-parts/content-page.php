@@ -3,7 +3,7 @@
  * Template part for displaying page content in page.php
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -19,35 +19,13 @@
 		<?php
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'conj-lite' ),
+		wp_link_pages( apply_filters( 'conj_lite_wp_link_pages_args', array(
+			/* translators: %s: Open div tag. */
+			'before' => sprintf( esc_html_x( '%sPages:', 'page links', 'conj-lite' ), '<div class="page-links">' ),
 			'after' => '</div>',
 			'link_before' => '<span class="page-number">',
 			'link_after' => '</span>'
-		) );
+		) ) );
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit this page <span class="screen-reader-text">%s</span>', 'conj-lite' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
