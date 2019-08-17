@@ -20,7 +20,7 @@
 			printf( '<span class="conj-lite-search-post__type-%1$s">%2$s</span>', esc_attr( $get_post_type_class_name ), esc_html( $get_post_type ) );
 
 			// Display, if post has a featured image attached!
-			if ( class_exists( 'WooCommerce' ) && 'product' === $get_post_type ) {
+			if ( conj_lite_is_woocommerce_activated() && 'product' === $get_post_type ) {
 				conj_lite_post_thumbnail();
 			} // End If Statement
 			?>
@@ -30,7 +30,7 @@
 			<?php 
 			conj_lite_post_title(); 
 			
-			if ( class_exists( 'WooCommerce' ) && 'product' === $get_post_type ) {
+			if ( conj_lite_is_woocommerce_activated() && 'product' === $get_post_type ) {
 				woocommerce_template_single_price();
 				conj_lite_wc_show_product_categories();
 			} else {
