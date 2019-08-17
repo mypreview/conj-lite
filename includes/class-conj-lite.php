@@ -720,6 +720,11 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				$classes[] = 'hfeed';
 			} // End If Statement
 
+			// Add class if WooCommerce breadcrumbs removed.
+			if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
+				$classes[]	= 'no-wc-breadcrumb';
+			} // End If Statement
+
 			// Add class if we're viewing the Customizer for easier styling of theme options.
 			if ( is_customize_preview() ) {
 				$classes[] = 'customizer-running';
