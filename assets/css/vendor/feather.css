@@ -3,18 +3,13 @@ https://feathericons.com
 ---------------------------------------------- */
 @font-face {
   font-family: 'Feather';
-  src: url('../../fonts/Feather.eot?6foe8l');
-  src: url('../../fonts/Feather.eot?6foe8l#iefix') format('embedded-opentype'),
-    url('../../fonts/Feather.woff2?6foe8l') format('woff2'),
-    url('../../fonts/Feather.ttf?6foe8l') format('truetype'),
-    url('../../fonts/Feather.woff?6foe8l') format('woff'),
-    url('../../fonts/Feather.svg?6foe8l#Feather') format('svg');
+  src: url('../../fonts/Feather.woff?6foe8l') format('woff');
   font-weight: normal;
   font-style: normal;
 }
-[class^="feather-"], [class*=" feather-"] {
+[class^="feather-"]:before, [class*=" feather-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Feather' !important;
+  font-family: 'Feather';
   speak: none;
   font-style: normal;
   font-weight: normal;
