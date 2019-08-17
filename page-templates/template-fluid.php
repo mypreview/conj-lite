@@ -9,7 +9,7 @@
  * @link 		https://developer.wordpress.org/reference/functions/the_posts_pagination/
  * @link 		https://developer.wordpress.org/reference/functions/the_post_navigation/
  * @link 		https://docs.woocommerce.com/wc-apidocs/function-woocommerce_content.html
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -19,34 +19,23 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
-
-			if ( conj_lite_is_woocommerce_activated() && is_singular( 'product' ) ) {
-
+			if ( conj_lite_is_woocommerce_activated() && is_singular( 'product' ) ) :
 				woocommerce_content();
-
-			} else {
-
+			else :
 				while ( have_posts() ) : the_post();
-
 					if ( is_singular( 'post' ) ) {
 
 						get_template_part( 'template-parts/content', get_post_type() );
 
-						the_posts_pagination( apply_filters( 'conj_lite_post_pagination_args', array(
-							'prev_text' => '<span class="screen-reader-text">' . esc_html__( 'Previous page', 'conj-lite' ) . '</span>',
-							'next_text' => '<span class="screen-reader-text">' . esc_html__( 'Next page', 'conj-lite' ) . '</span>',
-							'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'conj-lite' ) . ' </span>',
-						) ) );
-
 						the_post_navigation( apply_filters( 'conj_lite_post_navigation_args', array(
-							'prev_text' => '<span>' . esc_html__( 'Previous', 'conj-lite' ) . '</span>',
-							'next_text' => '<span>' . esc_html__( 'Next', 'conj-lite' ) . '</span>'
+							/* translators: 1: Open span tag, 2: Close span tag. */
+							'prev_text' => sprintf( esc_html_x( '%1$sPrevious%2$s', 'post navigation', 'conj-lite' ), '<span>', '</span>' ),
+							/* translators: 1: Open span tag, 2: Close span tag. */
+							'next_text' => sprintf( esc_html_x( '%1$sNext%2$s', 'post navigation', 'conj-lite' ), '<span>', '</span>' )
 						) ) );
 
 					} else {
-
 						get_template_part( 'template-parts/content', 'page' );
-
 					} // End If Statement
 
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -55,10 +44,7 @@ get_header(); ?>
 					} // End If Statement
 
 				endwhile; // End of the loop.
-
-			} // End If Statement
-
-			?>
+			endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
