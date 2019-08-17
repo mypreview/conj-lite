@@ -2,7 +2,7 @@
 /**
  * Customizer settings CSS styles.
  *
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 	/**
 	 * The Conj Lite Customizer settings class
 	 */
-	class Conj_Lite_Customizer_Styles {
+	final class Conj_Lite_Customizer_Styles {
 
 		/**
          * Add extra CSS styles to a registered stylesheet.
@@ -366,9 +366,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
         	 * append the following CSS styles to the Customizer style tag.
         	 */
 			if ( conj_lite_is_woocommerce_activated() ) :
-			
 				$customizer_css .= "
-
 					/* General */
 					.woocommerce-MyAccount-content legend,
 					.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-LostPassword,
@@ -525,11 +523,9 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 						color: {$button_alt_text_color};
 					}
 				";
-			
 			endif; // End If conj_lite_is_woocommerce_activated();
 
         	$customizer_css = apply_filters( 'conj_lite_customizer_inline_css', $customizer_css );
-
         	return wp_strip_all_tags( $customizer_css );
 
         }
