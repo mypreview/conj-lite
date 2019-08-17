@@ -20,13 +20,11 @@ function conj_lite_register_tgmpa_plugins() {
 	$plugins = apply_filters( 'conj_lite_register_tgmpa_plugin_arg', array(
 
 		array(
-			'required' => FALSE,
 			'name' => 'WooCommerce',
 			'slug' => 'woocommerce',
-			'version' => '3.5.0'
+			'version' => '3.0.0'
 		),
 		array(
-			'required' => FALSE,
 			'name' => 'One Click Demo Import',
 			'slug' => 'one-click-demo-import'
 		)
