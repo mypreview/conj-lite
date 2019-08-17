@@ -1,98 +1,71 @@
 /**
  * Conj Lite scripts & custom methods
  *
- * @since       1.1.0
+ * @since       1.2.0
  * @package     conj-lite
  * @author      MyPreview (Github: @mahdiyazdani, @mypreview)
  */
 (function( window, $, undefined ) {
     'use strict';
 
-    /* --------------------------------------------------------------------------------- /*
-     * If adminbar exist (should check for visible?) then add margin to offcanvas panel
-    /* --------------------------------------------------------------------------------- */
-    $( window ).on( 'load resize scroll', function() {
+    var conjLite = {
+        cache: function() {
+            conjLite.els = {};
+            conjLite.vars = {};
+            // No DOM cache
+            conjLite.vars.is_rtl = ( 'undefined' !== typeof conj_lite_vars )  ?  conj_lite_vars.is_rtl  :  null;
+            conjLite.vars.is_mobile = ( 'undefined' !== typeof conj_lite_vars )  ?  conj_lite_vars.is_mobile  :  null;
+            // DOM cache
+            conjLite.els.offcanvas = $( '#handheld-offcanvas' );
+            conjLite.els.handheld = $( '#handheld-slinky-menu' );
+            conjLite.els.iframes = $( 'iframe[src*="youtube"], iframe[src*="vimeo"], iframe[src*="dailymotion"], iframe[src*="soundcloud"], iframe[src*="mixcloud"], iframe[src*="google.com/maps"]' );
+        },
 
-        var handheld = $( '.handheld-offcanvas' ),
-            width = Math.max( $( window ).width(), window.innerWidth ),
-            topScroll = $( window ).scrollTop(),
-            wpAdminBar = $( '#wpadminbar' );
+        ready: function() {
+            conjLite.cache();
+            conjLite.load();
+        },
 
-        if ( wpAdminBar.length > 0 ) {
-            if ( width > 600 ) {
-                handheld.css( 'top', wpAdminBar.height() + 'px' );
-            } else if ( width <= 600 && topScroll >= 5 ) {
-                handheld.css('top', '0');
-            } else if ( width <= 600 && topScroll <= 5 ) {
-                handheld.css( 'top', wpAdminBar.height() + 'px' );
+        // Run on page load
+        load: function() {
+            // Call for methods
+            conjLite.iframeFitVids();
+
+            if ( conjLite.els.offcanvas.length ) {
+                conjLite.initOffcanvas();
             } // End If Statement
-        } // End If Statement
+        },
 
-    } );
+        // Initializing accesible offcanvas
+        initOffcanvas: function() {
+            conjLite.els.offcanvas.offcanvas( {
+                resize: ! conjLite.vars.is_mobile,
+                closeButtonClass: 'close-btn',
+                triggerButton: '.js-handheld-offcanvas-toggler',
+                modifiers: conjLite.vars.is_rtl  ?  'right,overlay,push'  :  'left,overlay,push',
+                onInit: function() {
+                    conjLite.initSlinky( conjLite.els.handheld );
+                }
+            } );
+        },
 
-    /* -------------------------------------------------------- /*
-     * Initializing accesible offcanvas panel and slinky nav
-    /* -------------------------------------------------------- */
-    $( window ).on( 'load', function() {
+        // Initializing slinky nav
+        initSlinky: function( element ) {
+            element.find( '> div' ).slinky( {
+                resize: true,
+                title: true
+            } );
+        },
 
-    	if ( $( '.handheld-offcanvas' ).length > 0) {
+        // Initialize `fitVids` to display fluid width video embeds.
+        iframeFitVids: function() {
+            if ( ! conjLite.els.iframes.parents( '.wp-has-aspect-ratio' ).length ) {
+                conjLite.els.iframes.parent().fitVids();
+            } // End If Statement
+        }
 
-	    	$( document ).trigger( 'enhance' );
+    };
 
-	        var handheld = $( '#left.handheld-offcanvas' ),
-	        	slinky = $( '#left.handheld-offcanvas #handheld-slinky-menu > div' ),
-	        	modifiers = 'left,overlay,push';
-
-	        // If current language direction is right to left
-	        if ( true === $( 'body' ).hasClass( 'rtl' ) ) {
-	        	modifiers =	'right,overlay,push';
-	        } // End If Statement
-
-	        handheld.offcanvas( {
-		        modifiers : modifiers,
-		        closeButtonClass : 'close-btn',
-		        triggerButton : '.js-handheld-offcanvas-toggler',
-		        onInit: function() {
-		            $( this ).removeClass( 'is-hidden' );
-		        }
-		    } );
-
-		    setTimeout( function() {
-		    	slinky.slinky( {
-	            	resize : true,
-	            	title : true
-	            } );
-		    }, 400 );
-		}
-    } );
-
-    /* ---------------------------------------------- /*
-     * Fluid width video embeds.
-    /* ---------------------------------------------- */
-    var youtube = $( 'iframe[src*="youtube"]' ),
-    	vimeo = $( 'iframe[src*="vimeo"]' ),
-    	dailymotion = $( 'iframe[src*="dailymotion"]' ),
-    	soundcloud = $( 'iframe[src*="soundcloud"]' ),
-    	mixcloud = $( 'iframe[src*="mixcloud"]' ),
-    	gmaps = $( 'iframe[src*="google.com/maps"]' );
-
-    if ( youtube.length > 0 && ! youtube.parents( '.wp-has-aspect-ratio' ).length > 0 ) {
-    	youtube.parent().fitVids();
-    } // End If Statement
-    if ( vimeo.length > 0 && ! vimeo.parents( '.wp-has-aspect-ratio' ).length > 0 ) {
-    	vimeo.parent().fitVids();
-    } // End If Statement
-    if ( dailymotion.length > 0 && ! dailymotion.parents( '.wp-has-aspect-ratio' ).length > 0 ) {
-    	dailymotion.parent().fitVids();
-    } // End If Statement
-    if ( soundcloud.length > 0 && ! soundcloud.parents( '.wp-has-aspect-ratio' ).length > 0 ) {
-    	soundcloud.parent().fitVids();
-    } // End If Statement
-    if ( mixcloud.length > 0 && ! mixcloud.parents( '.wp-has-aspect-ratio' ).length > 0 ) {
-    	mixcloud.parent().fitVids();
-    } // End If Statement
-    if ( gmaps.length > 0 ) {
-    	gmaps.parent().fitVids();
-    } // End If Statement
+    $( document ).ready( conjLite.ready() );
 
 } )( this, jQuery );
