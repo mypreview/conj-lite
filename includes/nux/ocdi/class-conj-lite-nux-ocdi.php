@@ -94,7 +94,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Demo_Import' ) ) :
 		    ( ! empty( $blog_page_obj ) )  ?  update_option( 'page_for_posts', intval( $blog_page_obj->ID ) )  :  NULL;
 
 		    // Query whether "WooCommerce" is activated or NOT.
-		    if ( class_exists( 'WooCommerce' ) ) {
+		    if ( conj_lite_is_woocommerce_activated() ) {
 
 		    	// Assign the WooCommerce pages.
 		    	$shop_page_obj = (object) get_page_by_title( 'Shop' );
