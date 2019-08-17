@@ -3,7 +3,7 @@
  * Template part for displaying results in search pages
  *
  * @link 		https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -17,7 +17,7 @@
 			$get_post_type_class_name =	(string) strtolower( $get_post_type );
 			$get_post_type_class_name =	(string) str_replace( ' ', '-', $get_post_type_class_name );
 
-			printf( '<span class="conj-lite-search-post__type-%1$s">%2$s</span>', esc_attr( $get_post_type_class_name ), esc_html( $get_post_type ) );
+			printf( '<span class="search-type-%1$s">%2$s</span>', esc_attr( $get_post_type_class_name ), esc_html( $get_post_type ) );
 
 			// Display, if post has a featured image attached!
 			if ( conj_lite_is_woocommerce_activated() && 'product' === $get_post_type ) {
