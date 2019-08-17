@@ -35,7 +35,7 @@
 				get_the_title()
 			) );
 
-			wp_link_pages( apply_filters( 'conj_wp_link_pages_args', array(
+			wp_link_pages( apply_filters( 'conj_lite_wp_link_pages_args', array(
 				/* translators: %s: Open div tag. */
 				'before' => sprintf( esc_html_x( '%sPages:', 'page links', 'conj-lite' ), '<div class="page-links">' ),
 				'after' => '</div>',
