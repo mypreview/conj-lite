@@ -28,11 +28,11 @@ function conj_lite_wpcom_setup() {
 		// Whitelist wpcom specific variable intended to be overruled.
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$themecolors = array(
-			'bg'      =>  '',
-			'border'  =>  '',
-			'text'    =>  '',
-			'link'    =>  '',
-			'url'     =>  '',
+			'bg' => '',
+			'border' => '',
+			'text' => '',
+			'link' => '',
+			'url' => ''
 		);
 	} // End If Statement
 
@@ -40,5 +40,4 @@ function conj_lite_wpcom_setup() {
 	add_theme_support( 'print-styles' );
 
 }
-
 add_action( 'after_setup_theme',   'conj_lite_wpcom_setup',   10 );
