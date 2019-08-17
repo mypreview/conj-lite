@@ -53,8 +53,16 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 			<div class="notice notice-warning notice-alt notice-large is-dismissible conj-lite-upsell">
 				<span class="notice__icon"></span>
 				<div class="notice__content">
-					<h2><?php _ex( '', 'upsell notice heading', 'conj-lite' ); ?></h2>
-					<p><?php _ex( '', 'upsell notice content', 'conj-lite' ); ?></p>
+					<h2><?php 
+						/* translators: %s: Emoji unicode. */
+						printf( esc_html_x( 'Smiles, shall we take it to the next level? %s', 'upsell notice heading', 'conj-lite' ), '🤔' ); 
+					?></h2>
+					<p>
+						<?php _ex( 'Thank you for choosing CONJ Lite to be as your online presence. We&rsquo;ve built a brand new, upgraded experience for curious and most valuable site owners like you ― it&rsquo;s just a few clicks away.', 'upsell notice content', 'conj-lite' ); ?>
+					</p>
+					<p>
+						<?php _ex( 'We are intended to keep your shopping experience hassle-free, with offering risk-free 14 days refund to your purchase. Give us a try, and we promise you won&rsquo;t regret it.', 'upsell notice content', 'conj-lite' ); ?>
+					</p>
 					<div class="notice_btns"><?php
 						/* translators: 1: Open anchor tag, 2: Close anchor tag. */
 						printf( esc_html__( '%1$sOpen Customizer %2$s', 'conj-lite' ), sprintf( '<a href="%s" class="button button-secondary">', esc_url( add_query_arg( 'return', admin_url( 'themes.php' ), admin_url( 'customize.php' ) ) ) ), '</a>' );
