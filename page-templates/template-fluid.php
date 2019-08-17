@@ -20,7 +20,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php
 
-			if ( class_exists( 'WooCommerce' ) && is_singular( 'product' ) ) {
+			if ( conj_lite_is_woocommerce_activated() && is_singular( 'product' ) ) {
 
 				woocommerce_content();
 
