@@ -365,7 +365,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
         	 * If the WooCommerce plugin is already activated then
         	 * append the following CSS styles to the Customizer style tag.
         	 */
-			if ( class_exists( 'WooCommerce' ) ) :
+			if ( conj_lite_is_woocommerce_activated() ) :
 			
 				$customizer_css .= "
 
@@ -526,7 +526,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					}
 				";
 			
-			endif; // End If class_exists( 'WooCommerce' );
+			endif; // End If conj_lite_is_woocommerce_activated();
 
         	$customizer_css = apply_filters( 'conj_lite_customizer_inline_css', $customizer_css );
 
