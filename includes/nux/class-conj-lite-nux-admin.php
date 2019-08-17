@@ -50,7 +50,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 			} // End If Statement
 
 			?>
-			<div class="notice notice-warning notice-alt notice-large is-dismissible conj-lite-upsell">
+			<div id="conj-lite-upsell" class="notice notice-warning notice-alt notice-large is-dismissible">
 				<span class="notice__icon"></span>
 				<div class="notice__content">
 					<h2><?php 
