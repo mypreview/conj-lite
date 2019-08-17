@@ -72,7 +72,7 @@ if ( ! function_exists( 'conj_lite_primary_navigation' ) ) :
 		?><div class="primary-navigation">
 			<nav id="site-navigation" class="main-navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><?php
 				/* translators: 1: Open `push-menu` button tag, 2: Close `push-menu` close tag(s). */
-				printf( esc_html__( '%1$sMenu%2$s', 'conj' ), '<button class="handheld-menu-toggle js-offcanvas-toggler js-handheld-offcanvas-toggler">', '<span class="hamburger-nav-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></span></button>' );
+				printf( esc_html__( '%1$sMenu%2$s', 'conj-lite' ), '<button class="handheld-menu-toggle js-offcanvas-toggler js-handheld-offcanvas-toggler">', '<span class="hamburger-nav-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></span></button>' );
 				wp_nav_menu(
 					apply_filters( 'conj_lite_primary_nav_menu_args', array(
 						'theme_location' => 'primary',
