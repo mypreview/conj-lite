@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The arbitrary control class
  */
-class Conj_Lite_More_Control extends WP_Customize_Control {
+final class Conj_Lite_More_Control extends WP_Customize_Control {
 
 	/**
 	 * Renter the control
@@ -44,52 +44,52 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 				<ul>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Header Customizer', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Header Customizer', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Modular Mega-Menu', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Modular Mega-Menu', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Gutenberg Blocks', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Gutenberg Blocks', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%1$s +%2$s Template Blocks', 'more_feature', 'conj-lite' ), '✅', '💯' ); ?></li>
+					printf( esc_html_x( '%1$s +%2$s Template Blocks', 'CONJ PRO feature', 'conj-lite' ), '✅', '💯' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Two-Steps Checkout', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Two-Steps Checkout', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Product Brands', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Product Brands', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Store Vacation', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Store Vacation', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Attribute Swatches', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Attribute Swatches', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Product Quick View', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Product Quick View', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Distraction Free Checkout', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Distraction Free Checkout', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Product Archive Customizer', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Product Archive Customizer', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s WPML Compatible', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s WPML Compatible', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s Google Analytics Integration', 'more_feature', 'conj-lite' ), '✅' ); ?></li>
+					printf( esc_html_x( '%s Google Analytics Integration', 'CONJ PRO feature', 'conj-lite' ), '✅' ); ?></li>
 					<li><?php 
 					/* translators: %s: Emoji unicode */
-					printf( esc_html_x( '%s &hellip;&hellip;and much more', 'more_feature', 'conj-lite' ), '🔥' ); ?></li>
+					printf( esc_html_x( '%s &hellip;&hellip;and much more', 'CONJ PRO feature', 'conj-lite' ), '🔥' ); ?></li>
 				</ul>
 			</p>
 			<p>
 				<?php
 				/* translators: 1: Open anchor tag, 2: Emoji unicode, 3: Close anchor tag. */
-				printf( esc_html__( '%1$sGo Premium %2$s %3$s', 'conj-lite' ), '<a href="https://themeforest.net/item/conj-ecommerce-wordpress-theme/21935639?ref=mypreview" class="button button-primary" target="_blank" rel="noopener">', '💰', '</a>' ); ?>
+				printf( esc_html__( '%1$sGo Premium %2$s %3$s', 'conj-lite' ), sprintf( '<a href="%s" class="button button-primary" target="_blank" rel="noopener noreferrer">', esc_url( CONJ_LITE_THEME_AUTHOR_URI ) ), '💰', '</a>' ); ?>
 			</p>
 			<hr/>
 			<span class="customize-control-title">
@@ -100,7 +100,7 @@ class Conj_Lite_More_Control extends WP_Customize_Control {
 			<p>
 				<?php
 				/* translators: 1: Emoji unicode, 2: Open anchor tag, 3: Close anchor tag, 4: Br tag. */
-				printf( esc_html__( 'Why not leave us a %1$s review on %2$sWordPress.org%3$s?%4$sWe&rsquo;d really appreciate it!', 'conj-lite' ), '⭐⭐⭐⭐⭐', '<a href="https://wordpress.org/support/theme/conj-lite/reviews/#new-post" target="_blank" rel="noopener noreferrer nofollow">', '</a>', '<br/>' ); ?>
+				printf( esc_html_( 'Why not leave us a %1$s review on %2$sWordPress.org%3$s?%4$sWe&rsquo;d really appreciate it!', 'conj-lite' ), '⭐⭐⭐⭐⭐', '<a href="https://wordpress.org/support/theme/conj-lite/reviews/#new-post" target="_blank" rel="noopener noreferrer nofollow">', '</a>', '<br/>' ); ?>
 			</p>
 		</label>
 		<?php
