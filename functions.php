@@ -16,7 +16,7 @@
  *
  * @see 		https://codex.wordpress.org/Theme_Development
  * @see 		https://codex.wordpress.org/Plugin_API
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -28,6 +28,7 @@ define( 'CONJ_LITE_THEME_URI', $conj_lite_theme->get( 'ThemeURI' ) );
 define( 'CONJ_LITE_THEME_AUTHOR', $conj_lite_theme->get( 'Author' ) );
 define( 'CONJ_LITE_THEME_AUTHOR_URI', $conj_lite_theme->get( 'AuthorURI' ) );
 define( 'CONJ_LITE_THEME_VERSION', $conj_lite_theme->get( 'Version' ) );
+define( 'CONJ_LITE_THEME_DEMO_API', 'https://api.mypreview.one/demo-uploads/conj/sites' );
 
 // Back compat functionality
 require get_parent_theme_file_path( '/includes/back-compat.php' );
@@ -52,7 +53,7 @@ require get_parent_theme_file_path( '/includes/conj-lite-template-functions.php'
  *
  * @see 	https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
  */
-if ( class_exists( 'WooCommerce' ) ) {
+if ( conj_lite_is_woocommerce_activated() ) {
 	$conj_lite->woocommerce = require get_parent_theme_file_path( '/includes/woocommerce/class-conj-lite-woocommerce.php' );
 	require get_parent_theme_file_path( '/includes/woocommerce/conj-lite-woocommerce-template-hooks.php' );
 	require get_parent_theme_file_path( '/includes/woocommerce/conj-lite-woocommerce-template-functions.php' );
@@ -66,9 +67,9 @@ if ( class_exists( 'WooCommerce' ) ) {
  * @see 	https://github.com/TGMPA/TGM-Plugin-Activation
  */
 if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'activate_plugins' ) ) {
-	$conj_lite->admin = require get_parent_theme_file_path( '/includes/nux/class-conj-lite-admin.php' );
+	$conj_lite->admin = require get_parent_theme_file_path( '/includes/nux/class-conj-lite-nux-admin.php' );
 	require get_parent_theme_file_path( '/includes/nux/tgmpa/class-tgm-plugin-activation.php' );
-	require get_parent_theme_file_path( '/includes/nux/tgmpa/conj-lite-register-tgmpa-plugins.php' );
+	require get_parent_theme_file_path( '/includes/nux/tgmpa/class-conj-lite-nux-tgmpa-register.php' );
 
 	/**
 	 * Query whether "One click demo import" is activated or NOT.
@@ -77,7 +78,7 @@ if ( is_admin() && current_user_can( 'install_plugins' ) && current_user_can( 'a
 	 * @see 	https://developer.wordpress.org/reference/functions/current_user_can/
 	 */
 	if ( class_exists( 'OCDI_Plugin' ) ) {
-		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/ocdi/class-conj-lite-demo-import.php' );
+		$conj_lite->demo_import = require get_parent_theme_file_path( '/includes/nux/ocdi/class-conj-lite-nux-ocdi.php' );
 	} // End If Statement
 } // End If Statement
 
