@@ -58,7 +58,7 @@ if ( ! class_exists( 'Conj_Lite_NUX_Admin' ) ) :
 						printf( esc_html_x( 'Smiles, shall we take it to the next level? %s', 'upsell notice heading', 'conj-lite' ), '🤔' ); 
 					?></h2>
 					<p>
-						<?php _ex( 'Thank you for choosing CONJ Lite to be as your online presence. We&rsquo;ve built a brand new, upgraded experience for curious and most valuable site owners like you ― it&rsquo;s just a few clicks away.', 'upsell notice content', 'conj-lite' ); ?>
+						<?php _ex( 'Thank you for choosing CONJ Lite for your online presence. We&rsquo;ve built a brand new, upgraded experience for curious and most valuable site owners like you ― it&rsquo;s just a few clicks away.', 'upsell notice content', 'conj-lite' ); ?>
 					</p>
 					<p>
 						<?php _ex( 'We are intended to keep your shopping experience hassle-free, with offering risk-free 14 days refund to your purchase. Give us a try, and we promise you won&rsquo;t regret it.', 'upsell notice content', 'conj-lite' ); ?>
