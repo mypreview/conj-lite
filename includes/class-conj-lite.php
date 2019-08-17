@@ -2,7 +2,7 @@
 /**
  * Conj Lite Class
  *
- * @since 	    1.1.1
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
@@ -116,7 +116,8 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				'default-text-color' => '6B6F81',
 				'width' => 1950,
 				'height' => 500,
-				'flex-height' => TRUE
+				'flex-height' => TRUE,
+				'wp-head-callback' => ''
 			) ) );
 
 			/**
@@ -194,88 +195,84 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 
 			// Block font sizes
 			add_theme_support( 'editor-font-sizes', apply_filters( 'conj_lite_editor_font_sizes', array(
-
 			    array(
-			        'name' => __( 'Small', 'conj-lite' ),
-			        'shortName' => __( 'S', 'conj-lite' ),
+			        'name' => _x( 'Small', 'editor font size', 'conj-lite' ),
+			        'shortName' => _x( 'S', 'editor font size', 'conj-lite' ),
 			        'size' => 13.6,
 			        'slug' => 'small'
 			    ),
 			    array(
-			        'name' => __( 'Regular', 'conj-lite' ),
-			        'shortName' => __( 'M', 'conj-lite' ),
+			        'name' => _x( 'Regular', 'editor font size', 'conj-lite' ),
+			        'shortName' => _x( 'M', 'editor font size', 'conj-lite' ),
 			        'size' => 16,
 			        'slug' => 'regular'
 			    ),
 			    array(
-			        'name' => __( 'Large', 'conj-lite' ),
-			        'shortName' => __( 'L', 'conj-lite' ),
+			        'name' => _x( 'Large', 'editor font size', 'conj-lite' ),
+			        'shortName' => _x( 'L', 'editor font size', 'conj-lite' ),
 			        'size' => 21.25,
 			        'slug' => 'large'
 			    ),
 			    array(
-			        'name' => __( 'Larger', 'conj-lite' ),
-			        'shortName' => __( 'XL', 'conj-lite' ),
+			        'name' => _x( 'Larger', 'editor font size', 'conj-lite' ),
+			        'shortName' => _x( 'XL', 'editor font size', 'conj-lite' ),
 			        'size' => 35,
 			        'slug' => 'larger'
 			    )
-
 			) ) );
 		
 			// Block color palettes
 			add_theme_support( 'editor-color-palette', apply_filters( 'conj_lite_editor_color_palette', array(
-				
 				array(
-					'name' => __( 'Black', 'conj-lite' ),
+					'name' => _x( 'Black', 'editor color', 'conj-lite' ),
 					'slug' => 'black',
 					'color' => '#000000'
 				),
 				array(
-					'name' => __( 'Mako', 'conj-lite' ),
+					'name' => _x( 'Mako', 'editor color', 'conj-lite' ),
 					'slug' => 'mako',
 					'color' => '#464855'
 				),
 				array(
-					'name' => __( 'Storm Gray', 'conj-lite' ),
+					'name' => _x( 'Storm Gray', 'editor color', 'conj-lite' ),
 					'slug' => 'storm-gray',
 					'color' => '#6B6F82'
 				),
 				array(
-					'name' => __( 'Manatee', 'conj-lite' ),
+					'name' => _x( 'Manatee', 'editor color', 'conj-lite' ),
 					'slug' => 'manatee',
 					'color' => '#898EA3'
 				),
 				array(
-					'name' => __( 'Cadet Blue', 'conj-lite' ),
+					'name' => _x( 'Cadet Blue', 'editor color', 'conj-lite' ),
 					'slug' => 'cadet-blue',
 					'color' => '#A7ABBE'
 				),
 				array(
-					'name' => __( 'Martinique', 'conj-lite' ),
+					'name' => _x( 'Martinique', 'editor color', 'conj-lite' ),
 					'slug' => 'martinique',
 					'color' => '#2D2E4F'
 				),
 				array(
-					'name' => __( 'Victoria', 'conj-lite' ),
+					'name' => _x( 'Victoria', 'editor color', 'conj-lite' ),
 					'slug' => 'victoria',
 					'color' => '#414B92'
 				),
 				array(
-					'name' => __( 'Cornflower Blue', 'conj-lite' ),
+					'name' => _x( 'Cornflower Blue', 'editor color', 'conj-lite' ),
 					'slug' => 'cornflower-blue',
 					'color' => '#666EE8'
 				),
 				array(
-					'name' => __( 'White Lilac', 'conj-lite' ),
+					'name' => _x( 'White Lilac', 'editor color', 'conj-lite' ),
 					'slug' => 'white-lilac',
 					'color' => '#F4F5FA'
 				),
 				array(
-					'name' => __( 'White', 'conj-lite' ),
+					'name' => _x( 'White', 'editor color', 'conj-lite' ),
 					'slug' => 'white',
 					'color' => '#FFFFFF'
 				)
-
 			) ) );
 
 		}
@@ -318,37 +315,50 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		public function widgets_init() {
 
 			$sidebar_args['sidebar'] = array(
-				'name' => __( 'Sidebar', 'conj-lite' ),
 				'id' => 'sidebar-1',
-				'description' => __( 'Widgets added to this region will appear in archive/shop pages.', 'conj-lite' )
+				'name' => _x( 'Sidebar', 'sidebar name', 'conj-lite' ),
+				'description' => _x( 'Widgets in this area will be shown in header navigation area.', 'sidebar description', 'conj-lite' )
 			);
 
+			$rows = intval( apply_filters( 'conj_lite_footer_widget_rows', 1 ) );
 			$regions = intval( apply_filters( 'conj_lite_footer_widget_columns', 4 ) );
 
-			for ( $region = 1; $region <= $regions; $region++ ) {
-				$footer = sprintf( 'footer_%d', $region );
-				/* translators: 1: Decimal number. */
-				$footer_region_name = sprintf( __( 'Footer Column %1$d', 'conj-lite' ), $region );
-				/* translators: 1: Decimal number. */
-				$footer_region_description = sprintf( __( 'Widgets added here will appear in column %1$d of the footer.', 'conj-lite' ), $region );
-				$sidebar_args[ $footer ] = array(
-					'name' => $footer_region_name,
-					/* translators: 1: Decimal number. */
-					'id' => sprintf( 'footer-%d', $region ),
-					'description' => $footer_region_description,
-				);
-			}
+			for ( $row = 1; $row <= $rows; $row++ ) {
+				for ( $region = 1; $region <= $regions; $region++ ) {
+					$footer_n = $region + $regions * ( $row - 1 ); // Defines footer sidebar ID.
+					$footer = sprintf( 'footer_%d', $footer_n );
+
+					if ( 1 === $rows ) {
+						/* translators: 1: Decimal number. */
+						$footer_region_name = sprintf( _x( 'Footer Column %1$d', 'sidebar name', 'conj-lite' ), $region );
+						/* translators: 1: Decimal number. */
+						$footer_region_description = sprintf( _x( 'Widgets added here will appear in column %1$d of the footer.', 'sidebar description', 'conj-lite' ), $region );
+					} else {
+						/* translators: 1: Decimal number, 2: Decimal number. */
+						$footer_region_name = sprintf( _x( 'Footer Row %1$d - Column %2$d', 'sidebar name', 'conj-lite' ), $row, $region );
+						/* translators: 1: Decimal number. */
+						$footer_region_description = sprintf( _x( 'Widgets added here will appear in column %1$d of footer row %2$d.', 'sidebar description', 'conj-lite' ), $region, $row );
+					} // End If Statement
+
+					$sidebar_args[ $footer ] = array(
+						'name' => $footer_region_name,
+						/* translators: 1: Decimal number. */
+						'id' => sprintf( 'footer-%d', $footer_n ),
+						'description' => $footer_region_description,
+					);
+				} // End of the loop
+			} // End of the loop
 
 			$sidebar_args = apply_filters( 'conj_lite_sidebar_args', $sidebar_args );
 
 			foreach ( $sidebar_args as $sidebar => $args ) {
+				$title_wrapper_open = NULL;
+				$title_wrapper_close = NULL;
+
 				// Add wrapper around the widget title on footer section
 				if ( preg_match( '/footer-[0-9]+/', $args['id'] ) ) {
-					$title_wrapper_open = '<div class="widget-title__wrapper">';
+					$title_wrapper_open = '<div class="widget-title-wrapper">';
 					$title_wrapper_close = '</div>';
-				} else {
-					$title_wrapper_open = '';
-					$title_wrapper_close = '';
 				} // End If Statement
 
 				$widget_tags = array(
@@ -371,8 +381,8 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				$widget_tags = apply_filters( $filter_hook, $widget_tags );
 				if ( is_array( $widget_tags ) ) {
 					register_sidebar( $args + $widget_tags );
-				}
-			}
+				} // End If Statement
+			} // End of the loop
 
 		}
 
@@ -431,7 +441,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		/**
 		 * Enqueue scripts and styles.
 		 *
-		 * @see 	https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 		 * @access 	public
@@ -444,19 +453,17 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * 
 			 * @see 	https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L276
 			 */
-			wp_register_style( 'conj-lite-google-font', self::google_fonts_url(), array(), NULL );
+			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_THEME_VERSION, 'all' );
 
-			if ( NULL !== self::google_fonts_url() ) {
-				wp_enqueue_style( 'conj-lite-google-font' );
-			} // End If Statement
-
-			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0' );
-			wp_register_style( 'js-offcanvas', get_theme_file_uri( '/assets/css/vendor/js-offcanvas.css' ), FALSE, '1.2.9' );
-			wp_register_style( 'slinky', get_theme_file_uri( '/assets/css/vendor/slinky.css' ), FALSE, '4.0.2' );
-			
+			/**
+			 * The core CSS libraries can be found in /assets/css/vendor/
+			 */
+			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0', 'all' );
+			wp_register_style( 'js-offcanvas', get_theme_file_uri( '/assets/css/vendor/js-offcanvas.css' ), FALSE, '1.2.9', 'screen' );
+			wp_register_style( 'slinky', get_theme_file_uri( '/assets/css/vendor/slinky.css' ), FALSE, '4.0.2', 'screen' );
 			$stylesheet_deps = (array) apply_filters( 'conj_lite_vendor_stylesheet_deps', array( 'feather', 'js-offcanvas', 'slinky' ) );
-
-			wp_enqueue_style( 'conj-lite-styles', get_stylesheet_uri(), $stylesheet_deps, CONJ_LITE_THEME_VERSION );
+			wp_enqueue_style( 'conj-lite-styles', sprintf( '%s/style.css', get_template_directory_uri() ), $stylesheet_deps, CONJ_LITE_THEME_VERSION );
+			wp_style_add_data( 'conj-lite-styles', 'rtl', 'replace' );
 			wp_add_inline_style( 'conj-lite-styles', Conj_Lite_Customizer_Styles::css() );
 
 			/**
@@ -467,9 +474,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			wp_register_script( 'conj-lite-underscores-skip-link-focus-fix', get_theme_file_uri( '/assets/js/vendor/skip-link-focus-fix.js' ), array( 'jquery', 'conj-lite-underscores-navigation' ), '20151215', TRUE );
 			wp_register_script( 'slinky', get_theme_file_uri( '/assets/js/vendor/slinky.js' ), array( 'jquery', 'js-offcanvas' ), '4.0.2', TRUE );
 			wp_register_script( 'jquery-fitvids', get_theme_file_uri( '/assets/js/vendor/jquery.fitvids.js' ), array( 'jquery' ), '1.1.0', TRUE );
-
 			$javascript_deps = (array) apply_filters( 'conj_lite_vendor_javascript_deps', array( 'jquery', 'js-offcanvas', 'conj-lite-underscores-navigation', 'conj-lite-underscores-skip-link-focus-fix', 'slinky', 'jquery-fitvids' ) );
-
 			wp_enqueue_script( 'conj-lite-scripts', get_theme_file_uri( '/assets/js/script.js' ), $javascript_deps, CONJ_LITE_THEME_VERSION, TRUE );
 
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -481,7 +486,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		/**
 		 * Enqueue extra CSS & JavaScript to improve the user experience in the WordPress dashboard.
 		 *
-		 * @see 	https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_localize_script/
@@ -493,7 +497,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			wp_enqueue_style( 'conj-lite-admin-styles', get_theme_file_uri( '/assets/admin/css/style.css' ), array(), CONJ_LITE_THEME_VERSION, 'all' );
 
 			$conj_lite_admin_l10n = array(
-				'dismiss_upsell_notice_nonce' => wp_create_nonce( 'conj_lite_upsell_notice_dismiss_nonce' )
+				'dismiss_upsell_nonce' => wp_create_nonce( 'conj-lite-upsell-dismiss-nonce' )
 			);
 
 			wp_register_script( 'conj-lite-admin-scripts', get_theme_file_uri( '/assets/admin/js/script.js' ), array( 'jquery' ), CONJ_LITE_THEME_VERSION, TRUE );
@@ -519,15 +523,10 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * 
 			 * @see 	https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L276
 			 */
-			wp_register_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, NULL );
-
-			if ( NULL !== self::google_fonts_url() ) {
-				wp_enqueue_style( 'conj-lite-google-font' );
-			} // End If Statement
-
-			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0' );
-			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks', 'feather' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks' ), CONJ_LITE_THEME_VERSION, 'all' );
 			wp_style_add_data( 'conj-lite-block-editor-styles', 'rtl', 'replace' );
+			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-block-editor', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
 
 			// General			
 			$general_background_color = sanitize_hex_color_no_hash( get_background_color() );
@@ -658,8 +657,6 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 
 			wp_add_inline_style( 'conj-lite-block-editor-styles', wp_strip_all_tags( $inline_css ) );
 
-			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-block-editor', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
-
 		}
 
 		/**
@@ -698,8 +695,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		public function child_scripts() {
 
 			if ( is_child_theme() ) {
-				$child_theme = wp_get_theme( get_stylesheet() );
-				wp_enqueue_style( 'conj-lite-child-style', get_stylesheet_uri(), array(), $child_theme->get( 'Version' ) );
+				wp_enqueue_style( 'conj-child-styles', get_theme_file_uri( '/style.css' ), array(), NULL, 'all' );
 			} // End If Statement
 
 		}
@@ -726,7 +722,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 
 			// Add class if we're viewing the Customizer for easier styling of theme options.
 			if ( is_customize_preview() ) {
-				$classes[] = 'conj-lite-customizer';
+				$classes[] = 'customizer-running';
 			} // End If Statement
 
 			// Add a class if there is a custom header.
@@ -734,33 +730,22 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				$classes[] = 'has-header-image';
 			} // End If Statement
 
+			$layout_sidebar = (string) get_theme_mod( 'conj_layout_sidebar', 'left-sidebar' );
 			// Add class if sidebar is used.
-			if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() ) {
+			if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() && ! conj_lite_is_fluid_template() ) {
 				$classes[] = 'has-sidebar';
-
-				$layout_sidebar = (string) get_theme_mod( 'conj_lite_layout_sidebar', 'left-sidebar' );
 				// Add a class to define sidebar placement.
 				if ( ! empty( $layout_sidebar ) ) {
 					$classes[] = esc_attr( $layout_sidebar );
 				} // End If Statement
 			} // End If Statement
 
-			// Add class if the site title and tagline is hidden.
-			if ( 'blank' === get_header_textcolor() ) {
-				$classes[] = 'title-tagline-hidden';
-			} // End If Statement
-
 			// Add class if the current page is a blog post archive/single.
-			if ( conj_lite_is_blog_archive() ) {
-				$classes[]	= 'conj-lite-blog__archive';
+			if ( conj_is_blog_archive() ) {
+				$classes[]	= 'blog-archive';
 			} // End If Statement
 
-			// Add class if WooCommerce breadcrumbs removed.
-			if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
-				$classes[]	= 'no-wc-breadcrumb';
-			} // End If Statement
-
-			return $classes;
+			return apply_filters( 'conj_lite_body_classes', (array) $classes );
 
 		}
 
@@ -881,7 +866,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		public function aside_to_infinity_and_beyond( $content ) {
 
 			if ( has_post_format( 'aside' ) && ! is_singular() ) {
-				$content .= ' <a href="' . esc_url( get_permalink() ) . '">&#8734;</a>';
+				$content .= sprintf( ' <a href="%s">&#8734;</a>', esc_url( get_permalink() ) );
 			} // End If Statement
 
 			return $content;
