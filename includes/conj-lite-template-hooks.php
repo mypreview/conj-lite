@@ -2,7 +2,7 @@
 /**
  * Conj Lite hooks
  *
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -24,6 +24,15 @@ add_action( 'conj_lite_before_site', 		'conj_lite_handheld_navigation',     		  
 add_action( 'conj_lite_header', 			'conj_lite_skip_links',                         0 );
 add_action( 'conj_lite_header', 			'conj_lite_site_branding',                     10 );
 add_action( 'conj_lite_header', 			'conj_lite_primary_navigation',                40 );
+
+/**
+ * Site container
+ *
+ * @see  conj_site_container_wrapper()
+ * @see  conj_site_container_wrapper_close()
+ */
+add_action( 'conj_site_content_top', 	 	'conj_lite_site_container_wrapper', 			5 );
+add_action( 'conj_site_content_bottom',		'conj_lite_site_container_wrapper_close', 	 	5 );
 
 /**
  * Footer
