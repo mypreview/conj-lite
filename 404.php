@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (not found)
  *
  * @link 		https://codex.wordpress.org/Creating_an_Error_404_Page
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -20,7 +20,7 @@ get_header(); ?>
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'conj-lite' ); ?></p>
 					<div aria-label="<?php esc_html_e( 'Search', 'conj-lite' ); ?>">
 						<?php
-						if ( class_exists( 'WooCommerce' ) ) {
+						if ( conj_lite_is_woocommerce_activated() ) {
 			                the_widget( 'WC_Widget_Product_Search', 'title=' );
 						} else {
 							get_search_form();
@@ -31,22 +31,19 @@ get_header(); ?>
 					<section class="error-404-first">
 						<?php
 
-						if ( class_exists( 'WooCommerce' ) ) {
-
+						if ( conj_lite_is_woocommerce_activated() ) {
 							/* translators: 1: Div tag open 2: Aria-label quotation close. */
 							printf( esc_html__( '%1$sPromoted Products%2$s', 'conj-lite' ), '<div class="promoted-products" aria-label="', '">' );
 								conj_lite_wc_promoted_products();
-							printf( '</div><!-- .promoted-products -->' );
+							?></div><!-- .promoted-products --><?php
 
 							/* translators: 1: Nav tag open 2: Aria-label quotation close. */
 							printf( esc_html__( '%1$sProduct Categories%2$s', 'conj-lite' ), '<nav class="product-categories" aria-label="', '">' );
 								the_widget( 'WC_Widget_Product_Categories', array(
 									'count' => 1,
 								) );
-							printf( '</nav><!-- .product-categories -->' );
-						
+							?></nav><!-- .product-categories --><?php
 						} else {
-
 							the_widget( 'WP_Widget_Recent_Posts' );
 
 							/* translators: 1: Div tag open 2: Aria-label quotation close. */
@@ -61,24 +58,24 @@ get_header(); ?>
 									'title_li' => '',
 									'number' => 10
 								) );
-							printf( '</ul></div><!-- .widget_categories -->' );
+							?></ul></div><!-- .widget_categories --><?php
 						} // End If Statement
 						?>
 					</section><!-- .error-404-first -->
 
 					<section class="error-404-last">
-						<?php
-						if ( class_exists( 'WooCommerce' ) ) {
-
+					<?php
+						if ( conj_lite_is_woocommerce_activated() ) {
 							/* translators: 1: Div tag open 2: Aria-label quotation close. */
 							printf( esc_html__( '%1$sBest-Selling Products%2$s', 'conj-lite' ), '<div class="best-selling-products" aria-label="', '">' );
 								/* translators: 1: Head tag open 2: Head tag close. */
 								printf( esc_html__( '%1$sBest-Selling Products%2$s', 'conj-lite' ), '<h2>', '</h2>' );
+								
 								echo wp_kses_post( conj_lite_do_shortcode( 'best_selling_products', array(
 									'per_page' => 4,
 									'columns' => 4
 								) ) );
-							printf( '</div><!-- .best-selling-products -->' );
+							?></div><!-- .best-selling-products --><?php
 
 						} else {
 							/* translators: %1$s: smiley */
@@ -87,7 +84,7 @@ get_header(); ?>
 
 							the_widget( 'WP_Widget_Tag_Cloud' );
 						} // End If Statement
-						?>
+					?>
 					</section><!-- .error-404-last -->
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
