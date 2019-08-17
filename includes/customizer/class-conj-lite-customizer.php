@@ -2,7 +2,7 @@
 /**
  * Conj Lite Customizer class
  *
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -16,7 +16,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 	/**
 	 * The Conj Customizer class
 	 */
-	class Conj_Lite_Customizer {
+	final class Conj_Lite_Customizer {
 
 		/**
 		 * Setup class.
@@ -32,7 +32,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 		}
 
 		/**
-		 * Fires once WordPress has loaded, allowing scripts and styles to be initialized.
+		 * Used to customize and manipulate the Theme Customization admin screen.
 		 *
 		 * @see  	https://developer.wordpress.org/reference/hooks/customize_register/
 		 * @see  	https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/
@@ -55,8 +55,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 			$wp_customize->add_panel( 'conj_lite_colors_pnl', array(
 			    'priority' => 30,
 			    'capability' => 'edit_theme_options',
-			    'title' => esc_html__( 'Colors', 'conj-lite' ),
-			    'description' => esc_html__( 'This option allows you to choose a color, view color suggestions, refine with the color picker and apply background color changes.', 'conj-lite' )
+			    'title' => esc_html_x( 'Colors', 'panel title', 'conj-lite' ),
+			    'description' => esc_html_x( 'This option allows you to choose a color, view color suggestions, refine with the color picker and apply background color changes.', 'panel description', 'conj-lite' )
 			) );
 
 			/**
@@ -66,21 +66,21 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 			$wp_customize->add_section( 'conj_lite_button_colors_sec', array(
 			    'priority' => 20,
 			    'capability' => 'edit_theme_options',
-			    'title' => esc_html__( 'Button', 'conj-lite' ),
+			    'title' => esc_html_x( 'Button', 'section title', 'conj-lite' ),
 			    'panel' => 'conj_lite_colors_pnl'
 			) );
 
 			$wp_customize->add_section( 'conj_lite_layout_sec', array(
 			    'priority' => 100,
 			    'capability' => 'edit_theme_options',
-			    'title' => esc_html__( 'Layout', 'conj-lite' )
+			    'title' => esc_html_x( 'Layout', 'section title', 'conj-lite' )
 			) );
 
             $wp_customize->add_section( 'conj_lite_more_sec', array(
                 'priority' => 9999,
                 'capability' => 'edit_theme_options',
                 /* translators: %s: Emoji unicode */
-                'title' => sprintf( esc_html__( 'More %s', 'conj-lite' ), '⚡' )
+                'title' => sprintf( esc_html_x( 'More %s', 'section title', 'conj-lite' ), '⚡' )
             ) );
 
 			/**
@@ -95,7 +95,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_general_heading_color', array(
-                'label' => esc_html__( 'Heading', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Heading', 'control label', 'conj-lite' ) ,
                 'section' => 'colors',
                 'settings' => 'conj_lite_general_heading_color',
                 'priority' => 20
@@ -109,7 +109,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_general_text_color', array(
-                'label' => esc_html__( 'Text', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Text', 'control label', 'conj-lite' ) ,
                 'section' => 'colors',
                 'settings' => 'conj_lite_general_text_color',
                 'priority' => 30
@@ -123,7 +123,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_general_link_color', array(
-                'label' => esc_html__( 'Link', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Link', 'control label', 'conj-lite' ) ,
                 'section' => 'colors',
                 'settings' => 'conj_lite_general_link_color',
                 'priority' => 40
@@ -137,8 +137,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_general_link_alt_color', array(
-                'label' => esc_html__( 'Link', 'conj-lite' ) ,
-                'description' => esc_html__( 'Alternate', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Link', 'control label', 'conj-lite' ) ,
+                'description' => esc_html_x( 'Alternate', 'control description', 'conj-lite' ) ,
                 'section' => 'colors',
                 'settings' => 'conj_lite_general_link_alt_color',
                 'priority' => 50
@@ -152,7 +152,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_button_text_color', array(
-                'label' => esc_html__( 'Text', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Text', 'control label', 'conj-lite' ) ,
                 'section' => 'conj_lite_button_colors_sec',
                 'settings' => 'conj_lite_button_text_color',
                 'priority' => 10
@@ -166,8 +166,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_button_alt_text_color', array(
-                'label' => esc_html__( 'Text', 'conj-lite' ) ,
-                'description' => esc_html__( 'Alternate', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Text', 'control label', 'conj-lite' ) ,
+                'description' => esc_html_x( 'Alternate', 'control description', 'conj-lite' ) ,
                 'section' => 'conj_lite_button_colors_sec',
                 'settings' => 'conj_lite_button_alt_text_color',
                 'priority' => 20
@@ -181,7 +181,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> 'sanitize_hex_color'
             ) );
             $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'conj_lite_button_background_color', array(
-                'label' => esc_html__( 'Background', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Background', 'control label', 'conj-lite' ) ,
                 'section' => 'conj_lite_button_colors_sec',
                 'settings' => 'conj_lite_button_background_color',
                 'priority' => 30
@@ -199,13 +199,13 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback'	=> array( $this, 'sanitize_choices' )
             ) );
             $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'conj_lite_layout_sidebar', array(
-            	'label' => esc_html__( 'Sidebar layout', 'conj-lite' ) ,
+            	'label' => esc_html_x( 'Sidebar layout', 'control label', 'conj-lite' ) ,
                 'type' => 'radio',
                 'section' => 'conj_lite_layout_sec',
                 'settings' => 'conj_lite_layout_sidebar',
                 'choices' => array(
-        			'left-sidebar' => esc_html__( 'Left', 'conj-lite' ),
-                    'right-sidebar' => esc_html__( 'Right', 'conj-lite' )
+        			'left-sidebar' => esc_html_x( 'Left', 'control choice', 'conj-lite' ),
+                    'right-sidebar' => esc_html_x( 'Right', 'control choice', 'conj-lite' )
                 ),
                 'priority' => 10
             ) ) );
@@ -220,7 +220,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
                 'sanitize_callback' => 'sanitize_text_field'
             ) );
             $wp_customize->add_control( new Conj_Lite_More_Control( $wp_customize, 'conj_lite_more', array(
-                'label' => esc_html__( 'Looking for more options?', 'conj-lite' ) ,
+                'label' => esc_html_x( 'Looking for more options?', 'control label', 'conj-lite' ) ,
                 'section' => 'conj_lite_more_sec',
                 'settings' => 'conj_lite_more',
                 'priority' => 10
@@ -229,27 +229,24 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
 			// Default controls
 			$wp_customize->remove_control( 'display_header_text' );
 			$wp_customize->get_section( 'colors' )->panel = 'conj_lite_colors_pnl';
-			$wp_customize->get_section( 'colors' )->title = esc_html__( 'General', 'conj-lite' );
+			$wp_customize->get_section( 'colors' )->title = esc_html_x( 'General', 'section title', 'conj-lite' );
 			$wp_customize->get_section( 'colors' )->priority = 10;
 			$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
-			$wp_customize->get_control( 'header_textcolor' )->label = esc_html__( 'Site title', 'conj-lite' );
+			$wp_customize->get_control( 'header_textcolor' )->label = esc_html_x( 'Site title', 'control label', 'conj-lite' );
             $wp_customize->get_control( 'header_textcolor' )->priority = 10;
-			$wp_customize->get_control( 'background_color' )->label = esc_html__( 'Background', 'conj-lite' );
+			$wp_customize->get_control( 'background_color' )->label = esc_html_x( 'Background', 'control label', 'conj-lite' );
             $wp_customize->get_control( 'background_color' )->priority = 70;
 
 			// Selective refresh.
 			if ( isset( $wp_customize->selective_refresh ) ) {
-
 				$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 				$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-
 				$wp_customize->selective_refresh->add_partial( 'blogname', array(
-					'selector' => '.site-title.beta a',
+					'selector' => '.site-title a',
 					'render_callback' => function() {
 						return get_bloginfo( 'name', 'display' );
 					}
 				) );
-
 				$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 					'selector' => '.site-description',
 					'render_callback' => function() {
@@ -270,7 +267,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer' ) ) :
          */
         public function panels_enqueue() {
 
-            wp_enqueue_style( 'conj-lite-panel-customizer-styles', get_theme_file_uri( '/assets/admin/css/panel-customizer.css' ), array(), CONJ_LITE_THEME_VERSION, 'all' );
+            wp_enqueue_style( 'conj-lite-panel-customizer-styles', get_theme_file_uri( '/assets/admin/css/panel-customizer.css' ), array(), CONJ_LITE_THEME_VERSION, 'screen' );
+            wp_style_add_data( 'conj-lite-panel-customizer-styles', 'rtl', 'replace' );
 
         }
 
