@@ -503,6 +503,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 		public function admin_enqueue() {
 
 			wp_enqueue_style( 'conj-lite-admin-styles', get_theme_file_uri( '/assets/admin/css/style.css' ), array(), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_style_add_data( 'conj-lite-admin-styles', 'rtl', 'replace' );
 
 			$conj_lite_admin_l10n = array(
 				'dismiss_upsell_nonce' => wp_create_nonce( 'conj-lite-upsell-dismiss-nonce' )
