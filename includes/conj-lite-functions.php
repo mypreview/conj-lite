@@ -1,8 +1,8 @@
 <?php
 /**
- * Conj functions.
+ * Conj Lite functions.
  *
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -24,30 +24,6 @@ if ( ! function_exists( 'conj_lite_is_front_page_configured' ) ) :
 endif;
 
 /**
- * Checks if the current page is a blog post archive/single.
- *
- * @uses 	is_archive()
- * @uses 	is_author()
- * @uses 	is_category()
- * @uses 	is_home()
- * @uses 	is_single()
- * @uses 	is_tag()
- * @uses 	get_post_type()
- * @return  bool
- */
-if ( ! function_exists( 'conj_lite_is_blog_archive' ) ) :
-	function conj_lite_is_blog_archive() {
-
-		if ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag() ) && 'post' === get_post_type() ) {
-			return TRUE;
-		} else {
-			return FALSE;
-		} // End If Statement
-
-	}
-endif;
-
-/**
  * Checks if the current page is the fluid template.
  *
  * @uses 	is_page_template()
@@ -57,6 +33,46 @@ if ( ! function_exists( 'conj_lite_is_fluid_template' ) ) :
 	function conj_lite_is_fluid_template() {
 
 		return is_page_template( 'page-templates/template-fluid.php' )  ?  TRUE  :  FALSE;
+
+	}
+endif;
+
+/**
+ * Checks if the current page is a blog post archive/single.
+ *
+ * @uses 	is_archive()
+ * @uses 	is_author()
+ * @uses 	is_category()
+ * @uses 	is_home()
+ * @uses 	is_tag()
+ * @uses 	get_post_type()
+ * @return  bool
+ */
+if ( ! function_exists( 'conj_lite_is_blog_archive' ) ) :
+	function conj_lite_is_blog_archive() {
+
+		if ( ( is_archive() || is_author() || is_category() || is_home() || is_tag() ) && 'post' === get_post_type() ) {
+			return TRUE;
+		} else {
+			return FALSE;
+		} // End If Statement
+
+	}
+endif;
+
+/**
+ * Query WooCommerce activation
+ *
+ * @return  bool
+ */
+if ( ! function_exists( 'conj_lite_is_woocommerce_activated' ) ) :
+	function conj_lite_is_woocommerce_activated() {
+
+		if ( class_exists( 'WooCommerce' ) ) {
+			return TRUE;
+		} else {
+			return FALSE;
+		} // End If Statement
 
 	}
 endif;
@@ -80,6 +96,41 @@ if ( ! function_exists( 'conj_lite_do_shortcode' ) ) :
 		} // End If Statement
 
 		return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+
+	}
+endif;
+
+/**
+ * Gets the sidebar content based on given sidebar ID.
+ *
+ * @link 	https://forums.envato.com/t/get-dynamic-sidebar/76169/3?u=mypreview
+ * @uses 	ob_start()
+ * @uses 	ob_get_clean()
+ * @uses 	is_active_sidebar()
+ * @uses 	dynamic_sidebar()
+ * @param  	string $id     	ID of required registered sidebar.
+ * @return 	string|html 	The content of sidebar returned with HTML markup without "echo".
+ */
+if ( ! function_exists( 'conj_lite_get_dynamic_sidebar' ) ) :
+	function conj_lite_get_dynamic_sidebar( $id = NULL ) {
+
+		// Bail out, if the ID is empty or missing.
+		if ( empty( $id ) ) {
+			return NULL;
+		} // End If Statement
+
+		// Bail out, if there is no sidebar registered with given ID.
+		if ( ! is_active_sidebar( $id ) ) {
+			return NULL;
+		} // End If Statement
+
+		$sidebar_id = esc_attr( $id );
+
+		ob_start();
+		dynamic_sidebar( $sidebar_id );
+		$sidebar_contents = ob_get_clean();
+
+		return $sidebar_contents;
 
 	}
 endif;
@@ -148,15 +199,13 @@ if ( ! function_exists( 'conj_lite_post_title' ) ) :
 			return;
 		} // End If Statement
 
-		printf( '<header class="entry-header">' );
-
+		?><header class="entry-header"><?php
 			if ( is_singular() ) {
 				the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
 			} else {
-				the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 			} // End If Statement
-
-		printf( '</header><!-- .entry-header -->' );
+		?></header><!-- .entry-header --><?php
 
 	}
 endif;
@@ -177,11 +226,11 @@ if ( ! function_exists( 'conj_lite_posted_on' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author */
 			esc_html__( 'by %s', 'conj-lite' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
+			sprintf( '<span class="author vcard"><a class="url fn n" href="%s">%s</a></span>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() )
 		);
 
 		// Finally, let's write all of this to the page.
-		echo '<span class="posted-on">' . conj_lite_time_link() . '</span><span class="byline">' . wp_kses_post( $byline ) . '</span>';
+		printf( '<span class="posted-on">%s</span><span class="byline">%s</span>', conj_lite_time_link(), wp_kses_post( $byline ) );
 
 	}
 endif;
@@ -216,7 +265,7 @@ if ( ! function_exists( 'conj_lite_time_link' ) ) :
 		// Wrap the time string in a link, and preface it with 'Posted on'.
 		return sprintf(
 			/* translators: 1: Open span tag, 2: Close span tag, 3: Post date. */
-			esc_html__( '%1$sPosted on%2$s %3$s', 'conj-lite' ), '<span class="screen-reader-text">', '</span>', '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html__( '%1$sPosted on%2$s %3$s', 'conj-lite' ), '<span class="screen-reader-text">', '</span>', sprintf( '<a href="%s" rel="bookmark">%s</a>', esc_url( get_permalink() ), $time_string )
 		);
 
 	}
@@ -237,9 +286,9 @@ if ( ! function_exists( 'conj_lite_comments_link' ) ) :
 
 		$is_comment_open = comments_open( $post->ID );
 
-		if ( $is_comment_open && FALSE === post_password_required() ) {
+		if ( $is_comment_open && ! post_password_required() ) {
 			/* translators: %: Number of comments */
-			return comments_popup_link( '<span class="leave-reply">' . esc_html__( 'Leave a comment', 'conj-lite' ) . '</span>', esc_html__( 'One Comment', 'conj-lite' ), esc_html__( '% Comments', 'conj-lite' ), 'comments-link' );
+			return comments_popup_link( sprintf( '<span class="leave-reply">%s</span>', esc_html_x( 'Leave a comment', 'link to the comments', 'conj-lite' ) ), esc_html_x( 'One Comment', 'link to the comments', 'conj-lite' ), esc_html_x( '% Comments', 'link to the comments', 'conj-lite' ), 'comments-link' );
 		} // End If Statement
 
 		return NULL;
@@ -261,10 +310,8 @@ if ( ! function_exists( 'conj_lite_entry_footer' ) ) :
 
 		// Empty space used between list items, there is no space or comma
 		$separate_meta = '';
-
 		// Get Categories for posts.
 		$categories_list = get_the_category_list( $separate_meta );
-
 		// Get Tags for posts.
 		$tags_list = get_the_tag_list( '', $separate_meta );
 
@@ -272,52 +319,26 @@ if ( ! function_exists( 'conj_lite_entry_footer' ) ) :
 		if ( ( ( conj_lite_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
 			if ( 'post' === get_post_type() ) {
 				if ( ( $categories_list && conj_lite_categorized_blog() ) || $tags_list ) {
-					echo '<span class="cat-tags-links">';
+					printf( '<span class="cat-tags-links">' ); // WPCS: XSS OK.
 						// Make sure there's more than one category before displaying.
-						if ( $categories_list && conj_lite_categorized_blog() && TRUE === $posted_categories ) {
-							echo '<span class="cat-links" data-title="' . esc_html__( 'in', 'conj-lite' ) . '"><span class="screen-reader-text">' . esc_html__( 'Categories', 'conj-lite' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+						if ( $categories_list && conj_lite_categorized_blog() && $posted_categories ) {
+							/* translators: 1: Open span tag, 2: Close span tag. */
+							printf( esc_html_x( '%1$sin%2$s', 'data title', 'conj-lite' ), '<span class="cat-links" data-title="', '">' );
+								/* translators: 1: Open span tag, 2: Close span tag. */
+								printf( esc_html_x( '%1$sCategories%2$s', 'cats links', 'conj-lite' ), '<span class="screen-reader-text">', '</span>' );
+							printf( '%s</span>', $categories_list );
 						} // End If Statement
-						if ( $tags_list && TRUE === $posted_tags ) {
-							echo '<span class="tags-links"><span class="screen-reader-text">' . esc_html__( 'Tags', 'conj-lite' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
+						if ( $tags_list && $posted_tags ) {
+							/* translators: 1: Open span tag, 2: Close span tag. */
+							printf( esc_html_x( '%1$sin%2$s', 'data title', 'conj-lite' ), '<span class="tags-links" data-title="', '">' );
+								/* translators: 1: Open span tag, 2: Close span tag. */
+								printf( esc_html_x( '%1$sTags%2$s', 'tags links', 'conj-lite' ), '<span class="screen-reader-text">', '</span>' );
+							printf( '%s</span>', $tags_list );
 						} // End If Statement
-					echo '</span>';
+					printf( '</span>' ); // WPCS: XSS OK.
 				} // End If Statement
 			} // End If Statement
-			conj_lite_edit_link();
 		} // End If Statement
-
-	}
-endif;
-
-/**
- * Returns an accessibility-friendly link to edit a post or page.
- *
- * This also gives us a little context about what exactly we're editing
- * (post or page?) so that users understand a bit more where they are in terms
- * of the template hierarchy and their content. Helpful when/if the single-page
- * layout with multiple posts/pages shown gets confusing.
- *
- * @uses 	is_search()
- * @uses 	edit_post_link()
- * @return 	html
- */
-if ( ! function_exists( 'conj_lite_edit_link' ) ) :
-	function conj_lite_edit_link() {
-
-		if ( is_search() ) {
-			return;
-		} // End If Statement
-
-		$link = edit_post_link(
-			sprintf(
-					/* translators: 1: Open span tag, 2: Name of current post, 3: Close span tag.  */
-					esc_html__( 'Edit this post%1$s "%2$s"%3$s', 'conj-lite' ), '<span class="screen-reader-text">', get_the_title(), '</span>'
-				),
-				'<span class="edit-link">',
-				'</span>'
-		);
-
-		return $link;
 
 	}
 endif;
@@ -449,6 +470,8 @@ endif;
  */
 if ( ! function_exists( 'wp_body_open' ) ) :
 	function wp_body_open() {
+
 		do_action( 'wp_body_open' );
+
 	}
 endif;
