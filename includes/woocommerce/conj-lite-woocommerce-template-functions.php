@@ -3,7 +3,7 @@
  * WooCommerce template functions.
  *
  * @requires 	WooCommerce
- * @since 	    1.1.0
+ * @since 	    1.2.0
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -11,14 +11,14 @@
 /**
  * WooCommerce shop messages.
  * 
- * @uses    is_checkout()
+ * @uses    conj_lite_is_not_checkout_page()
  * @uses    conj_lite_do_shortcode()
  * @return  void
  */
 if ( ! function_exists( 'conj_lite_wc_shop_messages' ) ) :
 	function conj_lite_wc_shop_messages() {
 
-		if ( ! is_checkout() ) {
+		if ( conj_lite_is_not_checkout_page() ) {
 			echo wp_kses_post( conj_lite_do_shortcode( 'woocommerce_messages' ) );
 		} // End If Statement
 
@@ -34,10 +34,8 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_wrapper_before' ) ) :
 	function conj_lite_wc_wrapper_before() {
 
-		?>
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
-		<?php
+		?><div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main"><?php
 
 	}
 endif;
@@ -51,10 +49,8 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_wrapper_after' ) ) :
 	function conj_lite_wc_wrapper_after() {
 
-		?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
-		<?php
+		?></main><!-- #main -->
+		</div><!-- #primary --><?php
 
 	}
 endif;
@@ -67,7 +63,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_sorting_wrapper' ) ) :
 	function conj_lite_wc_sorting_wrapper() {
 
-		?><div class="conj-lite-wc-sorting"><?php
+		?><div class="products-sorting"><?php
 
 	}
 endif;
@@ -100,8 +96,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_sorting_wrapper_close' ) ) :
 	function conj_lite_wc_sorting_wrapper_close() {
 
-		?></div><!-- .conj-lite-wc-sorting -->
-		<?php
+		?></div><?php
 
 	}
 endif;
@@ -114,11 +109,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_product_cols_wrapper' ) ) :
 	function conj_lite_wc_product_cols_wrapper() {
 
-		// Get the default columns setting
-		// this is how many products will be shown per row in loops.
-		$columns = (int) ( function_exists( 'wc_get_default_products_per_row' ) )  ?  wc_get_default_products_per_row()  :  2;
-
-		printf( '<div class="conj-lite-wc-product-columns archive-columns-%1$s">', intval( $columns ) );
+		?><div class="product-cols"><?php
 
 	}
 endif;
@@ -131,8 +122,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_product_cols_wrapper_close' ) ) :
 	function conj_lite_wc_product_cols_wrapper_close() {
 
-		?></div><!-- .conj-lite-wc-product-columns -->
-		<?php
+		?></div><?php
 
 	}
 endif;
@@ -162,7 +152,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_product_flash_wrapper' ) ) :
 	function conj_lite_wc_product_flash_wrapper() {
 
-		?><div class="conj-lite-wc-product__flashs"><?php
+		?><div class="product-flash-wrapper"><?php
 
 	}
 endif;
@@ -176,8 +166,27 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_product_flash_wrapper_close' ) ) :
 	function conj_lite_wc_product_flash_wrapper_close() {
 
-		?></div><!-- .conj-lite-wc-product__flash -->
-		<?php
+		?></div><?php
+
+	}
+endif;
+
+/**
+ * Cart Link.
+ * Displayed a link to the cart including the number of items present and the cart total.
+ *
+ * @uses 	get_cart_subtotal()
+ * @uses 	get_cart_contents_count()
+ * @return  void
+ */
+if ( ! function_exists( 'conj_lite_wc_cart_link' ) ) :
+	function conj_lite_wc_cart_link() {
+
+		printf( '<a class="cart-contents" href="%s" target="_self">', esc_url( wc_get_cart_url() ) );
+			printf( '<span class="amount">%s</span>', wp_kses_data( WC()->cart->get_cart_subtotal() ) );
+			/* translators: number of items in the mini cart. */
+			printf( '<span class="count">%s</span>', wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'conj-lite' ), WC()->cart->get_cart_contents_count() ) ) );
+		?></a><?php
 
 	}
 endif;
@@ -217,32 +226,9 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_search_field' ) ) :
 	function conj_lite_wc_search_field() {
 
-		?>
-		<div class="site-wc-search">
+		?><div class="site-header__search">
 			<?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
-		</div>
-		<?php
-
-	}
-endif;
-
-/**
- * Cart Link.
- * Displayed a link to the cart including the number of items present and the cart total.
- *
- * @uses 	get_cart_subtotal()
- * @uses 	get_cart_contents_count()
- * @return  void
- */
-if ( ! function_exists( 'conj_lite_wc_cart_link' ) ) :
-	function conj_lite_wc_cart_link() {
-
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'conj-lite' ); ?>">
-			<?php /* translators: number of items in the mini cart. */ ?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'conj-lite' ), WC()->cart->get_cart_contents_count() ) );?></span>
-		</a>
-		<?php
+		</div><?php
 
 	}
 endif;
@@ -258,17 +244,19 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_header_cart' ) ) :
 	function conj_lite_wc_header_cart() {
 
+		$classnames_link = '';
+
 		if ( is_cart() ) {
-			$class = 'current-menu-item';
-		} else {
-			$class = '';
+			$classnames_link = 'current-menu-item';
 		} // End If Statement
-		?>
-		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>"><?php conj_lite_wc_cart_link(); ?></li>
-			<li><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?></li>
-		</ul>
-		<?php
+		?><ul class="site-header__cart">
+			<li class="<?php echo esc_attr( $classnames_link ); ?>">
+				<?php conj_lite_wc_cart_link(); ?>
+			</li>
+			<li>
+				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+			</li>
+		</ul><?php
 
 	}
 endif;
@@ -283,7 +271,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_checkout_order_review_wrapper' ) ) :
 	function conj_lite_wc_checkout_order_review_wrapper() {
 
-		?><div class="conj-lite-wc-checkout-order-review__wrapper"><?php
+		?><div class="order-review-wrapper"><?php
 
 	}
 endif;
@@ -296,7 +284,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_checkout_order_review_heading' ) ) :
 	function conj_lite_wc_checkout_order_review_heading() {
 
-		?><h3 class="conj-lite-wc-checkout-order-review__heading"><?php esc_html_e( 'Your order', 'conj-lite' ); ?></h3><?php
+		?><h3 class="woocommerce-checkout-review-order__heading"><?php esc_html_e( 'Your order', 'conj-lite' ); ?></h3><?php
 
 	}
 endif;
@@ -309,8 +297,7 @@ endif;
 if ( ! function_exists( 'conj_lite_wc_checkout_order_review_wrapper_close' ) ) :
 	function conj_lite_wc_checkout_order_review_wrapper_close() {
 
-		?></div><!-- .conj-lite-wc-checkout-order-review__wrapper -->
-		<?php
+		?></div><?php
 
 	}
 endif;
