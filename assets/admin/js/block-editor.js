@@ -5,6 +5,7 @@
  * configuration and styling.
  *
  * @requires 	wp-block-editor
+ * @since       1.2.0
  * @package     conj-lite
  * @author     	MyPreview (Github: @mahdiyazdani, @mypreview)
  */
@@ -22,7 +23,7 @@
 
 		if ( settings.hasOwnProperty( 'conjLiteHasSidebarActive' ) && !! settings.conjLiteHasSidebarActive ) {
 			return true;
-		}
+		} // End If Statement
 
 		return false;
 	};
@@ -46,7 +47,7 @@
 
 		if ( settings.hasOwnProperty( 'alignWide' ) && !! settings.alignWide ) {
 			return true;
-		}
+		} // End If Statement
 
 		return false;
 	};
@@ -76,14 +77,14 @@
 
 				if ( ! [ 'full', 'wide' ].includes( align ) ) {
 					return;
-				}
+				} // End If Statement
 
 				let blockWrapper = document.getElementById( 'block-' + block.clientId );
 
 				if ( blockWrapper ) {
 					blockWrapper.setAttribute( 'data-align', alignWide ? align : '' );
-				}
-			}
+				} // End If Statement
+			} // End If Statement
 		} );
 	};
 
@@ -98,13 +99,13 @@
 
 		if ( ! editorWrapper.length ) {
 			return;
-		}
+		} // End If Statement
 
 		if ( !! showSidebar ) {
 			editorWrapper[0].classList.add( 'conj-lite-has-sidebar__active' );
 		} else {
 			editorWrapper[0].classList.remove( 'conj-lite-has-sidebar__active' );
-		}
+		} // End If Statement
 	};
 
 	/**
@@ -125,7 +126,7 @@
 			updateWideSupport( true );
 			toggleCustomSidebarClass( false );
 			updateAlignAttribute( true );
-		}
+		} // End If Statement
 	};
 
 	wp.domReady( () => {
@@ -142,9 +143,8 @@
 		wp.data.subscribe( () => {
 			if ( getCurrentPageTemplate() !== pageTemplate ) {
 				pageTemplate = getCurrentPageTemplate();
-
 				maybeUpdateEditor();
-			}
+			} // End If Statement
 		} );
 	} );
 } )();
