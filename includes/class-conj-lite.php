@@ -453,7 +453,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * 
 			 * @see 	https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L276
 			 */
-			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_LITE_THEME_VERSION, 'all' );
 
 			/**
 			 * The core CSS libraries can be found in /assets/css/vendor/
@@ -523,7 +523,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * 
 			 * @see 	https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L276
 			 */
-			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_LITE_THEME_VERSION, 'all' );
 			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks' ), CONJ_LITE_THEME_VERSION, 'all' );
 			wp_style_add_data( 'conj-lite-block-editor-styles', 'rtl', 'replace' );
 			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-block-editor', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
@@ -741,7 +741,7 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			} // End If Statement
 
 			// Add class if the current page is a blog post archive/single.
-			if ( conj_is_blog_archive() ) {
+			if ( conj_lite_is_blog_archive() ) {
 				$classes[]	= 'blog-archive';
 			} // End If Statement
 
