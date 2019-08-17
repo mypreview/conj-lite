@@ -78,6 +78,27 @@ if ( ! function_exists( 'conj_lite_is_woocommerce_activated' ) ) :
 endif;
 
 /**
+ * Checks if the current page is "NOT" checkout page.
+ *
+ * @uses 	is_checkout()
+ * @uses 	conj_lite_is_woocommerce_activated()
+ * @return  bool
+ */
+if ( ! function_exists( 'conj_lite_is_not_checkout_page' ) ) :
+	function conj_lite_is_not_checkout_page() {
+
+		if ( conj_lite_is_woocommerce_activated() ) {
+			if ( is_checkout() ) {
+				return FALSE;
+			} // End If Statement
+		} // End If Statement
+
+		return TRUE;
+
+	}
+endif;
+
+/**
  * Call a shortcode function by tag name.
  *
  * @uses 	call_user_func()
