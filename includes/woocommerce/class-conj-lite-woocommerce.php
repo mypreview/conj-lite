@@ -3,14 +3,15 @@
  * Conj Lite WooCommerce Class
  *
  * @requires 	WooCommerce
- * @since 	    1.1.1
+ * @since 	    1.2.0
  * @package 	conj-lite
- * @author  	MyPreview (Github: @mahdiyazdani, @mypreview)
+ * @author  	MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+	exit; 
+} // End If Statement
 
 if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 
@@ -30,7 +31,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			add_action( 'after_setup_theme',        					array( $this, 'setup' ),       						11 );
 			add_action( 'wp_enqueue_scripts',       					array( $this, 'enqueue' ),       					10 );
 			add_action( 'enqueue_block_editor_assets',       			array( $this, 'enqueue_editor_assets' ),     	   	10 );
-			add_filter( 'body_class', 									array( $this, 'body_classes' ),   	 			 10, 1 );
+			add_filter( 'conj_lite_body_classes', 						array( $this, 'body_classes' ),   	 			 10, 1 );
 			add_filter( 'woocommerce_cross_sells_columns', 				array( $this, 'cross_sells_cols' ),    		 	 10, 1 );
 			add_filter( 'woocommerce_cross_sells_total', 				array( $this, 'cross_sells_total' ),    		 10, 1 );
 			add_filter( 'woocommerce_upsell_display_args', 				array( $this, 'upsell_products_args' ),    		 10, 1 );
@@ -40,6 +41,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			add_filter( 'woocommerce_get_price_html',          			array( $this, 'custom_price_html' ),  	        100, 2 );
 			add_filter( 'woocommerce_get_price_suffix',          		array( $this, 'add_suffix_to_price' ),  	     99, 4 );
 			add_filter( 'woocommerce_pagination_args',          		array( $this, 'pagination_args' ),  	     	 10, 1 );
+			add_filter( 'woocommerce_single_product_carousel_options',  array( $this, 'flexslider_args' ),  	     	 10, 1 );
 
 			/**
 			 * Disable default WooCommerce stylesheet.
@@ -92,17 +94,14 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		/**
 		 * Enqueue scripts and styles.
 		 *
-		 * @link 	https://www.skyverge.com/blog/how-to-use-woocommerces-lightbox-part-2/
-		 * @see 	https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
 		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_style/
-		 * @see 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-		 * @see 	https://developer.wordpress.org/reference/functions/wp_add_inline_style/
 		 * @access 	public
 		 * @return 	void
 		 */
 		public function enqueue() {
 
 			wp_enqueue_style( 'conj-lite-woocommerce-styles', get_theme_file_uri( 'woocommerce.css' ), array( 'conj-lite-styles' ), CONJ_LITE_THEME_VERSION );
+			wp_style_add_data( 'conj-woocommerce-styles', 'rtl', 'replace' );
 
 		}
 
@@ -160,6 +159,11 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			
 			$classes[] = 'woocommerce-running';
 
+			// Add class if WooCommerce ajax is disabled.
+			if ( 'yes' !== get_option( 'woocommerce_enable_ajax_add_to_cart' ) ) {
+				$classes[]	= 'no-wc-ajax';
+			} // End If Statement
+
 			return $classes;
 
 		}
@@ -167,7 +171,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		/**
 		 * Cross sells products columns.
 		 *
-		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
+		 * @see 	https://developer.wordpress.org/reference/functions/is_active_sidebar/
 		 * @uses 	conj_lite_is_fluid_template()
 		 * @access 	public
 		 * @param  	integer 	$columns 	number of cross-sells columns.
@@ -189,7 +193,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		/**
 		 * Cross sells products max limit.
 		 *
-		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
+		 * @see 	https://developer.wordpress.org/reference/functions/is_active_sidebar/
 		 * @uses 	conj_lite_is_fluid_template()
 		 * @access 	public
 		 * @param  	integer 	$number 	number of cross-sells to display on cart page.
@@ -212,8 +216,6 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		 * Upsell products args.
 		 *
 		 * @see 	https://developer.wordpress.org/reference/functions/is_active_sidebar/
-		 * @see 	https://developer.wordpress.org/reference/functions/is_singular/
-		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
 		 * @uses 	conj_lite_is_fluid_template()
 		 * @access 	public
 		 * @param  	array 	$args 	up-sell products args.
@@ -243,8 +245,6 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		 * Related products args.
 		 *
 		 * @see 	https://developer.wordpress.org/reference/functions/is_active_sidebar/
-		 * @see 	https://developer.wordpress.org/reference/functions/is_singular/
-		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
 		 * @uses 	conj_lite_is_fluid_template()
 		 * @access 	public
 		 * @param  	array 	$args 	related products args.
@@ -275,7 +275,6 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		 *
 		 * @see 	https://developer.wordpress.org/reference/functions/is_active_sidebar/
 		 * @see 	https://developer.wordpress.org/reference/functions/is_singular/
-		 * @see 	https://developer.wordpress.org/reference/functions/get_theme_mod/
 		 * @uses 	conj_lite_is_fluid_template()
 		 * @access 	public
 		 * @return 	integer 	number of columns.
@@ -319,7 +318,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 
 			// Skip appending this to the administrative interface of WooCommerce pages.
 			if ( ! is_admin() ) {
-				$price = '<span class="conj-lite-wc-price__wrapper">' . $price;
+				$price = sprintf( '<span class="price__wrapper">%s', $price );
 				$price.= '</span>';
 			} // End If Statement
 
@@ -364,6 +363,23 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			$args['show_all'] = FALSE;
 			$args['prev_text'] = apply_filters( 'conj_lite_wc_pagination_prev_text', '<i class="feather-chevron-left"></i>' );
 			$args['next_text'] = apply_filters( 'conj_lite_wc_pagination_next_text', '<i class="feather-chevron-right"></i>' );
+
+			return $args;
+
+		}
+
+		/**
+		 * Modifies flexslider args.
+		 *
+		 * @access 	public
+		 * @param 	array 	$args 	The current flexslider arguments.
+		 * @return 	array
+		 */
+		public function flexslider_args( $args ) {
+
+			$args['smoothHeight'] = FALSE;
+			$args['directionNav'] = TRUE;
+			$args['useCSS'] = is_rtl();
 
 			return $args;
 
