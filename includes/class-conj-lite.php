@@ -475,7 +475,15 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			wp_register_script( 'slinky', get_theme_file_uri( '/assets/js/vendor/slinky.js' ), array( 'jquery', 'js-offcanvas' ), '4.0.2', TRUE );
 			wp_register_script( 'jquery-fitvids', get_theme_file_uri( '/assets/js/vendor/jquery.fitvids.js' ), array( 'jquery' ), '1.1.0', TRUE );
 			$javascript_deps = (array) apply_filters( 'conj_lite_vendor_javascript_deps', array( 'jquery', 'js-offcanvas', 'conj-lite-underscores-navigation', 'conj-lite-underscores-skip-link-focus-fix', 'slinky', 'jquery-fitvids' ) );
-			wp_enqueue_script( 'conj-lite-scripts', get_theme_file_uri( '/assets/js/script.js' ), $javascript_deps, CONJ_LITE_THEME_VERSION, TRUE );
+			wp_register_script( 'conj-lite-scripts', get_theme_file_uri( '/assets/js/script.js' ), $javascript_deps, CONJ_LITE_THEME_VERSION, TRUE );
+
+			$conj_lite_l10n = apply_filters( 'conj_lite_scripts_l10n_args', array(
+				'is_rtl' => (bool) is_rtl(),
+				'is_mobile' => (bool) wp_is_mobile()
+			) );
+
+			wp_localize_script( 'conj-lite-scripts', 'conj_lite_vars', $conj_lite_l10n );
+			wp_enqueue_script( 'conj-lite-scripts' );
 
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );
