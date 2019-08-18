@@ -16,6 +16,7 @@
             conjLite.vars.is_rtl = ( 'undefined' !== typeof conj_lite_vars )  ?  conj_lite_vars.is_rtl  :  null;
             conjLite.vars.is_mobile = ( 'undefined' !== typeof conj_lite_vars )  ?  conj_lite_vars.is_mobile  :  null;
             // DOM cache
+            conjLite.els.flyOutMenu = $( '.site-header .menu-item-has-children' );
             conjLite.els.offcanvas = $( '#handheld-offcanvas' );
             conjLite.els.handheld = $( '#handheld-slinky-menu' );
             conjLite.els.iframes = $( 'iframe[src*="youtube"], iframe[src*="vimeo"], iframe[src*="dailymotion"], iframe[src*="soundcloud"], iframe[src*="mixcloud"], iframe[src*="google.com/maps"]' );
@@ -29,11 +30,34 @@
         // Run on page load
         load: function() {
             // Call for methods
+            conj.isSubmenuEdge();
             conjLite.iframeFitVids();
 
             if ( conjLite.els.offcanvas.length ) {
                 conjLite.initOffcanvas();
             } // End If Statement
+        },
+
+        // Avoid sub-menus from going off-screen.
+        isSubmenuEdge: function() {
+            conjLite.els.flyOutMenu.on( 'mouseenter mouseleave', function ( event ) {
+                if ( $( 'ul', this ).length ) {
+                    var submenu = $( 'ul:first', this ),
+                        submenuOffset = submenu.offset(),
+                        submenuWidth = submenu.width(),
+                        innerWidth = $( window ).innerWidth(),
+                        submenuLeft = submenuOffset.left,
+                        submenuRight = innerWidth - ( submenuLeft + submenuWidth ),
+                        isEntirelyVisible = conjLite.vars.is_rtl  ?  ( submenuRight + submenuWidth <= innerWidth )  :  ( submenuLeft + submenuWidth <= innerWidth )
+                    if ( ! isEntirelyVisible ) {
+                        $( this ).addClass( 'is-edge' );
+                    } else {
+                        setTimeout( function() {
+                            $( this ).removeClass( 'is-edge' );
+                        }, 300 );
+                    } // End If Statement
+                } // End If Statement
+            } );
         },
 
         // Initializing accesible offcanvas
