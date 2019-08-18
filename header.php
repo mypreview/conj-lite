@@ -47,7 +47,7 @@ wp_body_open();
 			</div>
 		</header><!-- #masthead -->
 		<div id="content" class="site-content" tabindex="-1">
-			<div class="conj-lite-col__full">
+			<div class="col-full">
 				<?php
 				/**
 				 * Functions hooked into conj_lite_header action
