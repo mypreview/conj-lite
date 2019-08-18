@@ -59,16 +59,15 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
         			color: #{$general_site_title_color};
         		}
         		/* General */
-        		.wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
-				.wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
-				.c-offcanvas-content-wrap,
-				.search-results:not(.post-type-archive) .site-main article:not(.type-product):not(.type-post) .entry-meta span,
-				article.post.hentry .cat-tags-links .post-categories a,
-				.entry-footer .edit-link .post-edit-link,
-				.widget_tag_cloud ul li,
-				.conj-lite-blog__archive.has-sidebar.post-template-template-fluid article.post.hentry .alignfull,
-				.conj-lite-blog__archive:not(.has-sidebar) article.post.hentry .alignfull,
-				body {
+        		.c-offcanvas-content-wrap,
+        		article.post .cat-links > .post-categories a,
+				article.post:not([class*='category']) .cat-tags-links .cat-links,
+				.blog-archive:not(.has-sidebar) article.post .alignfull,
+				.single-post:not(.has-sidebar) article.post .alignfull,
+				[class*='search-type-'],
+				.widget_tag_cloud a,
+				.wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
+                .wp-block-pullquote:not(.is-style-solid-color) blockquote:before {
 					background-color: #{$general_background_color};
 				}
 				#site-navigation > div.menu > ul ul.children:before,
@@ -96,8 +95,8 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				.comment-respond #reply-title,
 				.main-navigation .widget_calendar .calendar_wrap caption,
 				.wp-block-calendar table caption,
-				.conj-lite-secondary-widget-area__wrapper .widget_calendar .calendar_wrap caption,
-				.conj-lite-secondary-widget-area__wrapper .widget-title,
+				.widget-area__wrapper .widget_calendar .calendar_wrap caption,
+				.widget-area__wrapper .widget-title,
 				dd,
 				h1,
 				h2,
@@ -124,13 +123,13 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				.single-post article.type-post .post-meta .byline a,
 				.error-404-first .widget_recent_entries a,
 				.wp-block-latest-posts a,
-				.conj-lite-secondary-widget-area__wrapper .widget_recent_entries a,
-				.conj-lite-secondary-widget-area__wrapper .widget_pages ul a,
-				.conj-lite-secondary-widget-area__wrapper .widget ul.menu li > a,
-				.conj-lite-secondary-widget-area__wrapper .widget_meta a,
+				.widget-area__wrapper .widget_recent_entries a,
+				.widget-area__wrapper .widget_pages ul a,
+				.widget-area__wrapper .widget ul.menu li > a,
+				.widget-area__wrapper .widget_meta a,
 				.widget_categories a,
 				.wp-block-categories.wp-block-categories-list a,
-				.conj-lite-secondary-widget-area__wrapper .widget_archive a,
+				.widget-area__wrapper .widget_archive a,
 				ul.wp-block-archives a,
 				body {
 					color: {$general_text_color};
@@ -181,22 +180,22 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				.page-links .page-number,
 				.comment-metadata a:hover time,
 				.error-404-first .widget_recent_entries a:hover,
-				.conj-lite-secondary-widget-area__wrapper .widget_recent_entries a:hover,
-				.conj-lite-secondary-widget-area__wrapper .widget_categories .current-cat-parent > a,
-				.conj-lite-secondary-widget-area__wrapper .widget_categories .current-cat > a,
-				.conj-lite-secondary-widget-area__wrapper ul.menu .current_page_parent > a,
-				.conj-lite-secondary-widget-area__wrapper ul.menu .current_page_item > a,
-				.conj-lite-secondary-widget-area__wrapper .widget_pages .current_page_parent > a,
-				.conj-lite-secondary-widget-area__wrapper .widget_pages .current_page_item > a,
-				.conj-lite-secondary-widget-area__wrapper .widget_pages ul a:hover,
-				.conj-lite-secondary-widget-area__wrapper .widget ul.menu li:hover > a,
-				.conj-lite-secondary-widget-area__wrapper .widget_meta a abbr,
-				.conj-lite-secondary-widget-area__wrapper .widget_meta a:hover,
+				.widget-area__wrapper .widget_recent_entries a:hover,
+				.widget-area__wrapper .widget_categories .current-cat-parent > a,
+				.widget-area__wrapper .widget_categories .current-cat > a,
+				.widget-area__wrapper ul.menu .current_page_parent > a,
+				.widget-area__wrapper ul.menu .current_page_item > a,
+				.widget-area__wrapper .widget_pages .current_page_parent > a,
+				.widget-area__wrapper .widget_pages .current_page_item > a,
+				.widget-area__wrapper .widget_pages ul a:hover,
+				.widget-area__wrapper .widget ul.menu li:hover > a,
+				.widget-area__wrapper .widget_meta a abbr,
+				.widget-area__wrapper .widget_meta a:hover,
 				.wp-block-categories.wp-block-categories-list a:hover,
 				.widget_categories a:not(.has-text-color):hover,
 				.wp-block-calendar tfoot a:hover,
 				.calendar_wrap tfoot td a:hover,
-				.conj-lite-secondary-widget-area__wrapper .widget_archive a:hover,
+				.widget-area__wrapper .widget_archive a:hover,
 				ul.wp-block-archives a:hover,
 				.wp-block-latest-posts > li > a:hover,
 				.site-branding .site-title a:hover,
@@ -424,7 +423,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					}
 					.widget_price_filter .ui-slider .ui-slider-range,
 					.search-results:not(.post-type-archive) .site-main article.type-product .woocommerce-Price-amount,
-					.single-product div.product .entry-summary .woocommerce-Price-amount {
+					div.product .entry-summary .woocommerce-Price-amount {
 						background-color: {$general_link_color};
 					}
 					.woocommerce-pagination ul li .page-numbers:not(.dots):hover,
@@ -460,21 +459,21 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-remove-coupon:before,
 					.product-remove .remove:before,
 					.woocommerce-review__published-date,
-					.single-product div.product .entry-summary del,
+					div.product .entry-summary del,
 					.search-results:not(.post-type-archive) .site-main article.type-product del .woocommerce-Price-amount,
-					.single-product div.product .entry-summary del .woocommerce-Price-amount,
+					div.product .entry-summary del .woocommerce-Price-amount,
 					ul.products li.product .price .price-label {
 						color: {$general_text_color_lighter};
 					}
 					.widget_product_tag_cloud .tagcloud a,
 					.woocommerce-product-gallery__trigger,
-					ul.products li.product .category-flash,
-					ul.products li.product .sold-out-flash,
+					.category-flash,
+					.sold-out-flash,
 					.woocommerce-checkout-review-order-table thead th,
 					.woocommerce-cart-form table th,
 					.woocommerce-pagination ul li .page-numbers,
-					.single-product div.product .entry-summary .cart .quantity .qty,
-					.single-product div.product .entry-summary .product_meta,
+					div.product .entry-summary .cart .quantity .qty,
+					div.product .entry-summary .product_meta,
 					.woocommerce-product-rating .woocommerce-review-link {
 						color: {$general_text_color_light};
 					}
@@ -492,36 +491,28 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 						color: {$general_text_color} !important;
 					}
 					.woocommerce-terms-and-conditions,
-					.widget_product_tag_cloud .tagcloud a,
+					.widget_product_tag_cloud a,
 					.woocommerce-product-gallery__trigger,
 					.category-flash,
 					.sold-out-flash {
 						background-color: #{$general_background_color};
 					}
 					/* Button */
-					#main .woocommerce-variation-add-to-cart-disabled .button.disabled {
-						border-color: {$button_alt_text_color};
-					}
 					.select2-container.select2-container--default .select2-results__option[aria-selected=true], 
 					.select2-container.select2-container--default .select2-results__option[data-selected=true],
 					.select2-container.select2-container--default .select2-results__option--highlighted[aria-selected], 
 					.select2-container.select2-container--default .select2-results__option--highlighted[data-selected],
 					.widget_product_tag_cloud .tagcloud a:hover,
-					.site-header-cart:not(:hover):not(:focus) li:not(.current-menu-item) .cart-contents:not(:focus):not(:active):not(:hover) {
+					.site-header__cart li:not(.current-menu-item) .cart-contents {
 						background-color: {$button_background_color};
 						border-color: {$button_background_color};
 						color: {$button_text_color};
 					}
-					#main .woocommerce-variation-add-to-cart-disabled .button.disabled,
-					.site-header-cart .current-menu-item .cart-contents,
-					.site-header-cart .cart-contents:active,
-					.site-header-cart .cart-contents:focus,
-					.site-header-cart:focus .cart-contents, 
-					.site-header-cart:hover .cart-contents:hover, 
-					.site-header-cart:hover .cart-contents, 
-					.site-header-cart .cart-contents:hover {
-						color: {$button_alt_text_color};
-					}
+					.site-header__cart li.current-menu-item .cart-contents,
+	                .site-header__cart:focus li .cart-contents, 
+	                .site-header__cart:hover li .cart-contents {
+	                    color: {$button_alt_text_color};
+	                }
 				";
 			endif; // End If conj_lite_is_woocommerce_activated();
 
