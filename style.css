@@ -4226,11 +4226,11 @@ mark {
 .slinky-menu > ul a:hover {
 	color: #A7ABBD;
 }
-.site-footer {
+.site-footer__inner {
 	background-color: #353745;
 }
 .site-footer a,
-.site-footer {
+.site-footer__inner {
 	color: #A5A8BB;
 }
 .site-footer .widget-title {
