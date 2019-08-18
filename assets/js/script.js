@@ -30,7 +30,7 @@
         // Run on page load
         load: function() {
             // Call for methods
-            conj.isSubmenuEdge();
+            conjLite.isSubmenuEdge();
             conjLite.iframeFitVids();
 
             if ( conjLite.els.offcanvas.length ) {
