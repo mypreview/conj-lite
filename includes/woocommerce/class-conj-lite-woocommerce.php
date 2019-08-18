@@ -378,7 +378,6 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		public function flexslider_args( $args ) {
 
 			$args['smoothHeight'] = FALSE;
-			$args['directionNav'] = TRUE;
 			$args['useCSS'] = is_rtl();
 
 			return $args;
