@@ -573,12 +573,10 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				.editor-block-list__layout h6 {
 					color: {$general_heading_color};
 				}
-				.wp-block-pullquote,
-				.editor-block-list__layout .wp-block-quote__citation, 
+				.wp-block-pullquote, 
 				.editor-block-list__layout .wp-block-quote cite, 
-				.editor-block-list__layout .wp-block-quote footer,
 				.editor-block-list__layout blockquote.wp-block-quote,
-				.wp-block-calendar table tbody,
+				.wp-block-calendar tbody,
 				.wp-block-freeform.block-library-rich-text__tinymce .wp-caption .wp-caption-dd,
 				.editor-block-list__layout .wp-block-archives li,
 				.editor-block-list__layout .wp-block-archives a,
@@ -590,74 +588,63 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 				.edit-post-visual-editor {
 					color: {$general_text_color};
 				}
-				.wp-block-tag-cloud a.tag-cloud-link,
+				.wp-block-tag-cloud a,
 				.wp-block-search .wp-block-search__label,
 				.wp-block-freeform.block-library-rich-text__tinymce dt {
 					color: {$general_text_color_light};
 				}
 				.wp-block-calendar thead th,
-				.wp-block-calendar tfoot a {
+                .wp-block-calendar tfoot a {
 					color: {$general_text_color_lighter};
 				}
 				.wp-block-calendar tfoot a:hover,
+				.wp-block-file .wp-block-file__textlink,
 				.wp-block-freeform.block-library-rich-text__tinymce a,
 				.editor-block-list__layout .wp-block-archives a:hover,
 				.editor-block-list__layout .wp-block-latest-posts a:hover,
 				.editor-block-list__layout .wp-block-categories a:hover,
-				.wp-block-file__textlink,
 				.editor-rich-text__tinymce a,
 				.editor-block-list__layout a {
 					color: {$general_link_color};
 				}
-				.wp-block-file__textlink:hover,
-				.editor-rich-text__tinymce a:hover,
+				.wp-block-file .wp-block-file__textlink:hover,
+				.wp-block-freeform.block-library-rich-text__tinymce a:hover,
 				.editor-block-list__layout a:hover {
 					color: {$general_link_alt_color};
 				}
-				.wp-block-tag-cloud a.tag-cloud-link:hover,
-				.wp-block-search .wp-block-search__button,
-				.wp-block-calendar tbody td > a,
-				.wp-block-calendar tbody td#today,
-				#editor .wp-block-more input[type=text],
-				.wp-block-file .wp-block-file__button,
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
-				#editor .wp-block-more input[type=text]:focus,
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):active, 
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):focus, 
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):hover {
+				.wp-block-button__link:not(.has-text-color),
+				.wp-block-button__link:not(.has-text-color):hover {
 					color: {$button_text_color};
 				}
-				.wp-block-tag-cloud a.tag-cloud-link:hover,
-				.wp-block-search .wp-block-search__button,
-				.wp-block-calendar tbody td#today, 
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background), 
-				#editor .wp-block-more input[type='text'],
-				.wp-block-file .wp-block-file__button {
+				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
 					background-color: {$button_background_color};
 				}
 				.wp-block-calendar tbody td > a {
 					background-color: {$button_background_color_lighter};
+					color: {$button_text_color};
 				}
-				.wp-block-search .wp-block-search__button,
-				.wp-block-file .wp-block-file__button,
 				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
 					border-color: {$button_background_color};
-				}
-				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
 					color: {$button_background_color};
 				}
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):active, 
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):focus, 
+				.wp-block-file .wp-block-file__button,
+				.wp-block-search .wp-block-search__button {
+                    color: {$button_text_color};
+                    background-color: {$button_background_color};
+                    border-color: {$button_background_color};
+                }
+                .block-editor .wp-block-more input[type='text'],
+                .wp-block-calendar #today,
+                .wp-block-tag-cloud a:hover {
+                    background-color: {$button_background_color};
+                    color: {$button_text_color};
+                }
 				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):hover,
-				#editor .wp-block-more input[type=text]:focus {
+				.block-editor .wp-block-more input[type='text']:focus {
 					background-color: {$button_alt_text_color};
 				}
+				.wp-block-file.wp-block-file .wp-block-file__button:hover,
 				.wp-block-search .wp-block-search__button:hover,
-				.wp-block-file .wp-block-file__button:active,
-				.wp-block-file .wp-block-file__button:focus,
-				.wp-block-file .wp-block-file__button:hover,
-				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active, 
-				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus, 
 				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover {
 					border-color: {$button_alt_text_color};
 					color: {$button_alt_text_color};

@@ -54,30 +54,34 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 
 	        // Global inline styles
         	$customizer_css = "
-        		.site-branding .site-description,
-				.site-branding .site-title a {
+        		.site-description,
+				.site-title a {
         			color: #{$general_site_title_color};
         		}
         		/* General */
         		.c-offcanvas-content-wrap,
-        		article.post .cat-links > .post-categories a,
-				article.post:not([class*='category']) .cat-tags-links .cat-links,
 				.blog-archive:not(.has-sidebar) article.post .alignfull,
 				.single-post:not(.has-sidebar) article.post .alignfull,
-				[class*='search-type-'],
-				.widget_tag_cloud a,
 				.wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
                 .wp-block-pullquote:not(.is-style-solid-color) blockquote:before {
 					background-color: #{$general_background_color};
 				}
-				#site-navigation > div.menu > ul ul.children:before,
-				#site-navigation > div.menu > ul ul.children,
-				#masthead ul.sub-menu > li > ul.sub-menu:before,
-				#masthead ul.menu > li.menu-item-has-children > ul.sub-menu:before,
-				#masthead ul.sub-menu {
+				[class*='search-type-'],
+				article.post .cat-links > .post-categories a,
+				article.post:not([class*='category']) .cat-tags-links .cat-links,
+				.wp-block-tag-cloud a,
+				.widget_tag_cloud a {
+					color: {$general_text_color_light};
+					background-color: #{$general_background_color};
+				}
+				.primary-navigation div.menu > ul ul.children:before,
+				.primary-navigation div.menu > ul ul.children,
+				.site-header ul.sub-menu > li > ul.sub-menu:before,
+				.site-header ul.menu > li.menu-item-has-children > ul.sub-menu:before,
+				.site-header ul.sub-menu {
 					border-color: #{$general_background_color};
 				}
-				#masthead {
+				.site-header {
 					border-color: {$general_background_color_darker};
 				}
 				pre:not(.wp-block-verse):not(.wp-block-code) {
@@ -86,16 +90,15 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				audio::-webkit-media-controls-panel {
 					background-color: {$general_background_color_dark};
 				}
-				body.search-results article .entry-footer a,
-				body.search-results article .entry-title a,
+				.widget-area__wrapper .widget_calendar caption,
+				.wp-block-calendar caption,
+				.search-results article .entry-footer a,
+				.search-results article .entry-title a,
 				.search-results:not(.post-type-archive) .site-main article .entry-header a,
 				body:not(.single-post) article.post.hentry .entry-header a,
 				.comment-meta .comment-author .fn,
-				.comment-respond .comment-reply-title,
 				.comment-respond #reply-title,
-				.main-navigation .widget_calendar .calendar_wrap caption,
-				.wp-block-calendar table caption,
-				.widget-area__wrapper .widget_calendar .calendar_wrap caption,
+				article.post .entry-title a,
 				.widget-area__wrapper .widget-title,
 				dd,
 				h1,
@@ -106,42 +109,38 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				h6 {
 					color: {$general_heading_color};
 				}
-				#site-navigation > div.menu > ul ul.children > li > a,
-				#masthead ul.sub-menu > li > a,
-				#site-navigation > div.menu > ul > li > a,
+				.widget-area__wrapper .widget_archive a,
+				.widget-area__wrapper .widget_meta a,
+				.widget-area__wrapper .menu-item > a,
+				.widget-area__wrapper .page_item a,
+				.primary-navigation div.menu > ul ul.children > li > a,
+				.site-header ul.sub-menu > li > a,
+				.primary-navigation div.menu > ul > li > a,
 				.primary-navigation > ul.menu > .menu-item > a,
-				.wp-block-pullquote,
-				.wp-block-quote__citation,
-				.wp-block-quote footer,
 				blockquote,
-				.wp-block-calendar table tbody,
-				.ui-datepicker .ui-datepicker-calendar th,
-				body.single-post article.post.hentry .entry-footer .tags-links > a,
+				.wp-block-quote,
+                .wp-block-quote cite,
+                .wp-block-pullquote,
+				.wp-block-calendar tbody,
 				.type-attachment .post-meta a,
-				article.post.hentry .post-meta a,
 				.type-attachment .post-meta .byline a,
-				.single-post article.type-post .post-meta .byline a,
+				article.post .post-meta a,
 				.error-404-first .widget_recent_entries a,
 				.wp-block-latest-posts a,
 				.widget-area__wrapper .widget_recent_entries a,
-				.widget-area__wrapper .widget_pages ul a,
-				.widget-area__wrapper .widget ul.menu li > a,
-				.widget-area__wrapper .widget_meta a,
 				.widget_categories a,
-				.wp-block-categories.wp-block-categories-list a,
-				.widget-area__wrapper .widget_archive a,
-				ul.wp-block-archives a,
+				.wp-block-categories a,
+				.ui-datepicker-calendar th,
+				article.post .entry-footer .tags-links > a,
+				article.type-post .post-meta .byline a,
+				.wp-block-archives a,
 				body {
 					color: {$general_text_color};
 				}
 				.primary-navigation ul.menu > li.menu-item-has-children > a:after,
-				.wp-block-tag-cloud a.tag-cloud-link,
 				.page-links a>.page-number,
-				.nav-links a,
-				.pagination .page-numbers:not(.current),
-				.search-results:not(.post-type-archive) .site-main article:not(.type-product):not(.type-post) .entry-meta span,
-				article.post.hentry .cat-tags-links .post-categories a,
-				.widget_tag_cloud a,
+				.post-navigation .nav-links a,
+				.pagination .page-numbers,
 				label,
 				dt {
 					color: {$general_text_color_light};
@@ -154,51 +153,51 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				.wp-block-calendar thead th,
 				.calendar_wrap thead tr th,
 				.type-attachment .post-meta .byline,
-				.single-post article.type-post .post-meta .byline {
+				article.type-post .post-meta .byline {
 					color: {$general_text_color_lighter};
 				}
+				.widget_calendar tfoot td a:hover,
+				.widget-area__wrapper .widget_nav_menu [class*='current'] > a,
+                .widget-area__wrapper .menu-item:hover > a,
 				#site-navigation > div.menu > ul ul.children > li[class*='current'] > a,
 				#site-navigation > div.menu > ul ul.children > li:hover > a,
 				#masthead ul.sub-menu [class*='current'] > a,
 				#masthead ul.sub-menu > li:hover > a,
-				body.search-results article .entry-footer a:hover,
-				body.search-results article .entry-title a:hover,
 				body.single-post article.post.hentry .entry-footer .tags-links > a:hover,
-				.single-post article.type-post .post-meta .byline a:hover,
-				.type-attachment .post-meta .byline a:hover,
-				.search-results:not(.post-type-archive) .site-main article .entry-header a:hover,
 				body:not(.single-post) article.post.hentry .entry-header a:hover,
-				.type-attachment .post-meta a:hover,
-				article.post.hentry .post-meta a:hover,
 				.entry-footer .edit-link .post-edit-link,
-				.page-links a>.page-number:hover,
-				.site-main .comment-navigation a:hover,
-				.post-navigation .nav-links a:hover,
-				.pagination .page-numbers:not(.dots):hover,
-				.pagination .page-numbers.current,
-				body:not(.single-post) article.type-post .page-links > a:first-child .page-number,
-				.page-links .page-number,
-				.comment-metadata a:hover time,
 				.error-404-first .widget_recent_entries a:hover,
 				.widget-area__wrapper .widget_recent_entries a:hover,
-				.widget-area__wrapper .widget_categories .current-cat-parent > a,
-				.widget-area__wrapper .widget_categories .current-cat > a,
-				.widget-area__wrapper ul.menu .current_page_parent > a,
-				.widget-area__wrapper ul.menu .current_page_item > a,
-				.widget-area__wrapper .widget_pages .current_page_parent > a,
-				.widget-area__wrapper .widget_pages .current_page_item > a,
-				.widget-area__wrapper .widget_pages ul a:hover,
-				.widget-area__wrapper .widget ul.menu li:hover > a,
+				.widget_categories a:hover,
+                .widget-area__wrapper .widget_categories [class*='current'] > a,
+				.widget-area__wrapper .widget_pages [class*='current'] > a,
+                .widget-area__wrapper .page_item a:hover,
 				.widget-area__wrapper .widget_meta a abbr,
-				.widget-area__wrapper .widget_meta a:hover,
-				.wp-block-categories.wp-block-categories-list a:hover,
+                .widget-area__wrapper .widget_meta a:hover,
+				.wp-block-categories a:hover,
 				.widget_categories a:not(.has-text-color):hover,
 				.wp-block-calendar tfoot a:hover,
 				.calendar_wrap tfoot td a:hover,
 				.widget-area__wrapper .widget_archive a:hover,
-				ul.wp-block-archives a:hover,
-				.wp-block-latest-posts > li > a:hover,
-				.site-branding .site-title a:hover,
+				.wp-block-archives a:hover,
+				.wp-block-latest-posts a:hover,
+				.pagination .page-numbers:not(.dots):hover,
+				.pagination .page-numbers.current,
+				.search-results article .entry-footer a:hover,
+				.search-results article .entry-title a:hover,
+				.search-results:not(.post-type-archive) .site-main article .entry-header a:hover,
+				.type-attachment .post-meta .byline a:hover,
+				.type-attachment .post-meta a:hover,
+				.comment-metadata a:hover time,
+				.comment-navigation a:hover,
+				.post-navigation .nav-links a:hover,
+				article.type-post .post-meta .byline a:hover,
+				article.type-post .page-links > a:first-child .page-number,
+				article.post .entry-title a:hover,
+				article.post .post-meta a:hover,
+				.page-links a > .page-number:hover,
+				.page-links .page-number,
+				.site-title a:hover,
 				input[type='checkbox']:checked:before,
 				a {
 					color: {$general_link_color};
@@ -207,152 +206,102 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				input[type='radio']:checked:before {
 					background-color: {$general_link_color};
 				}
-				body:not(.single-post) article.type-post .page-links > a:first-child .page-number,
-				article.post.hentry.format-chat .entry-content > *:nth-child(even),
-				article.post.hentry.format-chat .entry-content > *:nth-child(even):before {
+				article.type-post .page-links > a:first-child .page-number,
+				article.post.format-chat .entry-content > *:nth-child(even),
+				article.post.format-chat .entry-content > *:nth-child(even):before {
 					border-color: {$general_link_color};
 				}
 				a:hover {
 					color: {$general_link_alt_color};
 				}
 				/* Button */
-				.wp-block-tag-cloud a.tag-cloud-link:hover,
-				.ui-datepicker .ui-datepicker-calendar td a:hover,
-				.ui-datepicker .ui-datepicker-calendar td a.ui-state-active,
-				.ui-datepicker .ui-datepicker-title select,
-				.ui-datepicker .ui-datepicker-header,
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
-				body.single-post article.post.hentry .entry-footer .tags-links > a:hover,
-				article.post.hentry .cat-tags-links .post-categories a:hover,
-				body:not(.single-post) article.post.hentry .entry-content .more-link,
-				.wp-block-file .wp-block-file__button,
-				.widget_tag_cloud ul li:hover,
-				.wp-block-calendar tbody td#today,
-				.calendar_wrap #today,
-				.button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-				button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-				input[type='button']:not(:focus):not(:active):not(:hover), 
-				input[type='reset']:not(:focus):not(:active):not(:hover), 
-				button[name='apply_coupon']:active,
-				button[name='apply_coupon']:hover,
-				button[name='apply_coupon']:focus,
-				input[type='submit'][name='apply_coupon']:hover,
-				input[type='submit'][name='apply_coupon']:focus,
-				input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
+				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
 					background-color: {$button_background_color};
+				}
+				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):hover {
+					background-color: {$button_alt_text_color};
 				}
 				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
 					color: {$button_background_color};
-				}
-				.wp-block-file a.wp-block-file__button,
-				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-				body:not(.single-post) article.post.hentry .entry-content .more-link,
-				.button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-				button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-				input[type='button']:not(:focus):not(:active):not(:hover), 
-				input[type='reset']:not(:focus):not(:active):not(:hover), 
-				button[name='apply_coupon']:active,
-				button[name='apply_coupon']:hover,
-				button[name='apply_coupon']:focus,
-				input[type='submit'][name='apply_coupon']:hover,
-				input[type='submit'][name='apply_coupon']:focus,
-				input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
 					border-color: {$button_background_color};
 				}
 				.wp-block-calendar tbody td > a,
-				.widget_calendar .calendar_wrap tbody td > a {
+				.widget_calendar tbody td > a {
 					background-color: {$button_background_color_lighter};
+					color: {$button_text_color};
 				}
-				.wp-block-tag-cloud a.tag-cloud-link:hover,
 				#subscribe-submit [type='submit']:hover,
-				.ui-datepicker.ui-widget .ui-datepicker-header,
-				.ui-datepicker .ui-datepicker-calendar td a:hover,
-				.ui-datepicker .ui-datepicker-calendar td a.ui-state-active,
-				.ui-datepicker .ui-datepicker-title select,
 				.ui-datepicker-header .ui-datepicker-next, 
 				.ui-datepicker-header .ui-datepicker-prev,
 				.ui-datepicker-header .ui-datepicker-next:hover, 
 				.ui-datepicker-header .ui-datepicker-prev:hover,
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):hover,
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
-				body.single-post article.post.hentry .entry-footer .tags-links > a:hover,
-				article.post.hentry .cat-tags-links .post-categories a:hover,
-				body:not(.single-post) article.post.hentry .entry-content .more-link,
-				.wp-block-file .wp-block-file__button,
-				.widget_tag_cloud ul li:hover a,
-				.wp-block-calendar tbody td > a,
-				.widget_calendar .calendar_wrap tbody td > a,
-				.wp-block-calendar tbody td#today,
-				.calendar_wrap #today,
-				.button:not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-				button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not(:focus):not(:active):not(:hover):not([disabled]):not([name='apply_coupon']), 
-				input[type='button']:not(:focus):not(:active):not(:hover), 
-				input[type='reset']:not(:focus):not(:active):not(:hover), 
+				.wp-block-button__link:not(.has-text-color),
+				.wp-block-button__link:not(.has-text-color):hover,
 				button[name='apply_coupon']:active,
 				button[name='apply_coupon']:hover,
 				button[name='apply_coupon']:focus,
 				input[type='submit'][name='apply_coupon']:hover,
-				input[type='submit'][name='apply_coupon']:focus,
-				input[type='submit']:not([name='apply_coupon']):not(:focus):not(:active):not(:hover) {
+				input[type='submit'][name='apply_coupon']:focus {
+					color: {$button_text_color};
+				}
+				.wp-block-file .wp-block-file__button,
+				article.post .entry-content .more-link,
+				.button,
+				button,
+				input[type='button'], 
+				input[type='reset'],
+				input[type='submit'] {
+					background-color: {$button_background_color};
+					border-color: {$button_background_color};
+					color: {$button_text_color};
+				}
+				.ui-datepicker .ui-datepicker-calendar td a:hover,
+				.ui-datepicker .ui-datepicker-calendar td a.ui-state-active,
+				.ui-datepicker .ui-datepicker-title select,
+				.ui-datepicker .ui-datepicker-header,
+				.widget_tag_cloud a:hover,
+				.wp-block-calendar #today,
+				.wp-block-tag-cloud a:hover,
+				.widget_calendar #today,
+				article.post .entry-footer .tags-links > a:hover,
+				article.post .cat-links > .post-categories a:hover {
+					background-color: {$button_background_color};
 					color: {$button_text_color};
 				}
 				.ui-datepicker .ui-datepicker-title select {
 					background-image: -webkit-linear-gradient(45deg, transparent 50%, {$button_text_color} 50%), -webkit-linear-gradient(315deg, {$button_text_color} 50%, transparent 50%), -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 					background-image: -o-linear-gradient(45deg, transparent 50%, {$button_text_color} 50%), -o-linear-gradient(315deg, {$button_text_color} 50%, transparent 50%), -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 					background-image: linear-gradient(45deg, transparent 50%, {$button_text_color} 50%), linear-gradient(135deg, {$button_text_color} 50%, transparent 50%), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-				}
-				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover,
-				.wp-block-file a.wp-block-file__button:active, 
-				.wp-block-file a.wp-block-file__button:focus, 
-				.wp-block-file a.wp-block-file__button:hover, 
-				.wp-block-file a.wp-block-file__button:visited,
-				body:not(.single-post) article.post.hentry .entry-content .more-link:hover,
-				.button:not([name='apply_coupon']):focus, 
-				.button[disabled], 
-				button[disabled], 
-				button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not([name='apply_coupon']):focus, 
-				input[type='button']:focus, 
-				input[type='reset']:focus, 
-				button[name='apply_coupon'],
-				input[type='submit'][name='apply_coupon'],
-				input[type='submit']:not([name='apply_coupon']):focus,
-				.button:not([name='apply_coupon']):active, 
-				button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not([name='apply_coupon']):active, 
-				input[type='button']:active, 
-				input[type='reset']:active, 
-				input[type='submit']:not([name='apply_coupon']):active,
-				.button:not([name='apply_coupon']):hover, 
-				button:not(.close-btn):not(.handheld-menu-toggle):not(.pswp__button):not([name='apply_coupon']):hover, 
-				input[type='button']:hover, 
-				input[type='reset']:hover, 
-				input[type='submit']:not([name='apply_coupon']):hover {
+				} 
+				.wp-block-file a.wp-block-file__button:hover {
 					color: {$button_alt_text_color};
 				}
-				.wp-block-file a.wp-block-file__button:active, 
-				.wp-block-file a.wp-block-file__button:focus, 
-				.wp-block-file a.wp-block-file__button:hover, 
-				.wp-block-file a.wp-block-file__button:visited,
+				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover,
+				article.post .entry-content .more-link:hover,
+				.button:focus, 
+				.button.disabled,
+				button.disabled,
+				.button[disabled],
+				button[disabled], 
+				button:focus, 
+				input[type='button']:focus, 
+				input[type='reset']:focus,
+				input[type='submit']:focus,
 				.button:active, 
 				button:active, 
-				button[disabled],
-				input[type='button']:active,
+				input[type='button']:active, 
+				input[type='reset']:active, 
 				input[type='submit']:active,
-				.button:focus, 
-				button:focus, 
-				input[type='button']:focus,
-				input[type='submit']:focus,
 				.button:hover, 
-				button:hover,
-				button[name='apply_coupon'],
-				input[type='submit'][name='apply_coupon'],
-				input[type='button']:hover,
-				input[type='submit']:hover, 
-				.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover,
-				body:not(.single-post) article.post.hentry .entry-content .more-link:hover {
+				button:hover, 
+				input[type='button']:hover, 
+				input[type='reset']:hover, 
+				input[type='submit']:hover {
+					color: {$button_alt_text_color};
 					border-color: {$button_alt_text_color};
 				}
-				.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):hover {
-					background-color: {$button_alt_text_color};
+				.wp-block-file a.wp-block-file__button:hover{
+					border-color: {$button_alt_text_color};
 				}
 				/* Header */
 				body.has-header-image #masthead {
@@ -367,9 +316,11 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 			if ( conj_lite_is_woocommerce_activated() ) :
 				$customizer_css .= "
 					/* General */
+					.product_list_widget li > a,
+	                .product_list_widget .woocommerce-Price-amount,
+	                .product_list_widget .product-title,
 					.woocommerce-MyAccount-content legend,
-					.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-LostPassword,
-					#customer_login .woocommerce-LostPassword a,
+					.woocommerce-form-login .woocommerce-LostPassword a,
 					.woocommerce-table--order-downloads .download-product a,
 					.woocommerce-table--order-details a,
 					.woocommerce-thankyou-order-received,
@@ -380,19 +331,17 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-cart-form__cart-item td,
 					.woocommerce-cart-form__cart-item td a,
 					.woocommerce-loop-category__title mark,
-					.product_list_widget li > a,
 					.woocommerce-mini-cart__total > strong,
 					.woocommerce-mini-cart-item a,
 					.woocommerce-Tabs-panel--additional_information .shop_attributes td,
-					ol.commentlist .comment-text .woocommerce-review__author,
-					.product_list_widget .woocommerce-Price-amount,
-	        		.product_list_widget .product-title {
+					.comment-text .woocommerce-review__author {
 						color: {$general_heading_color};
 					}
-					.widget_product_categories .product-categories li.current-cat-parent > a,
-					.widget_product_categories .product-categories li.current-cat > a,
-					#customer_login .woocommerce-LostPassword a:hover,
-					.woocommerce-account:not(.logged-in) .entry-content > .woocommerce > .woocommerce-form-login .woocommerce-LostPassword a:hover,
+					.widget_product_categories [class*='current'] > a,
+                	.widget_product_categories li a:hover,
+                	.woocommerce-widget-layered-nav li a:hover,
+                	.woocommerce-widget-layered-nav li.chosen a
+					.woocommerce-form-login .woocommerce-LostPassword a:hover,
 					.woocommerce-MyAccount-navigation-link:not(.is-active) > a:hover,
 					.woocommerce-MyAccount-navigation-link.is-active > a,
 					.woocommerce-table--order-downloads .download-product a:hover,
@@ -400,13 +349,11 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					ul.woocommerce-thankyou-order-details li strong,
 					.woocommerce-checkout-review-order-table td.product-total,
 					.woocommerce-cart-form__cart-item td a:hover,
-					li.product-category a:hover .woocommerce-loop-category__title mark,
-					li.product-category a:hover .woocommerce-loop-category__title,
+					a:hover > .woocommerce-loop-category__title mark,
+                	a:hover > .woocommerce-loop-category__title,
 					.product_list_widget li > a:hover,
-					.woocommerce.widget_rating_filter li a:hover,
-					.woocommerce-widget-layered-nav ul li a:hover,
-					.woocommerce-pagination ul li .page-numbers:not(.dots):hover,
-					.woocommerce-pagination ul li .page-numbers.current,
+                	.product_list_widget .product-title:hover,
+					.widget_rating_filter li a:hover,
 					.widget_product_categories .product-categories li a:hover,
 					.woocommerce-mini-cart__total > .woocommerce-Price-amount,
 					.woocommerce-mini-cart-item .woocommerce-Price-amount,
@@ -414,11 +361,10 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-tabs ul.tabs li.active a,
 					.woocommerce-tabs ul.tabs li:hover a,
 					.woocommerce-product-rating .woocommerce-review-link:hover,
-					ul.products li.product > .price,
-					ul.products li.product .woocommerce-loop-product__link .woocommerce-loop-product__title:hover,
-					.product_list_widget .product-title:hover,
-					ul.products li.product .added_to_cart:after,
-					ul.products li.product .button:after {
+					li.product > .price,
+					.woocommerce-loop-product__title:hover,
+					li.product .added_to_cart:after,
+					li.product .button:after {
 						color: {$general_link_color};
 					}
 					.widget_price_filter .ui-slider .ui-slider-range,
@@ -427,18 +373,16 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 						background-color: {$general_link_color};
 					}
 					.woocommerce-pagination ul li .page-numbers:not(.dots):hover,
-					.woocommerce-pagination ul li .page-numbers.current {
-						border-color: {$general_link_color};
-					}
+                	.woocommerce-pagination ul li .page-numbers.current,
 					.woocommerce-mini-cart__buttons > a:not(.checkout):hover {
-						border-color: {$general_link_color} !important;
+						border-color: {$general_link_color};
+						color: {$general_link_color};
 					}
 					form.track_order > p:first-of-type {
 						background: -webkit-linear-gradient(315deg, {$general_link_color} 39%, {$general_link_color_lighter} 100%);
 						background: -o-linear-gradient(315deg, {$general_link_color} 39%, {$general_link_color_lighter} 100%);
 						background: linear-gradient(135deg, {$general_link_color} 39%, {$general_link_color_lighter} 100%);
 					}
-					.woocommerce-mini-cart__buttons > a:not(.checkout):hover,
 					.woocommerce-MyAccount-downloads-file,
 					.woocommerce-orders-table__cell-order-actions .woocommerce-button {
 						color: {$general_link_color} !important;
@@ -447,13 +391,13 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-orders-table__cell-order-actions .woocommerce-button:hover {
 						color: {$general_link_alt_color} !important;
 					}
-					.widget_product_categories .product-categories li.current-cat-parent > a:hover,
-					.widget_product_categories .product-categories li.current-cat > a:hover,
+					.widget_product_categories [class*='current'] > a:hover,
 					.woocommerce-orders-table__cell-order-actions .woocommerce-button:hover,
-					ul.products li.product .added_to_cart:hover:after,
-					ul.products li.product .button:hover:after {
+					li.product .added_to_cart:hover:after,
+					li.product .button:hover:after {
 						color: {$general_link_alt_color};
 					}
+					.site-header__search form[role='search'].woocommerce-product-search:before,
 					ul.woocommerce-thankyou-order-details li,
 					abbr.required:before,
 					.woocommerce-remove-coupon:before,
@@ -462,13 +406,9 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					div.product .entry-summary del,
 					.search-results:not(.post-type-archive) .site-main article.type-product del .woocommerce-Price-amount,
 					div.product .entry-summary del .woocommerce-Price-amount,
-					ul.products li.product .price .price-label {
+					li.product .price .price-label {
 						color: {$general_text_color_lighter};
 					}
-					.widget_product_tag_cloud .tagcloud a,
-					.woocommerce-product-gallery__trigger,
-					.category-flash,
-					.sold-out-flash,
 					.woocommerce-checkout-review-order-table thead th,
 					.woocommerce-cart-form table th,
 					.woocommerce-pagination ul li .page-numbers,
@@ -477,32 +417,34 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-product-rating .woocommerce-review-link {
 						color: {$general_text_color_light};
 					}
+					.widget_rating_filter li a,
 					.cart_totals .shipping label,
+					.woocommerce-checkout-review-order__heading,
 					.site-footer-bar .widget_price_filter .price_label,
+					.woocommerce-mini-cart__buttons > a:not(.checkout),
 					.woocommerce-MyAccount-navigation-link:not(.is-active) > a,
-					.woocommerce.widget_rating_filter li a,
 					.star-rating,
-					.woocommerce-widget-layered-nav ul li a,
-					.widget_product_categories .product-categories li a,
+					.woocommerce-widget-layered-nav li a,
+					.widget_product_categories li a,
 					.woocommerce-tabs ul.tabs li a {
 						color: {$general_text_color};
 					}
-					.woocommerce-mini-cart__buttons > a:not(.checkout) {
-						color: {$general_text_color} !important;
-					}
-					.woocommerce-terms-and-conditions,
-					.widget_product_tag_cloud a,
-					.woocommerce-product-gallery__trigger,
-					.category-flash,
-					.sold-out-flash {
+					.woocommerce-terms-and-conditions {
 						background-color: #{$general_background_color};
 					}
+					.category-flash,
+					.sold-out-flash
+					.woocommerce-product-gallery__trigger,
+					.widget_product_tag_cloud a {
+	                    color: {$general_text_color_light};
+	                    background-color: #{$general_background_color};
+	                }
 					/* Button */
 					.select2-container.select2-container--default .select2-results__option[aria-selected=true], 
 					.select2-container.select2-container--default .select2-results__option[data-selected=true],
 					.select2-container.select2-container--default .select2-results__option--highlighted[aria-selected], 
 					.select2-container.select2-container--default .select2-results__option--highlighted[data-selected],
-					.widget_product_tag_cloud .tagcloud a:hover,
+					.widget_product_tag_cloud a:hover,
 					.site-header__cart li:not(.current-menu-item) .cart-contents {
 						background-color: {$button_background_color};
 						border-color: {$button_background_color};
