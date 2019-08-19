@@ -1214,6 +1214,9 @@ body.has-header-image .site-header:after {
        object-fit: cover;
 }
 @media (min-width: 62.0625em) {
+	.site-header {
+		padding-top: 30px;
+	}
 	.site-header > .col-full > .primary-navigation {
 		align-self: flex-end;
 	}
@@ -3903,6 +3906,7 @@ video {
 }
 .site-footer__inner {
 	position: relative;
+    padding: 56px 0 28px;
 }
 .site-footer__inner > .col-full {
 	display: flex;
