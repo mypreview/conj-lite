@@ -120,27 +120,22 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 			wp_style_add_data( 'conj-lite-block-editor-woocommerce-styles', 'rtl', 'replace' );
 
 			// Retrieving Customizer theme mod values
-			$general_background_color = sanitize_hex_color_no_hash( get_background_color() );
 			$general_text_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_text_color', '#6B6F81' ) );
-			$general_text_color_light = sanitize_hex_color( conj_lite_adjust_color_brightness( $general_text_color, 30 ) );
 			$general_text_color_lighter = sanitize_hex_color( conj_lite_adjust_color_brightness( $general_text_color, 50 ) );
 			$general_link_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_link_color', '#666EE8' ) );
 			$general_heading_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_heading_color', '#464855' ) );
-			$general_button_text_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_button_text_color', '#FFFFFF' ) );
-			$general_button_background_color = sanitize_hex_color( get_theme_mod( 'conj_lite_general_button_background_color', '#666EE8' ) );
 
 			// Append the following CSS styles to the Gutenberg style tag.
 			$inline_css = "
-				.wc-block-products-grid .wc-product-preview .wc-product-preview__title {
+				.wc-block-grid__product-title {
 					color: {$general_heading_color};
 				}
-				.wc-block-products-grid .wc-product-preview .wc-product-preview__add-to-cart:after,
-				.wc-block-products-grid .wc-product-preview del,
-				.wc-block-products-grid .wc-product-preview .woocommerce-Price-amount {
-					color: {$general_link_color};
-				}
-				.wc-block-products-grid .wc-product-preview .price-label {
+				.wc-block-grid__product-price .price-label {
 					color: {$general_text_color_lighter};
+				}
+				.wc-block-grid__product-price,
+				.wc-block-grid__product-add-to-cart > a:after {
+					color: {$general_link_color};
 				}
 			";
 

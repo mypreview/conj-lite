@@ -316,6 +316,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 			if ( conj_lite_is_woocommerce_activated() ) :
 				$customizer_css .= "
 					/* General */
+					.wc-block-grid__product-title,
 					.product_list_widget li > a,
 	                .product_list_widget .woocommerce-Price-amount,
 	                .product_list_widget .product-title,
@@ -361,6 +362,9 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-tabs ul.tabs li.active a,
 					.woocommerce-tabs ul.tabs li:hover a,
 					.woocommerce-product-rating .woocommerce-review-link:hover,
+					.wc-block-grid__product-title:hover,
+					.wc-block-grid__product-price,
+					.wc-block-grid__product-add-to-cart > a:after,
 					li.product > .price,
 					.woocommerce-loop-product__title:hover,
 					li.product .added_to_cart:after,
@@ -393,6 +397,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					}
 					.widget_product_categories [class*='current'] > a:hover,
 					.woocommerce-orders-table__cell-order-actions .woocommerce-button:hover,
+					.wc-block-grid__product-add-to-cart > a:hover:after,
 					li.product .added_to_cart:hover:after,
 					li.product .button:hover:after {
 						color: {$general_link_alt_color};
@@ -406,6 +411,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					div.product .entry-summary del,
 					.search-results:not(.post-type-archive) .site-main article.type-product del .woocommerce-Price-amount,
 					div.product .entry-summary del .woocommerce-Price-amount,
+					.wc-block-grid__product-price .price-label,
 					li.product .price .price-label {
 						color: {$general_text_color_lighter};
 					}
@@ -433,7 +439,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 						background-color: #{$general_background_color};
 					}
 					.category-flash,
-					.sold-out-flash
+					.sold-out-flash,
 					.woocommerce-product-gallery__trigger,
 					.widget_product_tag_cloud a {
 	                    color: {$general_text_color_light};
