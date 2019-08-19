@@ -533,7 +533,8 @@ if ( ! class_exists( 'Conj_Lite' ) ) :
 			 * @see 	https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L276
 			 */
 			wp_enqueue_style( 'conj-lite-google-font', self::google_fonts_url(), FALSE, CONJ_LITE_THEME_VERSION, 'all' );
-			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks' ), CONJ_LITE_THEME_VERSION, 'all' );
+			wp_register_style( 'feather', get_theme_file_uri( '/assets/css/vendor/feather.css' ), FALSE, '4.19.0', 'all' );
+			wp_enqueue_style( 'conj-lite-block-editor-styles', get_theme_file_uri( '/assets/admin/css/style-editor.css' ), array( 'wp-edit-blocks', 'feather' ), CONJ_LITE_THEME_VERSION, 'all' );
 			wp_style_add_data( 'conj-lite-block-editor-styles', 'rtl', 'replace' );
 			wp_enqueue_script( 'conj-lite-block-editor-scripts', get_theme_file_uri( '/assets/admin/js/block-editor.js' ), array( 'wp-data', 'wp-dom-ready', 'wp-block-editor', 'wp-edit-post' ), CONJ_LITE_THEME_VERSION, TRUE );
 
