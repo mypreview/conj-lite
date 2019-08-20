@@ -172,6 +172,23 @@ if ( ! function_exists( 'conj_lite_wc_product_flash_wrapper_close' ) ) :
 endif;
 
 /**
+ * Append the product categories to archive products loop.
+ *
+ * @uses 	get_the_term_list()
+ * @return  void
+ */
+if ( ! function_exists( 'conj_lite_wc_show_product_categories' ) ) :
+	function conj_lite_wc_show_product_categories() {
+
+		global $post;
+		$terms_as_links = get_the_term_list( intval( $post->ID ), 'product_cat', '<small>', ', ', '</small>' );
+
+		printf( '<p class="woocommerce-loop-product__categories">%s</p>', wp_kses_post( $terms_as_links ) );
+
+	}
+endif;
+
+/**
  * Cart Link.
  * Displayed a link to the cart including the number of items present and the cart total.
  *
