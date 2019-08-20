@@ -69,7 +69,6 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				[class*='search-type-'],
 				article.post .cat-links > .post-categories a,
 				article.post:not([class*='category']) .cat-tags-links .cat-links,
-				.wp-block-tag-cloud a,
 				.widget_tag_cloud a {
 					color: {$general_text_color_light};
 					background-color: #{$general_background_color};
@@ -137,6 +136,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				body {
 					color: {$general_text_color};
 				}
+				.wp-block-tag-cloud a,
 				.primary-navigation ul.menu > li.menu-item-has-children > a:after,
 				.page-links a>.page-number,
 				.post-navigation .nav-links a,
@@ -163,7 +163,6 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				#site-navigation > div.menu > ul ul.children > li:hover > a,
 				#masthead ul.sub-menu [class*='current'] > a,
 				#masthead ul.sub-menu > li:hover > a,
-				body.single-post article.post.hentry .entry-footer .tags-links > a:hover,
 				body:not(.single-post) article.post.hentry .entry-header a:hover,
 				.entry-footer .edit-link .post-edit-link,
 				.error-404-first .widget_recent_entries a:hover,
@@ -236,12 +235,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 				.ui-datepicker-header .ui-datepicker-next:hover, 
 				.ui-datepicker-header .ui-datepicker-prev:hover,
 				.wp-block-button__link:not(.has-text-color),
-				.wp-block-button__link:not(.has-text-color):hover,
-				button[name='apply_coupon']:active,
-				button[name='apply_coupon']:hover,
-				button[name='apply_coupon']:focus,
-				input[type='submit'][name='apply_coupon']:hover,
-				input[type='submit'][name='apply_coupon']:focus {
+				.wp-block-button__link:not(.has-text-color):hover {
 					color: {$button_text_color};
 				}
 				.wp-block-file .wp-block-file__button,
@@ -426,7 +420,6 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.widget_rating_filter li a,
 					.cart_totals .shipping label,
 					.woocommerce-checkout-review-order__heading,
-					.site-footer-bar .widget_price_filter .price_label,
 					.woocommerce-mini-cart__buttons > a:not(.checkout),
 					.woocommerce-MyAccount-navigation-link:not(.is-active) > a,
 					.star-rating,
