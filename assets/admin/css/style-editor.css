@@ -560,9 +560,11 @@ a {
 .wp-block-freeform.block-library-rich-text__tinymce code {
     background: transparent;
     font-size: 90%;
+    color: #FF4961;
 }
 .wp-block-freeform.block-library-rich-text__tinymce pre {
     margin-bottom: 0;
+    color: #FF4961;
 }
 .wp-block-freeform.block-library-rich-text__tinymce pre,
 .wp-block-preformatted pre {
@@ -1782,27 +1784,30 @@ body.post-type-post .block-editor-block-list__layout .block-editor-block-list__b
 }
 .wp-block-code,
 .wp-block-code textarea,
-.wp-block-tag-cloud a.tag-cloud-link,
+.wp-block-tag-cloud a,
 .post-type-post .wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
 .post-type-post .wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
 .post-type-post .edit-post-visual-editor > .editor-writing-flow,
-.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment {
+	background-color: #FFFFFF;
+}
 .wp-block-search .wp-block-search__input,
 .block-editor-block-list__block select {
 	background-color: #FFFFFF;
-}
-.block-editor-block-list__layout blockquote.wp-block-quote,
-.wp-block-search .wp-block-search__input,
-.wp-block-pullquote,
-.wp-block-quote.is-large, 
-.wp-block-quote.is-style-large,
-.block-editor-block-list__layout blockquote,
-.wp-block-latest-comments__comment-meta,
-.wp-block-categories ul.wp-block-categories__list,
-.block-editor-block-list__block select {
 	border-color: #DDDFE7;
 }
-.wp-block-categories ul.wp-block-categories__list > li:before {
+.wp-block-categories ul.children,
+.wp-block-categories__list,
+.block-editor-block-list__layout blockquote.wp-block-quote,
+.wp-block-pullquote,
+.wp-block-quote, 
+.wp-block-quote.is-style-large,
+.block-editor-block-list__layout blockquote,
+.wp-block-latest-comments__comment-meta {
+	border-color: #DDDFE7;
+}
+.wp-block-categories ul.children > li:before,
+.wp-block-categories__list > li:before {
 	background-color: #DDDFE7;
 }
 .wp-block-code,
