@@ -645,6 +645,7 @@ li.product .price__wrapper,
     display: flex;
     line-height: 1.38;
     font-size: 16px;
+    padding-top: 15px;
     align-items: center;
     justify-content: center;
 }
@@ -1004,7 +1005,9 @@ ul > .product {
 }
 @media (max-width: 60em) and (min-width: 37.5625em) {
 	.wc-block-grid:not(.has-1-columns) .wc-block-grid__product {
-		width: calc((100% - 30.02px) /2);
+		max-width: calc((100% - 30.02px) /2);
+	    flex: 1 0 50%;
+
 	}
 	[class*="woocommerce-columns--"]:not(.woocommerce-columns--1) > *,
 	[class*="columns-"]:not(.columns-1) > .product {
@@ -1022,8 +1025,10 @@ ul > .product {
 	}
 }
 @media (max-width: 37.5em) {
-	.wc-block-grid .wc-block-grid__product {
+	.wc-block-grid .wc-block-grid__products .wc-block-grid__product {
 		margin: 30px 0 0;
+		max-width: 100%;
+		flex: 1 0 100%;
 	}
 	[class*="columns-"] > .product,
 	[class*="woocommerce-columns--"] > * {
@@ -1051,6 +1056,7 @@ ul > .product {
 .wc-block-grid__product-onsale {
 	top: 20px;
 	left: 20px;
+	right: auto;
     text-transform: none;
     z-index: 0;
 }
@@ -1060,16 +1066,14 @@ ul > .product {
     font-weight: 500;
     font-size: 16px;
 }
-.wc-block-grid__product-price {
-	margin: 15px 0 0;
-}
+.wc-block-grid__product-price,
 .wc-block-grid__product-rating, 
 .wc-block-grid__product-title {
     margin-bottom: 0;
 }
 .wc-block-grid__product-add-to-cart {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     right: 0;
 }
 .wc-block-grid__product-add-to-cart a.add_to_cart_button.loading {
@@ -1929,12 +1933,10 @@ table.variations .label {
 /*--------------------------------------------------------------
 # Notices
 --------------------------------------------------------------*/
-.woocommerce-store-notice,
 .woocommerce-message, 
 .woocommerce-info, 
 .woocommerce-error:not(:empty), 
 .woocommerce-noreviews {
-	clear: both;
 	-webkit-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
 	        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
 	width: 100%;
@@ -1942,16 +1944,11 @@ table.variations .label {
     list-style: none;
 	margin-left: 0;
 	margin-right: 0;
-	line-height: 1.71;
 	position: relative;
 }
-.woocommerce-message > li, 
-.woocommerce-info > li, 
 .woocommerce-error > li {
 	position: relative;
 }
-.entry-content ul.woocommerce-message, 
-.entry-content ul.woocommerce-info, 
 .entry-content ul.woocommerce-error {
 	margin-left: 0;
 }
@@ -1972,7 +1969,6 @@ table.variations .label {
 }
 .woocommerce-info .showlogin,
 .woocommerce-info .showcoupon,
-.woocommerce-store-notice__dismiss-link,
 .woocommerce-message > a, 
 .woocommerce-message .button, 
 .woocommerce-info .button, 
@@ -1980,8 +1976,6 @@ table.variations .label {
     border: 0;
     min-width: auto;
     min-height: auto;
-    text-align: center;
-    line-height: 1.71;
 }
 .woocommerce-store-notice:before,
 .woocommerce-info:before, 
@@ -2006,29 +2000,71 @@ table.variations .label {
 	content: "\e91d";
 }
 .woocommerce-store-notice {
+	-webkit-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
+	        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
+	width: 100%;
+	padding: 14px 40px 14px 50px;
 	position: -ms-device-fixed;
     position: -webkit-sticky;
     position: sticky;
     z-index: 20;
 	margin: 0;
-    width: 100%;
 	font-size: 14px;
+	bottom: 0;
+}
+.woocommerce-store-notice__dismiss-link {
+	text-indent: -9999px;
+    font-size: 16px;
+    position: absolute;
+    right: 17px;
+    top: 12px;
+}
+.woocommerce-store-notice__dismiss-link:before {
+    content: "\ea00";
+    font-family: Feather;
+    text-indent: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .has-offcanvas--overlay .woocommerce-store-notice {
 	display: none;
 }
+.page-template-template-fluid.home .site-content > .col-full > .woocommerce:first-child {
+    margin-top: 0;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    position: relative;
+}
 @media (min-width: 37.5625em) {
 	.woocommerce-info .showlogin,
 	.woocommerce-info .showcoupon,
-	.woocommerce-store-notice__dismiss-link,
 	.woocommerce-message > a,
 	.woocommerce-error .button, 
 	.woocommerce-message .button, 
 	.woocommerce-info .button {
-		padding: 14px 20px 14px 20px;
-		margin: -14px -20px -14px 20px;
+		padding: 0 0 0 20px;
+	    margin: 0 0 14px 20px;
 	    font-size: inherit;
 	    float: right;
+	    position: relative;
+    	z-index: 0;
+	}
+	.woocommerce-info .showlogin:after,
+	.woocommerce-info .showcoupon:after,
+	.woocommerce-message > a:after,
+	.woocommerce-error .button:after, 
+	.woocommerce-message .button:after, 
+	.woocommerce-info .button:after {
+	    content: "";
+	    right: -20px;
+	    top: -14px;
+	    bottom: -14px;
+	    left: 0;
+	    background-color: inherit;
+	    z-index: -1;
+	    position: absolute;
 	}
 	.site-content > .col-full > .woocommerce:first-child,
 	.post-type-archive-product.search-no-results .woocommerce-breadcrumb + .woocommerce,
@@ -2037,38 +2073,22 @@ table.variations .label {
 		margin-top: 57px;
 	}
 }
-@media (min-width: 62.0625em) {
-	.woocommerce-store-notice {
-		bottom: 0;
-	}
-}
-@media (max-width: 62em) {
-	.woocommerce-store-notice {
-		bottom: 50px;
-	}
-}
 @media (max-width: 37.5em) {
-	.woocommerce-info .showlogin,
-	.woocommerce-info .showcoupon,
-	.woocommerce-store-notice__dismiss-link {
-		display: block;
-		padding: 14px;
-		margin: 10px -20px -14px -50px;
-	}
-	.woocommerce > .woocommerce-message > li:only-child,
-	.woocommerce > .woocommerce-info > li:only-child,
-	.woocommerce > .woocommerce-error > li:only-child {
-	    display: flex;
-	    flex-direction: column;
-	}
 	.woocommerce-message > a,
 	.woocommerce-error .button, 
 	.woocommerce-message .button, 
-	.woocommerce-info .button {
+	.woocommerce-info .button,
+	.woocommerce-info .showlogin,
+	.woocommerce-info .showcoupon {
 		order: 5;
 		display: block;
+	    text-align: center;
 		padding: 14px;
 		margin: 10px -20px -14px -50px;
+	}
+	.woocommerce > .woocommerce-error > li:only-child {
+	    display: flex;
+	    flex-direction: column;
 	}
 	.site-content > .col-full > .woocommerce:first-child,
 	body:not(.search-no-results) .woocommerce-breadcrumb + .woocommerce {
@@ -3835,7 +3855,6 @@ li.product .added_to_cart,
 }
 .woocommerce-info .showlogin,
 .woocommerce-info .showcoupon,
-.woocommerce-store-notice__dismiss-link,
 .woocommerce-info .button {
 	background-color: #0081d4;
 }
