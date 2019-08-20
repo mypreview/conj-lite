@@ -47,13 +47,12 @@ wp_body_open();
 			</div>
 		</header><!-- #masthead -->
 		<div id="content" class="site-content" tabindex="-1">
-			<div class="col-full">
-				<?php
-				/**
-				 * Functions hooked into conj_lite_header action
-				 *
-				 * @hooked 	conj_lite_site_container_wrapper		 - 5
-				 * @hooked 	woocommerce_breadcrumb 					 - 10
-				 * @hooked 	conj_lite_wc_shop_messages 				 - 15
-				 */
-				do_action( 'conj_lite_site_content_top' ); ?>
+			<?php
+			/**
+			 * Functions hooked into conj_lite_header action
+			 *
+			 * @hooked 	conj_lite_site_container_wrapper		 - 5
+			 * @hooked 	woocommerce_breadcrumb 					 - 10
+			 * @hooked 	conj_lite_wc_shop_messages 				 - 15
+			 */
+			do_action( 'conj_lite_site_content_top' ); ?>
