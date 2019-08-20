@@ -15,7 +15,9 @@
     font-weight: 500;
     font-size: 16px;
 }
-.wc-block-grid__product-price, 
+.wc-block-grid__product-price {
+	margin: 15px 0 0;
+}
 .wc-block-grid__product-rating, 
 .wc-block-grid__product-title {
     margin-bottom: 0;
