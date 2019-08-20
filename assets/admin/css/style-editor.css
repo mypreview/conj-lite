@@ -130,7 +130,6 @@ p.has-text-color a:hover {
 .block-editor-block-list__layout select, 
 .block-editor-block-list__layout optgroup, 
 .block-editor-block-list__layout textarea {
-	font-size: 14px;
 	font-family: 'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
 }
 .block-editor-block-list__layout abbr, 
@@ -148,6 +147,11 @@ p.has-text-color a:hover {
 .block-editor-block-list__layout label {
 	font-size: 13px;
 }
+.block-editor-block-list__block select,
+.block-editor-block-list__layout input, 
+.block-editor-block-list__layout select, 
+.block-editor-block-list__layout optgroup, 
+.block-editor-block-list__layout textarea,
 .block-editor-block-list__layout button,
 .wp-block-categories,
 .post-type-post .editor-styles-wrapper .wp-block-latest-comments__comment-excerpt p,
@@ -1812,6 +1816,7 @@ body.post-type-post .block-editor-block-list__layout .block-editor-block-list__b
 }
 .wp-block-code,
 .wp-block-preformatted pre,
+.wp-block-verse pre,
 .wp-block-code .block-editor-plain-text,
 code,
 pre,
