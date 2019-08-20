@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2019-06-02 16:39+0400\n"
+"POT-Creation-Date: 2019-08-20 13:32+0400\n"
 "PO-Revision-Date: 2018-05-14 10:20+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -36,55 +36,61 @@ msgid "Search"
 msgstr ""
 
 #. translators: 1: Div tag open 2: Aria-label quotation close.
-#: 404.php:37
+#: 404.php:36
 #, php-format
 msgid "%1$sPromoted Products%2$s"
 msgstr ""
 
 #. translators: 1: Nav tag open 2: Aria-label quotation close.
-#: 404.php:42
+#: 404.php:41
 #, php-format
 msgid "%1$sProduct Categories%2$s"
 msgstr ""
 
 #. translators: 1: Div tag open 2: Aria-label quotation close.
-#: 404.php:53
+#: 404.php:50
 #, php-format
 msgid "%1$sCategories%2$s"
 msgstr ""
 
 #. translators: 1: Head tag open 2: Head tag close.
-#: 404.php:56
+#: 404.php:53
 #, php-format
 msgid "%1$sMost Used Categories%2$s"
 msgstr ""
 
 #. translators: 1: Div tag open 2: Aria-label quotation close.
 #. translators: 1: Head tag open 2: Head tag close.
-#: 404.php:74 404.php:76
+#: 404.php:70 404.php:72
 #, php-format
 msgid "%1$sBest-Selling Products%2$s"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: 404.php:85
+#: 404.php:82
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:40 index.php:45 page-templates/template-fluid.php:36
-#: search.php:40 single.php:26
-msgid "Previous page"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: archive.php:38 index.php:41 search.php:38
+#, php-format
+msgctxt "posts pagination"
+msgid "%1$sPrevious page%2$s"
 msgstr ""
 
-#: archive.php:41 index.php:46 page-templates/template-fluid.php:37
-#: search.php:41 single.php:27
-msgid "Next page"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: archive.php:40 index.php:43 search.php:40
+#, php-format
+msgctxt "posts pagination"
+msgid "%1$sNext page%2$s"
 msgstr ""
 
-#: archive.php:42 index.php:47 page-templates/template-fluid.php:38
-#: search.php:42 single.php:28
-msgid "Page"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: archive.php:42 index.php:45 search.php:42
+#, php-format
+msgctxt "posts pagination label"
+msgid "%1$sPage%2$s"
 msgstr ""
 
 #. translators: %s: post title
@@ -106,199 +112,253 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:32 includes/conj-lite-template-functions.php:51
-msgid "Skip to content"
-msgstr ""
-
-#. translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required PHP version number, 4: Running PHP version number, 5: Anchor open tag, 6: Anchor close tag.
+#. translators: 1: Required PHP version number, 2: Running PHP version number, 3: Anchor open tag, 4: Anchor close tag.
 #: includes/back-compat.php:52
 #, php-format
+msgctxt "admin notice"
 msgid ""
-"%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least PHP version "
-"%3$s. You are running version %4$s. Please %5$supgrade%6$s and try again."
+"CONJ Lite theme requires at least PHP version %1$s. You are running version "
+"%2$s. Please %3$supgrade%4$s and try again."
 msgstr ""
 
-#. translators: 1: Anchor open tag, 2: Anchor close tag, 3: Required WordPress version number, 4: Running WordPress version number.
+#. translators: 1: Required PHP version number, 2: Running PHP version number, 3: Anchor open tag, 4: Anchor close tag.
 #: includes/back-compat.php:73
 #, php-format
+msgctxt "admin notice"
 msgid ""
-"%1$sConj Lite - eCommerce WordPress Theme%2$s requires at least WordPress "
-"version %3$s. You are running version %4$s. Please upgrade and try again."
-msgstr ""
-
-#: includes/class-conj-lite.php:137
-msgid "Primary Menu"
+"CONJ Lite theme requires at least WordPress version %1$s. You are running "
+"version %2$s. Please %3$supgrade%4$s and try again."
 msgstr ""
 
 #: includes/class-conj-lite.php:138
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/class-conj-lite.php:139
 msgid "Push Menu"
 msgstr ""
 
 #: includes/class-conj-lite.php:199
+msgctxt "editor font size"
 msgid "Small"
 msgstr ""
 
 #: includes/class-conj-lite.php:200
+msgctxt "editor font size"
 msgid "S"
 msgstr ""
 
 #: includes/class-conj-lite.php:205
+msgctxt "editor font size"
 msgid "Regular"
 msgstr ""
 
 #: includes/class-conj-lite.php:206
+msgctxt "editor font size"
 msgid "M"
 msgstr ""
 
 #: includes/class-conj-lite.php:211
+msgctxt "editor font size"
 msgid "Large"
 msgstr ""
 
 #: includes/class-conj-lite.php:212
+msgctxt "editor font size"
 msgid "L"
 msgstr ""
 
 #: includes/class-conj-lite.php:217
+msgctxt "editor font size"
 msgid "Larger"
 msgstr ""
 
 #: includes/class-conj-lite.php:218
+msgctxt "editor font size"
 msgid "XL"
 msgstr ""
 
-#: includes/class-conj-lite.php:229
+#: includes/class-conj-lite.php:227
+msgctxt "editor color"
 msgid "Black"
 msgstr ""
 
-#: includes/class-conj-lite.php:234
+#: includes/class-conj-lite.php:232
+msgctxt "editor color"
 msgid "Mako"
 msgstr ""
 
-#: includes/class-conj-lite.php:239
+#: includes/class-conj-lite.php:237
+msgctxt "editor color"
 msgid "Storm Gray"
 msgstr ""
 
-#: includes/class-conj-lite.php:244
+#: includes/class-conj-lite.php:242
+msgctxt "editor color"
 msgid "Manatee"
 msgstr ""
 
-#: includes/class-conj-lite.php:249
+#: includes/class-conj-lite.php:247
+msgctxt "editor color"
 msgid "Cadet Blue"
 msgstr ""
 
-#: includes/class-conj-lite.php:254
+#: includes/class-conj-lite.php:252
+msgctxt "editor color"
 msgid "Martinique"
 msgstr ""
 
-#: includes/class-conj-lite.php:259
+#: includes/class-conj-lite.php:257
+msgctxt "editor color"
 msgid "Victoria"
 msgstr ""
 
-#: includes/class-conj-lite.php:264
+#: includes/class-conj-lite.php:262
+msgctxt "editor color"
 msgid "Cornflower Blue"
 msgstr ""
 
-#: includes/class-conj-lite.php:269
+#: includes/class-conj-lite.php:267
+msgctxt "editor color"
 msgid "White Lilac"
 msgstr ""
 
-#: includes/class-conj-lite.php:274
+#: includes/class-conj-lite.php:272
+msgctxt "editor color"
 msgid "White"
 msgstr ""
 
-#: includes/class-conj-lite.php:321
+#: includes/class-conj-lite.php:319
+msgctxt "sidebar name"
 msgid "Sidebar"
 msgstr ""
 
-#: includes/class-conj-lite.php:323
-msgid "Widgets added to this region will appear in archive/shop pages."
-msgstr ""
-
-#. translators: 1: Decimal number.
-#: includes/class-conj-lite.php:331
-#, php-format
-msgid "Footer Column %1$d"
+#: includes/class-conj-lite.php:320
+msgctxt "sidebar description"
+msgid "Widgets in this area will be shown in header navigation area."
 msgstr ""
 
 #. translators: 1: Decimal number.
 #: includes/class-conj-lite.php:333
 #, php-format
+msgctxt "sidebar name"
+msgid "Footer Column %1$d"
+msgstr ""
+
+#. translators: 1: Decimal number.
+#: includes/class-conj-lite.php:335
+#, php-format
+msgctxt "sidebar description"
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: includes/class-conj-lite.php:414
+#. translators: 1: Decimal number, 2: Decimal number.
+#: includes/class-conj-lite.php:338
+#, php-format
+msgctxt "sidebar name"
+msgid "Footer Row %1$d - Column %2$d"
+msgstr ""
+
+#. translators: 1: Decimal number.
+#: includes/class-conj-lite.php:340
+#, php-format
+msgctxt "sidebar description"
+msgid "Widgets added here will appear in column %1$d of footer row %2$d."
+msgstr ""
+
+#: includes/class-conj-lite.php:424
 msgctxt "rubik and montserrat font: on or off"
 msgid "google-fonts-on"
 msgstr ""
 
 #. translators: %s: post author
-#: includes/conj-lite-functions.php:179
+#: includes/conj-lite-functions.php:249
 #, php-format
 msgid "by %s"
 msgstr ""
 
 #. translators: 1: Open span tag, 2: Close span tag, 3: Post date.
-#: includes/conj-lite-functions.php:219
+#: includes/conj-lite-functions.php:289
 #, php-format
 msgid "%1$sPosted on%2$s %3$s"
 msgstr ""
 
 #. translators: %: Number of comments
-#: includes/conj-lite-functions.php:242
+#: includes/conj-lite-functions.php:312
+msgctxt "link to the comments"
 msgid "Leave a comment"
 msgstr ""
 
-#: includes/conj-lite-functions.php:242
+#: includes/conj-lite-functions.php:312
+msgctxt "link to the comments"
 msgid "One Comment"
 msgstr ""
 
-#: includes/conj-lite-functions.php:242
+#: includes/conj-lite-functions.php:312
+msgctxt "link to the comments"
 msgid "% Comments"
 msgstr ""
 
-#: includes/conj-lite-functions.php:278
-msgid "in"
-msgstr ""
-
-#: includes/conj-lite-functions.php:278
-msgid "Categories"
-msgstr ""
-
-#: includes/conj-lite-functions.php:281
-msgid "Tags"
-msgstr ""
-
-#. translators: 1: Open span tag, 2: Name of current post, 3: Close span tag.
-#: includes/conj-lite-functions.php:314
+#. translators: 1: Open span tag, 2: Close span tag.
+#: includes/conj-lite-functions.php:347 includes/conj-lite-functions.php:354
 #, php-format
-msgid "Edit this post%1$s \"%2$s\"%3$s"
+msgctxt "data title"
+msgid "%1$sin%2$s"
 msgstr ""
 
-#: includes/conj-lite-template-functions.php:50
-msgid "Skip to navigation"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: includes/conj-lite-functions.php:349
+#, php-format
+msgctxt "cats links"
+msgid "%1$sCategories%2$s"
 msgstr ""
 
-#: includes/conj-lite-template-functions.php:88
-msgid "Menu"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: includes/conj-lite-functions.php:356
+#, php-format
+msgctxt "tags links"
+msgid "%1$sTags%2$s"
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: includes/conj-lite-template-functions.php:40
+#, php-format
+msgctxt "screen reader text"
+msgid "%1$sSkip to navigation%2$s"
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: includes/conj-lite-template-functions.php:42
+#, php-format
+msgctxt "screen reader text"
+msgid "%1$sSkip to content%2$s"
+msgstr ""
+
+#. translators: 1: Open `push-menu` button tag, 2: Close `push-menu` close tag(s).
+#: includes/conj-lite-template-functions.php:75
+#, php-format
+msgid "%1$sMenu%2$s"
+msgstr ""
+
+#: includes/conj-lite-template-functions.php:163
+msgctxt "date in localized format"
+msgid "Y"
 msgstr ""
 
 #. translators: 1: WordPress.org URL.
-#: includes/conj-lite-template-functions.php:167
+#: includes/conj-lite-template-functions.php:168
 #, php-format
 msgid "%1$sProudly powered by %2$s "
 msgstr ""
 
-#: includes/conj-lite-template-functions.php:170
-msgid "Y"
-msgstr ""
-
 #. translators: 1: Seperator, 2: Theme name, 3: Theme author.
-#: includes/conj-lite-template-functions.php:174
+#: includes/conj-lite-template-functions.php:173
 #, php-format
 msgid "%1$s Theme: %2$s by %3$s"
 msgstr ""
 
-#: includes/customizer/class-conj-lite-customizer-control-more.php:36
+#: includes/customizer/class-conj-lite-customizer-control-more.php:35
+msgctxt "upsell content"
 msgid ""
 "CONJ aims to remove all barriers between you and 3rd party plugins by "
 "offering all the things that you need to run a successful webshop. Give us a "
@@ -306,447 +366,284 @@ msgid ""
 msgstr ""
 
 #. translators: %1$s: Open Br, small and em tags, Close em and small tags.
-#: includes/customizer/class-conj-lite-customizer-control-more.php:41
+#: includes/customizer/class-conj-lite-customizer-control-more.php:39
 #, php-format
+msgctxt "upsell content"
 msgid "Something missing?%1$sThere&rsquo;s a built-in feature for that!%2$s"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:47
+#: includes/customizer/class-conj-lite-customizer-control-more.php:45
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s Header Customizer"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:50
+#: includes/customizer/class-conj-lite-customizer-control-more.php:49
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s Modular Mega-Menu"
 msgstr ""
 
 #. translators: %s: Emoji unicode
 #: includes/customizer/class-conj-lite-customizer-control-more.php:53
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s Gutenberg Blocks"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:56
+#: includes/customizer/class-conj-lite-customizer-control-more.php:57
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%1$s +%2$s Template Blocks"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:59
+#: includes/customizer/class-conj-lite-customizer-control-more.php:61
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s Two-Steps Checkout"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:62
-#, php-format
-msgctxt "more_feature"
-msgid "%s Product Brands"
 msgstr ""
 
 #. translators: %s: Emoji unicode
 #: includes/customizer/class-conj-lite-customizer-control-more.php:65
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
+msgid "%s Product Brands"
+msgstr ""
+
+#. translators: %s: Emoji unicode
+#: includes/customizer/class-conj-lite-customizer-control-more.php:69
+#, php-format
+msgctxt "CONJ PRO feature"
 msgid "%s Store Vacation"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:68
+#: includes/customizer/class-conj-lite-customizer-control-more.php:73
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s Attribute Swatches"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:71
-#, php-format
-msgctxt "more_feature"
-msgid "%s Product Quick View"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:74
-#, php-format
-msgctxt "more_feature"
-msgid "%s Distraction Free Checkout"
 msgstr ""
 
 #. translators: %s: Emoji unicode
 #: includes/customizer/class-conj-lite-customizer-control-more.php:77
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
+msgid "%s Product Quick View"
+msgstr ""
+
+#. translators: %s: Emoji unicode
+#: includes/customizer/class-conj-lite-customizer-control-more.php:81
+#, php-format
+msgctxt "CONJ PRO feature"
+msgid "%s Distraction Free Checkout"
+msgstr ""
+
+#. translators: %s: Emoji unicode
+#: includes/customizer/class-conj-lite-customizer-control-more.php:85
+#, php-format
+msgctxt "CONJ PRO feature"
 msgid "%s Product Archive Customizer"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:80
+#: includes/customizer/class-conj-lite-customizer-control-more.php:89
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s WPML Compatible"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:83
+#: includes/customizer/class-conj-lite-customizer-control-more.php:93
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s Google Analytics Integration"
 msgstr ""
 
 #. translators: %s: Emoji unicode
-#: includes/customizer/class-conj-lite-customizer-control-more.php:86
-#: includes/nux/class-conj-lite-admin.php:188
+#: includes/customizer/class-conj-lite-customizer-control-more.php:97
 #, php-format
-msgctxt "more_feature"
+msgctxt "CONJ PRO feature"
 msgid "%s &hellip;&hellip;and much more"
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Emoji unicode, 3: Close anchor tag.
-#: includes/customizer/class-conj-lite-customizer-control-more.php:92
-#: includes/nux/class-conj-lite-admin.php:71
+#: includes/customizer/class-conj-lite-customizer-control-more.php:103
 #, php-format
+msgctxt "upsell content"
 msgid "%1$sGo Premium %2$s %3$s"
 msgstr ""
 
 #. translators: %s: Conj Lite
-#: includes/customizer/class-conj-lite-customizer-control-more.php:98
+#: includes/customizer/class-conj-lite-customizer-control-more.php:108
 #, php-format
+msgctxt "upsell content"
 msgid "Enjoying %s?"
 msgstr ""
 
 #. translators: 1: Emoji unicode, 2: Open anchor tag, 3: Close anchor tag, 4: Br tag.
-#: includes/customizer/class-conj-lite-customizer-control-more.php:103
+#: includes/customizer/class-conj-lite-customizer-control-more.php:112
 #, php-format
+msgctxt "upsell content"
 msgid ""
 "Why not leave us a %1$s review on %2$sWordPress.org%3$s?%4$sWe&rsquo;d "
 "really appreciate it!"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:58
+msgctxt "panel title"
 msgid "Colors"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:59
+msgctxt "panel description"
 msgid ""
 "This option allows you to choose a color, view color suggestions, refine "
 "with the color picker and apply background color changes."
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:69
+msgctxt "section title"
 msgid "Button"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:76
+msgctxt "section title"
 msgid "Layout"
 msgstr ""
 
 #. translators: %s: Emoji unicode
 #: includes/customizer/class-conj-lite-customizer.php:83
 #, php-format
+msgctxt "section title"
 msgid "More %s"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:98
+msgctxt "control label"
 msgid "Heading"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:112
 #: includes/customizer/class-conj-lite-customizer.php:155
 #: includes/customizer/class-conj-lite-customizer.php:169
+msgctxt "control label"
 msgid "Text"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:126
 #: includes/customizer/class-conj-lite-customizer.php:140
+msgctxt "control label"
 msgid "Link"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:141
 #: includes/customizer/class-conj-lite-customizer.php:170
+msgctxt "control description"
 msgid "Alternate"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:184
 #: includes/customizer/class-conj-lite-customizer.php:237
+msgctxt "control label"
 msgid "Background"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:202
+msgctxt "control label"
 msgid "Sidebar layout"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:207
+msgctxt "control choice"
 msgid "Left"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:208
+msgctxt "control choice"
 msgid "Right"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:223
+msgctxt "control label"
 msgid "Looking for more options?"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:232
+msgctxt "section title"
 msgid "General"
 msgstr ""
 
 #: includes/customizer/class-conj-lite-customizer.php:235
+msgctxt "control label"
 msgid "Site title"
 msgstr ""
 
-#: includes/nux/class-conj-lite-admin.php:62
+#. translators: %s: Emoji unicode.
+#: includes/nux/class-conj-lite-nux-admin.php:58
+#, php-format
+msgctxt "upsell notice heading"
+msgid "Smiles, shall we take it to the next level? %s"
+msgstr ""
+
+#: includes/nux/class-conj-lite-nux-admin.php:61
+msgctxt "upsell notice content"
 msgid ""
-"You&rsquo;re currently using free version of the Conj theme. By upgrading to "
-"premium version, you would be able to unlock powerful e-Commerce features "
-"and performance tools for your webshop."
+"Thank you for choosing CONJ Lite for your online presence. We&rsquo;ve built "
+"a brand new, upgraded experience for curious and most valuable site owners "
+"like you ― it&rsquo;s just a few clicks away."
 msgstr ""
 
-#: includes/nux/class-conj-lite-admin.php:73
+#: includes/nux/class-conj-lite-nux-admin.php:64
+msgctxt "upsell notice content"
 msgid ""
-"By clicking the button, you will be redirected to the item details page on "
-"ThemeForest."
+"We are intended to keep your shopping experience hassle-free, with offering "
+"risk-free 14 days refund to your purchase. Give us a try, and we promise you "
+"won&rsquo;t regret it."
 msgstr ""
 
-#: includes/nux/class-conj-lite-admin.php:78
-msgid "Stay Focused on Your Business!"
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: includes/nux/class-conj-lite-nux-admin.php:68
+#, php-format
+msgid "%1$sOpen Customizer %2$s"
 msgstr ""
 
-#: includes/nux/class-conj-lite-admin.php:79
+#: includes/nux/class-conj-lite-nux-admin.php:69
+msgctxt "upsell notice content"
+msgid "OR"
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Emoji unicode, 3: Close anchor tag.
+#: includes/nux/class-conj-lite-nux-admin.php:71
+#, php-format
+msgid "%1$sGo Premium %2$s %3$s"
+msgstr ""
+
+#. translators: 1: Open small tag, 2: Close small tag.
+#: includes/nux/ocdi/class-conj-lite-nux-ocdi.php:59
+#, php-format
+msgctxt "demo import notice"
 msgid ""
-"Block editor components, built-in e-Commerce features, and customization "
-"options are all thoroughly documented with live website examples for easier "
-"use and customization — just like WordPress itself. Not comfortable diving "
-"that deep? No worries,  a huge set of base elements and pre-built block "
-"editor templates are already set up for you. You just have to get started!"
+"%1$sThe following plugins are used within the selected demo and you may want "
+"to install a few or all of them depending on which feature you may want to "
+"have on your site.%2$s"
 msgstr ""
 
-#: includes/nux/class-conj-lite-admin.php:82
-msgid "Structure"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:86
+#. translators: 1: Open list and anchor tag, 2: Open small tag, 3: Close anchor and list tag.
+#: includes/nux/ocdi/class-conj-lite-nux-ocdi.php:62
 #, php-format
-msgctxt "upsell_feature"
-msgid "%s Based on Underscores"
+msgctxt "demo import notice"
+msgid "%1$sWooCommerce%2$s(Required)%3$s"
 msgstr ""
 
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:89
+#. translators: 1: Open list and anchor tag, 2: Open small tag, 3: Close anchor and list tag.
+#: includes/nux/ocdi/class-conj-lite-nux-ocdi.php:64
 #, php-format
-msgctxt "upsell_feature"
-msgid "%s Fully responsive"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:92
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Flexible CSS grid"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:95
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s HiDPI / Retina ready"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:98
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s JetPack integration"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:101
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Designed for WooCommerce"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:104
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Extended documentation"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:107
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Continuous free updates"
-msgstr ""
-
-#: includes/nux/class-conj-lite-admin.php:111
-msgid "Features"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:115
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Header customizer"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:118
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Modular mega-menu"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:121
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Gutenberg blocks"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:124
-#, php-format
-msgctxt "more_feature"
-msgid "%1$s +%2$s template blocks"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:127
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Demo content install"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:130
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s GDPR cookie notice"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:133
-#, php-format
-msgctxt "more_feature"
-msgid "%s WPML compatible"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:136
-#, php-format
-msgctxt "more_feature"
-msgid "%s Google Analytics integration"
-msgstr ""
-
-#: includes/nux/class-conj-lite-admin.php:140
-msgid "e-Commerce"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:144
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Quick view"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:147
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Product brands"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:150
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Attribute swatches"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:153
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Store vacation"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:156
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Sale percent badge"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:159
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Two-steps checkout"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:162
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Product archive customizer"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:165
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Distraction free checkout"
-msgstr ""
-
-#: includes/nux/class-conj-lite-admin.php:169
-msgid "Customization"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:173
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Customize colors"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:176
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Customize typography"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:179
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Extandable styles"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:182
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Child theme ready"
-msgstr ""
-
-#. translators: %s: Emoji unicode
-#: includes/nux/class-conj-lite-admin.php:185
-#, php-format
-msgctxt "upsell_feature"
-msgid "%s Translation ready"
+msgctxt "demo import notice"
+msgid "%1$sJetpack by WordPress.com%2$s(Recommended)%3$s"
 msgstr ""
 
 #: includes/nux/tgmpa/class-tgm-plugin-activation.php:327
@@ -1199,37 +1096,39 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: Span open tag, 2: Span close tag.
-#: includes/woocommerce/class-conj-lite-woocommerce.php:345
+#: includes/woocommerce/class-conj-lite-woocommerce.php:340
 #, php-format
 msgid "%1$sPrice%2$s"
 msgstr ""
 
-#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:241
-msgid "View your shopping cart"
-msgstr ""
-
 #. translators: number of items in the mini cart.
-#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:243
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:188
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:299
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:287
 msgid "Your order"
 msgstr ""
 
-#: page-templates/template-fluid.php:42 single.php:32
-msgid "Previous"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: page-templates/template-fluid.php:32 single.php:27
+#, php-format
+msgctxt "post navigation"
+msgid "%1$sPrevious%2$s"
 msgstr ""
 
-#: page-templates/template-fluid.php:43 single.php:33
-msgid "Next"
+#. translators: 1: Open span tag, 2: Close span tag.
+#: page-templates/template-fluid.php:34 single.php:29
+#, php-format
+msgctxt "post navigation"
+msgid "%1$sNext%2$s"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:22
+#: search.php:21
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1240,13 +1139,16 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-aside.php:39 template-parts/content-audio.php:55
-#: template-parts/content-chat.php:42 template-parts/content-gallery.php:56
-#: template-parts/content-image.php:47 template-parts/content-link.php:51
-#: template-parts/content-page.php:23 template-parts/content-quote.php:55
-#: template-parts/content-status.php:40 template-parts/content-video.php:56
-#: template-parts/content.php:42
-msgid "Pages:"
+#. translators: %s: Open div tag.
+#: template-parts/content-aside.php:40 template-parts/content-audio.php:56
+#: template-parts/content-chat.php:43 template-parts/content-gallery.php:57
+#: template-parts/content-image.php:48 template-parts/content-link.php:52
+#: template-parts/content-page.php:24 template-parts/content-quote.php:56
+#: template-parts/content-status.php:41 template-parts/content-video.php:57
+#: template-parts/content.php:43
+#, php-format
+msgctxt "page links"
+msgid "%sPages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
@@ -1281,12 +1183,6 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-page.php:38
-#, php-format
-msgid "Edit this page <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Conj Lite"
 msgstr ""
@@ -1297,7 +1193,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Meet Conj – a super-fast, super-lightweight and super-stylish theme with "
+"Meet CONJ – a super-fast, super-lightweight and super-stylish theme with "
 "impressive usability, both on the front and back end for creating a stylish "
 "WooCommerce webshop or stunning company website with its unique mobile-first "
 "and grid-based architecture which comes with built-in one click demo import "
