@@ -361,6 +361,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.wc-block-grid__product-add-to-cart > a:after,
 					li.product > .price,
 					.woocommerce-loop-product__title:hover,
+					.woocommerce-loop-product__categories a:hover,
 					li.product .added_to_cart:after,
 					li.product .button:after {
 						color: {$general_link_color};
@@ -423,6 +424,7 @@ if ( ! class_exists( 'Conj_Lite_Customizer_Styles' ) ) :
 					.woocommerce-mini-cart__buttons > a:not(.checkout),
 					.woocommerce-MyAccount-navigation-link:not(.is-active) > a,
 					.star-rating,
+					.woocommerce-loop-product__categories a,
 					.woocommerce-widget-layered-nav li a,
 					.widget_product_categories li a,
 					.woocommerce-tabs ul.tabs li a {
