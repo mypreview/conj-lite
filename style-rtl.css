@@ -515,9 +515,6 @@ label {
 	.site-info {
 		text-align: center;
 	}
-	.site-footer-bar .widget-title {
-		font-size: 30px;
-	}
 	h2,
 	.search-results:not(.post-type-archive) .site-main article .entry-title,
 	article.post .entry-title,
@@ -2217,34 +2214,34 @@ article.post .entry-content .alignwide.wp-block-pullquote {
 /*--------------------------------------------------------------
 ## Text color
 --------------------------------------------------------------*/
-#conj-lite-site__wrapper .has-black-color {
+#conj-lite-site-wrapper .has-black-color {
 	color: #000000;
 }
-#conj-lite-site__wrapper .has-mako-color {
+#conj-lite-site-wrapper .has-mako-color {
 	color: #464855;
 }
-#conj-lite-site__wrapper .has-storm-gray-color {
+#conj-lite-site-wrapper .has-storm-gray-color {
 	color: #6B6F82;
 }
-#conj-lite-site__wrapper .has-manatee-color {
+#conj-lite-site-wrapper .has-manatee-color {
 	color: #898EA3;
 }
-#conj-lite-site__wrapper .has-cadet-blue-color {
+#conj-lite-site-wrapper .has-cadet-blue-color {
 	color: #A7ABBE;
 }
-#conj-lite-site__wrapper .has-martinique-color {
+#conj-lite-site-wrapper .has-martinique-color {
 	color: #2D2E4F;
 }
-#conj-lite-site__wrapper .has-victoria-color {
+#conj-lite-site-wrapper .has-victoria-color {
 	color: #414B92;
 }
-#conj-lite-site__wrapper .has-cornflower-blue-color {
+#conj-lite-site-wrapper .has-cornflower-blue-color {
 	color: #666EE8;
 }
-#conj-lite-site__wrapper .has-white-lilac-color {
+#conj-lite-site-wrapper .has-white-lilac-color {
 	color: #F4F5FA;
 }
-#conj-lite-site__wrapper .has-white-color {
+#conj-lite-site-wrapper .has-white-color {
 	color: #FFFFFF;
 }
 .has-text-color a:hover,
@@ -2435,16 +2432,6 @@ article.post .entry-content .alignwide.wp-block-pullquote {
 }
 .widget-area__wrapper .widget-title .rsswidget + .rsswidget {
 	padding-right: 20px;
-}
-@media (min-width: 48.0625em) {
-	.site-footer-bar .widget-title {
-		margin-bottom: 25px;
-	}
-}
-@media (max-width: 48em) {
-	.site-footer-bar .widget-title {
-		margin-bottom: 15px;
-	}
 }
 /*--------------------------------------------------------------
 ## Footer Widgets
@@ -3685,6 +3672,7 @@ ol.comment-list .children .comment-meta {
 .error-404-last .widgettitle {
 	text-transform: uppercase;
 	margin-top: 0;
+	border-color: #DDDFE7;
 }
 body:not(.woocommerce-running) .error-404-last .widgettitle,
 body:not(.woocommerce-running) .error-404-first .widgettitle,
@@ -4110,28 +4098,28 @@ input[type="color"]:focus,
 textarea:focus {
 	border-color: #898EA2;
 }
-.error-404-last .widgettitle, 
-.error-404-first .widgettitle, 
-.error-404-first .widget-title,
+.entry-author .author-heading,
+.wp-block-categories ul.children,
+.wp-block-categories__list,
 .ui-datepicker .ui-datepicker-calendar,
 .ui-datepicker .ui-datepicker-calendar td,
 .comments-area .comments-title,
+ol.comment-list .comment-meta,
+.comment-respond #reply-title,
 .pagination .page-numbers.dots,
 .pagination .page-numbers:not(.current):not(:hover),
 .page-links a>.page-number:not(:hover),
 .wp-block-latest-comments__comment-meta,
-ol.comment-list .comment-meta,
 .comment-respond .comment-reply-title,
-.comment-respond #reply-title,
 blockquote,
-.wp-block-pullquote,
+.wp-block-quote,
+.wp-block-quote.is-style-large,
 section.error-404 .not-found .widgettitle,
 .widget-area__wrapper .widget:not(:first-of-type),
-.site-footer .widget ul.menu .sub-menu,
-.widget-area__wrapper .widget ul.menu .sub-menu,
-.widget_pages ul ul.children,
-.widget_categories ul ul.children,
-.wp-block-categories.wp-block-categories-list ul.children,
+.site-footer .widget_nav_menu .sub-menu,
+.widget-area__wrapper .widget_nav_menu .sub-menu,
+.widget_pages ul.children,
+.widget_categories ul.children,
 .entry-footer .edit-link .post-edit-link {
 	border-color: #DDDFE7;
 }
@@ -4139,12 +4127,13 @@ section.error-404 .not-found .widgettitle,
 	background-color: #eff1f9;
 }
 .ui-datepicker .ui-datepicker-calendar th,
-.site-footer .widget ul.menu .sub-menu li:before,
-.widget-area__wrapper .widget ul.menu .sub-menu li:before,
+.site-footer .widget_nav_menu .sub-menu li:before,
+.widget-area__wrapper .widget_nav_menu .sub-menu li:before,
 .widget_pages ul.children > li:before,
 .widget_categories ul.children > li:before,
-.wp-block-categories.wp-block-categories-list ul.children > li:before,
-body.single-post article.post.hentry .entry-footer .tags-links:before {
+.wp-block-categories ul.children > li:before,
+.wp-block-categories__list > li:before,
+article.post .entry-footer .tags-links:before {
 	background-color: #DDDFE7;
 }
 .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today {
@@ -4158,18 +4147,19 @@ body.single-post article.post.hentry .entry-footer .tags-links:before {
 #masthead ul.sub-menu > li > ul.sub-menu:before,
 #masthead ul.menu > li.menu-item-has-children > ul.sub-menu:before,
 #masthead ul.sub-menu,
-body:not(.has-header-image) #masthead,
-.wp-block-tag-cloud a.tag-cloud-link,
+body:not(.has-header-image) .site-header,
+.wp-block-tag-cloud a,
 article.post.hentry .wp-block-pullquote:not(.is-style-solid-color) blockquote:after,
 article.post.hentry .wp-block-pullquote:not(.is-style-solid-color) blockquote:before,
-article.post.hentry.format-chat .entry-content > *:before,
+article.post.format-chat .entry-content > *:before,
 .search-results:not(.post-type-archive) .site-main article:not(.type-product),
 article.type-attachment,
-article.post.hentry,
+article.post,
 ol.comment-list .pingback:not(:last-child) .comment-body,
 ol.comment-list .comment .comment-body,
-.wp-block-latest-comments .wp-block-latest-comments__comment,
-.error-404-last .widget_tag_cloud ul li:not(:hover),
+.wp-block-latest-comments__comment,
+.error-404-last .widget_tag_cloud li a:not(:hover),
+.entry-author,
 .widget-area__wrapper,
 .widget-area__wrapper .widget-title > a,
 .widget-area__wrapper .widget-title {
@@ -4182,16 +4172,14 @@ ol.comment-list .comment .comment-body,
 mark {
 	color: #FFFFFF;
 }
-.widget-area__wrapper .calendar_wrap tfoot tr:not(:last-of-type) td, 
-.widget-area__wrapper .calendar_wrap tbody tr:not(:last-of-type) td, 
-.widget-area__wrapper .calendar_wrap td {
+.widget-area__wrapper .widget_calendar td {
 	border-color: #FFFFFF;
 }
 .handheld-menu-toggle {
 	color: #434759;
 }
 .site-footer .widget_categories [class*="current"] > a,
-.site-footer ul.menu [class*="current"] > a,
+.site-footer .widget_nav_menu [class*="current"] > a,
 .site-footer .widget_pages [class*="current"] > a,
 .site-footer a:hover,
 .handheld-offcanvas .close-btn:hover,
@@ -4232,6 +4220,7 @@ mark {
 }
 .site-footer .widget-title {
 	border-color: #8A91FF;
+	color: #F4F5FA;
 }
 .site-footer h1,
 .site-footer h2,
@@ -4239,13 +4228,10 @@ mark {
 .site-footer h4,
 .site-footer h5,
 .site-footer h6,
-.site-footer .widget_calendar .calendar_wrap caption,
-.site-footer .widget-title {
+.site-footer .widget_calendar caption {
 	color: #F4F5FA;
 }
-.site-footer .calendar_wrap tfoot tr:not(:last-of-type) td, 
-.site-footer .calendar_wrap tbody tr:not(:last-of-type) td, 
-.site-footer .calendar_wrap td {
+.site-footer .widget_calendar td {
 	border-color: #353745;
 }
 code,
@@ -4253,8 +4239,8 @@ pre,
 .required {
 	color: #FF4961;
 }
+.search-type-post,
 .comment-meta .comment-awaiting-moderation,
-.search-results:not(.post-type-archive) .site-main article.type-post .entry-meta span,
 .akismet_comment_form_privacy_notice,
 .comment-respond .comment-notes,
 p.no-comments {
