@@ -101,7 +101,7 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		public function enqueue() {
 
 			wp_enqueue_style( 'conj-lite-woocommerce-styles', get_theme_file_uri( 'woocommerce.css' ), array( 'conj-lite-styles' ), CONJ_LITE_THEME_VERSION );
-			wp_style_add_data( 'conj-woocommerce-styles', 'rtl', 'replace' );
+			wp_style_add_data( 'conj-lite-woocommerce-styles', 'rtl', 'replace' );
 
 		}
 
