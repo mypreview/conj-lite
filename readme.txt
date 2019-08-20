@@ -9,39 +9,59 @@ Stable tag: 1.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Meet Conj – a super-fast, super-lightweight and super-stylish theme with impressive usability, both on the front and back end for creating a stylish WooCommerce webshop or stunning company website with its unique mobile-first and grid-based architecture.
+Meet CONJ – a super-fast, super-lightweight and super-stylish theme with impressive usability, both on the front and back end for creating a stylish WooCommerce webshop or stunning company website with its unique mobile-first and grid-based architecture.
 
 == Description ==
-Meet Conj – a super-fast, super-lightweight and super-stylish theme with impressive usability, both on the front and back end for creating a stylish WooCommerce webshop or stunning company website with its unique mobile-first and grid-based architecture which comes with built-in one click demo import to help you have your new website up and running in a matter of minutes. Intuitive, flexible and compatible with the new Gutenberg block-based content editor — Demo → https://www.conj.ws/lite
+Meet CONJ – a super-fast, super-lightweight and super-stylish theme with impressive usability, both on the front and back end for creating a stylish WooCommerce webshop or stunning company website with its unique mobile-first and grid-based architecture which comes with built-in one click demo import to help you have your new website up and running in a matter of minutes. Intuitive, flexible and compatible with the new Gutenberg block-based content editor — Demo → https://www.conj.ws/lite
 
 == Installation ==
-1. Upload the entire `conj-lite` folder to the `/wp-content/themes/` directory
+1. Upload the entire `conj-lite` folder to the `/wp-content/themes/` directory.
 2. Activate the theme through the `Themes` menu in WordPress.
 3. Start by visiting theme customizer at `Appearance` » `Customize`.
 
 == Frequently Asked Questions ==
-= What are the server requirements to install CONJ theme? =
-To run the [Conj Lite - eCommerce WordPress Theme](https://www.conj.ws/conj-lite) on your server we require your host supports:
+= What are the server requirements to install this theme? =
+To run the [Conj Lite](https://www.conj.ws/lite) on your server we require your host supports:
 
 * PHP version 7 or greater.
 * MySQL version 5.6 or greater OR MariaDB version 10.0 or greater.
-* WordPress version 5.2 or greater.
+* WordPress version 5.0 or greater.
 * WooCommerce version 3.5 or greater.
 * WP Memory limit of 64 MB or greater (128 MB or higher is preferred).
 
 == Copyright ==
-Conj Lite - eCommerce WordPress Theme, Copyright (C) 2015 - 2019 
-The [Conj Lite - eCommerce WordPress Theme](https://www.conj.ws/conj-lite) is distributed under the terms of the GNU GPL Version 3.
+Conj Lite WordPress Theme, Copyright (C) 2015 - 2019 MY PREVIEW LLC. https://www.conj.ws
+Conj Lite is distributed under the terms of the GNU GPL Version 3.
 
 You can redistribute this program and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-The [Conj Lite - eCommerce WordPress Theme](https://www.conj.ws/conj-lite) open source license is GPLv3. The GPLv3 has many terms, but the most important is how it is sticky when you distribute your work publicly. If you release the modified version of this theme to the public in some way, the GPL requires you to make the modified source code available to the program's users, under the GPL.
-
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-Due to copyright restrictions, all images downloaded via demo import are watermarked and their quality reduced on purpose.
-
 == Changelog ==
+= 1.2.0 =
+* Fix: Compliant with BEM CSS conventions `http://getbem.com`.
+* Fix: Multiple code standards improvements.
+* Fix: If no widgets are present in the sidebar, a full-width layout will be applied to all pages.
+* Fix: Correct position of product flashes on shop loop items.
+* Fix: Removed 100% width for container on single post page using fluid-template.
+* Fix: Shipping totals properly aligned in small screens.
+* Fix: Ensure all checkboxes and radio-buttons function correctly with new markup.
+* Fix: Improved semantic HTML for pages and template files.
+* Fix: Removed duplicate inline background-color style for the body tag.
+* Fix: Show cancel button when a user focuses on search input.
+* Fix: Remove submenu from the view when the menu item has not hovered.
+* Update: One-click demo import files.
+* Update: Gutenberg editor styles.
+* Update: Classic editor styles.
+* Update: Language files.
+* Update: Extensive improvements to the responsive design.
+* Update: Refactored all underlying code and re-organized/ static resources.
+* Tweak: Styling in IE 11 (Internet Explorer) browser.
+* Tweak: RTL (Right-to-left) language styling.
+* Tweak: Use transition instead of `keyframe` animation in submenu openning.
+* Tweak: Trigger a `wp_body_open` action immediately after the opening `body` tag.
+* Compatibility: WooCommerce 3.7.0
+
 = 1.1.1 =
 * Fix: Adjust background color in block mover controls to improve visibility in either dark or light color scheme.
 * Fix: Correct block inserter position to avoid overlapping select block over the next one in the editor.
