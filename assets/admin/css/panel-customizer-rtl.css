@@ -5,3 +5,19 @@
  * @package     conj-lite
  * @author      MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
+#conj-lite-customizer-more-control {
+	overflow: hidden;
+	zoom: 1;
+}
+#conj-lite-customizer-more-control hr {
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+#conj-lite-customizer-more-control .button-primary {
+	font-size: 14px;
+	margin: .3125rem 0;
+	padding: .5rem 1.5rem 2.2rem;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+	text-decoration: none;
+}
