@@ -18,17 +18,5 @@
 	padding: .5rem 1.5rem 2.2rem;
 	-ms-flex-negative: 0;
 	    flex-shrink: 0;
-	background: #666EE8;
-	border-color: #333BB5 #1A229C #1A229C;
-	-webkit-box-shadow: 0 1px 0 #1A229C;
-	        box-shadow: 0 1px 0 #1A229C;
-	color: #fff;
 	text-decoration: none;
-	text-shadow: 0 -1px 1px #1A229C,1px 0 1px #1A229C,0 1px 1px #1A229C,-1px 0 1px #1A229C;
-	-webkit-transition: background .3s ease;
-	-o-transition: background .3s ease;
-	transition: background .3s ease;
-}
-#conj-lite-customizer-more-control .button-primary:hover {
-	background: #4D55CF;
 }
