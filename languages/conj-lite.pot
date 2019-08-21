@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Conj Lite\n"
-"POT-Creation-Date: 2019-08-20 13:32+0400\n"
+"POT-Creation-Date: 2019-08-21 10:14+0400\n"
 "PO-Revision-Date: 2018-05-14 10:20+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1102,14 +1102,14 @@ msgid "%1$sPrice%2$s"
 msgstr ""
 
 #. translators: number of items in the mini cart.
-#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:188
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:205
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:287
+#: includes/woocommerce/conj-lite-woocommerce-template-functions.php:304
 msgid "Your order"
 msgstr ""
 
