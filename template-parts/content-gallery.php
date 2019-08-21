@@ -54,7 +54,7 @@
 
 			wp_link_pages( apply_filters( 'conj_lite_wp_link_pages_args', array(
 				/* translators: %s: Open div tag. */
-				'before' => sprintf( esc_html_x( '%sPages:', 'page links', 'conj' ), '<div class="page-links">' ),
+				'before' => sprintf( esc_html_x( '%sPages:', 'page links', 'conj-lite' ), '<div class="page-links">' ),
 				'after' => '</div>',
 				'link_before' => '<span class="page-number">',
 				'link_after' => '</span>'
