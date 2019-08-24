@@ -1730,10 +1730,10 @@ ol.commentlist .comment-text .description {
 	body:not(.logged-in) .woocommerce-Reviews .comment-form-rating {
 		width: calc(33.333% - 10px);	
 	}
-	.comment-respond .comment-form:not(.ratings-enabled) .comment-form-author {
+	.woocommerce-Reviews .comment-respond .comment-form:not(.ratings-enabled) .comment-form-author {
 		width: calc(50% - 15px);
 	}
-	.comment-respond .comment-form:not(.ratings-enabled) .comment-form-email {
+	.woocommerce-Reviews .comment-respond .comment-form:not(.ratings-enabled) .comment-form-email {
 	    margin: 0 0 15px 30px;
 	    width: calc(50% - 15px);
 	}
