@@ -3,7 +3,7 @@
  * Conj Lite WooCommerce Class
  *
  * @requires 	WooCommerce
- * @since 	    1.2.0
+ * @since 	    1.2.1
  * @package 	conj-lite
  * @author  	MyPreview (Github: @mahdiyazdani, @mypreview, @gookalani)
  */
@@ -28,20 +28,21 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'after_setup_theme',        					array( $this, 'setup' ),       						11 );
-			add_action( 'wp_enqueue_scripts',       					array( $this, 'enqueue' ),       					10 );
-			add_action( 'enqueue_block_editor_assets',       			array( $this, 'enqueue_editor_assets' ),     	   	10 );
-			add_filter( 'conj_lite_body_classes', 						array( $this, 'body_classes' ),   	 			 10, 1 );
-			add_filter( 'woocommerce_cross_sells_columns', 				array( $this, 'cross_sells_cols' ),    		 	 10, 1 );
-			add_filter( 'woocommerce_cross_sells_total', 				array( $this, 'cross_sells_total' ),    		 10, 1 );
-			add_filter( 'woocommerce_upsell_display_args', 				array( $this, 'upsell_products_args' ),    		 10, 1 );
-			add_filter( 'woocommerce_output_related_products_args', 	array( $this, 'related_products_args' ),    	 10, 1 );
-			add_filter( 'woocommerce_product_thumbnails_columns', 		array( $this, 'thumbnail_columns' ),       		 10, 1 );
-			add_filter( 'woocommerce_breadcrumb_defaults',          	array( $this, 'change_breadcrumb_delimiter' ),   10, 1 );
-			add_filter( 'woocommerce_get_price_html',          			array( $this, 'custom_price_html' ),  	        100, 2 );
-			add_filter( 'woocommerce_get_price_suffix',          		array( $this, 'add_suffix_to_price' ),  	     99, 4 );
-			add_filter( 'woocommerce_pagination_args',          		array( $this, 'pagination_args' ),  	     	 10, 1 );
-			add_filter( 'woocommerce_single_product_carousel_options',  array( $this, 'flexslider_args' ),  	     	 10, 1 );
+			add_action( 'after_setup_theme',        						array( $this, 'setup' ),       						11 );
+			add_action( 'wp_enqueue_scripts',       						array( $this, 'enqueue' ),       					10 );
+			add_action( 'enqueue_block_editor_assets',       				array( $this, 'enqueue_editor_assets' ),     	   	10 );
+			add_filter( 'conj_lite_body_classes', 							array( $this, 'body_classes' ),   	 			 10, 1 );
+			add_filter( 'woocommerce_cross_sells_columns', 					array( $this, 'cross_sells_cols' ),    		 	 10, 1 );
+			add_filter( 'woocommerce_cross_sells_total', 					array( $this, 'cross_sells_total' ),    		 10, 1 );
+			add_filter( 'woocommerce_upsell_display_args', 					array( $this, 'upsell_products_args' ),    		 10, 1 );
+			add_filter( 'woocommerce_output_related_products_args', 		array( $this, 'related_products_args' ),    	 10, 1 );
+			add_filter( 'woocommerce_product_thumbnails_columns', 			array( $this, 'thumbnail_columns' ),       		 10, 1 );
+			add_filter( 'woocommerce_breadcrumb_defaults',          		array( $this, 'change_breadcrumb_delimiter' ),   10, 1 );
+			add_filter( 'woocommerce_get_price_html',          				array( $this, 'custom_price_html' ),  	        100, 2 );
+			add_filter( 'woocommerce_get_price_suffix',          			array( $this, 'add_suffix_to_price' ),  	     99, 4 );
+			add_filter( 'woocommerce_pagination_args',          			array( $this, 'pagination_args' ),  	     	 10, 1 );
+			add_filter( 'woocommerce_single_product_carousel_options',  	array( $this, 'flexslider_args' ),  	     	 10, 1 );
+			add_filter( 'woocommerce_product_review_comment_form_args', 	array( $this, 'comment_form_args' ),  	     	 10, 1 );
 
 			/**
 			 * Disable default WooCommerce stylesheet.
@@ -374,6 +375,29 @@ if ( ! class_exists( 'Conj_Lite_WooCommerce' ) ) :
 
 			$args['smoothHeight'] = FALSE;
 			$args['useCSS'] = is_rtl();
+
+			return $args;
+
+		}
+
+		/**
+		 * Modifies comment/review form args.
+		 *
+		 * @see 	https://docs.woocommerce.com/wc-apidocs/function-wc_review_ratings_enabled.html
+		 * @access 	public
+		 * @param 	array 	$args 	The current comment/review arguments.
+		 * @return 	array
+		 */
+		public function comment_form_args( $args ) {
+
+			$classnames = array( 'comment-form' );
+
+			// Check if reviews ratings are enabled.
+			if ( wc_review_ratings_enabled() ) {
+				$classnames[] = apply_filters( 'conj_lite_wc_ratings_enabled_classname', 'ratings-enabled' );
+			} // End If Statement
+
+			$args['class_form'] = esc_attr( implode( ' ', $classnames ) );
 
 			return $args;
 
