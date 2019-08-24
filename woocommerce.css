@@ -116,11 +116,6 @@ form.track_order .button,
 li.product .woocommerce-loop-product__title {
 	font-size: 16px;
 }
-ol.commentlist .comment-text .woocommerce-review__author {
-	font-weight: 400;
-	line-height: normal;
-	font-size: 16px;
-}
 .woocommerce-product-details__short-description,
 .woocommerce-form-login .woocommerce-LostPassword {
 	font-size: 15px;
@@ -1303,7 +1298,6 @@ div.product .entry-summary .grouped_form {
 }
 .woocommerce-product-gallery,
 div.product .entry-summary,
-ol.commentlist .comment-text .meta,
 ol.commentlist .comment-text {
 	flex-direction: column;
 	display: flex;
@@ -1693,6 +1687,37 @@ ol.commentlist .comment-text .meta:after {
     width: 100%;
     bottom: 0;
 }
+.woocommerce-review__author {
+	font-weight: 400;
+	line-height: normal;
+	font-size: 16px;
+	display: inline-block;
+}
+.woocommerce-review__verified {
+    text-indent: -9999px;
+    position: absolute;
+}
+.woocommerce-review__verified:before {
+    content: "\e92a";
+    font-family: 'Feather';
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-style: normal;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-left: 8px;
+    border-radius: 50%;
+    line-height: 20px;
+    margin-top: 2px;
+    color: #FFF;
+    background-color: #FFC06A;
+}
+.woocommerce-review__published-date {
+	display: block;
+}
 ol.commentlist .comment-text .description {
 	padding-top: 1em;
 }
@@ -1704,6 +1729,13 @@ ol.commentlist .comment-text .description {
 @media (min-width: 48.0625em) {
 	body:not(.logged-in) .woocommerce-Reviews .comment-form-rating {
 		width: calc(33.333% - 10px);	
+	}
+	.comment-respond .comment-form:not(.ratings-enabled) .comment-form-author {
+		width: calc(50% - 15px);
+	}
+	.comment-respond .comment-form:not(.ratings-enabled) .comment-form-email {
+	    margin: 0 0 15px 30px;
+	    width: calc(50% - 15px);
 	}
 }
 @media (max-width: 37.5em) {
